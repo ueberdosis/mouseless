@@ -16,8 +16,8 @@ export default new Router({
           path: 'profile',
           name: 'courses.sketch',
           component: Sketch,
-        }
+        },
       ],
     },
-  ]
+  ],
 })
