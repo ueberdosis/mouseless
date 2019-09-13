@@ -15,6 +15,7 @@
   "main": "background.js",
   "dependencies": {
     "core-js": "^2.6.5",
+    "electron-store": "^5.0.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
