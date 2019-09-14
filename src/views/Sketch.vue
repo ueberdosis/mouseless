@@ -4,24 +4,22 @@
       Sketch
     </h1>
 
-    <div v-if="failed">
+    <p v-if="failed">
       You failed :(
-    </div>
+    </p>
 
-    <div v-if="!started">
-      <button type="button" @click="start">
-        Start
-      </button>
-    </div>
+    <button type="button" @click="start" v-if="!started">
+      Start
+    </button>
 
-    <div v-if="started">
+    <template v-if="started">
       <p>
         Type: {{ label }}
       </p>
       <button type="button" @click="stop">
         Stop
       </button>
-    </div>
+    </template>
   </div>
 </template>
 
