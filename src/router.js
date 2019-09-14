@@ -11,13 +11,18 @@ export default new Router({
       path: '/',
       name: 'courses',
       component: Courses,
-      children: [
-        {
-          path: 'profile',
-          name: 'courses.sketch',
-          component: Sketch,
-        },
-      ],
+      // children: [
+      //   {
+      //     path: 'profile',
+      //     name: 'courses.sketch',
+      //     component: Sketch,
+      //   },
+      // ],
+    },
+    {
+      path: '/courses/sketch',
+      name: 'courses.sketch',
+      component: Sketch,
     },
   ],
 })
