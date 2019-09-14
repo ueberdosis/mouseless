@@ -12,6 +12,8 @@
   </div>
 </template>
 
+<style lang="scss" src="./fonts.scss"></style>
+
 <style lang="scss">
 *,
 *::before,
@@ -22,7 +24,7 @@
 }
 
 body {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
