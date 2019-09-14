@@ -3,52 +3,105 @@
     <h1>
       Sketch
     </h1>
-    <pre>{{ keybindings }}</pre>
+
+    <div v-if="failed">
+      You failed :(
+    </div>
+
+    <div v-if="!started">
+      <button type="button" @click="start">
+        Start
+      </button>
+    </div>
+
+    <div v-if="started">
+      <p>
+        Type: {{ label }}
+      </p>
+      <button type="button" @click="stop">
+        Stop
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
-import Mousetrap from 'mousetrap'
-import 'mousetrap/plugins/record/mousetrap-record'
-import keybindings from '@/library/sketch.json'
+import collect from 'collect.js'
+import MousetrapClass from 'mousetrap'
+import './record'
+
+const Mousetrap = new MousetrapClass()
+Mousetrap.stopCallback = () => false
 
 export default {
   data() {
     return {
-      keybindings,
+      failed: false,
+      started: false,
+      label: null,
+      data: [
+        {
+          label: 'New Artboard',
+          binding: 'a',
+        },
+        {
+          label: 'New Rectangle',
+          binding: 'r',
+        },
+        {
+          label: 'Bold',
+          binding: 'meta+b',
+        },
+      ],
     }
   },
 
-  mounted() {
-    Mousetrap.bind('4', () => { console.log('4') })
-    Mousetrap.bind('?', () => { console.log('show shortcuts!') })
-    Mousetrap.bind('esc', () => { console.log('escape') }, 'keyup')
+  methods: {
+    start() {
+      this.failed = false
+      this.started = true
+      this.next()
+    },
 
-    // combinations
-    Mousetrap.bind('command+shift+k', () => { console.log('command shift k') })
+    setBinding() {
+      this.keybinding = collect(this.data).random()
+    },
 
-    // map multiple combinations to the same callback
-    Mousetrap.bind(['command+k', 'ctrl+k'], () => {
-      console.log('command k or control k')
+    next() {
+      this.setBinding()
+      this.label = this.keybinding.label
 
-      // return false to prevent default browser behavior
-      // and stop event from bubbling
-      return false
-    })
+      Mousetrap.record(sequence => {
+        console.log('typed:', sequence)
+        if (sequence.includes(this.keybinding.binding)) {
+          this.next()
+        } else {
+          this.fail()
+        }
+      })
+    },
 
-    // gmail style sequences
-    Mousetrap.bind('g i', () => { console.log('go to inbox') })
-    Mousetrap.bind('* a', () => { console.log('select all') })
+    fail() {
+      this.stop()
+      this.failed = true
+    },
 
-    // konami code!
-    Mousetrap.bind('up up down down left right left right b a enter', () => {
-      console.log('konami code')
-    })
-
-    Mousetrap.record(sequence => {
-      // sequence is an array like ['ctrl+k', 'c']
-      console.log(`You pressed: ${sequence.join(' ')}`)
-    })
+    stop() {
+      Mousetrap.stopRecord()
+      this.started = false
+      this.failed = false
+    },
   },
 }
 </script>
+
+<style lang="scss" scoped>
+button {
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+  font-weight: 700;
+  border: 0;
+  border-radius: 6px;
+}
+</style>
