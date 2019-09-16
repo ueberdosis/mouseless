@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      Sketch
+      Sketch ⌥ ⌘ ⇧ → ↓ ⌫ ⌃
     </h1>
 
     <p v-if="failed">
@@ -24,9 +24,12 @@
 </template>
 
 <script>
+import keyboardJS from 'keyboardjs'
 import collect from 'collect.js'
 import MousetrapClass from 'mousetrap'
 import './record'
+import hotkeys from 'hotkeys-js'
+import de from './de'
 
 const Mousetrap = new MousetrapClass()
 Mousetrap.stopCallback = () => false
@@ -89,6 +92,81 @@ export default {
       this.started = false
       this.failed = false
     },
+  },
+
+  mounted() {
+    // keyboardJS.setLocale('de', de)
+
+    // keyboardJS.bind('a', e => {
+    //   e.preventRepeat()
+    //   console.log('a is pressed')
+    // })
+    // keyboardJS.bind('a + b', e => {
+    //   e.preventRepeat()
+    //   console.log({ e })
+    //   console.log('a and b is pressed')
+    // })
+
+    // keyboardJS.bind('*', e => {
+    //   // e.preventRepeat()
+    //   // console.log({ e })
+    //   console.log('* is pressed')
+    // })
+
+    // keyboardJS.bind('*', e => {
+    //   e.preventRepeat()
+    //   console.log({ e })
+    //   console.log('* is pressed')
+    // })
+
+    // keyboardJS.bind(e => {
+    //   // e.preventDefault()
+    //   e.preventRepeat()
+    //   console.log(e.key, e.pressedKeys)
+    // })
+
+    // document.addEventListener('compositionstart', event => {
+    //   console.log(`generated characters were: ${event.data}`)
+    // })
+
+    // hotkeys('ctrl+a+s', () => {
+    //   console.log('you pressed ctrl+a+s!')
+    // })
+
+    // hotkeys('wcj', (event, handler) => {
+    //   console.log(handler)
+    //   if (hotkeys.shift) {
+    //     console.log('shift is pressed!')
+    //   }
+
+    //   if (hotkeys.ctrl) {
+    //     console.log('ctrl is pressed!')
+    //   }
+
+    //   if (hotkeys.alt) {
+    //     console.log('alt is pressed!')
+    //   }
+
+    //   if (hotkeys.option) {
+    //     console.log('option is pressed!')
+    //   }
+
+    //   if (hotkeys.control) {
+    //     console.log('control is pressed!')
+    //   }
+
+    //   if (hotkeys.cmd) {
+    //     console.log('cmd is pressed!')
+    //   }
+
+    //   if (hotkeys.command) {
+    //     console.log('command is pressed!')
+    //   }
+    // })
+  },
+
+  beforeDestroy() {
+    keyboardJS.reset()
   },
 }
 </script>

@@ -12,6 +12,24 @@
   </div>
 </template>
 
+<script>
+import Keyboard from '@/services/Keyboard'
+
+export default {
+  mounted() {
+
+    const keyboard = new Keyboard()
+
+
+    keyboard.on('a', event => {
+      // console.log(event.key)
+      console.log('a')
+    })
+  },
+}
+</script>
+
+
 <style lang="scss" src="./fonts.scss"></style>
 
 <style lang="scss">
