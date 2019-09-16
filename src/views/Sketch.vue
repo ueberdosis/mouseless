@@ -5,7 +5,7 @@
     </h1>
 
     <p v-if="failed">
-      You failed :(
+      Nope :(
     </p>
 
     <button type="button" @click="start" v-if="!started">
@@ -14,7 +14,10 @@
 
     <template v-if="started">
       <p>
-        Type: {{ label }}
+        {{ label }}
+      </p>
+      <p>
+        <key v-for="(key, index) in keybinding.binding" :key="index" :name="key" />
       </p>
       <button type="button" @click="stop">
         Stop
@@ -26,8 +29,13 @@
 <script>
 import collect from 'collect.js'
 import Shortcut from '@/services/Shortcut'
+import Key from '@/components/Key'
 
 export default {
+  components: {
+    Key,
+  },
+
   data() {
     return {
       failed: false,
@@ -99,12 +107,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+div {
+  text-align: center;
+}
+
 button {
   background-color: black;
   color: white;
-  padding: 0.5rem;
+  padding: 0.8rem 1rem;
+  font: inherit;
   font-weight: 700;
   border: 0;
-  border-radius: 6px;
+  border-radius: 9px;
 }
 </style>
