@@ -12,26 +12,6 @@
   </div>
 </template>
 
-<script>
-import Shortcut from '@/services/Shortcut'
-
-export default {
-  mounted() {
-    this.shortcut = new Shortcut()
-
-    this.shortcut.listen(({ event }) => {
-      // event.preventDefault()
-      const match = this.shortcut.is(['meta', ']'])
-      console.log({ match })
-    })
-  },
-
-  beforeDestroy() {
-    this.shortcut.destroy()
-  },
-}
-</script>
-
 <style lang="scss" src="./fonts.scss"></style>
 <style lang="scss" src="./base.scss"></style>
 

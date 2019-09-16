@@ -14,6 +14,11 @@ export default class Shortcut {
     })
   }
 
+  stop() {
+    this.listeners = []
+    this.reset()
+  }
+
   setSpecialKeys(event) {
     const keys = []
 
@@ -41,6 +46,11 @@ export default class Shortcut {
   }
 
   handleKeydown(event) {
+    console.log(this.listeners.length)
+    if (!this.listeners.length) {
+      return
+    }
+
     this.setSpecialKeys(event)
     const name = event.key.toLowerCase()
     const isSpecialKey = this.specialKeys.includes(name)
@@ -62,6 +72,7 @@ export default class Shortcut {
 
   is(keys) {
     const pressedKeys = this.getKeys()
+    console.log({ pressedKeys })
     const match = keys.every(key => pressedKeys.includes(key))
     return match
   }
@@ -76,8 +87,7 @@ export default class Shortcut {
   }
 
   destroy() {
-    this.reset()
-    this.listeners = []
+    this.stop()
     window.removeEventListener('keydown', this.keydownHandler)
   }
 
