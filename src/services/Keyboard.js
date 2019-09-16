@@ -3,8 +3,10 @@ export default class Keyboard {
   constructor() {
     this.listeners = []
     this.pressedKeys = []
-    document.addEventListener('keydown', this.handleKeydown.bind(this))
-    document.addEventListener('keyup', this.handleKeyup.bind(this))
+    this.keydownHandler = this.handleKeydown.bind(this)
+    this.keyupHandler = this.handleKeyup.bind(this)
+    window.addEventListener('keydown', this.keydownHandler)
+    window.addEventListener('keyup', this.keyupHandler)
   }
 
   on(binding, callback) {
@@ -19,6 +21,8 @@ export default class Keyboard {
     const keyIsPressed = this.keyIsPressed(event)
 
     this.increasePressedKeys(event)
+
+    console.log('pressed ', event.key, this.pressedKeys.map(e => this.getEventBinding(e)))
 
     this.listeners
       .filter(listener => listener.binding === binding)
@@ -52,8 +56,9 @@ export default class Keyboard {
 
   destroy() {
     this.listeners = []
-    document.removeEventListener('keydown', this.handleKeydown)
-    document.removeEventListener('keyup', this.handleKeyup)
+    this.pressedKeys = []
+    window.removeEventListener('keydown', this.keydownHandler)
+    window.removeEventListener('keyup', this.keyupHandler)
   }
 
 }
