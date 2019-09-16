@@ -17,14 +17,17 @@ import Keyboard from '@/services/Keyboard'
 
 export default {
   mounted() {
+    this.keyboard = new Keyboard()
 
-    const keyboard = new Keyboard()
-
-
-    keyboard.on('a', event => {
+    this.keyboard.on('a', event => {
+      event.preventDefault()
       // console.log(event.key)
       console.log('a')
     })
+  },
+
+  beforeDestroy() {
+    this.keyboard.destroy()
   },
 }
 </script>
