@@ -13,21 +13,21 @@
 </template>
 
 <script>
-import Keyboard from '@/services/Keyboard'
+import Shortcut from '@/services/Shortcut'
 
 export default {
   mounted() {
-    this.keyboard = new Keyboard()
+    this.shortcut = new Shortcut()
 
-    this.keyboard.on('a', event => {
-      event.preventDefault()
-      // console.log(event.key)
-      console.log('a')
+    this.shortcut.listen(({ event }) => {
+      // event.preventDefault()
+      const match = this.shortcut.is(['meta', ']'])
+      console.log({ match })
     })
   },
 
   beforeDestroy() {
-    this.keyboard.destroy()
+    this.shortcut.destroy()
   },
 }
 </script>
