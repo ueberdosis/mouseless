@@ -1,5 +1,5 @@
 <template>
-  <div class="key">
+  <div class="key" :class="{ 'is-active': active }">
     {{ name | key }}
   </div>
 </template>
@@ -10,6 +10,11 @@ export default {
     name: {
       default: '',
       type: String,
+    },
+
+    active: {
+      default: false,
+      type: Boolean,
     },
   },
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app" :class="{ 'is-loaded': isLoaded }">
     <div class="inner">
       <div class="navigation">
         <router-link class="navigation-item" :to="{ name: 'apps' }">
@@ -12,6 +12,22 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isLoaded: false,
+    }
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.isLoaded = true
+    }, 0)
+  },
+}
+</script>
+
 <style lang="scss" src="./fonts.scss"></style>
 <style lang="scss" src="./base.scss"></style>
 
@@ -21,6 +37,12 @@
   height: 100vh;
   overflow: scroll;
   background-color: #ffd300;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  &.is-loaded {
+    opacity: 1;
+  }
 
   &::before {
     content: '';

@@ -17,7 +17,12 @@
         {{ label }}
       </p>
       <p>
-        <key v-for="(key, index) in keybinding.binding" :key="index" :name="key" />
+        <key
+          v-for="(key, index) in keybinding.binding"
+          :key="index"
+          :name="key"
+          :active="false"
+        />
       </p>
       <button type="button" @click="stop">
         Stop
