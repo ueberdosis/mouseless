@@ -1,6 +1,7 @@
 export default class Keyboard {
 
   constructor() {
+    this.specialKeys = ['shift', 'control', 'alt', 'meta']
     this.listeners = []
     this.pressedKeys = []
     this.keydownHandler = this.handleKeydown.bind(this)
@@ -22,7 +23,8 @@ export default class Keyboard {
 
     this.increasePressedKeys(event)
 
-    console.log('pressed ', event.key, this.pressedKeys.map(e => this.getEventBinding(e)))
+    // console.log('pressed ', event.key, this.pressedKeys.map(e => this.getEventBinding(e)))
+    console.log('keydown', this.getEventBinding(event), this.pressedKeys.map(e => this.getEventBinding(e)))
 
     this.listeners
       .filter(listener => listener.binding === binding)
@@ -33,6 +35,7 @@ export default class Keyboard {
   }
 
   handleKeyup(event) {
+    console.log('keyup', this.getEventBinding(event))
     this.decreasePressedKeys(event)
   }
 
