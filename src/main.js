@@ -28,6 +28,10 @@ Vue.filter('key', value => {
       name: 'meta',
       formatted: '⌘',
     },
+    {
+      name: ' ',
+      formatted: 'Space',
+    },
   ]
 
   const specialKey = specialKeys.find(key => key.name === value)
