@@ -1,3 +1,4 @@
+import path from 'path'
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol, installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
 
@@ -21,6 +22,8 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
+    /* global __static */
+    icon: path.join(__static, 'icon.png'),
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
