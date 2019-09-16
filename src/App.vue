@@ -29,36 +29,8 @@ export default {
 }
 </script>
 
-
 <style lang="scss" src="./fonts.scss"></style>
-
-<style lang="scss">
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-  margin-bottom: 1rem;
-}
-
-p {
-  margin: 1rem 0;
-}
-
-a {
-  color: inherit;
-}
-</style>
+<style lang="scss" src="./base.scss"></style>
 
 <style lang="scss" scoped>
 .app {
