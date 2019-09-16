@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link class="item" :to="{ name: 'courses.sketch' }">
+    <router-link class="item" :to="{ name: 'apps.sketch' }">
       Sketch
     </router-link>
     <router-view />

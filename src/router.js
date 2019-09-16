@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Courses from './views/Courses.vue'
+import Apps from './views/Apps.vue'
 import Sketch from './views/Sketch.vue'
 
 Vue.use(Router)
@@ -9,19 +9,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'courses',
-      component: Courses,
+      name: 'apps',
+      component: Apps,
       // children: [
       //   {
       //     path: 'profile',
-      //     name: 'courses.sketch',
+      //     name: 'apps.sketch',
       //     component: Sketch,
       //   },
       // ],
     },
     {
-      path: '/courses/sketch',
-      name: 'courses.sketch',
+      path: '/apps/sketch',
+      name: 'apps.sketch',
       component: Sketch,
     },
   ],

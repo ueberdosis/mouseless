@@ -2,8 +2,8 @@
   <div class="app">
     <div class="inner">
       <div class="navigation">
-        <router-link class="navigation-item" :to="{ name: 'courses' }">
-          ← Courses
+        <router-link class="navigation-item" :to="{ name: 'apps' }">
+          ← Apps
         </router-link>
       </div>
 
