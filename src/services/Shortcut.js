@@ -46,7 +46,6 @@ export default class Shortcut {
   }
 
   handleKeydown(event) {
-    console.log(this.listeners.length)
     if (!this.listeners.length) {
       return
     }
@@ -72,7 +71,6 @@ export default class Shortcut {
 
   is(keys) {
     const pressedKeys = this.getKeys()
-    console.log({ pressedKeys })
     const match = keys.every(key => pressedKeys.includes(key))
     return match
   }
