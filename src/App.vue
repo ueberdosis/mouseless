@@ -1,7 +1,7 @@
 <template>
-  <div class="app" :class="{ 'is-loaded': isLoaded }">
+  <div class="app" :class="{ 'is-loaded': isLoaded, 'is-filled': $route.name === 'apps.sketch' }">
     <div class="inner">
-      <div class="navigation">
+      <div class="navigation" v-if="$route.name !== 'apps'">
         <router-link class="navigation-item" :to="{ name: 'apps' }">
           ← Apps
         </router-link>
@@ -38,6 +38,10 @@ export default {
   overflow: scroll;
   opacity: 0;
   transition: opacity 1s ease;
+
+  &.is-filled {
+    background-color: #FDD231;
+  }
 
   &.is-loaded {
     opacity: 1;
