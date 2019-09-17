@@ -4,12 +4,26 @@ export default class Keyboard {
 
   constructor() {
     this.emitter = new Emitter()
+    this.specialKeyNames = ['shift', 'control', 'alt', 'meta']
     this.specialKeys = []
-    this.keys = []
+    this.regularKeys = []
     this.keydownHandler = this.handleKeydown.bind(this)
     this.keyupHandler = this.handleKeyup.bind(this)
     window.addEventListener('keydown', this.keydownHandler)
     window.addEventListener('keyup', this.keyupHandler)
+  }
+
+  static aliases = [
+    { name: 'shift', alias: '⇧' },
+    { name: 'control', alias: '⌃' },
+    { name: 'alt', alias: '⌥' },
+    { name: 'meta', alias: '⌘' },
+    { name: ' ', alias: 'space' },
+  ]
+
+  static formatKeyName(name) {
+    const result = this.aliases.find(alias => alias.name === name)
+    return result ? result.alias : name
   }
 
   on(...args) {
@@ -42,27 +56,32 @@ export default class Keyboard {
     this.specialKeys = keys
   }
 
-  getKeys() {
-    return [...this.specialKeys, ...this.keys]
+  get keys() {
+    return [...this.specialKeys, ...this.regularKeys]
+  }
+
+  getKeyName(event) {
+    return event.key.toLowerCase()
   }
 
   handleKeydown(event) {
     this.setSpecialKeys(event)
-    this.emitter.emit('update', { event })
-
-    const name = event.key.toLowerCase()
+    const name = this.getKeyName(event)
     const isSpecialKey = this.specialKeys.includes(name)
     const isPressed = this.isPressed(name)
 
-    if (isSpecialKey || isPressed) {
+    if (isPressed) {
       return
     }
 
-    this.keys.push(name)
-    const keys = this.getKeys()
+    this.emitter.emit('update', { event })
 
-    this.emitter.emit('shortcut', { event, keys })
+    if (isSpecialKey) {
+      return
+    }
 
+    this.regularKeys.push(name)
+    this.emitter.emit('shortcut', { event, keys: this.keys })
     this.resetKeys()
   }
 
@@ -72,17 +91,15 @@ export default class Keyboard {
   }
 
   is(keys) {
-    const pressedKeys = this.getKeys()
-    const match = keys.every(key => pressedKeys.includes(key))
-    return match
+    return keys.every(key => this.keys.includes(key))
   }
 
   isPressed(name) {
-    return !!this.keys.find(key => key === name)
+    return !!this.regularKeys.find(key => key === name)
   }
 
   resetKeys() {
-    this.keys = []
+    this.regularKeys = []
     this.specialKeys = []
   }
 

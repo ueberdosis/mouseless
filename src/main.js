@@ -2,46 +2,15 @@ import Vue from 'vue'
 import Store from 'electron-store'
 import App from './App.vue'
 import router from './router'
-
-Vue.config.productionTip = false
-
-const store = new Store()
+import Keyboard from '@/services/Keyboard'
 
 // store.set('unicorn', '🦄');
 // console.log(store.get('unicorn'))
+// const store = new Store()
 
-Vue.filter('key', value => {
-  const specialKeys = [
-    {
-      name: 'shift',
-      formatted: '⇧',
-    },
-    {
-      name: 'control',
-      formatted: '⌃',
-    },
-    {
-      name: 'alt',
-      formatted: '⌥',
-    },
-    {
-      name: 'meta',
-      formatted: '⌘',
-    },
-    {
-      name: ' ',
-      formatted: 'Space',
-    },
-  ]
+Vue.config.productionTip = false
 
-  const specialKey = specialKeys.find(key => key.name === value)
-
-  if (specialKey) {
-    return specialKey.formatted
-  }
-
-  return value.toUpperCase()
-})
+Vue.filter('key', value => Keyboard.formatKeyName(value))
 
 new Vue({
   router,
