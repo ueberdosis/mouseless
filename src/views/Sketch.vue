@@ -21,7 +21,7 @@
           v-for="(key, index) in keybinding.binding"
           :key="index"
           :name="key"
-          :active="false"
+          :active="keys.includes(key)"
         />
       </p>
       <button type="button" @click="stop">
@@ -43,10 +43,12 @@ export default {
 
   data() {
     return {
+      success: false,
       failed: false,
       started: false,
       label: null,
       keyboard: new Keyboard(),
+      keys: [],
       data: [
         {
           label: 'New Artboard',
@@ -68,6 +70,7 @@ export default {
     start() {
       this.failed = false
       this.started = true
+      this.success = false
       this.next()
     },
 
@@ -76,6 +79,7 @@ export default {
     },
 
     next() {
+      this.keys = []
       this.setBinding()
       this.label = this.keybinding.label
     },
@@ -83,38 +87,43 @@ export default {
     fail() {
       this.stop()
       this.failed = true
+      this.success = false
     },
 
     stop() {
       this.started = false
       this.failed = false
+      this.success = false
     },
   },
 
   mounted() {
-    this.keyboard.on('update', () => {
-      if (!this.started) {
+    this.keyboard.on('update', ({ keys }) => {
+      if (!this.started || this.success) {
         return
       }
 
-      console.log('update')
+      this.keys = keys
     })
 
-    this.keyboard.on('shortcut', ({ event }) => {
-      if (!this.started) {
+    this.keyboard.on('shortcut', ({ event, keys }) => {
+      if (!this.started || this.success) {
         return
       }
-      console.log('shortcut')
-      // event.preventDefault()
-      // const match = this.keyboard.is(this.keybinding.binding)
-      // console.log({ match })
 
-      // if (match) {
-      //   this.keyboard.stop()
-      //   this.next()
-      // } else {
-      //   this.fail()
-      // }
+      this.keys = keys
+      event.preventDefault()
+      const match = this.keyboard.is(this.keybinding.binding)
+
+      if (match) {
+        this.success = true
+        setTimeout(() => {
+          this.success = false
+          this.next()
+        }, 1000)
+      } else {
+        this.fail()
+      }
     })
   },
 

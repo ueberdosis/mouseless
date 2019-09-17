@@ -74,7 +74,7 @@ export default class Keyboard {
       return
     }
 
-    this.emitter.emit('update', { event })
+    this.emitter.emit('update', { event, keys: this.keys })
 
     if (isSpecialKey) {
       return
@@ -87,7 +87,7 @@ export default class Keyboard {
 
   handleKeyup(event) {
     this.setSpecialKeys(event)
-    this.emitter.emit('update', { event })
+    this.emitter.emit('update', { event, keys: this.keys })
   }
 
   is(keys) {
