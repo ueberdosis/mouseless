@@ -33,7 +33,7 @@
 
 <script>
 import collect from 'collect.js'
-import Shortcut from '@/services/Shortcut'
+import Keyboard from '@/services/Keyboard'
 import Key from '@/components/Key'
 
 export default {
@@ -46,7 +46,7 @@ export default {
       failed: false,
       started: false,
       label: null,
-      shortcut: new Shortcut(),
+      keyboard: new Keyboard(),
       data: [
         {
           label: 'New Artboard',
@@ -78,19 +78,6 @@ export default {
     next() {
       this.setBinding()
       this.label = this.keybinding.label
-
-      this.shortcut.listen(({ event }) => {
-        event.preventDefault()
-        const match = this.shortcut.is(this.keybinding.binding)
-        console.log({ match })
-
-        if (match) {
-          this.shortcut.stop()
-          this.next()
-        } else {
-          this.fail()
-        }
-      })
     },
 
     fail() {
@@ -99,14 +86,40 @@ export default {
     },
 
     stop() {
-      this.shortcut.stop()
       this.started = false
       this.failed = false
     },
   },
 
+  mounted() {
+    this.keyboard.on('update', () => {
+      if (!this.started) {
+        return
+      }
+
+      console.log('update')
+    })
+
+    this.keyboard.on('shortcut', ({ event }) => {
+      if (!this.started) {
+        return
+      }
+      console.log('shortcut')
+      // event.preventDefault()
+      // const match = this.keyboard.is(this.keybinding.binding)
+      // console.log({ match })
+
+      // if (match) {
+      //   this.keyboard.stop()
+      //   this.next()
+      // } else {
+      //   this.fail()
+      // }
+    })
+  },
+
   beforeDestroy() {
-    this.shortcut.reset()
+    this.keyboard.destroy()
   },
 }
 </script>
