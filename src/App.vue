@@ -36,7 +36,6 @@ export default {
   position: relative;
   height: 100vh;
   overflow: scroll;
-  background-color: #ffd300;
   opacity: 0;
   transition: opacity 1s ease;
 

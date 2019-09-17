@@ -10,7 +10,8 @@
 <style lang="scss" scoped>
 .item {
   display: block;
-  background-color: rgba(black, 0.05);
+  background-color: #FDD231;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   border-radius: 10px;
   text-decoration: none;
