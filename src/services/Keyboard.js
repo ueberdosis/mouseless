@@ -1,4 +1,7 @@
+import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
+
+console.log(keymap.getKeyMap())
 
 export default class Keyboard {
 
