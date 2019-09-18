@@ -10,7 +10,7 @@ import Keyboard from '@/services/Keyboard'
 
 Vue.config.productionTip = false
 
-Vue.filter('key', value => Keyboard.formatKeyName(value))
+Vue.filter('key', value => Keyboard.formatKeyCode(value))
 
 new Vue({
   router,

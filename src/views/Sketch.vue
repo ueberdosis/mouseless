@@ -18,7 +18,7 @@
       </p>
       <p>
         <key
-          v-for="(key, index) in keybinding.binding"
+          v-for="(key, index) in keybinding.resolvedShortcut"
           :key="index"
           :name="key"
           :active="keys.includes(key)"
@@ -52,18 +52,31 @@ export default {
       data: [
         {
           label: 'New Artboard',
-          binding: ['a'],
+          shortcut: ['a'],
         },
         {
           label: 'New Rectangle',
-          binding: ['r'],
+          shortcut: ['r'],
         },
         {
           label: 'Bold',
-          binding: ['meta', 'b'],
+          shortcut: ['meta', 'b'],
+        },
+        {
+          label: 'Send backward',
+          shortcut: ['meta', '['],
         },
       ],
     }
+  },
+
+  computed: {
+    formattedData() {
+      return this.data.map(item => ({
+        ...item,
+        resolvedShortcut: this.keyboard.resolveCodesFromKeys(item.shortcut),
+      }))
+    },
   },
 
   methods: {
@@ -75,7 +88,7 @@ export default {
     },
 
     setBinding() {
-      this.keybinding = collect(this.data).random()
+      this.keybinding = collect(this.formattedData).random()
     },
 
     next() {
@@ -113,7 +126,7 @@ export default {
 
       this.keys = keys
       event.preventDefault()
-      const match = this.keyboard.is(this.keybinding.binding)
+      const match = this.keyboard.is(this.keybinding.resolvedShortcut)
 
       if (match) {
         this.success = true

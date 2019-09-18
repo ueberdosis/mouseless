@@ -1,13 +1,30 @@
 import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
 
-console.log(keymap.getKeyMap())
-
 export default class Keyboard {
 
   constructor() {
+    this.keymap = Object
+      .entries(keymap.getKeyMap())
+      .map(([code, data]) => ({
+        code,
+        ...data,
+      }))
     this.emitter = new Emitter()
-    this.specialKeyNames = ['shift', 'control', 'alt', 'meta']
+    this.specialKeyNames = [
+      'Shift',
+      'ShiftLeft',
+      'ShiftRight',
+      'Control',
+      'ControlLeft',
+      'ControlRight',
+      'Alt',
+      'AltLeft',
+      'AltRight',
+      'Meta',
+      'MetaLeft',
+      'MetaRight',
+    ]
     this.specialKeys = []
     this.regularKeys = []
     this.keydownHandler = this.handleKeydown.bind(this)
@@ -17,14 +34,21 @@ export default class Keyboard {
   }
 
   static aliases = [
-    { name: 'shift', alias: '⇧' },
-    { name: 'control', alias: '⌃' },
-    { name: 'alt', alias: '⌥' },
-    { name: 'meta', alias: '⌘' },
-    { name: ' ', alias: 'space' },
+    { name: 'Shift', alias: '⇧' },
+    { name: 'ShiftLeft', alias: '⇧L' },
+    { name: 'ShiftRight', alias: '⇧R' },
+    { name: 'Control', alias: '⌃' },
+    { name: 'ControlLeft', alias: '⌃L' },
+    { name: 'ControlRight', alias: '⌃R' },
+    { name: 'Alt', alias: '⌥' },
+    { name: 'AltLeft', alias: '⌥L' },
+    { name: 'AltRight', alias: '⌥R' },
+    { name: 'Meta', alias: '⌘' },
+    { name: 'MetaLeft', alias: '⌘L' },
+    { name: 'MetaRight', alias: '⌘R' },
   ]
 
-  static formatKeyName(name) {
+  static formatKeyCode(name) {
     const result = this.aliases.find(alias => alias.name === name)
     return result ? result.alias : name
   }
@@ -41,19 +65,19 @@ export default class Keyboard {
     const keys = []
 
     if (event.shiftKey) {
-      keys.push('shift')
+      keys.push('Shift')
     }
 
     if (event.ctrlKey) {
-      keys.push('control')
+      keys.push('Control')
     }
 
     if (event.altKey) {
-      keys.push('alt')
+      keys.push('Alt')
     }
 
     if (event.metaKey) {
-      keys.push('meta')
+      keys.push('Meta')
     }
 
     this.specialKeys = keys
@@ -63,15 +87,99 @@ export default class Keyboard {
     return [...this.specialKeys, ...this.regularKeys]
   }
 
+  get isOnlyShiftPressed() {
+    return this.specialKeys.length === 1 && this.specialKeys.includes('Shift')
+  }
+
+  get isOnlyAltPressed() {
+    return this.specialKeys.length === 1 && this.specialKeys.includes('Alt')
+  }
+
+  get isShiftAndAltPressed() {
+    return this.specialKeys.includes('Shift') && this.specialKeys.includes('Alt')
+  }
+
+  getKeyValue(event) {
+    const key = this.keymap.find(item => item.code === event.code)
+
+    if (!key) {
+      return event.code
+    }
+
+    if (this.isOnlyShiftPressed) {
+      return key.withShift
+    }
+
+    if (this.isOnlyAltPressed) {
+      return key.withAltGr
+    }
+
+    if (this.isShiftAndAltPressed) {
+      return key.withShiftAltGr
+    }
+
+    return key.value
+  }
+
   getKeyName(event) {
-    return event.key.toLowerCase()
+    return event.code
+  }
+
+  resolveCodesFromKeys(keys = []) {
+    return keys
+      .map(key => {
+        let match = null
+
+        if (key.toLowerCase() === 'shift') {
+          return 'Shift'
+        }
+
+        if (key.toLowerCase() === 'control') {
+          return 'Control'
+        }
+
+        if (key.toLowerCase() === 'alt') {
+          return 'Alt'
+        }
+
+        if (key.toLowerCase() === 'meta') {
+          return 'Meta'
+        }
+
+        match = this.keymap.find(item => item.value === key)
+
+        if (match) {
+          return match.value
+        }
+
+        match = this.keymap.find(item => item.withShift === key)
+
+        if (match) {
+          return ['Shift', match.value]
+        }
+
+        match = this.keymap.find(item => item.withAltGr === key)
+
+        if (match) {
+          return ['Alt', match.value]
+        }
+
+        match = this.keymap.find(item => item.withShiftAltGr === key)
+
+        if (match) {
+          return ['Shift', 'Alt', match.value]
+        }
+
+        return match
+      })
+      .flat()
   }
 
   handleKeydown(event) {
     this.setSpecialKeys(event)
-    const name = this.getKeyName(event)
-    const isSpecialKey = this.specialKeys.includes(name)
-    const isPressed = this.isPressed(name)
+    const value = this.getKeyValue(event)
+    const isSpecialKey = this.specialKeyNames.includes(event.key)
+    const isPressed = this.isPressed(value)
 
     if (isPressed) {
       return
@@ -83,7 +191,7 @@ export default class Keyboard {
       return
     }
 
-    this.regularKeys.push(name)
+    this.regularKeys.push(value)
     this.emitter.emit('shortcut', { event, keys: this.keys })
     this.resetKeys()
   }
@@ -94,11 +202,13 @@ export default class Keyboard {
   }
 
   is(keys) {
-    return keys.every(key => this.keys.includes(key))
+    const match1 = keys.every(key => this.keys.includes(key))
+    const match2 = this.keys.every(key => keys.includes(key))
+    return match1 && match2
   }
 
   isPressed(name) {
-    return !!this.regularKeys.find(key => key === name)
+    return !!this.regularKeys.find(key => key.toLowerCase() === name.toLowerCase())
   }
 
   resetKeys() {
