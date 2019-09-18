@@ -35,6 +35,7 @@
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 import Key from '@/components/Key'
+import data from '@/apps/sketch'
 
 export default {
   components: {
@@ -49,30 +50,12 @@ export default {
       label: null,
       keyboard: new Keyboard(),
       keys: [],
-      data: [
-        {
-          label: 'New Artboard',
-          shortcut: ['a'],
-        },
-        {
-          label: 'New Rectangle',
-          shortcut: ['r'],
-        },
-        {
-          label: 'Bold',
-          shortcut: ['meta', 'b'],
-        },
-        {
-          label: 'Send backward',
-          shortcut: ['meta', '['],
-        },
-      ],
     }
   },
 
   computed: {
     formattedData() {
-      return this.data.map(item => ({
+      return data.levels[0].shortcuts.map(item => ({
         ...item,
         resolvedShortcut: this.keyboard.resolveCodesFromKeys(item.shortcut),
       }))
@@ -94,7 +77,7 @@ export default {
     next() {
       this.keys = []
       this.setBinding()
-      this.label = this.keybinding.label
+      this.label = this.keybinding.title
     },
 
     fail() {
