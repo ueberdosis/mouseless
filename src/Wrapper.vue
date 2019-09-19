@@ -1,6 +1,8 @@
 <template>
   <div class="wrapper" :class="{ 'is-loaded': isLoaded }">
-    <router-view />
+    <transition :name="transitionName">
+      <router-view class="route" />
+    </transition>
   </div>
 </template>
 
@@ -10,6 +12,12 @@ export default {
     return {
       isLoaded: false,
     }
+  },
+
+  computed: {
+    transitionName() {
+      return this.$route.name === 'apps' ? 'slide-right' : 'slide-left'
+    },
   },
 
   mounted() {
@@ -22,7 +30,6 @@ export default {
 
 <style lang="scss" src="./fonts.scss"></style>
 <style lang="scss" src="./base.scss"></style>
-
 <style lang="scss" scoped>
 .wrapper {
   position: relative;
@@ -44,5 +51,20 @@ export default {
     pointer-events: none;
     -webkit-app-region: drag;
   }
+}
+
+.route {
+  width: 100%;
+  position: absolute;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(.55, 0, 0.1, 1);
+}
+
+.slide-left-enter, .slide-right-leave-active {
+  transform: translate(100%, 0);
+}
+
+.slide-right-enter-active {
+  z-index: -1;
 }
 </style>
