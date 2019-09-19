@@ -3,13 +3,34 @@ import Emitter from '@/services/Emitter'
 
 export default class Keyboard {
 
+  static keymap = Object
+    .entries(keymap.getKeyMap())
+    .map(([code, data]) => ({
+      code,
+      ...data,
+    }))
+
+  static aliases = [
+    { name: 'Shift', alias: '⇧' },
+    { name: 'ShiftLeft', alias: '⇧L' },
+    { name: 'ShiftRight', alias: '⇧R' },
+    { name: 'Control', alias: '⌃' },
+    { name: 'ControlLeft', alias: '⌃L' },
+    { name: 'ControlRight', alias: '⌃R' },
+    { name: 'Alt', alias: '⌥' },
+    { name: 'AltLeft', alias: '⌥L' },
+    { name: 'AltRight', alias: '⌥R' },
+    { name: 'Meta', alias: '⌘' },
+    { name: 'MetaLeft', alias: '⌘L' },
+    { name: 'MetaRight', alias: '⌘R' },
+  ]
+
+  static formatKeyCode(name) {
+    const result = this.aliases.find(alias => alias.name === name)
+    return result ? result.alias : name
+  }
+
   constructor() {
-    this.keymap = Object
-      .entries(keymap.getKeyMap())
-      .map(([code, data]) => ({
-        code,
-        ...data,
-      }))
     this.emitter = new Emitter()
     this.specialKeyNames = [
       'Shift',
@@ -31,26 +52,6 @@ export default class Keyboard {
     this.keyupHandler = this.handleKeyup.bind(this)
     window.addEventListener('keydown', this.keydownHandler)
     window.addEventListener('keyup', this.keyupHandler)
-  }
-
-  static aliases = [
-    { name: 'Shift', alias: '⇧' },
-    { name: 'ShiftLeft', alias: '⇧L' },
-    { name: 'ShiftRight', alias: '⇧R' },
-    { name: 'Control', alias: '⌃' },
-    { name: 'ControlLeft', alias: '⌃L' },
-    { name: 'ControlRight', alias: '⌃R' },
-    { name: 'Alt', alias: '⌥' },
-    { name: 'AltLeft', alias: '⌥L' },
-    { name: 'AltRight', alias: '⌥R' },
-    { name: 'Meta', alias: '⌘' },
-    { name: 'MetaLeft', alias: '⌘L' },
-    { name: 'MetaRight', alias: '⌘R' },
-  ]
-
-  static formatKeyCode(name) {
-    const result = this.aliases.find(alias => alias.name === name)
-    return result ? result.alias : name
   }
 
   on(...args) {
@@ -100,7 +101,7 @@ export default class Keyboard {
   }
 
   getKeyValue(event) {
-    const key = this.keymap.find(item => item.code === event.code)
+    const key = this.constructor.keymap.find(item => item.code === event.code)
 
     if (!key) {
       return event.code
@@ -125,7 +126,7 @@ export default class Keyboard {
     return event.code
   }
 
-  resolveCodesFromKeys(keys = []) {
+  static resolveCodesFromKeys(keys = []) {
     return keys
       .map(key => {
         let match = null

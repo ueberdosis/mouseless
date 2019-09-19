@@ -64,11 +64,8 @@ export default {
       return this.$db.app(this.$route.params.id)
     },
 
-    formattedData() {
-      return this.app.shortcuts.map(item => ({
-        ...item,
-        resolvedShortcut: this.keyboard.resolveCodesFromKeys(item.shortcut),
-      }))
+    shortcuts() {
+      return this.app.shortcutsByLevel(this.level.level)
     },
   },
 
@@ -81,7 +78,7 @@ export default {
     },
 
     setBinding() {
-      this.keybinding = collect(this.formattedData).random()
+      this.keybinding = collect(this.shortcuts).random()
     },
 
     next() {

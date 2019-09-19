@@ -1,4 +1,5 @@
 import collect from 'collect.js'
+import Keyboard from '@/services/Keyboard'
 
 export default {
   name: 'App',
@@ -34,6 +35,19 @@ export default {
         .map(level => this.$db.level(level))
         .filter()
         .toArray()
+    },
+
+    formattedShortcuts() {
+      return this.shortcuts.map(item => ({
+        ...item,
+        resolvedShortcut: Keyboard.resolveCodesFromKeys(item.shortcut),
+      }))
+    },
+  },
+
+  methods: {
+    shortcutsByLevel(level = null) {
+      return this.formattedShortcuts.filter(shortcut => shortcut.level === level)
     },
   },
 }
