@@ -55,6 +55,7 @@ export default {
 
 .route {
   width: 100%;
+  border-radius: 4px;
   position: absolute;
   will-change: transform;
   transition: transform 0.5s cubic-bezier(.55, 0, 0.1, 1);

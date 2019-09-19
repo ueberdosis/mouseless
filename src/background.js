@@ -18,7 +18,7 @@ function createWindow() {
     height: 480,
     resizable: false,
     titleBarStyle: 'hiddenInset',
-    vibrancy: 'ultra-dark',
+    // vibrancy: 'ultra-dark',
     backgroundColor: '#222',
     webPreferences: {
       nodeIntegration: true,
