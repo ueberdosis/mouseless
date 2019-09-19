@@ -1,10 +1,8 @@
 <template>
   <div class="app" :style="`background-color: ${app.color}`">
-    <div class="navigation" v-if="$route.name !== 'apps'">
-      <router-link class="navigation-item" :to="{ name: 'apps' }">
-        ← Apps
-      </router-link>
-    </div>
+    <router-link class="back" :to="{ name: 'apps' }">
+      ← Apps
+    </router-link>
     <h1>
       {{ app.title }}
     </h1>
@@ -157,12 +155,10 @@ button {
   border-radius: 9px;
 }
 
-.navigation {
-  margin-bottom: 1rem;
-}
-
-.navigation-item {
+.back {
+  display: inline-block;
   font-weight: bold;
   text-decoration: none;
+  margin-bottom: 12px;
 }
 </style>
