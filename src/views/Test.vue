@@ -1,8 +1,9 @@
 <template>
   <div>
-    <router-link class="back" :to="{ name: 'apps' }">
+    <router-link :to="{ name: 'apps' }">
       ← Apps
     </router-link>
+
     <h1>
       {{ app.title }} {{ level.title }}
     </h1>
@@ -149,12 +150,5 @@ button {
   font-weight: 700;
   border: 0;
   border-radius: 9px;
-}
-
-.back {
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  margin-bottom: 12px;
 }
 </style>
