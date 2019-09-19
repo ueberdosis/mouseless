@@ -4,7 +4,7 @@
       v-for="app in apps"
       class="item"
       :key="app.id"
-      :to="{ name: 'app', params: { id: app.id } }"
+      :to="{ name: 'app.levels', params: { id: app.id } }"
       :style="`background-color: ${app.color}`"
     >
       {{ app.title }}

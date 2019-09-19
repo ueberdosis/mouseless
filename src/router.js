@@ -25,7 +25,7 @@ export default new Router({
           component: Levels,
         },
         {
-          path: '/app/:id/test',
+          path: '/app/:id/test/:level',
           name: 'app.test',
           component: Test,
         },

@@ -35,7 +35,7 @@ export default new class {
   }
 
   level(level = null) {
-    return this.levels.find(item => item.level === level)
+    return this.levels.find(item => item.level === parseInt(level, 10))
   }
 
 }()
