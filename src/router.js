@@ -31,5 +31,9 @@ export default new Router({
         },
       ],
     },
+    {
+      path: '*',
+      component: Apps,
+    },
   ],
 })

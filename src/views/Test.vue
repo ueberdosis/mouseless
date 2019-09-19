@@ -18,11 +18,11 @@
 
     <template v-if="started">
       <p>
-        {{ label }}
+        {{ currentShortcut.title }}
       </p>
       <p>
         <key
-          v-for="(key, index) in keybinding.resolvedShortcut"
+          v-for="(key, index) in currentShortcut.resolvedShortcut"
           :key="index"
           :name="key"
           :active="keys.includes(key)"
@@ -50,9 +50,9 @@ export default {
       success: false,
       failed: false,
       started: false,
-      label: null,
       keyboard: new Keyboard(),
       keys: [],
+      currentShortcutIndex: null,
     }
   },
 
@@ -66,7 +66,13 @@ export default {
     },
 
     shortcuts() {
-      return this.app.shortcutsByLevel(this.level.level)
+      return collect(this.app.shortcutsByLevel(this.level.level))
+        .shuffle()
+        .toArray()
+    },
+
+    currentShortcut() {
+      return this.shortcuts[this.currentShortcutIndex]
     },
   },
 
@@ -78,14 +84,16 @@ export default {
       this.next()
     },
 
-    setBinding() {
-      this.keybinding = collect(this.shortcuts).random()
-    },
-
     next() {
       this.keys = []
-      this.setBinding()
-      this.label = this.keybinding.title
+
+      if (this.currentShortcutIndex === this.shortcuts.length - 1) {
+        this.finish()
+      } else {
+        this.currentShortcutIndex = this.currentShortcutIndex === null
+          ? 0
+          : this.currentShortcutIndex + 1
+      }
     },
 
     fail() {
@@ -99,6 +107,11 @@ export default {
       this.failed = false
       this.success = false
     },
+
+    finish() {
+      this.$router.push({ name: 'apps' })
+    },
+
   },
 
   mounted() {
@@ -117,7 +130,7 @@ export default {
 
       this.keys = keys
       event.preventDefault()
-      const match = this.keyboard.is(this.keybinding.resolvedShortcut)
+      const match = this.keyboard.is(this.currentShortcut.resolvedShortcut)
 
       if (match) {
         this.success = true
