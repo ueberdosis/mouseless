@@ -1,14 +1,6 @@
 <template>
-  <div class="app" :class="{ 'is-loaded': isLoaded, 'is-filled': $route.name === 'apps.sketch' }">
-    <div class="inner">
-      <div class="navigation" v-if="$route.name !== 'apps'">
-        <router-link class="navigation-item" :to="{ name: 'apps' }">
-          ← Apps
-        </router-link>
-      </div>
-
-      <router-view />
-    </div>
+  <div class="wrapper" :class="{ 'is-loaded': isLoaded }">
+    <router-view />
   </div>
 </template>
 
@@ -32,16 +24,11 @@ export default {
 <style lang="scss" src="./base.scss"></style>
 
 <style lang="scss" scoped>
-.app {
+.wrapper {
   position: relative;
   height: 100vh;
-  overflow: scroll;
   opacity: 0;
   transition: opacity 1s ease;
-
-  &.is-filled {
-    background-color: #FDD231;
-  }
 
   &.is-loaded {
     opacity: 1;
@@ -53,22 +40,9 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 24px;
+    height: 36px;
     pointer-events: none;
     -webkit-app-region: drag;
   }
-}
-
-.inner {
-  padding: 40px;
-}
-
-.navigation {
-  margin-bottom: 1rem;
-}
-
-.navigation-item {
-  font-weight: bold;
-  text-decoration: none;
 }
 </style>

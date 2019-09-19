@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div class="app" :style="`background-color: ${app.color}`">
+    <div class="navigation" v-if="$route.name !== 'apps'">
+      <router-link class="navigation-item" :to="{ name: 'apps' }">
+        ← Apps
+      </router-link>
+    </div>
     <h1>
       {{ app.title }}
     </h1>
@@ -133,6 +138,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.app {
+  height: 100vh;
+  padding: 40px;
+}
+
 div {
   text-align: center;
 }
@@ -145,5 +155,14 @@ button {
   font-weight: 700;
   border: 0;
   border-radius: 9px;
+}
+
+.navigation {
+  margin-bottom: 1rem;
+}
+
+.navigation-item {
+  font-weight: bold;
+  text-decoration: none;
 }
 </style>

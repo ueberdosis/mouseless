@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="apps">
     <router-link
       v-for="app in apps"
       class="item"
@@ -9,7 +9,6 @@
     >
       {{ app.title }}
     </router-link>
-    <router-view />
   </div>
 </template>
 
@@ -24,14 +23,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.apps {
+  padding: 42px 12px 12px 12px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .item {
   display: block;
   background-color: #FDD231;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
+  padding: 16px;
   border-radius: 10px;
   text-decoration: none;
-  margin: 1rem 0;
+  margin: 12px 0;
   font-weight: 700;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 // import Store from 'electron-store'
-import App from './App.vue'
+import Wrapper from './Wrapper.vue'
 import router from './router'
 import Keyboard from '@/services/Keyboard'
 import DB from '@/services/DB'
@@ -16,5 +16,5 @@ Vue.filter('key', value => Keyboard.formatKeyCode(value))
 
 new Vue({
   router,
-  render: h => h(App),
+  render: h => h(Wrapper),
 }).$mount('#app')
