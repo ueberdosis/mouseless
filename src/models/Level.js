@@ -1,4 +1,6 @@
 export default {
+  name: 'Level',
+
   props: {
     title: {
       type: String,

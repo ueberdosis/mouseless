@@ -1,4 +1,6 @@
 export default {
+  name: 'App',
+
   props: {
     id: {
       type: String,
