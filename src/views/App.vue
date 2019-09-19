@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      Sketch
+      {{ app.title }}
     </h1>
 
     <p v-if="failed">
@@ -35,7 +35,6 @@
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 import Key from '@/components/Key'
-import data from '@/apps/sketch'
 
 export default {
   components: {
@@ -54,8 +53,12 @@ export default {
   },
 
   computed: {
+    app() {
+      return this.$db.apps.find(app => app.id === this.$route.params.id)
+    },
+
     formattedData() {
-      return data.levels[0].shortcuts.map(item => ({
+      return this.app.shortcuts.map(item => ({
         ...item,
         resolvedShortcut: this.keyboard.resolveCodesFromKeys(item.shortcut),
       }))

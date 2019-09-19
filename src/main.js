@@ -1,14 +1,16 @@
 import Vue from 'vue'
-import Store from 'electron-store'
+// import Store from 'electron-store'
 import App from './App.vue'
 import router from './router'
 import Keyboard from '@/services/Keyboard'
+import DB from '@/services/DB'
 
 // store.set('unicorn', '🦄');
 // console.log(store.get('unicorn'))
 // const store = new Store()
 
 Vue.config.productionTip = false
+Vue.prototype.$db = DB
 
 Vue.filter('key', value => Keyboard.formatKeyCode(value))
 

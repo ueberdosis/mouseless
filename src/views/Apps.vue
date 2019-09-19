@@ -1,11 +1,27 @@
 <template>
   <div>
-    <router-link class="item" :to="{ name: 'apps.sketch' }">
-      Sketch
+    <router-link
+      v-for="app in apps"
+      class="item"
+      :key="app.id"
+      :to="{ name: 'app', params: { id: app.id } }"
+      :style="`background-color: ${app.color}`"
+    >
+      {{ app.title }}
     </router-link>
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      apps: this.$db.apps,
+    }
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .item {
