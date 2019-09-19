@@ -25,13 +25,17 @@ export default new class {
     return apps
   }
 
+  app(id = null) {
+    return this.apps.find(app => app.id === id)
+  }
+
   get levels() {
     return require('@/data/levels').default
       .map(data => this.createModel(Level, data))
   }
 
-  app(id = null) {
-    return this.apps.find(app => app.id === id)
+  level(level = null) {
+    return this.levels.find(item => item.level === level)
   }
 
 }()

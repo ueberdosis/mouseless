@@ -1,3 +1,5 @@
+import collect from 'collect.js'
+
 export default {
   name: 'App',
 
@@ -20,6 +22,18 @@ export default {
     shortcuts: {
       type: Array,
       default: () => ([]),
+    },
+  },
+
+  computed: {
+    levels() {
+      return collect(this.shortcuts)
+        .pluck('level')
+        .unique()
+        .sort()
+        .map(level => this.$db.level(level))
+        .filter()
+        .toArray()
     },
   },
 }

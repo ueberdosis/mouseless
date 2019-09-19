@@ -21,7 +21,7 @@ export default {
     {
       title: 'Send backward',
       shortcut: ['meta', '['],
-      level: 1,
+      level: 2,
     },
   ],
 }

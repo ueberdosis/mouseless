@@ -7,6 +7,10 @@
       {{ app.title }}
     </h1>
 
+    <div v-for="level in app.levels" :key="level.level">
+      {{ level.title }}
+    </div>
+
     <p v-if="failed">
       Nope :(
     </p>
