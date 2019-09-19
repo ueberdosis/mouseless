@@ -1,6 +1,6 @@
 export default {
-  title: 'VS Code',
   id: 'vscode',
+  title: 'VS Code',
   color: '#2FAEFF',
   shortcuts: [],
 }

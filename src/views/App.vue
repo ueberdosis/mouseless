@@ -57,7 +57,7 @@ export default {
 
   computed: {
     app() {
-      return this.$db.apps.find(app => app.id === this.$route.params.id)
+      return this.$db.app(this.$route.params.id)
     },
 
     formattedData() {

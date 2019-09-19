@@ -1,14 +1,14 @@
 export default [
   {
-    level: 1,
     title: 'Beginner',
+    level: 1,
   },
   {
-    level: 2,
     title: 'Advanced',
+    level: 2,
   },
   {
-    level: 3,
     title: 'Expert',
+    level: 3,
   },
 ]

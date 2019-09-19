@@ -1,6 +1,6 @@
 export default {
-  title: 'Sketch',
   id: 'sketch',
+  title: 'Sketch',
   color: '#FDD231',
   shortcuts: [
     {
