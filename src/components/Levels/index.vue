@@ -1,32 +1,15 @@
 <template>
   <div class="levels">
     <div class="swiper-container" ref="slider">
-      <!-- Additional required wrapper -->
       <div class="swiper-wrapper levels__items">
-        <!-- Slides -->
-        <button
-          class="swiper-slide levels__item"
-          type="button"
-          @click="slider.slideTo(index)"
+        <level
+          class="swiper-slide"
           v-for="(level, index) in app.levels"
           :key="level.level"
-          :to="{ name: 'app.test', params: { level: level.level } }"
-        >
-          <div class="levels__card">
-            <div class="levels__title">
-              {{ level.title }}
-            </div>
-            <div>
-              {{ app.shortcutsByLevel(level.level).length }} Shortcuts
-            </div>
-            <router-link
-              class="levels__button"
-              :to="{ name: 'app.test', params: { level: level.level } }"
-            >
-              Test
-            </router-link>
-          </div>
-        </button>
+          :app="app"
+          :level="level"
+          @click.native="slider.slideTo(index)"
+        />
       </div>
     </div>
   </div>
@@ -34,8 +17,13 @@
 
 <script>
 import Swiper from 'swiper'
+import Level from '@/components/Level'
 
 export default {
+  components: {
+    Level,
+  },
+
   props: {
     app: {
       required: true,
