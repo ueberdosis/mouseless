@@ -3,7 +3,7 @@
     class="app-item"
     :to="{ name: 'app.levels', params: { id: app.id } }"
   >
-    <div class="app-item__media" :style="`background-color: ${app.color}`">
+    <div class="app-item__media" :style="`background-color: ${app.lightColor}`">
       <img class="app-item__logo" :src="logo">
     </div>
     <div class="app-item__content">
