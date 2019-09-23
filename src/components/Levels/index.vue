@@ -65,6 +65,7 @@ export default {
         spaceBetween: 16,
         freeMode: true,
         mousewheel: true,
+        speed: 600,
       })
 
       this.slider.init()

@@ -18,6 +18,10 @@
     height: 100%;
   }
 
+  .swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  }
+
   &__items {
     padding: 0 60px;
   }
