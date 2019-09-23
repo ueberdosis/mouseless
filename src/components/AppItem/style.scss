@@ -1,10 +1,11 @@
 .app-item {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: black;
+  color: white;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 12px;
   text-decoration: none;
 
   &:first-child {
@@ -13,11 +14,10 @@
 
   &__media {
     flex: 0 0 auto;
-    width: 42px;
-    height: 42px;
-    background-color: white;
-    border-radius: 50%;
-    padding: 12px;
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    padding: 10px;
   }
 
   &__logo {
@@ -27,13 +27,14 @@
 
   &__content {
     flex: 1 1 auto;
-    margin-left: 16px;
+    margin-left: 12px;
   }
 
   &__title {
     font-size: 18px;
+    line-height: 1;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
 
   &__meta {

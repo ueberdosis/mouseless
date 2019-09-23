@@ -1,6 +1,13 @@
 <template>
   <div class="app" :style="`background-color: ${app.color}`">
-    <router-view />
+    <div class="app__header">
+      <router-link :to="{ name: 'apps' }">
+        ← Apps
+      </router-link>
+    </div>
+    <div class="app__content">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -17,6 +24,11 @@ export default {
 <style lang="scss" scoped>
 .app {
   height: 100vh;
-  padding: 40px;
+  // padding: 40px;
+
+  &__header {
+    padding: 8px;
+    padding-left: 80px;
+  }
 }
 </style>

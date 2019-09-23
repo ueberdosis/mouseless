@@ -17,12 +17,12 @@ export default {
     {
       title: 'Bold',
       shortcut: ['meta', 'b'],
-      level: 1,
+      level: 2,
     },
     {
       title: 'Send backward',
       shortcut: ['meta', '['],
-      level: 2,
+      level: 3,
     },
   ],
 }

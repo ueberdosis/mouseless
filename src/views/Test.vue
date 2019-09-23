@@ -1,9 +1,5 @@
 <template>
   <div>
-    <router-link :to="{ name: 'apps' }">
-      ← Apps
-    </router-link>
-
     <h1>
       {{ app.title }} {{ level.title }}
     </h1>

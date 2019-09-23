@@ -1,0 +1,22 @@
+// @import 'swiper/css/swiper.css';
+
+.levels {
+
+  &__items {
+    padding: 0 60px;
+  }
+
+  &__item {
+    display: block;
+    width: 40%;
+    background-color: #222;
+    color: #fff;
+    border-radius: 9px;
+    padding: 16px;
+    transition: width 0.2s ease;
+
+    &.swiper-slide-active {
+      width: 50%;
+    }
+  }
+}
