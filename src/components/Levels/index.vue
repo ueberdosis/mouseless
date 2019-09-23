@@ -28,14 +28,6 @@
           </div>
         </button>
       </div>
-
-      <!-- If we need navigation buttons
-      <div class="swiper-button-prev">
-        prev
-      </div>
-      <div class="swiper-button-next">
-        next
-      </div> -->
     </div>
   </div>
 </template>
