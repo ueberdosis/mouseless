@@ -1,19 +1,21 @@
 <template>
   <div class="apps">
-    <router-link
-      v-for="app in apps"
-      class="item"
-      :key="app.id"
-      :to="{ name: 'app.levels', params: { id: app.id } }"
-      :style="`background-color: ${app.color}`"
-    >
-      {{ app.title }}
-    </router-link>
+    <div class="apps__items">
+      <div class="apps__item" v-for="app in apps" :key="app.id">
+        <app-item :app="app" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import AppItem from '@/components/AppItem'
+
 export default {
+  components: {
+    AppItem,
+  },
+
   data() {
     return {
       apps: this.$db.apps,
@@ -24,23 +26,21 @@ export default {
 
 <style lang="scss" scoped>
 .apps {
-  padding: 42px 12px 12px 12px;
+  padding: 44px 32px 32px 32px;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-}
 
-.item {
-  display: block;
-  background-color: #FDD231;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  border-radius: 10px;
-  text-decoration: none;
-  margin: 12px 0;
-  font-weight: 700;
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-bottom: -12px;
+  }
 
-  &:first-child {
-    margin-top: 0;
+  &__item {
+    width: 50%;
+    padding: 0 12px 12px 0;
   }
 }
 </style>
