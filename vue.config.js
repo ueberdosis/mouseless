@@ -1,4 +1,13 @@
 module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `
+          @import "@/variables.scss";
+        `,
+      },
+    },
+  },
   chainWebpack: config => {
     config.module
       .rule('node')

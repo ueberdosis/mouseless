@@ -19,7 +19,7 @@
   }
 
   .swiper-wrapper {
-    transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    transition-timing-function: $easeOutExpo;
   }
 
   &__items {
@@ -32,7 +32,7 @@
     background: transparent;
     width: 210px;
     padding: 20px 0;
-    animation: start 1.1s 1 cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    animation: start 1.1s 1 $easeInOutQuad;
     transition: width 0.2s ease, padding 0.2s ease;
 
     &.swiper-slide-active {
