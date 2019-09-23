@@ -58,11 +58,21 @@ export default {
   border-radius: 4px;
   position: absolute;
   will-change: transform;
-  transition: transform 0.5s cubic-bezier(.55, 0, 0.1, 1);
+  transition:
+    opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000),
+    transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000)
+  ;
 }
 
-.slide-left-enter, .slide-right-leave-active {
+.slide-left-enter,
+.slide-right-leave-active {
   transform: translate(100%, 0);
+}
+
+.slide-right-enter,
+.slide-left-leave-active {
+  transform: scale(0.9);
+  opacity: 0.5;
 }
 
 .slide-right-enter-active {
