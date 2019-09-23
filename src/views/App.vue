@@ -23,11 +23,18 @@ export default {
 
 <style lang="scss" scoped>
 .app {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
 
   &__header {
+    flex: 0 0 auto;
     padding: 8px;
     padding-left: 80px;
+  }
+
+  &__content {
+    flex: 1 1 auto;
   }
 }
 </style>

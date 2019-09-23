@@ -4,19 +4,29 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper levels__items">
         <!-- Slides -->
-        <router-link
+        <button
           class="swiper-slide levels__item"
-          v-for="level in app.levels"
+          type="button"
+          @click="slider.slideTo(index)"
+          v-for="(level, index) in app.levels"
           :key="level.level"
           :to="{ name: 'app.test', params: { level: level.level } }"
         >
-          <div>
-            {{ level.title }}
+          <div class="levels__card">
+            <div class="levels__title">
+              {{ level.title }}
+            </div>
+            <div>
+              {{ app.shortcutsByLevel(level.level).length }} Shortcuts
+            </div>
+            <router-link
+              class="levels__button"
+              :to="{ name: 'app.test', params: { level: level.level } }"
+            >
+              Test
+            </router-link>
           </div>
-          <div>
-            {{ app.shortcutsByLevel(level.level).length }} Shortcuts
-          </div>
-        </router-link>
+        </button>
       </div>
 
       <!-- If we need navigation buttons
@@ -55,7 +65,6 @@ export default {
         spaceBetween: 16,
         freeMode: true,
         mousewheel: true,
-        // centeredSlides: true,
       })
 
       this.slider.init()

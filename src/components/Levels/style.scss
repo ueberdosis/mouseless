@@ -1,6 +1,11 @@
-// @import 'swiper/css/swiper.css';
-
 .levels {
+
+  height: 100%;
+  padding: 60px 0;
+
+  .swiper-container {
+    height: 100%;
+  }
 
   &__items {
     padding: 0 60px;
@@ -8,15 +13,34 @@
 
   &__item {
     display: block;
-    width: 40%;
-    background-color: #222;
-    color: #fff;
-    border-radius: 9px;
-    padding: 16px;
-    transition: width 0.2s ease;
+    border: none;
+    background: transparent;
+    width: 210px;
+    padding: 20px 0;
+    transition: width 0.2s ease, padding 0.2s ease;
 
     &.swiper-slide-active {
-      width: 50%;
+      padding: 0;
+      width: 250px;
     }
   }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 16px;
+    border-radius: 9px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
 }
