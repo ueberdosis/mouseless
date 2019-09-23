@@ -24,7 +24,6 @@ export default {
 <style lang="scss" scoped>
 .app {
   height: 100vh;
-  // padding: 40px;
 
   &__header {
     padding: 8px;

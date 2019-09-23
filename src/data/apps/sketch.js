@@ -2,7 +2,6 @@ export default {
   id: 'sketch',
   title: 'Sketch',
   color: '#FDD231',
-  lightColor: '#FBE79D',
   shortcuts: [
     {
       title: 'New Artboard',

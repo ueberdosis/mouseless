@@ -20,11 +20,6 @@ export default {
       default: '#FFF',
     },
 
-    lightColor: {
-      type: String,
-      default: '#FFF',
-    },
-
     shortcuts: {
       type: Array,
       default: () => ([]),
