@@ -12,31 +12,30 @@ export default class Keyboard {
       ...data,
     }))
 
-  static aliases = [
-    { name: 'shift', alias: 'Shift' },
-    { name: 'control', alias: 'Control' },
-    { name: 'alt', alias: 'Alt' },
-    { name: 'meta', alias: 'Meta' },
-    { name: 'up', alias: 'ArrowUp' },
-    { name: 'right', alias: 'ArrowRight' },
-    { name: 'down', alias: 'ArrowDown' },
-    { name: 'left', alias: 'ArrowLeft' },
-  ]
+  static aliases = {
+    shift: 'Shift',
+    control: 'Control',
+    alt: 'Alt',
+    meta: 'Meta',
+    up: 'ArrowUp',
+    right: 'ArrowRight',
+    down: 'ArrowDown',
+    left: 'ArrowLeft',
+  }
 
-  static formats = [
-    { name: 'Shift', format: '⇧' },
-    { name: 'Control', format: '⌃' },
-    { name: 'Alt', format: '⌥' },
-    { name: 'Meta', format: '⌘' },
-    { name: 'ArrowUp', format: '↑' },
-    { name: 'ArrowRight', format: '→' },
-    { name: 'ArrowDown', format: '↓' },
-    { name: 'ArrowLeft', format: '←' },
-  ]
+  static formats = {
+    Shift: '⇧',
+    Control: '⌃',
+    Alt: '⌥',
+    Meta: '⌘',
+    ArrowUp: '↑',
+    ArrowRight: '→',
+    ArrowDown: '↓',
+    ArrowLeft: '←',
+  }
 
   static formatKeyCode(name) {
-    const result = this.formats.find(format => format.name === name)
-    return result ? result.format : name
+    return this.formats[name] ? this.formats[name] : name
   }
 
   constructor() {
@@ -136,13 +135,13 @@ export default class Keyboard {
   static resolveCodesFromKeys(keys = []) {
     return keys
       .map(key => {
-        let match = null
+        const alias = this.aliases[key.toLowerCase()]
 
-        const result = this.aliases.find(alias => alias.name === key.toLowerCase())
-
-        if (result) {
-          return result.alias
+        if (alias) {
+          return alias
         }
+
+        let match = null
 
         match = this.keymap.find(item => item.value === key)
 
