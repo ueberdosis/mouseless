@@ -1,9 +1,9 @@
 import Vue from 'vue'
 // import Store from 'electron-store'
-import Wrapper from './Wrapper.vue'
-import router from './router'
-import Keyboard from '@/services/Keyboard'
+import router from '@/router'
 import DB from '@/services/DB'
+import Keyboard from '@/services/Keyboard'
+import Wrapper from '@/components/Wrapper'
 
 // store.set('unicorn', '🦄');
 // console.log(store.get('unicorn'))
