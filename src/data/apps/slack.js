@@ -91,7 +91,7 @@ export default {
     },
     {
       title: 'Toggle full screen view',
-      shortcut: ['^', 'meta', 'f'],
+      shortcut: ['control', 'meta', 'f'],
       level: 1,
     },
   ],
