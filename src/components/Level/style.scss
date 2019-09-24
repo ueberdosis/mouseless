@@ -29,8 +29,8 @@
     height: 100%;
     padding: 16px;
     border-radius: 16px;
-    background-color: black;
-    color: white;
+    background-color: $colorBlack;
+    color: colorWhite;
     text-align: center;
   }
 
@@ -69,12 +69,12 @@
     font-weight: 600;
     font-size: 14px;
     border-radius: 6px;
-    background-color: rgba(white, 0.15);
+    background-color: rgba($colorWhite, 0.15);
     margin-top: 6px;
     transition: background-color 0.2s $ease;
 
     &:hover {
-      background-color: rgba(white, 0.2);
+      background-color: rgba($colorWhite, 0.2);
     }
   }
 }

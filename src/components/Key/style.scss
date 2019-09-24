@@ -2,19 +2,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  color: $colorWhite;
+  background-color: rgba($colorWhite, 0.15);
   border-radius: 9px;
-  height: 3rem;
-  min-width: 3rem;
+  height: 60px;
+  min-width: 60px;
   padding: 0 1rem;
   margin-right: 0.5rem;
+  font-size: 26px;
   font-weight: 700;
   text-transform: uppercase;
-  color: black;
+  transition: color 0.1s $ease;
 
   &.is-active {
-    color: rgb(98, 192, 35);
-    box-shadow: 0 0 0 3px rgb(98, 192, 35);
+    color: $colorGreen;
   }
 
   &:last-child {
