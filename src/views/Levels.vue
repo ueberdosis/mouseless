@@ -80,12 +80,18 @@ export default {
         },
       })
     },
+
+    onBeforeAnimation(srcElement) {
+      this.srcElement = srcElement
+    },
   },
 
   mounted() {
-    Event.on('beforeAnimation', srcElement => {
-      this.srcElement = srcElement
-    })
+    Event.on('beforeAnimation', this.onBeforeAnimation)
+  },
+
+  beforeDestroy() {
+    Event.off('beforeAnimation', this.onBeforeAnimation)
   },
 }
 </script>
