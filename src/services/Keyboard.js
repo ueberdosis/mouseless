@@ -107,7 +107,7 @@ export default class Keyboard {
       return event.code
     }
 
-    let value = ''
+    let { value } = key
 
     if (this.isOnlyShiftPressed) {
       value = key.withShift
