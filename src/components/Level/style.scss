@@ -30,7 +30,7 @@
     padding: 16px;
     border-radius: 16px;
     background-color: $colorBlack;
-    color: colorWhite;
+    color: $colorWhite;
     text-align: center;
   }
 
@@ -70,6 +70,7 @@
     font-size: 14px;
     border-radius: 6px;
     background-color: rgba($colorWhite, 0.15);
+    color: $colorWhite;
     margin-top: 6px;
     transition: background-color 0.2s $ease;
 
