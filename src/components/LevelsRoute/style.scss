@@ -1,0 +1,36 @@
+.levels-route {
+  position: relative;
+  height: 100%;
+
+  &__sub {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    bottom: 14px;
+    right: 14px;
+
+    &:not(:empty) {
+      z-index: 2;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.5s $easeInOutQuint,
+      visibility 0.5s $easeInOutQuint,
+    ;
+
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

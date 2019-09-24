@@ -1,0 +1,18 @@
+.apps-route {
+  padding: 44px 32px 32px 32px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-bottom: -12px;
+  }
+
+  &__item {
+    width: 50%;
+    padding: 0 12px 12px 0;
+  }
+}

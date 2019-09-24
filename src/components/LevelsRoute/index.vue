@@ -1,13 +1,13 @@
 <template>
-  <div class="levels">
+  <div class="levels-route">
     <levels :app="app" />
-    <div class="levels__sub">
+    <div class="levels-route__sub">
       <transition @enter="enter" @leave="leave">
         <router-view />
       </transition>
     </div>
     <div
-      class="levels__overlay"
+      class="levels-route__overlay"
       :class="{ 'is-visible': overlayIsVisible }"
       :style="`background-color: ${app.color}`"
     />
@@ -96,41 +96,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.levels {
-  position: relative;
-  height: 100%;
-
-  &__sub {
-    position: absolute;
-    top: 0;
-    left: 14px;
-    bottom: 14px;
-    right: 14px;
-
-    &:not(:empty) {
-      z-index: 2;
-    }
-  }
-
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    opacity: 0;
-    visibility: hidden;
-    transition:
-      opacity 0.5s $easeInOutQuint,
-      visibility 0.5s $easeInOutQuint,
-    ;
-
-    &.is-visible {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-}
-</style>
+<style lang="scss" src="./style.scss"></style>

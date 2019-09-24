@@ -1,5 +1,5 @@
 <template>
-  <div class="test">
+  <div class="test-route">
     <h1>
       {{ app.title }} {{ level.title }}
     </h1>
@@ -146,23 +146,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.test {
-  background-color: black;
-  color: white;
-  padding: 60px;
-  height: 100%;
-  border-radius: 6px;
-  text-align: center;
-}
-
-button {
-  background-color: black;
-  color: white;
-  padding: 0.8rem 1rem;
-  font: inherit;
-  font-weight: 700;
-  border: 0;
-  border-radius: 9px;
-}
-</style>
+<style lang="scss" src="./style.scss" ></style>

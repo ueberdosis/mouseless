@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Apps from './views/Apps.vue'
-import App from './views/App.vue'
-import Levels from './views/Levels.vue'
-import Test from './views/Test.vue'
+import AppsRoute from '@/components/AppsRoute'
+import AppRoute from '@/components/AppRoute'
+import LevelsRoute from '@/components/LevelsRoute'
+import TestRoute from '@/components/TestRoute'
 
 Vue.use(Router)
 
@@ -12,22 +12,22 @@ export default new Router({
     {
       path: '/',
       name: 'apps',
-      component: Apps,
+      component: AppsRoute,
     },
     {
       path: '/app/:id',
       name: 'app',
-      component: App,
+      component: AppRoute,
       children: [
         {
           path: 'levels',
           name: 'app.levels',
-          component: Levels,
+          component: LevelsRoute,
           children: [
             {
               path: ':level',
               name: 'app.levels.test',
-              component: Test,
+              component: TestRoute,
             },
           ],
         },
@@ -35,7 +35,7 @@ export default new Router({
     },
     {
       path: '*',
-      component: Apps,
+      component: AppsRoute,
     },
   ],
 })
