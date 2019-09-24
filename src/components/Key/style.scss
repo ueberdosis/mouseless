@@ -18,6 +18,10 @@
     color: $colorGreen;
   }
 
+  &.is-false {
+    color: $colorRed;
+  }
+
   &:last-child {
     margin-right: 0;
   }

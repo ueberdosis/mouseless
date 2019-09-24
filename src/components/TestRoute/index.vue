@@ -12,10 +12,11 @@
 
       <div class="test-route__keys" v-if="started">
         <key
-          v-for="(key, index) in currentShortcut.resolvedShortcut"
+          v-for="(key, index) in mergedKeys"
           :key="index"
           :name="key"
-          :active="keys.includes(key)"
+          :is-active="currentShortcut.resolvedShortcut.includes(key) && keys.includes(key)"
+          :is-false="!currentShortcut.resolvedShortcut.includes(key)"
         />
       </div>
     </div>
@@ -55,6 +56,12 @@ export default {
   },
 
   computed: {
+    mergedKeys() {
+      return collect([...this.keys, ...this.currentShortcut.resolvedShortcut])
+        .unique()
+        .toArray()
+    },
+
     level() {
       return this.$db.level(this.$route.params.level)
     },
