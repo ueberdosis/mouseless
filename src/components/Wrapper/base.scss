@@ -6,6 +6,7 @@
   box-sizing: border-box;
   outline: none;
   user-select: none;
+  -webkit-user-drag: none;
 }
 
 ::-webkit-scrollbar {
