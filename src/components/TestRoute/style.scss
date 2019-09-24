@@ -1,18 +1,51 @@
 .test-route {
+  display: flex;
+  flex-direction: column;
   background-color: black;
   color: white;
-  padding: 60px;
+  padding: 36px;
   height: 100%;
   border-radius: 6px;
   text-align: center;
-}
 
-button {
-  background-color: black;
-  color: white;
-  padding: 0.8rem 1rem;
-  font: inherit;
-  font-weight: 700;
-  border: 0;
-  border-radius: 9px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 auto;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
+  }
+
+  &__title {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.2s $ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      content: '';
+      background-color: black;
+      display: block;
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+    }
+  }
 }

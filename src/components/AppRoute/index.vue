@@ -3,13 +3,13 @@
     <div class="app-route__header">
       <div class="app-route__title">
         {{ app.title }}
+        <template v-if="level">
+          {{ level.title }}
+        </template>
       </div>
       <router-link class="app-route__back" :to="{ name: 'apps' }">
         ← Apps
       </router-link>
-      <!-- <router-link class="app-route__back" :to="{ name: 'app.levels' }">
-        ← Levels
-      </router-link> -->
     </div>
     <div class="app-route__content">
       <router-view />
@@ -22,6 +22,10 @@ export default {
   computed: {
     app() {
       return this.$db.app(this.$route.params.id)
+    },
+
+    level() {
+      return this.$db.level(this.$route.params.level)
     },
   },
 }

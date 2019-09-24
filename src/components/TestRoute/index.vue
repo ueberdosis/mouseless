@@ -1,33 +1,28 @@
 <template>
   <div class="test-route">
-    <h1>
-      {{ app.title }} {{ level.title }}
-    </h1>
+    <div class="test-route__content">
+      <div class="test-route__title">
+        <template v-if="started">
+          {{ currentShortcut.title }}
+        </template>
+        <template v-if="failed">
+          Nope :(
+        </template>
+      </div>
 
-    <p v-if="failed">
-      Nope :(
-    </p>
-
-    <button type="button" @click="start" v-if="!started">
-      Start
-    </button>
-
-    <template v-if="started">
-      <p>
-        {{ currentShortcut.title }}
-      </p>
-      <p>
+      <div class="test-route__keys" v-if="started">
         <key
           v-for="(key, index) in currentShortcut.resolvedShortcut"
           :key="index"
           :name="key"
           :active="keys.includes(key)"
         />
-      </p>
-      <button type="button" @click="stop">
-        Stop
-      </button>
-    </template>
+      </div>
+    </div>
+
+    <div class="test-route__footer">
+      <button class="test-route__cancel" type="button" @click="stop" />
+    </div>
   </div>
 </template>
 
@@ -39,6 +34,13 @@ import Key from '@/components/Key'
 export default {
   components: {
     Key,
+  },
+
+  props: {
+    training: {
+      default: true,
+      type: Boolean,
+    },
   },
 
   data() {
@@ -102,6 +104,7 @@ export default {
       this.started = false
       this.failed = false
       this.success = false
+      this.$router.push({ name: 'app.levels' })
     },
 
     finish() {
@@ -138,6 +141,10 @@ export default {
         this.fail()
       }
     })
+
+    if (this.training) {
+      this.start()
+    }
   },
 
   beforeDestroy() {
