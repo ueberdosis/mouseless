@@ -1,14 +1,19 @@
 <template>
   <div class="level">
     <div class="level__card">
-      <div class="level__title">
-        {{ level.title }}
+      <div class="level__content">
+        <img class="level__image" src="@/assets/images/illustration.png">
+        <div class="level__title">
+          {{ level.title }}
+        </div>
+        <div class="level__sub-title">
+          {{ app.shortcutsByLevel(level.level).length }} Shortcuts
+        </div>
       </div>
-      <div>
-        {{ app.shortcutsByLevel(level.level).length }} Shortcuts
-      </div>
-      <div class="level__button" @click="onClick" v-if="isActive">
-        Animated Test
+      <div class="level__footer">
+        <div class="level__button" @click="onClick" v-if="isActive">
+          Training
+        </div>
       </div>
     </div>
   </div>

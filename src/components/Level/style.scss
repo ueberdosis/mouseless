@@ -30,10 +30,29 @@
     justify-content: center;
     height: 100%;
     padding: 16px;
-    border-radius: 9px;
+    border-radius: 16px;
     background-color: black;
     color: white;
     text-align: center;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+  }
+
+  &__footer {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  &__image {
+    max-width: 80px;
+    margin-bottom: 16px;
   }
 
   &__title {
@@ -41,12 +60,23 @@
     font-weight: 700;
   }
 
+  &__sub-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
   &__button {
-    padding: 4px;
+    width: 100%;
+    padding: 8px;
     font-weight: 600;
     font-size: 14px;
     border-radius: 6px;
-    background-color: rgba(white, 0.1);
+    background-color: rgba(white, 0.15);
     margin-top: 6px;
+    transition: background-color 0.2s $ease;
+
+    &:hover {
+      background-color: rgba(white, 0.2);
+    }
   }
 }
