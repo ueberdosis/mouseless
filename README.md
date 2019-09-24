@@ -1,4 +1,4 @@
-# shortcut
+# Mouseless.app
 
 ## Project setup
 ```
