@@ -22,3 +22,7 @@ yarn-error.log*
 
 #Electron-builder output
 /dist_electron
+
+#electron
+electron-builder.env
+certificate-mac.p12

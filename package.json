@@ -1,6 +1,9 @@
 {
   "name": "mouseless",
   "version": "0.1.0",
+  "productName": "Mouseless.app",
+  "author": "Philipp Kühn <philipp.kuehn@scrumpy.io>",
+  "description": "A shortcut app.",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
