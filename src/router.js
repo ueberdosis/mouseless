@@ -20,14 +20,16 @@ export default new Router({
       component: App,
       children: [
         {
-          path: '/app/:id/levels',
+          path: 'levels',
           name: 'app.levels',
           component: Levels,
-        },
-        {
-          path: '/app/:id/test/:level',
-          name: 'app.test',
-          component: Test,
+          children: [
+            {
+              path: ':level',
+              name: 'app.levels.animatedtest',
+              component: Test,
+            },
+          ],
         },
       ],
     },

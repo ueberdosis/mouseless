@@ -8,6 +8,7 @@
           :key="level.level"
           :app="app"
           :level="level"
+          :is-active="slider && slider.activeIndex === index"
           @click.native="slider.slideTo(index)"
         />
       </div>

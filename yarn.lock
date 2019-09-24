@@ -3640,6 +3640,11 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
+eases@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/eases/-/eases-1.0.8.tgz#f1f5069a6b6ed2ea510f9c6110398d63efe9aee6"
+  integrity sha1-8fUGmmtu0upRD5xhEDmNY+/pruY=
+
 easy-stack@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/easy-stack/-/easy-stack-1.0.0.tgz#12c91b3085a37f0baa336e9486eac4bf94e3e788"
@@ -8170,6 +8175,11 @@ querystringify@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
+
+ramjet@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/ramjet/-/ramjet-0.5.0.tgz#1a7a972b5c2abbc4e94c52baf778feb4b46dd50f"
+  integrity sha1-GnqXK1wqu8TpTFK693j+tLRt1Q8=
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"

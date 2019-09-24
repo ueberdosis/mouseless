@@ -17,8 +17,10 @@
   "dependencies": {
     "collect.js": "^4.16.6",
     "core-js": "^2.6.5",
+    "eases": "^1.0.8",
     "electron-store": "^5.0.0",
     "native-keymap": "^2.0.0",
+    "ramjet": "^0.5.0",
     "swiper": "^5.0.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"

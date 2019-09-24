@@ -4,6 +4,9 @@
       <router-link class="app__back" :to="{ name: 'apps' }">
         ← Apps
       </router-link>
+      <router-link class="app__back" :to="{ name: 'app.levels' }">
+        Levels
+      </router-link>
     </div>
     <div class="app__content">
       <router-view />
@@ -31,6 +34,7 @@ export default {
     flex: 0 0 auto;
     padding: 6px;
     padding-left: 80px;
+    height: 36px;
   }
 
   &__content {

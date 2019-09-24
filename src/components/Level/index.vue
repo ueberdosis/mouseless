@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="level"
-    type="button"
-    :to="{ name: 'app.test', params: { level: level.level } }"
-  >
+  <div class="level">
     <div class="level__card">
       <div class="level__title">
         {{ level.title }}
@@ -11,17 +7,16 @@
       <div>
         {{ app.shortcutsByLevel(level.level).length }} Shortcuts
       </div>
-      <router-link
-        class="level__button"
-        :to="{ name: 'app.test', params: { level: level.level } }"
-      >
-        Test
-      </router-link>
+      <div class="level__button" @click="onClick" v-if="isActive">
+        Animated Test
+      </div>
     </div>
-  </button>
+  </div>
 </template>
 
 <script>
+import Event from '@/services/Event'
+
 export default {
   props: {
     app: {
@@ -32,6 +27,21 @@ export default {
     level: {
       required: true,
       type: Object,
+    },
+
+    isActive: {
+      default: false,
+      type: Boolean,
+    },
+  },
+
+  methods: {
+    onClick() {
+      Event.emit('beforeAnimation', this.$el)
+      this.$router.push({
+        name: 'app.levels.animatedtest',
+        params: { level: this.level.level },
+      })
     },
   },
 }

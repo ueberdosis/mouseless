@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="test">
     <h1>
       {{ app.title }} {{ level.title }}
     </h1>
@@ -147,7 +147,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
+.test {
+  background-color: black;
+  color: white;
+  padding: 60px;
+  height: 100%;
+  border-radius: 6px;
   text-align: center;
 }
 

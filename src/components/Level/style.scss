@@ -1,3 +1,13 @@
+@keyframes start {
+  from {
+    transform: translateX(100px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 .level {
   display: block;
   border: none;
@@ -6,6 +16,7 @@
   padding: 20px 0;
   animation: start 1.1s 1 $easeInOutQuad;
   transition: width 0.2s ease, padding 0.2s ease;
+  cursor: pointer;
 
   &.swiper-slide-active {
     padding: 0;
@@ -28,5 +39,14 @@
   &__title {
     font-size: 24px;
     font-weight: 700;
+  }
+
+  &__button {
+    padding: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: rgba(white, 0.1);
+    margin-top: 6px;
   }
 }
