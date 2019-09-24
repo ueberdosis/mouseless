@@ -2,7 +2,7 @@
 export default {
   id: 'slack',
   title: 'Slack',
-  color: '#6ecadc',
+  color: '#611f69',
   shortcuts: [
     {
       title: 'Quick Switcher',
