@@ -2,20 +2,15 @@
   <div class="levels">
     <levels :app="app" />
     <div class="levels__sub">
-      <transition
-        @before-enter="beforeEnter"
-        @enter="enter"
-        @after-enter="afterEnter"
-        @enter-cancelled="enterCancelled"
-        @before-leave="beforeLeave"
-        @leave="leave"
-        @after-leave="afterLeave"
-        @leave-cancelled="leaveCancelled"
-      >
+      <transition @enter="enter" @leave="leave">
         <router-view />
       </transition>
     </div>
-    <div class="levels__overlay" :style="`background-color: ${app.color}`" />
+    <div
+      class="levels__overlay"
+      :class="{ 'is-visible': overlayIsVisible }"
+      :style="`background-color: ${app.color}`"
+    />
   </div>
 </template>
 
@@ -30,6 +25,12 @@ export default {
     Levels,
   },
 
+  data() {
+    return {
+      overlayIsVisible: this.$route.name === 'app.levels.test',
+    }
+  },
+
   computed: {
     app() {
       return this.$db.app(this.$route.params.id)
@@ -37,16 +38,18 @@ export default {
   },
 
   methods: {
-    beforeEnter(el) {
-
-    },
-
     enter(el, done) {
+      this.overlayIsVisible = true
+
       const a = this.srcElement
       const b = el
 
-      ramjet.hide(b)
+      if (!a || !b) {
+        done()
+        return
+      }
 
+      ramjet.hide(b)
       ramjet.transform(a, b, {
         duration: 400,
         easing: quintInOut,
@@ -57,40 +60,25 @@ export default {
       })
     },
 
-    afterEnter(el) {
-
-    },
-
-    enterCancelled(el) {
-
-    },
-
-    beforeLeave(el) {
-
-    },
-
     leave(el, done) {
+      this.overlayIsVisible = false
+
       const a = el
       const b = this.srcElement
 
-      ramjet.hide(a)
+      if (!a || !b) {
+        done()
+        return
+      }
 
+      ramjet.hide(a)
       ramjet.transform(a, b, {
         duration: 400,
         easing: quintInOut,
         done: () => {
-          // ramjet.show(b)
           done()
         },
       })
-    },
-
-    afterLeave(el) {
-
-    },
-
-    leaveCancelled(el) {
-
     },
   },
 
@@ -126,16 +114,17 @@ export default {
     right: 0;
     bottom: 0;
     z-index: 1;
-    opacity: 1;
+    opacity: 0;
+    visibility: hidden;
     transition:
       opacity 0.5s $easeInOutQuint,
       visibility 0.5s $easeInOutQuint,
     ;
-  }
 
-  &__sub:empty + &__overlay {
-    opacity: 0;
-    visibility: hidden;
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 </style>

@@ -39,7 +39,7 @@ export default {
     onClick() {
       Event.emit('beforeAnimation', this.$el)
       this.$router.push({
-        name: 'app.levels.animatedtest',
+        name: 'app.levels.test',
         params: { level: this.level.level },
       })
     },

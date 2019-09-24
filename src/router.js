@@ -26,7 +26,7 @@ export default new Router({
           children: [
             {
               path: ':level',
-              name: 'app.levels.animatedtest',
+              name: 'app.levels.test',
               component: Test,
             },
           ],

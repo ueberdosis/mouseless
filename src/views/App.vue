@@ -5,7 +5,7 @@
         ← Apps
       </router-link>
       <router-link class="app__back" :to="{ name: 'app.levels' }">
-        Levels
+        ← Levels
       </router-link>
     </div>
     <div class="app__content">
