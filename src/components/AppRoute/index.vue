@@ -1,5 +1,9 @@
 <template>
-  <div class="app-route" :style="`background-color: ${app.color}`">
+  <div
+    class="app-route"
+    :class="{ 'is-inverted': app.invertColor }"
+    :style="`background-color: ${app.color}`"
+  >
     <div class="app-route__header">
       <div class="app-route__title">
         {{ app.title }}

@@ -3,6 +3,10 @@
   flex-direction: column;
   height: 100vh;
 
+  &.is-inverted {
+    color: $colorWhite;
+  }
+
   &__header {
     position: relative;
     flex: 0 0 auto;

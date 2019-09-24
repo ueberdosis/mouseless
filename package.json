@@ -15,6 +15,7 @@
   },
   "main": "background.js",
   "dependencies": {
+    "chroma-js": "^2.0.6",
     "collect.js": "^4.16.6",
     "core-js": "2.6.7",
     "eases": "^1.0.8",

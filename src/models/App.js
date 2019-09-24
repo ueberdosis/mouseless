@@ -1,3 +1,4 @@
+import chroma from 'chroma-js'
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 
@@ -27,6 +28,10 @@ export default {
   },
 
   computed: {
+    invertColor() {
+      return chroma(this.color).luminance() < 0.5
+    },
+
     levels() {
       return collect(this.shortcuts)
         .pluck('level')
