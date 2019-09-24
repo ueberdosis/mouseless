@@ -70,7 +70,19 @@ export default {
     },
 
     leave(el, done) {
-      done()
+      const a = el
+      const b = this.srcElement
+
+      ramjet.hide(a)
+
+      ramjet.transform(a, b, {
+        duration: 400,
+        easing: quintInOut,
+        done: () => {
+          // ramjet.show(b)
+          done()
+        },
+      })
     },
 
     afterLeave(el) {
