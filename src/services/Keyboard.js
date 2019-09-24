@@ -1,6 +1,8 @@
 import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
 
+// console.table(keymap.getKeyMap())
+
 export default class Keyboard {
 
   static keymap = Object
@@ -11,40 +13,39 @@ export default class Keyboard {
     }))
 
   static aliases = [
-    { name: 'Shift', alias: '⇧' },
-    { name: 'ShiftLeft', alias: '⇧L' },
-    { name: 'ShiftRight', alias: '⇧R' },
-    { name: 'Control', alias: '⌃' },
-    { name: 'ControlLeft', alias: '⌃L' },
-    { name: 'ControlRight', alias: '⌃R' },
-    { name: 'Alt', alias: '⌥' },
-    { name: 'AltLeft', alias: '⌥L' },
-    { name: 'AltRight', alias: '⌥R' },
-    { name: 'Meta', alias: '⌘' },
-    { name: 'MetaLeft', alias: '⌘L' },
-    { name: 'MetaRight', alias: '⌘R' },
+    { name: 'shift', alias: 'Shift' },
+    { name: 'control', alias: 'Control' },
+    { name: 'alt', alias: 'Alt' },
+    { name: 'meta', alias: 'Meta' },
+    { name: 'up', alias: 'ArrowUp' },
+    { name: 'right', alias: 'ArrowRight' },
+    { name: 'down', alias: 'ArrowDown' },
+    { name: 'left', alias: 'ArrowLeft' },
+  ]
+
+  static formats = [
+    { name: 'Shift', format: '⇧' },
+    { name: 'Control', format: '⌃' },
+    { name: 'Alt', format: '⌥' },
+    { name: 'Meta', format: '⌘' },
+    { name: 'ArrowUp', format: '↑' },
+    { name: 'ArrowRight', format: '→' },
+    { name: 'ArrowDown', format: '↓' },
+    { name: 'ArrowLeft', format: '←' },
   ]
 
   static formatKeyCode(name) {
-    const result = this.aliases.find(alias => alias.name === name)
-    return result ? result.alias : name
+    const result = this.formats.find(format => format.name === name)
+    return result ? result.format : name
   }
 
   constructor() {
     this.emitter = new Emitter()
     this.specialKeyNames = [
       'Shift',
-      'ShiftLeft',
-      'ShiftRight',
       'Control',
-      'ControlLeft',
-      'ControlRight',
       'Alt',
-      'AltLeft',
-      'AltRight',
       'Meta',
-      'MetaLeft',
-      'MetaRight',
     ]
     this.specialKeys = []
     this.regularKeys = []
@@ -107,24 +108,25 @@ export default class Keyboard {
       return event.code
     }
 
+    let value = ''
+
     if (this.isOnlyShiftPressed) {
-      return key.withShift
+      value = key.withShift
     }
 
     if (this.isOnlyAltPressed) {
-      return key.withAltGr
+      value = key.withAltGr
     }
 
     if (this.isShiftAndAltPressed) {
-      return key.withShiftAltGr
+      value = key.withShiftAltGr
     }
 
-    // f1-f20
-    if (key.value === '') {
-      return key.code.toLowerCase()
+    if (value === '') {
+      return key.code
     }
 
-    return key.value
+    return value
   }
 
   getKeyName(event) {
@@ -136,20 +138,10 @@ export default class Keyboard {
       .map(key => {
         let match = null
 
-        if (key.toLowerCase() === 'shift') {
-          return 'Shift'
-        }
+        const result = this.aliases.find(alias => alias.name === key.toLowerCase())
 
-        if (key.toLowerCase() === 'control') {
-          return 'Control'
-        }
-
-        if (key.toLowerCase() === 'alt') {
-          return 'Alt'
-        }
-
-        if (key.toLowerCase() === 'meta') {
-          return 'Meta'
+        if (result) {
+          return result.alias
         }
 
         match = this.keymap.find(item => item.value === key)
