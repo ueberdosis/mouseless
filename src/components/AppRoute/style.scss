@@ -4,9 +4,8 @@
   height: 100vh;
 
   &__header {
+    position: relative;
     flex: 0 0 auto;
-    padding: 6px;
-    padding-left: 80px;
     height: 36px;
   }
 
@@ -14,13 +13,26 @@
     flex: 1 1 auto;
   }
 
-  &__back {
-    position: relative;
+  &__back,
+  &__title {
+    position: absolute;
+    top: 5px;
     font-size: 14px;
     font-weight: 600;
     padding: 4px 8px;
-    cursor: pointer;
+  }
 
+  &__title {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__back {
+    left: 76px;
+  }
+
+  &__back {
     &::after {
       position: absolute;
       top: 0;

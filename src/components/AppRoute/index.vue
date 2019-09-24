@@ -1,12 +1,15 @@
 <template>
   <div class="app-route" :style="`background-color: ${app.color}`">
     <div class="app-route__header">
+      <div class="app-route__title">
+        {{ app.title }}
+      </div>
       <router-link class="app-route__back" :to="{ name: 'apps' }">
         ← Apps
       </router-link>
-      <router-link class="app-route__back" :to="{ name: 'app.levels' }">
+      <!-- <router-link class="app-route__back" :to="{ name: 'app.levels' }">
         ← Levels
-      </router-link>
+      </router-link> -->
     </div>
     <div class="app-route__content">
       <router-view />
