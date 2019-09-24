@@ -119,6 +119,11 @@ export default class Keyboard {
       return key.withShiftAltGr
     }
 
+    // f1-f20
+    if (key.value === '') {
+      return key.code.toLowerCase()
+    }
+
     return key.value
   }
 
@@ -169,6 +174,13 @@ export default class Keyboard {
 
         if (match) {
           return ['Shift', 'Alt', match.value]
+        }
+
+        // f1-f20
+        match = this.keymap.find(item => item.code.toLowerCase() === key.toLowerCase())
+
+        if (match) {
+          return [match.code.toLowerCase()]
         }
 
         return match
