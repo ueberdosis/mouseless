@@ -47,6 +47,7 @@ export default {
         freeMode: true,
         mousewheel: true,
         speed: 600,
+        width: 1, // why
       })
 
       this.slider.init()
