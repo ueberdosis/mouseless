@@ -7,6 +7,9 @@
     <div class="app-route__header">
       <div class="app-route__title">
         {{ app.title }}
+        <template v-if="group">
+          {{ group.title }}
+        </template>
       </div>
       <router-link class="app-route__back" :to="{ name: 'apps' }">
         ← Apps
@@ -23,6 +26,10 @@ export default {
   computed: {
     app() {
       return this.$db.app(this.$route.params.id)
+    },
+
+    group() {
+      return this.app.group(this.$route.params.group)
     },
   },
 }

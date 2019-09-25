@@ -43,6 +43,10 @@ export default {
   },
 
   methods: {
+    group(id = null) {
+      return this.groups.find(group => group.id === id)
+    },
+
     shortcutsByGroup(id = null) {
       const group = this.groups.find(item => item.id === id)
 
