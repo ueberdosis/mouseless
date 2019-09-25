@@ -3,6 +3,13 @@ export default {
   id: 'sketch',
   title: 'Sketch',
   color: '#FDD231',
+  groups: [
+    {
+      name: 'Layers',
+      id: 'layers',
+      shortcuts: [],
+    },
+  ],
   shortcuts: [
     {
       title: 'Artboard',
