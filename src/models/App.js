@@ -1,6 +1,6 @@
 import chroma from 'chroma-js'
-import collect from 'collect.js'
 import { Base64 } from 'js-base64'
+import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 
 export default {
@@ -22,7 +22,7 @@ export default {
       default: '#FFF',
     },
 
-    shortcuts: {
+    groups: {
       type: Array,
       default: () => ([]),
     },
@@ -33,28 +33,32 @@ export default {
       return chroma(this.color).luminance() < 0.5
     },
 
-    levels() {
-      return collect(this.shortcuts)
-        .pluck('level')
-        .unique()
-        .sort()
-        .map(level => this.$db.level(level))
-        .filter()
+    shortcuts() {
+      return collect(this.groups)
+        .pluck('shortcuts')
+        .flatten(1)
+        .map(this.formatShortcut)
         .toArray()
-    },
-
-    formattedShortcuts() {
-      return this.shortcuts.map(shortcut => ({
-        ...shortcut,
-        id: Base64.encode(`${this.id}${shortcut.keys.toString()}`),
-        resolvedKeys: Keyboard.resolveCodesFromKeys(shortcut.keys),
-      }))
     },
   },
 
   methods: {
-    shortcutsByLevel(level = null) {
-      return this.formattedShortcuts.filter(shortcut => shortcut.level === level)
+    shortcutsByGroup(id = null) {
+      const group = this.groups.find(item => item.id === id)
+
+      if (!group) {
+        return []
+      }
+
+      return group.shortcuts.map(this.formatShortcut)
+    },
+
+    formatShortcut(shortcut) {
+      return {
+        ...shortcut,
+        id: Base64.encode(`${this.id}${shortcut.keys.toString()}`),
+        resolvedKeys: Keyboard.resolveCodesFromKeys(shortcut.keys),
+      }
     },
   },
 }

@@ -3,76 +3,73 @@ export default {
   id: 'sketch',
   title: 'Sketch',
   color: '#FDD231',
-  // TODO: New
   groups: [
     {
-      name: 'Layers',
+      title: 'Layers',
       id: 'layers',
+      version: 1,
       shortcuts: [
         {
           title: 'Artboard',
           keys: ['a'],
-          description: 'A new Artboard is cool',
+        },
+        {
+          title: 'Oval',
+          keys: ['o'],
+        },
+        {
+          title: 'Line',
+          keys: ['l'],
+        },
+        {
+          title: 'Rounded Rectangle',
+          keys: ['u'],
+        },
+        {
+          title: 'Vector',
+          keys: ['v'],
+        },
+        {
+          title: 'Pencil',
+          keys: ['p'],
+        },
+        {
+          title: 'Text',
+          keys: ['t'],
+        },
+        {
+          title: 'Slice',
+          keys: ['s'],
+        },
+        {
+          title: 'Hotspot',
+          keys: ['h'],
         },
       ],
+    },
+    {
+      title: 'Foo',
+      id: 'foo',
       version: 1,
-    },
-  ],
-  shortcuts: [
-    {
-      title: 'Artboard',
-      keys: ['a'],
-      level: 1,
-    },
-    {
-      title: 'Oval',
-      keys: ['o'],
-      level: 1,
+      shortcuts: [
+        {
+          title: 'Bold',
+          keys: ['meta', 'b'],
+          group: 2,
+        },
+      ],
     },
     {
-      title: 'Line',
-      keys: ['l'],
-      level: 1,
-    },
-    {
-      title: 'Rounded Rectangle',
-      keys: ['u'],
-      level: 1,
-    },
-    {
-      title: 'Vector',
-      keys: ['v'],
-      level: 1,
-    },
-    {
-      title: 'Pencil',
-      keys: ['p'],
-      level: 1,
-    },
-    {
-      title: 'Text',
-      keys: ['t'],
-      level: 1,
-    },
-    {
-      title: 'Slice',
-      keys: ['s'],
-      level: 1,
-    },
-    {
-      title: 'Hotspot',
-      keys: ['h'],
-      level: 1,
-    },
-    {
-      title: 'Bold',
-      keys: ['meta', 'b'],
-      level: 2,
-    },
-    {
-      title: 'Send backward',
-      keys: ['meta', '['],
-      level: 3,
+      title: 'Bar',
+      id: 'bar',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Send backward',
+          keys: ['meta', '['],
+          group: 3,
+        },
+      ],
     },
   ],
 }

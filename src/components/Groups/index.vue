@@ -1,13 +1,13 @@
 <template>
-  <div class="levels">
+  <div class="groups">
     <div class="swiper-container" ref="slider">
-      <div class="swiper-wrapper levels__items">
-        <level
+      <div class="swiper-wrapper groups__items">
+        <group
           class="swiper-slide"
-          v-for="(level, index) in app.levels"
-          :key="level.level"
+          v-for="(group, index) in app.groups"
+          :key="group.id"
           :app="app"
-          :level="level"
+          :group="group"
           :is-active="slider && slider.activeIndex === index"
           @click.native="slider.slideTo(index)"
         />
@@ -18,11 +18,11 @@
 
 <script>
 import Swiper from 'swiper'
-import Level from '@/components/Level'
+import Group from '@/components/Group'
 
 export default {
   components: {
-    Level,
+    Group,
   },
 
   props: {

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import AppsRoute from '@/components/AppsRoute'
 import AppRoute from '@/components/AppRoute'
-import LevelsRoute from '@/components/LevelsRoute'
+import GroupsRoute from '@/components/GroupsRoute'
 import TestRoute from '@/components/TestRoute'
 
 Vue.use(Router)
@@ -20,13 +20,13 @@ export default new Router({
       component: AppRoute,
       children: [
         {
-          path: 'levels',
-          name: 'app.levels',
-          component: LevelsRoute,
+          path: 'groups',
+          name: 'app.groups',
+          component: GroupsRoute,
           children: [
             {
-              path: ':level',
-              name: 'app.levels.test',
+              path: ':group',
+              name: 'app.groups.test',
               component: TestRoute,
             },
           ],

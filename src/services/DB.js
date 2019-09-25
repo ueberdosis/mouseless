@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from '@/models/App'
-import Level from '@/models/Level'
 
 export default new class {
 
@@ -27,15 +26,6 @@ export default new class {
 
   app(id = null) {
     return this.apps.find(app => app.id === id)
-  }
-
-  get levels() {
-    return require('@/data/levels').default
-      .map(data => this.createModel(Level, data))
-  }
-
-  level(level = null) {
-    return this.levels.find(item => item.level === parseInt(level, 10))
   }
 
 }()

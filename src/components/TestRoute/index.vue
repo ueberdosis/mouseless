@@ -73,16 +73,12 @@ export default {
       return showKeys
     },
 
-    level() {
-      return this.$db.level(this.$route.params.level)
-    },
-
     app() {
       return this.$db.app(this.$route.params.id)
     },
 
     shortcuts() {
-      return this.app.shortcutsByLevel(this.level.level)
+      return this.app.shortcutsByGroup(this.$route.params.group)
     },
 
     unseenShortcuts() {
@@ -174,7 +170,7 @@ export default {
     },
 
     stop() {
-      // this.$router.push({ name: 'app.levels' })
+      // this.$router.push({ name: 'app.groups' })
     },
 
     finish() {

@@ -1,13 +1,13 @@
 <template>
-  <div class="levels-route">
-    <levels :app="app" />
-    <div class="levels-route__sub">
+  <div class="groups-route">
+    <groups :app="app" />
+    <div class="groups-route__sub">
       <transition @enter="enter" @leave="leave">
         <router-view />
       </transition>
     </div>
     <div
-      class="levels-route__overlay"
+      class="groups-route__overlay"
       :class="{ 'is-visible': overlayIsVisible }"
       :style="`background-color: ${app.color}`"
     />
@@ -18,16 +18,16 @@
 import ramjet from 'ramjet'
 import quintInOut from 'eases/quint-in-out'
 import Event from '@/services/Event'
-import Levels from '@/components/Levels'
+import Groups from '@/components/Groups'
 
 export default {
   components: {
-    Levels,
+    Groups,
   },
 
   data() {
     return {
-      overlayIsVisible: this.$route.name === 'app.levels.test',
+      overlayIsVisible: this.$route.name === 'app.groups.test',
     }
   },
 

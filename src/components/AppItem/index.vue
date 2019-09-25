@@ -1,5 +1,5 @@
 <template>
-  <router-link class="app-item" :to="{ name: 'app.levels', params: { id: app.id } }">
+  <router-link class="app-item" :to="{ name: 'app.groups', params: { id: app.id } }">
     <div class="app-item__media" :style="`background-color: ${app.color}`">
       <img class="app-item__logo" :src="logo">
     </div>

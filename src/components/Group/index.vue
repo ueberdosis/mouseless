@@ -1,17 +1,17 @@
 <template>
-  <div class="level">
-    <div class="level__card">
-      <div class="level__content">
-        <img class="level__image" src="@/assets/images/illustration.png">
-        <div class="level__title">
-          {{ level.title }}
+  <div class="group">
+    <div class="group__card">
+      <div class="group__content">
+        <img class="group__image" src="@/assets/images/illustration.png">
+        <div class="group__title">
+          {{ group.title }}
         </div>
-        <div class="level__sub-title">
-          {{ app.shortcutsByLevel(level.level).length }} Shortcuts
+        <div class="group__sub-title">
+          {{ app.shortcutsByGroup(group.id).length }} Shortcuts
         </div>
       </div>
-      <div class="level__footer">
-        <div class="level__button" @click="onClick" v-if="isActive">
+      <div class="group__footer">
+        <div class="group__button" @click="onClick" v-if="isActive">
           Training
         </div>
       </div>
@@ -29,7 +29,7 @@ export default {
       type: Object,
     },
 
-    level: {
+    group: {
       required: true,
       type: Object,
     },
@@ -44,8 +44,8 @@ export default {
     onClick() {
       Event.emit('beforeAnimation', this.$el)
       this.$router.push({
-        name: 'app.levels.test',
-        params: { level: this.level.level },
+        name: 'app.groups.test',
+        params: { group: this.group.id },
       })
     },
   },
