@@ -23,11 +23,13 @@
     "core-js": "2.6.7",
     "eases": "^1.0.8",
     "electron-store": "^5.0.0",
+    "js-base64": "^2.5.1",
     "native-keymap": "^2.0.0",
     "ramjet": "^0.5.0",
     "swiper": "^5.0.3",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "weighted": "^0.3.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

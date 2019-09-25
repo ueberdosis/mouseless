@@ -1,5 +1,6 @@
 import chroma from 'chroma-js'
 import collect from 'collect.js'
+import { Base64 } from 'js-base64'
 import Keyboard from '@/services/Keyboard'
 
 export default {
@@ -45,6 +46,7 @@ export default {
     formattedShortcuts() {
       return this.shortcuts.map(shortcut => ({
         ...shortcut,
+        id: Base64.encode(`${this.id}${shortcut.keys.toString()}`),
         resolvedKeys: Keyboard.resolveCodesFromKeys(shortcut.keys),
       }))
     },

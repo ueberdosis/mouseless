@@ -5,12 +5,12 @@
         <template v-if="started">
           {{ currentShortcut.title }}
         </template>
-        <template v-if="failed">
+        <!-- <template v-if="failed">
           Nope :(
-        </template>
+        </template> -->
       </div>
 
-      <div class="test-route__keys" v-if="started">
+      <!-- <div class="test-route__keys" v-if="started">
         <key
           v-for="(key, index) in mergedKeys"
           :key="index"
@@ -18,16 +18,26 @@
           :is-active="currentShortcut.resolvedKeys.includes(key) && keys.includes(key)"
           :is-false="!currentShortcut.resolvedKeys.includes(key)"
         />
+      </div> -->
+
+      <div class="test-route__keys" v-if="showKeys">
+        <key
+          v-for="(key, index) in currentShortcut.resolvedKeys"
+          :key="index"
+          :name="key"
+        />
       </div>
     </div>
 
     <div class="test-route__footer">
       <button class="test-route__cancel" type="button" @click="stop" />
+      {{ learnedIds.length }} / {{ shortcuts.length }}
     </div>
   </div>
 </template>
 
 <script>
+import weighted from 'weighted'
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 import Key from '@/components/Key'
@@ -37,29 +47,29 @@ export default {
     Key,
   },
 
-  props: {
-    training: {
-      default: true,
-      type: Boolean,
-    },
-  },
-
   data() {
     return {
-      success: false,
-      failed: false,
-      started: false,
+      timeout: null,
       keyboard: new Keyboard(),
-      keys: [],
-      currentShortcutIndex: null,
+      pressedKeys: [],
+      run: null,
+      trainedIds: [],
+      learnedIds: [],
+      failedIds: [],
+      currentShortcut: null,
     }
   },
 
   computed: {
-    mergedKeys() {
-      return collect([...this.keys, ...this.currentShortcut.resolvedKeys])
-        .unique()
-        .toArray()
+    showKeys() {
+      if (!this.started) {
+        return false
+      }
+
+      const { id } = this.currentShortcut
+      const showKeys = !this.trainedIds.includes(id) && !this.learnedIds.includes(id)
+
+      return showKeys
     },
 
     level() {
@@ -71,87 +81,151 @@ export default {
     },
 
     shortcuts() {
-      return collect(this.app.shortcutsByLevel(this.level.level))
-        .shuffle()
-        .toArray()
+      return this.app.shortcutsByLevel(this.level.level)
     },
 
-    currentShortcut() {
-      return this.shortcuts[this.currentShortcutIndex]
+    untrainedShortcuts() {
+      return this.shortcuts
+        .filter(shortcut => !this.trainedIds.includes(shortcut.id))
+        .filter(shortcut => !this.learnedIds.includes(shortcut.id))
+        // .filter(shortcut => !this.failedIds.includes(shortcut.id))
+    },
+
+    trainedShortcuts() {
+      return this.trainedIds.map(id => this.shortcuts.find(shortcut => shortcut.id === id))
+    },
+
+    learnedShortcuts() {
+      return this.learnedIds.map(id => this.shortcuts.find(shortcut => shortcut.id === id))
+    },
+
+    failedShortcuts() {
+      return this.failedIds.map(id => this.shortcuts.find(shortcut => shortcut.id === id))
+    },
+
+    started() {
+      return !!this.currentShortcut
     },
   },
 
   methods: {
+    setShortcut() {
+      const data = [
+        {
+          shortcuts: this.shortcuts,
+          weight: 10,
+        },
+        {
+          shortcuts: this.trainedShortcuts,
+          weight: 20,
+        },
+        {
+          shortcuts: this.learnedShortcuts,
+          weight: 10,
+        },
+        {
+          shortcuts: this.failedShortcuts,
+          weight: 50,
+        },
+      ]
+        .map(item => ({
+          ...item,
+          shortcuts: item.shortcuts
+            .filter(shortcut => (this.currentShortcut ? shortcut.id !== this.currentShortcut.id : true)),
+        }))
+        .filter(item => item.shortcuts.length)
+
+      const shortcuts = collect(data).pluck('shortcuts').toArray()
+      const weights = collect(data).pluck('weight').toArray()
+      const weightedShortcuts = weighted(shortcuts, weights)
+
+      this.currentShortcut = collect(weightedShortcuts)
+      // .filter(shortcut => {
+      //   console.log(this.currentShortcut)
+      //   if (weightedShortcuts.length > 1 && this.currentShortcut) {
+      //     return shortcut.id !== this.currentShortcut.id
+      //   }
+
+        //   return true
+        // })
+        .random()
+    },
+
     start() {
-      this.failed = false
-      this.started = true
-      this.success = false
       this.next()
     },
 
     next() {
-      this.keys = []
-
-      if (this.currentShortcutIndex === this.shortcuts.length - 1) {
-        this.finish()
-      } else {
-        this.currentShortcutIndex = this.currentShortcutIndex === null
-          ? 0
-          : this.currentShortcutIndex + 1
-      }
+      this.setShortcut()
     },
 
     fail() {
       this.stop()
-      this.failed = true
-      this.success = false
     },
 
     stop() {
-      this.started = false
-      this.failed = false
-      this.success = false
-      this.$router.push({ name: 'app.levels' })
+      // this.$router.push({ name: 'app.levels' })
     },
 
     finish() {
-      this.$router.push({ name: 'apps' })
+      // this.$router.push({ name: 'apps' })
     },
 
+    addToTrainedIds(id) {
+      this.trainedIds = collect(this.trainedIds).push(id).unique().toArray()
+      this.failedIds = this.failedIds.filter(failedId => failedId !== id)
+    },
+
+    addToLearnedIds(id) {
+      this.learnedIds = collect(this.learnedIds).push(id).unique().toArray()
+      this.trainedIds = this.trainedIds.filter(trainedId => trainedId !== id)
+    },
+
+    addToFailedIds(id) {
+      this.failedIds = collect(this.failedIds).push(id).unique().toArray()
+      this.trainedIds = this.trainedIds.filter(trainedId => trainedId !== id)
+    },
   },
 
   mounted() {
     this.keyboard.on('update', ({ keys }) => {
-      if (!this.started || this.success) {
+      if (!this.started || this.timeout) {
         return
       }
 
-      this.keys = keys
+      this.pressedKeys = keys
     })
 
     this.keyboard.on('shortcut', ({ event, keys }) => {
-      if (!this.started || this.success) {
+      if (!this.started || this.timeout) {
         return
       }
 
-      this.keys = keys
+      console.log(keys, this.currentShortcut.resolvedKeys)
+
+      this.pressedKeys = keys
       event.preventDefault()
       const match = this.keyboard.is(this.currentShortcut.resolvedKeys)
+      const { id } = this.currentShortcut
 
       if (match) {
-        this.success = true
-        setTimeout(() => {
-          this.success = false
-          this.next()
-        }, 1000)
+        // this.success = true
+        // this.timeout = setTimeout(() => {
+        //   this.next()
+        // }, 1000)
+        if (this.showKeys) {
+          this.addToTrainedIds(id)
+        } else {
+          this.addToLearnedIds(id)
+        }
+        this.next()
       } else {
-        this.fail()
+        this.addToFailedIds(id)
+        this.next()
       }
     })
 
-    if (this.training) {
-      this.start()
-    }
+    this.start()
   },
 
   beforeDestroy() {
