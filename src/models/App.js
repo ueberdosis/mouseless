@@ -43,9 +43,9 @@ export default {
     },
 
     formattedShortcuts() {
-      return this.shortcuts.map(item => ({
-        ...item,
-        resolvedShortcut: Keyboard.resolveCodesFromKeys(item.shortcut),
+      return this.shortcuts.map(shortcut => ({
+        ...shortcut,
+        resolvedKeys: Keyboard.resolveCodesFromKeys(shortcut.keys),
       }))
     },
   },

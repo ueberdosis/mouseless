@@ -15,8 +15,8 @@
           v-for="(key, index) in mergedKeys"
           :key="index"
           :name="key"
-          :is-active="currentShortcut.resolvedShortcut.includes(key) && keys.includes(key)"
-          :is-false="!currentShortcut.resolvedShortcut.includes(key)"
+          :is-active="currentShortcut.resolvedKeys.includes(key) && keys.includes(key)"
+          :is-false="!currentShortcut.resolvedKeys.includes(key)"
         />
       </div>
     </div>
@@ -57,7 +57,7 @@ export default {
 
   computed: {
     mergedKeys() {
-      return collect([...this.keys, ...this.currentShortcut.resolvedShortcut])
+      return collect([...this.keys, ...this.currentShortcut.resolvedKeys])
         .unique()
         .toArray()
     },
@@ -136,7 +136,7 @@ export default {
 
       this.keys = keys
       event.preventDefault()
-      const match = this.keyboard.is(this.currentShortcut.resolvedShortcut)
+      const match = this.keyboard.is(this.currentShortcut.resolvedKeys)
 
       if (match) {
         this.success = true
