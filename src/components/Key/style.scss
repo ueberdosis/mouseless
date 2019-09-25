@@ -12,7 +12,7 @@
   font-size: 26px;
   font-weight: 700;
   text-transform: uppercase;
-  transition: color 0.1s $ease;
+  transition: color 0.1s $ease, transform 0.1s $ease;
 
   &.is-active {
     color: $colorGreen;
@@ -20,6 +20,10 @@
 
   &.is-false {
     color: $colorRed;
+  }
+
+  &.is-pressed {
+    transform: scale(0.9);
   }
 
   &:last-child {

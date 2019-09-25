@@ -25,6 +25,7 @@
           v-for="(key, index) in currentShortcut.resolvedKeys"
           :key="index"
           :name="key"
+          :pressed="currentShortcut.resolvedKeys.includes(key) && pressedKeys.includes(key)"
         />
       </div>
     </div>
