@@ -84,11 +84,11 @@ export default {
       return this.app.shortcutsByLevel(this.level.level)
     },
 
-    untrainedShortcuts() {
+    unseenShortcuts() {
       return this.shortcuts
         .filter(shortcut => !this.trainedIds.includes(shortcut.id))
         .filter(shortcut => !this.learnedIds.includes(shortcut.id))
-        // .filter(shortcut => !this.failedIds.includes(shortcut.id))
+        .filter(shortcut => !this.failedIds.includes(shortcut.id))
     },
 
     trainedShortcuts() {
@@ -106,18 +106,16 @@ export default {
     started() {
       return !!this.currentShortcut
     },
-  },
 
-  methods: {
-    setShortcut() {
+    finished() {
+      return this.learnedIds.length && this.learnedIds.length === this.shortcuts.length
+    },
+
+    shortcutSet() {
       const data = [
         {
-          shortcuts: this.shortcuts,
-          weight: 10,
-        },
-        {
           shortcuts: this.trainedShortcuts,
-          weight: 20,
+          weight: 50,
         },
         {
           shortcuts: this.learnedShortcuts,
@@ -125,30 +123,37 @@ export default {
         },
         {
           shortcuts: this.failedShortcuts,
-          weight: 50,
+          weight: 70,
+        },
+        {
+          shortcuts: this.unseenShortcuts,
+          weight: 90,
         },
       ]
+
+      return data
         .map(item => ({
           ...item,
           shortcuts: item.shortcuts
-            .filter(shortcut => (this.currentShortcut ? shortcut.id !== this.currentShortcut.id : true)),
+            .filter(shortcut => {
+              if (this.currentShortcut) {
+                return shortcut.id !== this.currentShortcut.id
+              }
+
+              return true
+            }),
         }))
         .filter(item => item.shortcuts.length)
+    },
+  },
 
-      const shortcuts = collect(data).pluck('shortcuts').toArray()
-      const weights = collect(data).pluck('weight').toArray()
+  methods: {
+    setShortcut() {
+      const shortcuts = collect(this.shortcutSet).pluck('shortcuts').toArray()
+      const weights = collect(this.shortcutSet).pluck('weight').toArray()
       const weightedShortcuts = weighted(shortcuts, weights)
 
-      this.currentShortcut = collect(weightedShortcuts)
-      // .filter(shortcut => {
-      //   console.log(this.currentShortcut)
-      //   if (weightedShortcuts.length > 1 && this.currentShortcut) {
-      //     return shortcut.id !== this.currentShortcut.id
-      //   }
-
-        //   return true
-        // })
-        .random()
+      this.currentShortcut = collect(weightedShortcuts).random()
     },
 
     start() {
@@ -156,7 +161,11 @@ export default {
     },
 
     next() {
-      this.setShortcut()
+      if (this.finished) {
+        console.log('FINISHED')
+      } else {
+        this.setShortcut()
+      }
     },
 
     fail() {
@@ -174,15 +183,18 @@ export default {
     addToTrainedIds(id) {
       this.trainedIds = collect(this.trainedIds).push(id).unique().toArray()
       this.failedIds = this.failedIds.filter(failedId => failedId !== id)
+      this.learnedIds = this.learnedIds.filter(learnedId => learnedId !== id)
     },
 
     addToLearnedIds(id) {
       this.learnedIds = collect(this.learnedIds).push(id).unique().toArray()
       this.trainedIds = this.trainedIds.filter(trainedId => trainedId !== id)
+      this.failedIds = this.failedIds.filter(failedId => failedId !== id)
     },
 
     addToFailedIds(id) {
       this.failedIds = collect(this.failedIds).push(id).unique().toArray()
+      this.learnedIds = this.learnedIds.filter(learnedId => learnedId !== id)
       this.trainedIds = this.trainedIds.filter(trainedId => trainedId !== id)
     },
   },
