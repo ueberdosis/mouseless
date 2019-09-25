@@ -209,6 +209,7 @@ export default {
       const { id } = this.currentShortcut
 
       if (match) {
+        console.log('jep')
         // this.success = true
         // this.timeout = setTimeout(() => {
         //   this.next()
@@ -220,6 +221,7 @@ export default {
         }
         this.next()
       } else {
+        console.log('nope')
         this.addToFailedIds(id)
         this.next()
       }
