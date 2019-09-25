@@ -47,11 +47,6 @@ export default {
       level: 1,
     },
     {
-      title: 'Artboard',
-      keys: ['a'],
-      level: 1,
-    },
-    {
       title: 'Slice',
       keys: ['s'],
       level: 1,
