@@ -3,11 +3,19 @@ export default {
   id: 'sketch',
   title: 'Sketch',
   color: '#FDD231',
+  // TODO: New
   groups: [
     {
       name: 'Layers',
       id: 'layers',
-      shortcuts: [],
+      shortcuts: [
+        {
+          title: 'Artboard',
+          keys: ['a'],
+          description: 'A new Artboard is cool',
+        },
+      ],
+      version: 1,
     },
   ],
   shortcuts: [
