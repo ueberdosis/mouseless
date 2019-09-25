@@ -22,6 +22,7 @@ export default class Keyboard {
     down: 'ArrowDown',
     left: 'ArrowLeft',
     enter: 'Enter',
+    backspace: 'Backspace',
   }
 
   static formats = {
@@ -34,6 +35,7 @@ export default class Keyboard {
     ArrowDown: '↓',
     ArrowLeft: '←',
     Enter: '↩',
+    Backspace: '⌫',
   }
 
   static formatKeyCode(name) {
