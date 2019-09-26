@@ -2,7 +2,6 @@
 export default {
   id: 'googledocs',
   title: 'Google Docs',
-  color: '#4285F4',
   shortcuts: [
     // Common actions
     {

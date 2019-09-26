@@ -2,7 +2,6 @@
 export default {
   id: 'slack',
   title: 'Slack',
-  color: '#611f69',
   shortcuts: [
     // Navigation
     {

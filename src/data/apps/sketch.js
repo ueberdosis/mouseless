@@ -2,7 +2,6 @@
 export default {
   id: 'sketch',
   title: 'Sketch',
-  color: '#FDD231',
   groups: [
     {
       title: 'Layers',

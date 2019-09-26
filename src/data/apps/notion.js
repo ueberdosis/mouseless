@@ -2,6 +2,5 @@
 export default {
   id: 'notion',
   title: 'Notion',
-  color: '#FFFFFF',
   shortcuts: [],
 }

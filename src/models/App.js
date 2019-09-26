@@ -1,4 +1,3 @@
-import chroma from 'chroma-js'
 import { Base64 } from 'js-base64'
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
@@ -17,11 +16,6 @@ export default {
       default: null,
     },
 
-    color: {
-      type: String,
-      default: '#FFF',
-    },
-
     groups: {
       type: Array,
       default: () => ([]),
@@ -29,10 +23,6 @@ export default {
   },
 
   computed: {
-    invertColor() {
-      return chroma(this.color).luminance() < 0.5
-    },
-
     shortcuts() {
       return collect(this.groups)
         .pluck('shortcuts')
