@@ -24,6 +24,7 @@
     "js-base64": "^2.5.1",
     "native-keymap": "^2.0.0",
     "swiper": "^5.0.3",
+    "uuid": "^3.3.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "weighted": "^0.3.0"
