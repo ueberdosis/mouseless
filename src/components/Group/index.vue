@@ -7,7 +7,7 @@
           {{ group.title }}
         </div>
         <div class="group__sub-title">
-          {{ app.shortcutsByGroup(group.id).length }} Shortcuts
+          {{ shortcuts.length }} Shortcuts
         </div>
       </div>
       <div class="group__footer">
@@ -42,6 +42,12 @@ export default {
     animate: {
       default: false,
       type: Boolean,
+    },
+  },
+
+  computed: {
+    shortcuts() {
+      return this.app.shortcutsByGroup(this.group.id)
     },
   },
 
