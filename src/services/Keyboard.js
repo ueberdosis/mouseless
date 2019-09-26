@@ -1,3 +1,4 @@
+import collect from 'collect.js'
 import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
 
@@ -212,8 +213,14 @@ export default class Keyboard {
   }
 
   is(keys) {
-    const match1 = keys.every(key => this.keys.includes(key))
-    const match2 = this.keys.every(key => keys.includes(key))
+    const checkedKeys = keys.map(key => key.toLowerCase())
+    const pressedKeys = collect(this.constructor.resolveCodesFromKeys(this.keys))
+      .unique()
+      .map(key => key.toLowerCase())
+      .toArray()
+
+    const match1 = checkedKeys.every(key => pressedKeys.includes(key))
+    const match2 = pressedKeys.every(key => checkedKeys.includes(key))
     return match1 && match2
   }
 
