@@ -11,104 +11,84 @@ export default {
         {
           title: 'Copy',
           keys: ['meta', 'c'],
-          group: 1,
         },
         {
           title: 'Cut',
           keys: ['meta', 'x'],
-          group: 1,
         },
         {
           title: 'Paste',
           keys: ['meta', 'v'],
-          group: 1,
         },
         {
           title: 'Paste without formatting',
           keys: ['meta', 'shift', 'v'],
-          group: 1,
         },
         {
           title: 'Undo',
           keys: ['meta', 'z'],
-          group: 1,
         },
         {
           title: 'Redo',
           keys: ['meta', 'shift', 'z'],
-          group: 1,
         },
         {
           title: 'Insert or edit link',
           keys: ['meta', 'k'],
-          group: 1,
         },
         {
           title: 'Open link',
           keys: ['alt', 'enter'],
-          group: 1,
         },
         {
           title: 'Show common keyboard shortcuts',
           keys: ['meta', '/'],
-          group: 1,
         },
         {
           title: 'Save',
           // Every change is automatically saved in Drive,
           keys: ['meta', 's'],
-          group: 1,
         },
         {
           title: 'Print',
           keys: ['meta', 'p'],
-          group: 1,
         },
         {
           title: 'Open',
           keys: ['meta', 'o'],
-          group: 1,
         },
         {
           title: 'Find',
           keys: ['meta', 'f'],
-          group: 1,
         },
         {
           title: 'Find and replace',
           keys: ['meta', 'shift', 'h'],
-          group: 1,
         },
         {
           title: 'Find again',
           keys: ['meta', 'g'],
-          group: 1,
         },
         {
           title: 'Find previous',
           keys: ['meta', 'shift', 'g'],
-          group: 1,
         },
         {
           title: 'Hide the menus (compact mode)',
           keys: ['control', 'shift', 'f'],
-          group: 1,
         },
         {
           title: 'Insert page break',
           keys: ['meta', 'enter'],
-          group: 1,
         },
         // {
         //   title: 'Search the menus',
         //   keys: ['alt', '/'],
         //   // keys: ['control', 'alt', 'z'],
-        //   group: 1,
         // },
         {
           title: 'Repeat last action',
           keys: ['meta', 'y'],
-          group: 1,
         },
       ],
     },
