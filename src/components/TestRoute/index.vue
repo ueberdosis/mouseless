@@ -175,6 +175,8 @@ export default {
     },
 
     next() {
+      this.pressedResolvedKeys = []
+
       this.run.update({
         trainedIds: this.trainedIds,
         learnedIds: this.learnedIds,
