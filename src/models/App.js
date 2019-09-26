@@ -34,6 +34,18 @@ export default {
     runs() {
       return this.$db.runs.filter(run => run.appId === this.id)
     },
+
+    latestUpdatedGroup() {
+      const latestRun = collect(this.runs)
+        .sortByDesc('createdAt')
+        .first()
+
+      if (!latestRun) {
+        return null
+      }
+
+      return this.group(latestRun.groupId)
+    },
   },
 
   methods: {

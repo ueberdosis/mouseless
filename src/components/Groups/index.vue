@@ -46,6 +46,11 @@ export default {
 
   methods: {
     initSlider() {
+      const { groups, latestUpdatedGroup } = this.app
+      const initialSlide = latestUpdatedGroup
+        ? groups.findIndex(group => group.id === latestUpdatedGroup.id) || 0
+        : 0
+
       this.slider = new Swiper(this.$refs.slider, {
         init: false,
         slidesPerView: 'auto',
@@ -54,6 +59,7 @@ export default {
         mousewheel: true,
         speed: 600,
         width: 1, // why
+        initialSlide,
       })
 
       this.slider.init()
