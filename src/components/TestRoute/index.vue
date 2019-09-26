@@ -170,7 +170,14 @@ export default {
     },
 
     next() {
+      this.run.update({
+        trainedIds: this.trainedIds,
+        learnedIds: this.learnedIds,
+        failedIds: this.failedIds,
+      })
+
       if (this.finished) {
+        this.run.finish()
         console.log('FINISHED')
       } else {
         this.setShortcut()
@@ -202,6 +209,32 @@ export default {
       this.learnedIds = this.learnedIds.filter(learnedId => learnedId !== id)
       this.trainedIds = this.trainedIds.filter(trainedId => trainedId !== id)
     },
+
+    setupRun() {
+      const existingRun = collect(this.$db.runs)
+        .where('appId', this.app.id)
+        .where('groupId', this.group.id)
+        .where('finishedAt', '===', null)
+        .sortByDesc('createdAt')
+        .first()
+
+      if (existingRun) {
+        this.run = existingRun
+      } else {
+        this.run = this.$db.createRun({
+          appId: this.app.id,
+          groupId: this.group.id,
+        })
+      }
+
+      this.trainedIds = this.run.trainedIds
+      this.learnedIds = this.run.learnedIds
+      this.failedIds = this.run.failedIds
+    },
+  },
+
+  created() {
+    this.setupRun()
   },
 
   mounted() {
