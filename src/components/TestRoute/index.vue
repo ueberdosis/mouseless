@@ -22,13 +22,16 @@
             {{ currentShortcut.description }}
           </div>
 
-          <div class="test-route__keys" v-if="showKeys">
-            <key
-              v-for="(key, index) in currentShortcut.resolvedKeys"
-              :key="index"
-              :name="key"
-              :is-pressed="pressedResolvedKeys.includes(key)"
-            />
+          <div class="test-route__keys">
+            <template v-if="showKeys">
+              <key
+                v-for="(key, index) in currentShortcut.resolvedKeys"
+                :key="index"
+                :name="key"
+                :is-pressed="pressedResolvedKeys.includes(key)"
+              />
+            </template>
+            <div class="test-route__placeholder" v-else />
           </div>
         </div>
 
