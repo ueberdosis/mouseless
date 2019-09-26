@@ -22,13 +22,16 @@
             {{ currentShortcut.description }}
           </div>
 
-          <div class="test-route__keys" v-if="showKeys">
-            <key
-              v-for="(key, index) in currentShortcut.resolvedKeys"
-              :key="index"
-              :name="key"
-              :pressed="currentShortcut.resolvedKeys.includes(key) && pressedKeys.includes(key)"
-            />
+          <div class="test-route__keys">
+            <template v-if="showKeys">
+              <key
+                v-for="(key, index) in currentShortcut.resolvedKeys"
+                :key="index"
+                :name="key"
+                :is-pressed="pressedResolvedKeys.includes(key)"
+              />
+            </template>
+            <div class="test-route__placeholder" v-else />
           </div>
         </div>
 
@@ -62,7 +65,7 @@ export default {
     return {
       timeout: null,
       keyboard: new Keyboard(),
-      pressedKeys: [],
+      pressedResolvedKeys: [],
       run: null,
       trainedIds: [],
       learnedIds: [],
@@ -179,8 +182,9 @@ export default {
       })
 
       if (this.finished) {
-        this.run.finish()
         console.log('FINISHED')
+        this.run.finish()
+        this.stop()
       } else {
         this.setShortcut()
       }
@@ -240,15 +244,15 @@ export default {
   },
 
   mounted() {
-    this.keyboard.on('update', ({ keys }) => {
+    this.keyboard.on('update', () => {
       if (!this.started || this.timeout) {
         return
       }
 
-      this.pressedKeys = keys
+      this.pressedResolvedKeys = this.keyboard.resolvedKeys
     })
 
-    this.keyboard.on('shortcut', ({ event, keys }) => {
+    this.keyboard.on('shortcut', ({ event }) => {
       if (!this.started || this.timeout) {
         return
       }
@@ -258,23 +262,22 @@ export default {
         expected: this.currentShortcut.resolvedKeys,
       })
 
-      this.pressedKeys = keys
+      this.pressedResolvedKeys = this.keyboard.resolvedKeys
       event.preventDefault()
       const match = this.keyboard.is(this.currentShortcut.resolvedKeys)
       const { id } = this.currentShortcut
 
       if (match) {
         console.log('jep')
-        // this.success = true
-        // this.timeout = setTimeout(() => {
-        //   this.next()
-        // }, 1000)
-        if (this.showKeys) {
-          this.addToTrainedIds(id)
-        } else {
-          this.addToLearnedIds(id)
-        }
-        this.next()
+        this.timeout = setTimeout(() => {
+          this.timeout = null
+          if (this.showKeys) {
+            this.addToTrainedIds(id)
+          } else {
+            this.addToLearnedIds(id)
+          }
+          this.next()
+        }, 500)
       } else {
         console.log('nope')
         this.addToFailedIds(id)
@@ -286,6 +289,7 @@ export default {
   },
 
   beforeDestroy() {
+    clearTimeout(this.timeout)
     this.keyboard.destroy()
   },
 }

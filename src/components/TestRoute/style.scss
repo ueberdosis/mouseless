@@ -37,6 +37,14 @@
     margin-top: 20px;
   }
 
+  &__placeholder {
+    display: inline-flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 9px;
+    border: 3px dashed rgba($colorBlack, 0.1);
+  }
+
   &__progress {
     font-size: 14px;
     font-weight: 600;

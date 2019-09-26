@@ -19,7 +19,7 @@
     animation: start 1.1s 1 $easeInOutQuad;
   }
 
-  &.swiper-slide-active {
+  &.is-active {
     padding: 0;
     width: 250px;
   }
