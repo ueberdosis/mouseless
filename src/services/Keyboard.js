@@ -103,6 +103,12 @@ export default class Keyboard {
     return [...this.specialKeys, ...this.regularKeys]
   }
 
+  get resolvedKeys() {
+    return collect(this.constructor.resolveCodesFromKeys(this.keys))
+      .unique()
+      .toArray()
+  }
+
   get isOnlyShiftPressed() {
     return this.specialKeys.length === 1 && this.specialKeys.includes('Shift')
   }
@@ -223,11 +229,7 @@ export default class Keyboard {
 
   is(keys) {
     const checkedKeys = keys.map(key => key.toLowerCase())
-    const pressedKeys = collect(this.constructor.resolveCodesFromKeys(this.keys))
-      .unique()
-      .map(key => key.toLowerCase())
-      .toArray()
-
+    const pressedKeys = this.resolvedKeys.map(key => key.toLowerCase())
     const match1 = checkedKeys.every(key => pressedKeys.includes(key))
     const match2 = pressedKeys.every(key => checkedKeys.includes(key))
     return match1 && match2

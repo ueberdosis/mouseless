@@ -251,7 +251,10 @@ export default {
         return
       }
 
-      console.log(keys, this.currentShortcut.resolvedKeys)
+      console.log({
+        pressed: this.keyboard.resolvedKeys,
+        expected: this.currentShortcut.resolvedKeys,
+      })
 
       this.pressedKeys = keys
       event.preventDefault()
