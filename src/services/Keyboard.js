@@ -11,6 +11,8 @@ export default class Keyboard {
       code,
       ...data,
     }))
+    // TODO: this will break something
+    .filter(key => !key.code.startsWith('Numpad'))
 
   static aliases = {
     shift: 'Shift',

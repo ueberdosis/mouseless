@@ -2,7 +2,7 @@
   <div class="group" :class="{ 'has-animation': animate }">
     <div class="group__card">
       <div class="group__content">
-        <img class="group__image" src="@/assets/images/illustration.png">
+        <!-- <img class="group__image" src="@/assets/images/illustration.png"> -->
         <div class="group__title">
           {{ group.title }}
         </div>
