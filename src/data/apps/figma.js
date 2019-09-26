@@ -134,18 +134,19 @@ export default {
           title: 'Zoom Out',
           keys: ['-'],
         },
-        {
-          title: 'Zoom to 100%',
-          keys: ['0'],
-        },
-        {
-          title: 'Zoom to Fit',
-          keys: ['1'],
-        },
-        {
-          title: 'Zoom to Selection',
-          keys: ['2'],
-        },
+        // TODO:  Different on some machines
+        // {
+        //   title: 'Zoom to 100%',
+        //   keys: ['0'],
+        // },
+        // {
+        //   title: 'Zoom to Fit',
+        //   keys: ['1'],
+        // },
+        // {
+        //   title: 'Zoom to Selection',
+        //   keys: ['2'],
+        // },
         {
           title: 'Zoom to Previous Frame',
           keys: ['shift', 'n'],
