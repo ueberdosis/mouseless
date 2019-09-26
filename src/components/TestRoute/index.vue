@@ -1,12 +1,15 @@
 <template>
   <page>
-    <template v-slot:left>
+    <!-- <template v-slot:left>
       <router-link class="hover-button" :to="{ name: 'app.groups' }">
         ← Groups
       </router-link>
-    </template>
+    </template> -->
     <template v-slot:center>
-      {{ app.title }} {{ group.title }}
+      {{ app.title }}
+      <span style="opacity: 0.5">
+        {{ group.title }}
+      </span>
     </template>
     <template v-slot>
       <div class="test-route">
@@ -79,15 +82,15 @@ export default {
     },
 
     app() {
-      return this.$db.app(this.$route.params.id)
+      return this.$db.app(this.$route.params.appId)
     },
 
     group() {
-      return this.app.group(this.$route.params.group)
+      return this.app.group(this.$route.params.groupId)
     },
 
     shortcuts() {
-      return this.app.shortcutsByGroup(this.$route.params.group)
+      return this.app.shortcutsByGroup(this.$route.params.groupId)
     },
 
     unseenShortcuts() {

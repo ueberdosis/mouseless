@@ -1,5 +1,5 @@
 <template>
-  <router-link class="app-item" :to="{ name: 'app.groups', params: { id: app.id } }">
+  <router-link class="app-item" :to="{ name: 'app.groups', params: { appId: app.id } }">
     <img class="app-item__logo" :src="logo">
     <div class="app-item__content">
       <div class="app-item__title">

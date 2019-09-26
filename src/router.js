@@ -15,7 +15,7 @@ export default new Router({
       component: AppsRoute,
     },
     {
-      path: '/app/:id',
+      path: '/app/:appId',
       name: 'app',
       component: AppRoute,
       children: [
@@ -25,7 +25,7 @@ export default new Router({
           component: GroupsRoute,
         },
         {
-          path: 'groups/:group',
+          path: 'groups/:groupId',
           name: 'app.test',
           component: TestRoute,
         },

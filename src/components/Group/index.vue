@@ -50,7 +50,7 @@ export default {
       Event.emit('beforeAnimation', this.$el)
       this.$router.push({
         name: 'app.test',
-        params: { group: this.group.id },
+        params: { groupId: this.group.id },
       })
     },
   },
