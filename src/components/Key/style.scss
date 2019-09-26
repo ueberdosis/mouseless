@@ -12,10 +12,23 @@
   font-size: 26px;
   font-weight: 700;
   text-transform: uppercase;
-  transition: color 0.1s $ease, transform 0.1s $ease;
+  transition: box-shadow 0.1s $ease, transform 0.1s $ease;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.04),
+    0 2px 2px rgba(0, 0, 0, 0.04),
+    0 4px 4px rgba(0, 0, 0, 0.04),
+    0 8px 8px rgba(0, 0, 0, 0.04),
+    0 16px 16px rgba(0, 0, 0, 0.04),
+  ;
 
   &.is-pressed {
-    transform: scale(0.9);
+    transform: translateY(3px);
+    box-shadow:
+      0 1px 1px rgba(0, 0, 0, 0.03),
+      0 2px 2px rgba(0, 0, 0, 0.03),
+      0 4px 4px rgba(0, 0, 0, 0.03),
+      0 8px 8px rgba(0, 0, 0, 0.03),
+    ;
   }
 
   &:last-child {
