@@ -34,12 +34,27 @@
   }
 
   &__right {
-
+    right: 0;
+    // text-align: right;
   }
 
   &__content {
     position: relative;
     flex: 1 1 auto;
+  }
+
+  &__settings {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    fill: $colorBlack;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: fill 0.2s $ease;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
 }
