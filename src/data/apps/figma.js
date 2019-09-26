@@ -100,19 +100,19 @@ export default {
         },
         {
           title: 'Show Multiplayer Cursors',
-          keys: ['option', 'meta', '\\'],
+          keys: ['alt', 'meta', '\\'],
         },
         {
           title: 'Show Layers',
-          keys: ['option', '1'],
+          keys: ['alt', '1'],
         },
         {
           title: 'Show Components',
-          keys: ['option', '2'],
+          keys: ['alt', '2'],
         },
         {
           title: 'Show Team Library',
-          keys: ['option', '3'],
+          keys: ['alt', '3'],
         },
       ],
     },
@@ -162,14 +162,16 @@ export default {
           title: 'Next Page',
           keys: ['pagedown'],
         },
-        {
-          title: 'Find Previous Frame',
-          keys: ['fn', 'left'],
-        },
-        {
-          title: 'Find Next Frame',
-          keys: ['fn', 'right'],
-        },
+        // TODO: fn doesn't send event
+        // {
+        //   title: 'Find Previous Frame',
+        //   keys: ['fn', 'left'],
+        // },
+        // TODO: fn doesn't send event
+        // {
+        //   title: 'Find Next Frame',
+        //   keys: ['fn', 'right'],
+        // },
       ],
     },
     {
