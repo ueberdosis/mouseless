@@ -12,14 +12,14 @@ export default {
           title: 'Show/Hide UI',
           keys: ['meta', '\\'],
         },
-        // {
-        //   title: 'Pick Color',
-        //   keys: ['control', 'c'],
-        // },
-        // {
-        //   title: 'Search Menu',
-        //   keys: ['meta', '/'],
-        // },
+        {
+          title: 'Pick Color',
+          keys: ['control', 'c'],
+        },
+        {
+          title: 'Search Menu',
+          keys: ['meta', '/'],
+        },
       ],
     },
     {
