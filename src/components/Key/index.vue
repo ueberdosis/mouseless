@@ -1,5 +1,5 @@
 <template>
-  <div class="key" :class="{ 'is-active': isActive, 'is-false': isFalse, 'is-pressed': pressed }">
+  <div class="key" :class="{ 'is-pressed': isPressed }">
     {{ name | key }}
   </div>
 </template>
@@ -12,17 +12,7 @@ export default {
       type: String,
     },
 
-    isActive: {
-      default: false,
-      type: Boolean,
-    },
-
-    isFalse: {
-      default: false,
-      type: Boolean,
-    },
-
-    pressed: {
+    isPressed: {
       default: false,
       type: Boolean,
     },
