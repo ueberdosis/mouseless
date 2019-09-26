@@ -134,19 +134,18 @@ export default {
           title: 'Zoom Out',
           keys: ['-'],
         },
-        // TODO:  Different on some machines
-        // {
-        //   title: 'Zoom to 100%',
-        //   keys: ['0'],
-        // },
-        // {
-        //   title: 'Zoom to Fit',
-        //   keys: ['1'],
-        // },
-        // {
-        //   title: 'Zoom to Selection',
-        //   keys: ['2'],
-        // },
+        {
+          title: 'Zoom to 100%',
+          keys: ['shift', '0'],
+        },
+        {
+          title: 'Zoom to Fit',
+          keys: ['shift', '1'],
+        },
+        {
+          title: 'Zoom to Selection',
+          keys: ['shift', '2'],
+        },
         {
           title: 'Zoom to Previous Frame',
           keys: ['shift', 'n'],
@@ -421,15 +420,15 @@ export default {
         },
         {
           title: 'Set Opacity to 10%',
-          keys: ['shift', '1'],
+          keys: ['1'],
         },
         {
           title: 'Set Opacity to 50%',
-          keys: ['shift', '5'],
+          keys: ['5'],
         },
         {
           title: 'Set Opacity to 100%',
-          keys: ['shift', '0'],
+          keys: ['0'],
         },
       ],
     },
