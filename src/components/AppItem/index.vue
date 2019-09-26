@@ -1,8 +1,6 @@
 <template>
   <router-link class="app-item" :to="{ name: 'app.groups', params: { id: app.id } }">
-    <div class="app-item__media" :style="`background-color: ${app.color}`">
-      <img class="app-item__logo" :src="logo">
-    </div>
+    <img class="app-item__logo" :src="logo">
     <div class="app-item__content">
       <div class="app-item__title">
         {{ app.title }}
