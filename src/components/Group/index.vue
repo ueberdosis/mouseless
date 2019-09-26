@@ -1,5 +1,5 @@
 <template>
-  <div class="group">
+  <div class="group" :class="{ 'has-animation': animate }">
     <div class="group__card">
       <div class="group__content">
         <img class="group__image" src="@/assets/images/illustration.png">
@@ -35,6 +35,11 @@ export default {
     },
 
     isActive: {
+      default: false,
+      type: Boolean,
+    },
+
+    animate: {
       default: false,
       type: Boolean,
     },

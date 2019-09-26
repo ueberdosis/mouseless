@@ -9,6 +9,7 @@
           :app="app"
           :group="group"
           :is-active="slider && slider.activeIndex === index"
+          :animate="animate"
           @click.native="slider.slideTo(index)"
         />
       </div>
@@ -29,6 +30,11 @@ export default {
     app: {
       required: true,
       type: Object,
+    },
+
+    animate: {
+      default: false,
+      type: Boolean,
     },
   },
 

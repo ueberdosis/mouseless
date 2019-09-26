@@ -9,7 +9,7 @@
       {{ app.title }}
     </template>
     <template v-slot>
-      <groups :app="app" />
+      <groups :app="app" :animate="animate" />
     </template>
   </page>
 </template>
@@ -29,6 +29,7 @@ export default {
 
   data() {
     return {
+      previousRoute: null,
       overlayIsVisible: this.$route.name === 'app.groups.test',
     }
   },
@@ -36,6 +37,10 @@ export default {
   computed: {
     app() {
       return this.$db.app(this.$route.params.id)
+    },
+
+    animate() {
+      return this.previousRoute && this.previousRoute.name === 'apps'
     },
   },
 
@@ -88,7 +93,14 @@ export default {
     },
   },
 
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      vm.previousRoute = from
+    })
+  },
+
   mounted() {
+    // console.log(this.$router, this.$route)
     Event.on('beforeAnimation', this.onBeforeAnimation)
   },
 
