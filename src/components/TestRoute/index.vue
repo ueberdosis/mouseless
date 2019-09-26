@@ -145,7 +145,7 @@ export default {
           ...item,
           shortcuts: item.shortcuts
             .filter(shortcut => {
-              if (this.currentShortcut) {
+              if (item.shortcuts.length > 1 && this.currentShortcut) {
                 return shortcut.id !== this.currentShortcut.id
               }
 
