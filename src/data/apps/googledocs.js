@@ -321,15 +321,18 @@ export default {
           keys: ['control', 'alt', 'h'],
         },
         {
-          title: 'Accessibility menu (present when screen reader support is enabled)',
+          title: 'Accessibility menu',
+          description: 'Present when screen reader support is enabled',
           keys: ['control', 'alt', 'a'],
         },
         {
-          title: 'Input Tools menu (available in documents in non-Latin languages)',
+          title: 'Input Tools menu',
+          description: 'Available in documents in non-Latin languages',
           keys: ['meta', 'alt', 'shift', 'k'],
         },
         {
-          title: 'Toggle input controls (available in documents in non-Latin languages)',
+          title: 'Toggle input controls',
+          description: 'Available in documents in non-Latin languages',
           keys: ['meta', 'shift', 'k'],
         },
       ],

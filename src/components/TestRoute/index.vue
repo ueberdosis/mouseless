@@ -13,11 +13,13 @@
     </template>
     <template v-slot>
       <div class="test-route">
-        <div class="test-route__content">
+        <div class="test-route__content" v-if="started" :key="currentShortcut.id">
           <div class="test-route__title">
-            <template v-if="started">
-              {{ currentShortcut.title }}
-            </template>
+            {{ currentShortcut.title }}
+          </div>
+
+          <div class="test-route__description" v-if="currentShortcut.description">
+            {{ currentShortcut.description }}
           </div>
 
           <div class="test-route__keys" v-if="showKeys">
@@ -251,7 +253,10 @@ export default {
         return
       }
 
-      console.log(keys, this.currentShortcut.resolvedKeys)
+      console.log({
+        pressed: this.keyboard.resolvedKeys,
+        expected: this.currentShortcut.resolvedKeys,
+      })
 
       this.pressedKeys = keys
       event.preventDefault()

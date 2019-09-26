@@ -6,14 +6,22 @@ import Emitter from '@/services/Emitter'
 
 export default class Keyboard {
 
+  static blacklist = [
+    'NumpadDivide',
+    'NumpadMultiply',
+    'NumpadSubtract',
+    'NumpadAdd',
+    'NumpadDecimal',
+  ]
+
   static keymap = Object
     .entries(keymap.getKeyMap())
     .map(([code, data]) => ({
       code,
       ...data,
     }))
-    // TODO: this will break something
-    .filter(key => !key.code.startsWith('Numpad'))
+    // maybe this will break something
+    .filter(key => !this.blacklist.includes(key.code))
 
   static aliases = {
     shift: 'Shift',
@@ -93,6 +101,12 @@ export default class Keyboard {
 
   get keys() {
     return [...this.specialKeys, ...this.regularKeys]
+  }
+
+  get resolvedKeys() {
+    return collect(this.constructor.resolveCodesFromKeys(this.keys))
+      .unique()
+      .toArray()
   }
 
   get isOnlyShiftPressed() {
@@ -184,6 +198,7 @@ export default class Keyboard {
         return match
       })
       .flat()
+      .filter(key => key)
   }
 
   handleKeydown(event) {
@@ -214,11 +229,7 @@ export default class Keyboard {
 
   is(keys) {
     const checkedKeys = keys.map(key => key.toLowerCase())
-    const pressedKeys = collect(this.constructor.resolveCodesFromKeys(this.keys))
-      .unique()
-      .map(key => key.toLowerCase())
-      .toArray()
-
+    const pressedKeys = this.resolvedKeys.map(key => key.toLowerCase())
     const match1 = checkedKeys.every(key => pressedKeys.includes(key))
     const match2 = pressedKeys.every(key => checkedKeys.includes(key))
     return match1 && match2

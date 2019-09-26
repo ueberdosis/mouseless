@@ -23,7 +23,18 @@
   &__title {
     font-size: 34px;
     font-weight: 700;
-    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.5;
+    max-width: 350px;
+    margin: 6px auto 0 auto;
+  }
+
+  &__keys {
+    margin-top: 20px;
   }
 
   &__progress {
