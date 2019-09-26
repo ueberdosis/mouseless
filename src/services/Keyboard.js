@@ -6,14 +6,22 @@ import Emitter from '@/services/Emitter'
 
 export default class Keyboard {
 
+  static blacklist = [
+    'NumpadDivide',
+    'NumpadMultiply',
+    'NumpadSubtract',
+    'NumpadAdd',
+    'NumpadDecimal',
+  ]
+
   static keymap = Object
     .entries(keymap.getKeyMap())
     .map(([code, data]) => ({
       code,
       ...data,
     }))
-    // TODO: this will break something
-    .filter(key => !key.code.startsWith('Numpad'))
+    // maybe this will break something
+    .filter(key => !this.blacklist.includes(key.code))
 
   static aliases = {
     shift: 'Shift',
@@ -184,6 +192,7 @@ export default class Keyboard {
         return match
       })
       .flat()
+      .filter(key => key)
   }
 
   handleKeydown(event) {
