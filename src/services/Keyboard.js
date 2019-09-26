@@ -47,6 +47,7 @@ export default class Keyboard {
     ArrowLeft: '←',
     Enter: '↩',
     Backspace: '⌫',
+    Escape: 'Esc',
   }
 
   static formatKeyCode(name) {
