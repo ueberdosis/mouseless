@@ -32,6 +32,7 @@
 export default {
   methods: {
     reset() {
+      console.log('RESET')
       this.$db.store.set('runs', [])
     },
   },

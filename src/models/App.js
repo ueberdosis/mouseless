@@ -30,6 +30,10 @@ export default {
         .map(this.formatShortcut)
         .toArray()
     },
+
+    runs() {
+      return this.$db.runs.filter(run => run.appId === this.id)
+    },
   },
 
   methods: {
@@ -45,6 +49,13 @@ export default {
       }
 
       return group.shortcuts.map(this.formatShortcut)
+    },
+
+    latestRunByGroup(id = null) {
+      return collect(this.runs)
+        .filter(run => run.groupId === id)
+        .sortByDesc('createdAt')
+        .first()
     },
 
     formatShortcut(shortcut) {

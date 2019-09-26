@@ -9,6 +9,14 @@
         <div class="group__sub-title">
           {{ shortcuts.length }} Shortcuts
         </div>
+        <div v-if="latestRun">
+          <div v-if="finished">
+            finished
+          </div>
+          <div v-else>
+            {{ latestRun.learnedIds.length }} / {{ shortcuts.length }} learned
+          </div>
+        </div>
       </div>
       <div class="group__footer">
         <div class="group__button" @click="onClick" v-if="isActive">
@@ -48,6 +56,14 @@ export default {
   computed: {
     shortcuts() {
       return this.app.shortcutsByGroup(this.group.id)
+    },
+
+    latestRun() {
+      return this.app.latestRunByGroup(this.group.id)
+    },
+
+    finished() {
+      return this.latestRun && this.latestRun.finishedAt
     },
   },
 
