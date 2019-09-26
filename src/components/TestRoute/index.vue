@@ -1,40 +1,39 @@
 <template>
-  <div class="test-route">
-    <div class="test-route__content">
-      <div class="test-route__title">
-        <template v-if="started">
-          {{ currentShortcut.title }}
-        </template>
-        <!-- <template v-if="failed">
-          Nope :(
-        </template> -->
+  <page>
+    <template v-slot:left>
+      <router-link class="hover-button" :to="{ name: 'app.groups' }">
+        ← Groups
+      </router-link>
+    </template>
+    <template v-slot:center>
+      {{ app.title }} {{ group.title }}
+    </template>
+    <template v-slot>
+      <div class="test-route">
+        <div class="test-route__content">
+          <div class="test-route__title">
+            <template v-if="started">
+              {{ currentShortcut.title }}
+            </template>
+          </div>
+
+          <div class="test-route__keys" v-if="showKeys">
+            <key
+              v-for="(key, index) in currentShortcut.resolvedKeys"
+              :key="index"
+              :name="key"
+              :pressed="currentShortcut.resolvedKeys.includes(key) && pressedKeys.includes(key)"
+            />
+          </div>
+        </div>
+
+        <div class="test-route__footer">
+          <button class="test-route__cancel" type="button" @click="stop" />
+          {{ learnedIds.length }} / {{ shortcuts.length }}
+        </div>
       </div>
-
-      <!-- <div class="test-route__keys" v-if="started">
-        <key
-          v-for="(key, index) in mergedKeys"
-          :key="index"
-          :name="key"
-          :is-active="currentShortcut.resolvedKeys.includes(key) && keys.includes(key)"
-          :is-false="!currentShortcut.resolvedKeys.includes(key)"
-        />
-      </div> -->
-
-      <div class="test-route__keys" v-if="showKeys">
-        <key
-          v-for="(key, index) in currentShortcut.resolvedKeys"
-          :key="index"
-          :name="key"
-          :pressed="currentShortcut.resolvedKeys.includes(key) && pressedKeys.includes(key)"
-        />
-      </div>
-    </div>
-
-    <div class="test-route__footer">
-      <button class="test-route__cancel" type="button" @click="stop" />
-      {{ learnedIds.length }} / {{ shortcuts.length }}
-    </div>
-  </div>
+    </template>
+  </page>
 </template>
 
 <script>
@@ -42,10 +41,12 @@ import weighted from 'weighted'
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 import Key from '@/components/Key'
+import Page from '@/components/Page'
 
 export default {
   components: {
     Key,
+    Page,
   },
 
   data() {
@@ -75,6 +76,10 @@ export default {
 
     app() {
       return this.$db.app(this.$route.params.id)
+    },
+
+    group() {
+      return this.app.group(this.$route.params.group)
     },
 
     shortcuts() {

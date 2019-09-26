@@ -65,3 +65,51 @@ button {
   background-color: transparent;
   border: none;
 }
+
+.hover-button {
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    display: block;
+    background-color: currentColor;
+    opacity: 0;
+    border-radius: 6px;
+    transition: 0.2s $ease;
+  }
+
+  &:hover::after {
+    opacity: 0.06;
+  }
+}
+
+.route {
+  width: 100%;
+  border-radius: 4px;
+  position: absolute;
+  will-change: transform;
+  transition:
+    opacity 0.7s $easeInOutQuint,
+    transform 0.7s $easeInOutQuint
+  ;
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  transform: translate(100%, 0);
+}
+
+.slide-right-enter,
+.slide-left-leave-active {
+  transform: scale(0.9);
+  opacity: 0.5;
+}
+
+.slide-right-enter-active {
+  z-index: -1;
+}

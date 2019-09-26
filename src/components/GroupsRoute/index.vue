@@ -1,17 +1,17 @@
 <template>
-  <div class="groups-route">
-    <groups :app="app" />
-    <div class="groups-route__sub">
-      <transition @enter="enter" @leave="leave">
-        <router-view />
-      </transition>
-    </div>
-    <div
-      class="groups-route__overlay"
-      :class="{ 'is-visible': overlayIsVisible }"
-      :style="`background-color: ${app.color}`"
-    />
-  </div>
+  <page>
+    <template v-slot:left>
+      <router-link class="hover-button" :to="{ name: 'apps' }">
+        ← Apps
+      </router-link>
+    </template>
+    <template v-slot:center>
+      {{ app.title }}
+    </template>
+    <template v-slot>
+      <groups :app="app" />
+    </template>
+  </page>
 </template>
 
 <script>
@@ -19,10 +19,12 @@ import ramjet from 'ramjet'
 import quintInOut from 'eases/quint-in-out'
 import Event from '@/services/Event'
 import Groups from '@/components/Groups'
+import Page from '@/components/Page'
 
 export default {
   components: {
     Groups,
+    Page,
   },
 
   data() {

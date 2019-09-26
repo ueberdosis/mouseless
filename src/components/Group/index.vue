@@ -44,7 +44,7 @@ export default {
     onClick() {
       Event.emit('beforeAnimation', this.$el)
       this.$router.push({
-        name: 'app.groups.test',
+        name: 'app.test',
         params: { group: this.group.id },
       })
     },

@@ -23,13 +23,11 @@ export default new Router({
           path: 'groups',
           name: 'app.groups',
           component: GroupsRoute,
-          children: [
-            {
-              path: ':group',
-              name: 'app.groups.test',
-              component: TestRoute,
-            },
-          ],
+        },
+        {
+          path: 'groups/:group',
+          name: 'app.test',
+          component: TestRoute,
         },
       ],
     },

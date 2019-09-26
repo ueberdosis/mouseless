@@ -1,0 +1,45 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #FDD231;
+  border-radius: 30px;
+  overflow: hidden;
+
+  &__header {
+    position: relative;
+    flex: 0 0 auto;
+    height: 37px;
+  }
+
+  &__left,
+  &__center,
+  &__right {
+    position: absolute;
+    top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 8px;
+  }
+
+  &__left {
+    left: 76px;
+    z-index: 1;
+  }
+
+  &__center {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__right {
+
+  }
+
+  &__content {
+    position: relative;
+    flex: 1 1 auto;
+  }
+
+}

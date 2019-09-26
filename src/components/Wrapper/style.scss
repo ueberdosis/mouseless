@@ -19,29 +19,3 @@
     -webkit-app-region: drag;
   }
 }
-
-.route {
-  width: 100%;
-  border-radius: 4px;
-  position: absolute;
-  will-change: transform;
-  transition:
-    opacity 0.7s $easeInOutQuint,
-    transform 0.7s $easeInOutQuint
-  ;
-}
-
-.slide-left-enter,
-.slide-right-leave-active {
-  transform: translate(100%, 0);
-}
-
-.slide-right-enter,
-.slide-left-leave-active {
-  transform: scale(0.9);
-  opacity: 0.5;
-}
-
-.slide-right-enter-active {
-  z-index: -1;
-}
