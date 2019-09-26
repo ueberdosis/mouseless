@@ -28,8 +28,12 @@
         </div>
 
         <div class="test-route__footer">
-          <button class="test-route__cancel" type="button" @click="stop" />
-          {{ learnedIds.length }} / {{ shortcuts.length }}
+          <div class="test-route__progress">
+            {{ learnedIds.length }} / {{ shortcuts.length }}
+          </div>
+          <button class="test-route__cancel" type="button" @click="stop">
+            Stop
+          </button>
         </div>
       </div>
     </template>
@@ -175,11 +179,7 @@ export default {
     },
 
     stop() {
-      // this.$router.push({ name: 'app.groups' })
-    },
-
-    finish() {
-      // this.$router.push({ name: 'apps' })
+      this.$router.push({ name: 'app.groups' })
     },
 
     addToTrainedIds(id) {

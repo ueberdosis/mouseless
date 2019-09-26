@@ -1,8 +1,6 @@
 .test-route {
   display: flex;
   flex-direction: column;
-  // background-color: $colorBlack;
-  // color: $colorWhite;
   padding: 36px;
   height: 100%;
   border-radius: 6px;
@@ -16,6 +14,9 @@
   }
 
   &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex: 0 0 auto;
   }
 
@@ -25,27 +26,21 @@
     margin-bottom: 20px;
   }
 
+  &__progress {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
   &__cancel {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: $colorWhite;
-    transition: transform 0.2s $ease;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 8px;
+    background-color: rgba($colorBlack, 0.06);
+    border-radius: 6px;
+    transition: background-color 0.2s $ease;
 
     &:hover {
-      transform: scale(1.1);
-    }
-
-    &::after {
-      content: '';
-      background-color: $colorBlack;
-      display: block;
-      width: 14px;
-      height: 14px;
-      border-radius: 2px;
+      background-color: rgba($colorBlack, 0.08);
     }
   }
 }
