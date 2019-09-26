@@ -233,7 +233,7 @@ export default {
         })
       }
 
-      this.trainedIds = this.run.trainedIds
+      this.trainedIds = [] // don't restore trained ids
       this.learnedIds = this.run.learnedIds
       this.failedIds = this.run.failedIds
     },
