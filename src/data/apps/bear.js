@@ -262,7 +262,7 @@ export default {
         },
         {
           title: 'Restore selected note',
-          keys: ['Shift', 'Meta', 'R'],
+          keys: ['Shift', 'Meta', 'r'],
         },
         {
           title: 'Pin/unpin selected note',
