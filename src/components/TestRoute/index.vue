@@ -23,15 +23,13 @@
           </div>
 
           <div class="test-route__keys">
-            <template v-if="showKeys">
-              <key
-                v-for="(key, index) in currentShortcut.resolvedKeys"
-                :key="index"
-                :name="key"
-                :is-pressed="pressedResolvedKeys.includes(key)"
-              />
-            </template>
-            <div class="test-route__placeholder" v-else />
+            <key
+              v-for="(key, index) in currentShortcut.resolvedKeys"
+              :key="index"
+              :name="key"
+              :is-pressed="pressedResolvedKeys.includes(key)"
+              :is-ghost="hideKeys"
+            />
           </div>
         </div>
 
@@ -75,15 +73,15 @@ export default {
   },
 
   computed: {
-    showKeys() {
+    hideKeys() {
       if (!this.started) {
         return false
       }
 
       const { id } = this.currentShortcut
-      const showKeys = !this.trainedIds.includes(id) && !this.learnedIds.includes(id)
+      const hideKeys = this.trainedIds.includes(id) || this.learnedIds.includes(id)
 
-      return showKeys
+      return hideKeys
     },
 
     app() {
@@ -273,10 +271,10 @@ export default {
         console.log('jep')
         this.timeout = setTimeout(() => {
           this.timeout = null
-          if (this.showKeys) {
-            this.addToTrainedIds(id)
-          } else {
+          if (this.hideKeys) {
             this.addToLearnedIds(id)
+          } else {
+            this.addToTrainedIds(id)
           }
           this.next()
         }, 500)

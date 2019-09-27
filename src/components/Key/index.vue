@@ -1,5 +1,5 @@
 <template>
-  <div class="key" :class="{ 'is-pressed': isPressed }">
+  <div class="key" :class="{ 'is-pressed': isPressed, 'is-ghost': isGhost }">
     <div class="key__card">
       {{ name | key }}
     </div>
@@ -18,6 +18,11 @@ export default {
     },
 
     isPressed: {
+      default: false,
+      type: Boolean,
+    },
+
+    isGhost: {
       default: false,
       type: Boolean,
     },
