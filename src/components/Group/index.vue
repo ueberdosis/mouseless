@@ -20,7 +20,7 @@
       </div>
       <div class="group__footer">
         <div class="group__button" @click="onClick" v-if="isActive">
-          Training
+          Play
         </div>
       </div>
     </div>
