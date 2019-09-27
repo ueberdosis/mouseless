@@ -112,11 +112,11 @@ export default {
         },
         {
           title: 'Move line up',
-          keys: ['Meta', 'Alt', 'Up'],
+          keys: ['Meta', 'Alt', 'ArrowUp'],
         },
         {
           title: 'Move line down',
-          keys: ['Meta', 'Alt', 'Down'],
+          keys: ['Meta', 'Alt', 'ArrowDown'],
         },
       ],
     },
@@ -306,11 +306,11 @@ export default {
         },
         {
           title: 'Navigate back in visualized notes history',
-          keys: ['Alt', 'Meta', 'Left'],
+          keys: ['Alt', 'Meta', 'ArrowLeft'],
         },
         {
           title: 'Navigate forward in visualized notes history',
-          keys: ['Alt', 'Meta', 'Right'],
+          keys: ['Alt', 'Meta', 'ArrowRight'],
         },
       ],
     },
