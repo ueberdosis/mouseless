@@ -13,30 +13,32 @@
     </template>
     <template v-slot>
       <div class="test-route">
-        <div
-          class="test-route__content"
-          :class="{ 'is-failed': isFailed }"
-          v-if="started"
-          :key="currentShortcut.id"
-        >
-          <div class="test-route__title">
-            {{ currentShortcut.title }}
-          </div>
+        <transition name="shortcut" mode="out-in">
+          <div
+            class="test-route__content"
+            :class="{ 'is-failed': isFailed }"
+            v-if="started"
+            :key="currentShortcut.id"
+          >
+            <div class="test-route__title">
+              {{ currentShortcut.title }}
+            </div>
 
-          <div class="test-route__description" v-if="currentShortcut.description">
-            {{ currentShortcut.description }}
-          </div>
+            <div class="test-route__description" v-if="currentShortcut.description">
+              {{ currentShortcut.description }}
+            </div>
 
-          <div class="test-route__keys">
-            <key
-              v-for="(key, index) in currentShortcut.resolvedKeys"
-              :key="index"
-              :name="key"
-              :is-pressed="pressedResolvedKeys.includes(key)"
-              :is-ghost="isTest && !success"
-            />
+            <div class="test-route__keys">
+              <key
+                v-for="(key, index) in currentShortcut.resolvedKeys"
+                :key="index"
+                :name="key"
+                :is-pressed="pressedResolvedKeys.includes(key)"
+                :is-ghost="isTest && !success"
+              />
+            </div>
           </div>
-        </div>
+        </transition>
 
         <div class="test-route__footer">
           <div class="test-route__progress">

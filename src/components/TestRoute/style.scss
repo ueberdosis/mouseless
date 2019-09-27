@@ -16,6 +16,21 @@
   }
 }
 
+.shortcut-enter-active,
+.shortcut-leave-active {
+  transition: all 0.2s $easeInOutQuad;
+}
+
+.shortcut-enter {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.shortcut-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
 .test-route {
   display: flex;
   flex-direction: column;
