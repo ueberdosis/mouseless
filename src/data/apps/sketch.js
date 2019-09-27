@@ -410,7 +410,7 @@ export default {
         },
         {
           title: 'Align right',
-          keys: ['Shift', 'Meta', '{'],
+          keys: ['Shift', 'Meta', '}'],
         },
         {
           title: 'Emoji & symbols',

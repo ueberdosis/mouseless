@@ -338,7 +338,7 @@ export default {
         },
         {
           title: 'Frame Selection',
-          keys: ['Shift', 'Meta', 'g'],
+          keys: ['Alt', 'Meta', 'g'],
         },
         {
           title: 'Show/Hide Selection',
@@ -389,7 +389,7 @@ export default {
         },
         {
           title: 'Paste Properties',
-          keys: ['Shift', 'Meta', 'v'],
+          keys: ['Alt', 'Meta', 'v'],
         },
       ],
     },
