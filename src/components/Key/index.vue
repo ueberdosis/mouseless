@@ -1,6 +1,11 @@
 <template>
   <div class="key" :class="{ 'is-pressed': isPressed }">
-    {{ name | key }}
+    <div class="key__card">
+      {{ name | key }}
+    </div>
+    <div class="key__name" v-if="showName">
+      {{ name }}
+    </div>
   </div>
 </template>
 
@@ -15,6 +20,13 @@ export default {
     isPressed: {
       default: false,
       type: Boolean,
+    },
+  },
+
+  computed: {
+    showName() {
+      const keys = ['Shift', 'Control', 'Alt', 'Meta', 'Enter', 'Backspace']
+      return keys.includes(this.name)
     },
   },
 }
