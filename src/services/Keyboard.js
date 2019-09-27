@@ -102,18 +102,6 @@ export default class Keyboard {
       .toArray()
   }
 
-  get isOnlyShiftPressed() {
-    return this.specialKeys.length === 1 && this.specialKeys.includes('Shift')
-  }
-
-  get isOnlyAltPressed() {
-    return this.specialKeys.length === 1 && this.specialKeys.includes('Alt')
-  }
-
-  get isShiftAndAltPressed() {
-    return this.specialKeys.includes('Shift') && this.specialKeys.includes('Alt')
-  }
-
   getKeyValue(event) {
     const key = this.constructor.keymap.find(item => item.code === event.code)
 
@@ -123,15 +111,15 @@ export default class Keyboard {
 
     let { value } = key
 
-    if (this.isOnlyShiftPressed) {
+    if (this.specialKeys.length === 1 && this.specialKeys.includes('Shift')) {
       value = key.withShift
     }
 
-    if (this.isOnlyAltPressed) {
+    if (this.specialKeys.length === 1 && this.specialKeys.includes('Alt')) {
       value = key.withAltGr
     }
 
-    if (this.isShiftAndAltPressed) {
+    if (this.specialKeys.includes('Shift') && this.specialKeys.includes('Alt')) {
       value = key.withShiftAltGr
     }
 
