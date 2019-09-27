@@ -243,7 +243,7 @@ export default {
         },
         {
           title: 'Finish editing',
-          keys: ['esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Focus X position input field in the Inspector',
@@ -304,7 +304,7 @@ export default {
         },
         {
           title: 'Return to instance',
-          keys: ['meta', 'esc'],
+          keys: ['meta', 'Escape'],
         },
         {
           title: 'Union multiple layers',
@@ -457,7 +457,7 @@ export default {
         },
         {
           title: 'Selects parent group',
-          keys: ['esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Bring forward',
@@ -578,7 +578,7 @@ export default {
         },
         {
           title: 'Clear change',
-          keys: ['esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Increase value by 1',

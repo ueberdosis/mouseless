@@ -310,7 +310,7 @@ export default {
         },
         {
           title: 'Select None',
-          keys: ['esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Select Child',

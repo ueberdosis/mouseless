@@ -146,7 +146,7 @@ export default {
       shortcuts: [
         {
           title: 'Clear selected blocks',
-          keys: ['esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Delete selected blocks',

@@ -255,8 +255,8 @@ export default {
         // TODO: Two bindings
         // {
         //   title: 'Close drawing editor',
-        //   keys: ['meta', 'esc'],
-        //   keys: ['shift', 'esc'],
+        //   keys: ['meta', 'Escape'],
+        //   keys: ['shift', 'Escape'],
         // },
       ],
     },
