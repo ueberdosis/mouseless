@@ -278,7 +278,7 @@ export default {
       this.pressedResolvedKeys = this.keyboard.resolvedKeys
     })
 
-    this.keyboard.on('shortcut', ({ event }) => {
+    this.keyboard.on('shortcut', event => {
       if (!this.started || this.timeout) {
         return
       }
