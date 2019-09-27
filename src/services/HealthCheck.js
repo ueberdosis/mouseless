@@ -26,20 +26,16 @@ export default new class {
     })
   }
 
-  findDuplicatesInArray(items = []) {
-    const object = {}
+  findDuplicatesInArray(data = []) {
     const result = []
 
-    items.forEach(item => {
-      if (!object[item]) { object[item] = 0 }
-      object[item] += 1
-    })
-
-    for (const prop in object) {
-      if (object[prop] >= 2) {
-        result.push(prop)
+    data.forEach((element, index) => {
+      if (data.indexOf(element, index + 1) > -1) {
+        if (result.indexOf(element) === -1) {
+          result.push(element)
+        }
       }
-    }
+    })
 
     return result
   }
