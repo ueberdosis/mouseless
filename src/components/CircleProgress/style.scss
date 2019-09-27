@@ -1,0 +1,28 @@
+.c-circle-progress {
+
+  display: inline-flex;
+  position: relative;
+
+	&__svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		fill: transparent;
+	}
+
+	&__circle {
+		stroke: rgba($colorBlack, 0.2);
+	}
+
+	&__progress {
+		stroke: $colorBlack;
+    transition:
+      stroke-dashoffset 0.5s $ease,
+      stroke-dasharray 0.5s $ease,
+      stroke 0.5s $ease,
+    ;
+	}
+
+}
