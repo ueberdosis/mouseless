@@ -13,7 +13,12 @@
     </template>
     <template v-slot>
       <div class="test-route">
-        <div class="test-route__content" v-if="started" :key="currentShortcut.id">
+        <div
+          class="test-route__content"
+          :class="{ 'is-failed': isFailed }"
+          v-if="started"
+          :key="currentShortcut.id"
+        >
           <div class="test-route__title">
             {{ currentShortcut.title }}
           </div>
@@ -28,7 +33,7 @@
               :key="index"
               :name="key"
               :is-pressed="pressedResolvedKeys.includes(key)"
-              :is-ghost="hideKeys"
+              :is-ghost="isTest && !success"
             />
           </div>
         </div>
@@ -61,6 +66,8 @@ export default {
 
   data() {
     return {
+      success: false,
+      isFailed: false,
       timeout: null,
       keyboard: new Keyboard(),
       pressedResolvedKeys: [],
@@ -73,15 +80,19 @@ export default {
   },
 
   computed: {
-    hideKeys() {
+    isTest() {
       if (!this.started) {
         return false
       }
 
       const { id } = this.currentShortcut
-      const hideKeys = this.trainedIds.includes(id) || this.learnedIds.includes(id)
+      const isTest = this.trainedIds.includes(id) || this.learnedIds.includes(id)
 
-      return hideKeys
+      return isTest
+    },
+
+    isTraining() {
+      return !this.isTest
     },
 
     app() {
@@ -173,6 +184,7 @@ export default {
     },
 
     next() {
+      this.success = false
       this.pressedResolvedKeys = []
 
       this.run.update({
@@ -182,7 +194,6 @@ export default {
       })
 
       if (this.finished) {
-        console.log('FINISHED')
         this.run.finish()
         this.stop()
       } else {
@@ -237,6 +248,13 @@ export default {
       this.learnedIds = this.run.learnedIds
       this.failedIds = this.run.failedIds
     },
+
+    startFailedAnimation() {
+      this.isFailed = true
+      this.failedTimeout = setTimeout(() => {
+        this.isFailed = false
+      }, 500)
+    },
   },
 
   created() {
@@ -264,24 +282,29 @@ export default {
 
       this.pressedResolvedKeys = this.keyboard.resolvedKeys
       event.preventDefault()
-      const match = this.keyboard.is(this.currentShortcut.resolvedKeys)
+      const success = this.keyboard.is(this.currentShortcut.resolvedKeys)
       const { id } = this.currentShortcut
 
-      if (match) {
+      if (success) {
         console.log('jep')
+        this.success = true
         this.timeout = setTimeout(() => {
           this.timeout = null
-          if (this.hideKeys) {
+          if (this.isTest) {
             this.addToLearnedIds(id)
           } else {
             this.addToTrainedIds(id)
           }
           this.next()
-        }, 500)
+        }, 1000)
       } else {
         console.log('nope')
-        this.addToFailedIds(id)
-        this.next()
+        if (this.isTraining) {
+          this.startFailedAnimation()
+        } else {
+          this.addToFailedIds(id)
+          this.next()
+        }
       }
     })
 
