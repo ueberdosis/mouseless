@@ -175,14 +175,7 @@ export default class Keyboard {
           return ['Shift', 'Alt', match.value]
         }
 
-        // f1-f20
-        match = this.keymap.find(item => item.code.toLowerCase() === key.toLowerCase())
-
-        if (match) {
-          return [match.code]
-        }
-
-        return match
+        return key
       })
       .flat()
       .filter(key => key)
