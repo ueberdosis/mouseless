@@ -352,7 +352,7 @@ export default {
         },
         {
           title: 'Enter fullscreen',
-          keys: ['Control', 'Meta', 'F'],
+          keys: ['Control', 'Meta', 'f'],
         },
         {
           title: 'Open main window',

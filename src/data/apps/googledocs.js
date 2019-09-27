@@ -394,7 +394,7 @@ export default {
         },
         {
           title: 'Open spelling/grammar',
-          keys: ['Meta', 'Alt', 'X'],
+          keys: ['Meta', 'Alt', 'x'],
         },
         {
           title: 'Open dictionary',

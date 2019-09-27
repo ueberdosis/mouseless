@@ -253,7 +253,7 @@ export default {
         // TODO: Multiple directions
         // {
         //   title: 'View and select an emoji reaction',
-        //   keys: ['E' then 1-9],
+        //   keys: ['e' then 1-9],
         // },
       ],
     },
