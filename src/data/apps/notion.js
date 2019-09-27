@@ -10,27 +10,27 @@ export default {
       shortcuts: [
         {
           title: 'Create a new page',
-          keys: ['meta', 'n'],
+          keys: ['Meta', 'n'],
         },
         {
           title: 'Open a new window',
-          keys: ['meta', 'shift', 'n'],
+          keys: ['Meta', 'Shift', 'n'],
         },
         {
           title: 'Open search',
-          keys: ['meta', 'o'],
+          keys: ['Meta', 'o'],
         },
         {
           title: 'Go back a page',
-          keys: ['meta', '['],
+          keys: ['Meta', '['],
         },
         {
           title: 'Go forward a page',
-          keys: ['meta', ']'],
+          keys: ['Meta', ']'],
         },
         {
           title: 'Switch to dark mode',
-          keys: ['meta', 'shift', 'l'],
+          keys: ['Meta', 'Shift', 'l'],
         },
       ],
     },
@@ -41,39 +41,39 @@ export default {
       shortcuts: [
         {
           title: 'Create a line break within a block of text',
-          keys: ['shift', 'enter'],
+          keys: ['Shift', 'Enter'],
         },
         {
           title: 'Create a comment',
-          keys: ['meta', 'shift', 'm'],
+          keys: ['Meta', 'Shift', 'm'],
         },
         {
           title: 'Bold text',
-          keys: ['meta', 'b'],
+          keys: ['Meta', 'b'],
         },
         {
           title: 'Italicize text',
-          keys: ['meta', 'i'],
+          keys: ['Meta', 'i'],
         },
         {
           title: 'Strikethrough text',
-          keys: ['meta', 'shift', 's'],
+          keys: ['Meta', 'Shift', 's'],
         },
         {
           title: 'Add a link',
-          keys: ['meta', 'k'],
+          keys: ['Meta', 'k'],
         },
         {
           title: 'Inline code',
-          keys: ['meta', 'e'],
+          keys: ['Meta', 'e'],
         },
         {
           title: 'Indent',
-          keys: ['tab'],
+          keys: ['Tab'],
         },
         {
           title: 'Un-indent',
-          keys: ['shift', 'tab'],
+          keys: ['Shift', 'Tab'],
         },
       ],
     },
@@ -84,43 +84,43 @@ export default {
       shortcuts: [
         {
           title: 'Create text',
-          keys: ['meta', 'alt', '0'],
+          keys: ['Meta', 'Alt', '0'],
         },
         {
           title: 'Create an H1 heading',
-          keys: ['meta', 'alt', '1'],
+          keys: ['Meta', 'Alt', '1'],
         },
         {
           title: 'Create an H2 heading',
-          keys: ['meta', 'alt', '2'],
+          keys: ['Meta', 'Alt', '2'],
         },
         {
           title: 'Create an H3 heading',
-          keys: ['meta', 'alt', '3'],
+          keys: ['Meta', 'Alt', '3'],
         },
         {
           title: 'Create a to-do checkbox',
-          keys: ['meta', 'alt', '4'],
+          keys: ['Meta', 'Alt', '4'],
         },
         {
           title: 'Create a bullet list',
-          keys: ['meta', 'alt', '5'],
+          keys: ['Meta', 'Alt', '5'],
         },
         {
           title: 'Create a numbered list',
-          keys: ['meta', 'alt', '6'],
+          keys: ['Meta', 'Alt', '6'],
         },
         {
           title: 'Created a toggle list',
-          keys: ['meta', 'alt', '7'],
+          keys: ['Meta', 'Alt', '7'],
         },
         {
           title: 'Create a code block',
-          keys: ['meta', 'alt', '8'],
+          keys: ['Meta', 'Alt', '8'],
         },
         {
           title: 'Create a new page',
-          keys: ['meta', 'alt', '9'],
+          keys: ['Meta', 'Alt', '9'],
         },
       ],
     },
@@ -131,11 +131,11 @@ export default {
       shortcuts: [
         {
           title: 'Zoom in',
-          keys: ['meta', '+'],
+          keys: ['Meta', '+'],
         },
         {
           title: 'Zoom out',
-          keys: ['meta', '-'],
+          keys: ['Meta', '-'],
         },
       ],
     },
@@ -150,23 +150,23 @@ export default {
         },
         {
           title: 'Delete selected blocks',
-          keys: ['backspace'],
+          keys: ['Backspace'],
         },
         {
           title: 'Select the block your cursor is in',
-          keys: ['meta', 'a'],
+          keys: ['Meta', 'a'],
         },
         {
           title: 'Open a selected image in full-screen',
-          keys: ['space'],
+          keys: ['Space'],
         },
         {
           title: 'Expand your selection up',
-          keys: ['shift', 'up'],
+          keys: ['Shift', 'ArrowUp'],
         },
         {
           title: 'Expand your selection down',
-          keys: ['shift', 'down'],
+          keys: ['Shift', 'ArrowDown'],
         },
       ],
     },
@@ -177,11 +177,11 @@ export default {
       shortcuts: [
         {
           title: 'Move a selected block up',
-          keys: ['meta', 'shift', 'up'],
+          keys: ['Meta', 'Shift', 'ArrowUp'],
         },
         {
           title: 'Move a selected block down',
-          keys: ['meta', 'shift', 'down'],
+          keys: ['Meta', 'Shift', 'ArrowDown'],
         },
       ],
     },
@@ -192,27 +192,27 @@ export default {
       shortcuts: [
         {
           title: 'Edit text inside a selected block',
-          keys: ['enter'],
+          keys: ['Enter'],
         },
         {
           title: 'Modify the current block',
-          keys: ['meta', 'enter'],
+          keys: ['Meta', 'Enter'],
         },
         {
           title: 'Change selected blocks',
-          keys: ['meta', '/'],
+          keys: ['Meta', '/'],
         },
         {
           title: 'Duplicate the selected blocks',
-          keys: ['meta', 'd'],
+          keys: ['Meta', 'd'],
         },
         {
           title: 'Expand or close all toggles in a toggle list',
-          keys: ['meta', 'alt', 't'],
+          keys: ['Meta', 'Alt', 't'],
         },
         {
           title: 'Apply the last text or highlight color you used',
-          keys: ['meta', 'shift', 'h'],
+          keys: ['Meta', 'Shift', 'h'],
         },
       ],
     },

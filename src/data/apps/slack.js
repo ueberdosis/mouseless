@@ -10,75 +10,75 @@ export default {
       shortcuts: [
         {
           title: 'Quick Switcher',
-          keys: ['meta', 'k'],
+          keys: ['Meta', 'k'],
         },
         {
           title: 'Navigate by section',
-          keys: ['f6'],
+          keys: ['F6'],
         },
         {
           title: 'Open Direct messages menu',
-          keys: ['meta', 'shift', 'k'],
+          keys: ['Meta', 'Shift', 'k'],
         },
         {
           title: 'Browse all channels',
-          keys: ['meta', 'shift', 'l'],
+          keys: ['Meta', 'Shift', 'l'],
         },
         {
           title: 'Open the Threads view',
-          keys: ['meta', 'shift', 't'],
+          keys: ['Meta', 'Shift', 't'],
         },
         {
           title: 'Previous unread channel or DM',
-          keys: ['alt', 'shift', 'up'],
+          keys: ['Alt', 'Shift', 'ArrowUp'],
         },
         {
           title: 'Next unread channel or DM',
-          keys: ['alt', 'shift', 'down'],
+          keys: ['Alt', 'Shift', 'ArrowDown'],
         },
         {
           title: 'Previous channel or DM visited',
-          keys: ['meta', '['],
+          keys: ['Meta', '['],
         },
         {
           title: 'Next channel or DM visited',
-          keys: ['meta', ']'],
+          keys: ['Meta', ']'],
         },
         {
           title: 'Preferences',
-          keys: ['meta', ','],
+          keys: ['Meta', ','],
         },
         {
           title: 'Open or close right pane',
-          keys: ['meta', '.'],
+          keys: ['Meta', '.'],
         },
         {
           title: 'Channel info pane',
-          keys: ['meta', 'shift', 'i'],
+          keys: ['Meta', 'Shift', 'i'],
         },
         {
           title: 'Activity',
-          keys: ['meta', 'shift', 'm'],
+          keys: ['Meta', 'Shift', 'm'],
         },
         {
           title: 'Directory',
-          keys: ['meta', 'shift', 'e'],
+          keys: ['Meta', 'Shift', 'e'],
         },
         {
           title: 'Starred items',
-          keys: ['meta', 'shift', 's'],
+          keys: ['Meta', 'Shift', 's'],
         },
         {
           title: 'Search current channel or conversation',
-          keys: ['meta', 'f'],
+          keys: ['Meta', 'f'],
         },
         {
           title: 'Open previous search',
-          keys: ['meta', 'g'],
+          keys: ['Meta', 'g'],
         },
         {
           title: 'Toggle full screen view',
-          keys: ['control', 'meta', 'f'],
+          keys: ['Control', 'Meta', 'f'],
         },
       ],
     },
@@ -89,23 +89,23 @@ export default {
       shortcuts: [
         {
           title: 'Open All unread view',
-          keys: ['meta', 'shift', 'a'],
+          keys: ['Meta', 'Shift', 'a'],
         },
         {
           title: 'Previous channel',
-          keys: ['up'],
+          keys: ['ArrowUp'],
         },
         {
           title: 'Next channel',
-          keys: ['down'],
+          keys: ['ArrowDown'],
         },
         {
           title: 'Open channel sections',
-          keys: ['right'],
+          keys: ['ArrowRight'],
         },
         {
           title: 'Collapse channel sections',
-          keys: ['left'],
+          keys: ['ArrowLeft'],
         },
         {
           title: 'Toggle current channel read or unread',
@@ -120,23 +120,23 @@ export default {
       shortcuts: [
         {
           title: 'Switch to previous workspace',
-          keys: ['meta', 'shift', '['],
+          keys: ['Meta', 'Shift', '['],
         },
         {
           title: 'Switch to next workspace',
-          keys: ['meta', 'shift', ']'],
+          keys: ['Meta', 'Shift', ']'],
         },
         // {
         //   title: 'Switch to a specific workspace (see assigned number under the workspace icon in your Slack app)',
-        //   keys: ['meta', [number]],
+        //   keys: ['Meta', [number]],
         // },
         {
           title: 'Switch to workspace #1',
-          keys: ['meta', '1'],
+          keys: ['Meta', '1'],
         },
         {
           title: 'Switch to workspace #2',
-          keys: ['meta', '2'],
+          keys: ['Meta', '2'],
         },
       ],
     },
@@ -147,11 +147,11 @@ export default {
       shortcuts: [
         {
           title: 'Mark all messages in current channel or DM as read',
-          keys: ['escape'],
+          keys: ['Escape'],
         },
         {
           title: 'Mark all messages as read',
-          keys: ['shift', 'escape'],
+          keys: ['Shift', 'Escape'],
         },
       ],
     },
@@ -163,55 +163,55 @@ export default {
         {
           title: 'Edit your last message',
           // in empty message field
-          keys: ['up'],
+          keys: ['ArrowUp'],
         },
         {
           title: 'Select text to beginning of current line',
-          keys: ['shift', 'up'],
+          keys: ['Shift', 'ArrowUp'],
         },
         {
           title: 'Select text to end of current line',
-          keys: ['shift', 'down'],
+          keys: ['Shift', 'ArrowDown'],
         },
         {
           title: 'Create a new line in your message',
-          keys: ['shift', 'enter'],
+          keys: ['Shift', 'Enter'],
         },
         {
           title: 'Add emoji reactions to a message',
-          keys: ['meta', 'shift', '\\'],
+          keys: ['Meta', 'Shift', '\\'],
         },
         {
           title: 'Bold selected text',
-          keys: ['meta', 'b'],
+          keys: ['Meta', 'b'],
         },
         {
           title: 'Italicise selected text',
-          keys: ['meta', 'i'],
+          keys: ['Meta', 'i'],
         },
         {
           title: 'Cross out selected text',
-          keys: ['meta', 'shift', 'x'],
+          keys: ['Meta', 'Shift', 'x'],
         },
         {
           title: 'Quote selected text',
-          keys: ['meta', 'shift', '>'],
+          keys: ['Meta', 'Shift', '>'],
         },
         {
           title: 'Codeblock selected text',
-          keys: ['meta', 'shift', 'c'],
+          keys: ['Meta', 'Shift', 'c'],
         },
         {
           title: 'Turn selected text into a numbered list',
-          keys: ['meta', 'shift', '7'],
+          keys: ['Meta', 'Shift', '7'],
         },
         {
           title: 'Turn selected text into a bullet-point list',
-          keys: ['meta', 'shift', '8'],
+          keys: ['Meta', 'Shift', '8'],
         },
         {
           title: 'Set or edit your status',
-          keys: ['meta', 'shift', 'y'],
+          keys: ['Meta', 'Shift', 'y'],
         },
       ],
     },
@@ -222,11 +222,11 @@ export default {
       shortcuts: [
         {
           title: 'Upload file',
-          keys: ['meta', 'u'],
+          keys: ['Meta', 'u'],
         },
         {
           title: 'Create new snippet',
-          keys: ['meta', 'shift', 'enter'],
+          keys: ['Meta', 'Shift', 'Enter'],
         },
       ],
     },

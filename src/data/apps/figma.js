@@ -10,15 +10,15 @@ export default {
       shortcuts: [
         {
           title: 'Show/Hide UI',
-          keys: ['meta', '\\'],
+          keys: ['Meta', '\\'],
         },
         {
           title: 'Pick Color',
-          keys: ['control', 'c'],
+          keys: ['Control', 'c'],
         },
         {
           title: 'Search Menu',
-          keys: ['meta', '/'],
+          keys: ['Meta', '/'],
         },
       ],
     },
@@ -41,7 +41,7 @@ export default {
         },
         {
           title: 'Pencil Tool',
-          keys: ['shift', 'p'],
+          keys: ['Shift', 'p'],
         },
         {
           title: 'Text Tool',
@@ -61,7 +61,7 @@ export default {
         },
         {
           title: 'Arrow Tool',
-          keys: ['shift', 'l'],
+          keys: ['Shift', 'l'],
         },
         {
           title: 'Add/Show Comments',
@@ -80,39 +80,39 @@ export default {
       shortcuts: [
         {
           title: 'Rulers',
-          keys: ['shift', 'r'],
+          keys: ['Shift', 'r'],
         },
         {
           title: 'Show Outlines',
-          keys: ['meta', 'y'],
+          keys: ['Meta', 'y'],
         },
         {
           title: 'Pixel Preview',
-          keys: ['control', 'p'],
+          keys: ['Control', 'p'],
         },
         {
           title: 'Layout Grids',
-          keys: ['control', 'g'],
+          keys: ['Control', 'g'],
         },
         {
           title: 'Pixel Grid',
-          keys: ['meta', '\''],
+          keys: ['Meta', '\''],
         },
         {
           title: 'Show Multiplayer Cursors',
-          keys: ['alt', 'meta', '\\'],
+          keys: ['Alt', 'Meta', '\\'],
         },
         {
           title: 'Show Layers',
-          keys: ['alt', '1'],
+          keys: ['Alt', '1'],
         },
         {
           title: 'Show Components',
-          keys: ['alt', '2'],
+          keys: ['Alt', '2'],
         },
         {
           title: 'Show Team Library',
-          keys: ['alt', '3'],
+          keys: ['Alt', '3'],
         },
       ],
     },
@@ -124,7 +124,7 @@ export default {
         // TODO: Unclear. Works only with mousedrag.
         // {
         //   title: 'Pan',
-        //   keys: ['space'],
+        //   keys: ['Space'],
         // },
         {
           title: 'Zoom In',
@@ -136,19 +136,19 @@ export default {
         },
         {
           title: 'Zoom to 100%',
-          keys: ['shift', '0'],
+          keys: ['Shift', '0'],
         },
         {
           title: 'Zoom to Fit',
-          keys: ['shift', '1'],
+          keys: ['Shift', '1'],
         },
         {
           title: 'Zoom to Selection',
-          keys: ['shift', '2'],
+          keys: ['Shift', '2'],
         },
         {
           title: 'Zoom to Previous Frame',
-          keys: ['shift', 'n'],
+          keys: ['Shift', 'n'],
         },
         {
           title: 'Zoom to Next Frame',
@@ -156,21 +156,21 @@ export default {
         },
         {
           title: 'Previous Page',
-          keys: ['pageup'],
+          keys: ['PageUp'],
         },
         {
           title: 'Next Page',
-          keys: ['pagedown'],
+          keys: ['PageDown'],
         },
         // TODO: fn doesn't send event
         // {
         //   title: 'Find Previous Frame',
-        //   keys: ['fn', 'left'],
+        //   keys: ['Fn', 'ArrowLeft'],
         // },
         // TODO: fn doesn't send event
         // {
         //   title: 'Find Next Frame',
-        //   keys: ['fn', 'right'],
+        //   keys: ['Fn', 'ArrowRight'],
         // },
       ],
     },
@@ -181,59 +181,59 @@ export default {
       shortcuts: [
         {
           title: 'Bold',
-          keys: ['meta', 'b'],
+          keys: ['Meta', 'b'],
         },
         {
           title: 'Italic',
-          keys: ['meta', 'i'],
+          keys: ['Meta', 'i'],
         },
         {
           title: 'Underline',
-          keys: ['meta', 'u'],
+          keys: ['Meta', 'u'],
         },
         {
           title: 'Paste and Match Style',
-          keys: ['shift', 'meta', 'v'],
+          keys: ['Shift', 'Meta', 'v'],
         },
         {
           title: 'Text Align Left',
-          keys: ['alt', 'meta', 'l'],
+          keys: ['Alt', 'Meta', 'l'],
         },
         {
           title: 'Text Align Center',
-          keys: ['alt', 'meta', 't'],
+          keys: ['Alt', 'Meta', 't'],
         },
         {
           title: 'Text Align Right',
-          keys: ['alt', 'meta', 'r'],
+          keys: ['Alt', 'Meta', 'r'],
         },
         {
           title: 'Text Align Justified',
-          keys: ['alt', 'meta', 'j'],
+          keys: ['Alt', 'Meta', 'j'],
         },
         {
           title: 'Decrease Font Size',
-          keys: ['shift', 'meta', '<'],
+          keys: ['Shift', 'Meta', '<'],
         },
         {
           title: 'Increase Font Size',
-          keys: ['shift', 'meta', '>'],
+          keys: ['Shift', 'Meta', '>'],
         },
         {
           title: 'Decrease Letter Spacing',
-          keys: ['alt', ','],
+          keys: ['Alt', ','],
         },
         {
           title: 'Increase Letter Spacing',
-          keys: ['alt', '.'],
+          keys: ['Alt', '.'],
         },
         {
           title: 'Decrease Line Height',
-          keys: ['shift', 'alt', '<'],
+          keys: ['Shift', 'Alt', '<'],
         },
         {
           title: 'Increase Line Height',
-          keys: ['shift', 'alt', '>'],
+          keys: ['Shift', 'Alt', '>'],
         },
       ],
     },
@@ -248,7 +248,7 @@ export default {
         },
         {
           title: 'Pencil',
-          keys: ['shift', 'p'],
+          keys: ['Shift', 'p'],
         },
         {
           // while editing a shape …
@@ -258,11 +258,11 @@ export default {
         {
           // while editing a shape …
           title: 'Bend Tool',
-          keys: ['meta'],
+          keys: ['Meta'],
         },
         {
           title: 'Remove Fill',
-          keys: ['alt', '/'],
+          keys: ['Alt', '/'],
         },
         {
           title: 'Remove Stroke',
@@ -270,28 +270,28 @@ export default {
         },
         {
           title: 'Swap Fill and Stroke',
-          keys: ['shift', 'x'],
+          keys: ['Shift', 'x'],
         },
         {
           title: 'Outline Stroke',
-          keys: ['shift', 'meta', 'o'],
+          keys: ['Shift', 'Meta', 'o'],
         },
         {
           title: 'Flatten Selection',
-          keys: ['meta', 'e'],
+          keys: ['Meta', 'e'],
         },
         {
           // after selecting points…
           title: 'Join Selection',
-          keys: ['meta', 'j'],
+          keys: ['Meta', 'j'],
         },
         {
           title: 'Smooth Join Selection',
-          keys: ['shift', 'meta', 'j'],
+          keys: ['Shift', 'Meta', 'j'],
         },
         {
           title: 'Delete and Heal Selection',
-          keys: ['shift', 'backspace'],
+          keys: ['Shift', 'Backspace'],
         },
       ],
     },
@@ -302,11 +302,11 @@ export default {
       shortcuts: [
         {
           title: 'Select All',
-          keys: ['meta', 'a'],
+          keys: ['Meta', 'a'],
         },
         {
           title: 'Select Inverse',
-          keys: ['shift', 'meta', 'a'],
+          keys: ['Shift', 'Meta', 'a'],
         },
         {
           title: 'Select None',
@@ -314,39 +314,39 @@ export default {
         },
         {
           title: 'Select Child',
-          keys: ['enter'],
+          keys: ['Enter'],
         },
         {
           title: 'Select Parents',
-          keys: ['shift', 'enter'],
+          keys: ['Shift', 'Enter'],
         },
         {
           title: 'Select Next Sibling',
-          keys: ['tab'],
+          keys: ['Tab'],
         },
         {
           title: 'Select Previous Sibling',
-          keys: ['shift', 'tab'],
+          keys: ['Shift', 'Tab'],
         },
         {
           title: 'Group Selection',
-          keys: ['meta', 'g'],
+          keys: ['Meta', 'g'],
         },
         {
           title: 'Ungroup Selection',
-          keys: ['shift', 'meta', 'g'],
+          keys: ['Shift', 'Meta', 'g'],
         },
         {
           title: 'Frame Selection',
-          keys: ['shift', 'meta', 'g'],
+          keys: ['Shift', 'Meta', 'g'],
         },
         {
           title: 'Show/Hide Selection',
-          keys: ['shift', 'meta', 'h'],
+          keys: ['Shift', 'Meta', 'h'],
         },
         {
           title: 'Lock/Unlock Selection',
-          keys: ['shift', 'meta', 'l'],
+          keys: ['Shift', 'Meta', 'l'],
         },
       ],
     },
@@ -357,39 +357,39 @@ export default {
       shortcuts: [
         {
           title: 'Copy',
-          keys: ['meta', 'c'],
+          keys: ['Meta', 'c'],
         },
         {
           title: 'Cut',
-          keys: ['meta', 'x'],
+          keys: ['Meta', 'x'],
         },
         {
           title: 'Paste',
-          keys: ['meta', 'v'],
+          keys: ['Meta', 'v'],
         },
         {
           title: 'Paste Over Selection',
-          keys: ['shift', 'meta', 'v'],
+          keys: ['Shift', 'Meta', 'v'],
         },
         {
           title: 'Duplicate',
-          keys: ['meta', 'd'],
+          keys: ['Meta', 'd'],
         },
         {
           title: 'Rename Selection',
-          keys: ['meta', 'r'],
+          keys: ['Meta', 'r'],
         },
         {
           title: 'Export',
-          keys: ['shift', 'meta', 'e'],
+          keys: ['Shift', 'Meta', 'e'],
         },
         {
           title: 'Copy Properties',
-          keys: ['shift', 'meta', 'c'],
+          keys: ['Shift', 'Meta', 'c'],
         },
         {
           title: 'Paste Properties',
-          keys: ['shift', 'meta', 'v'],
+          keys: ['Shift', 'Meta', 'v'],
         },
       ],
     },
@@ -400,23 +400,23 @@ export default {
       shortcuts: [
         {
           title: 'Flip Horizontal',
-          keys: ['shift', 'h'],
+          keys: ['Shift', 'h'],
         },
         {
           title: 'Flip Vertical',
-          keys: ['shift', 'v'],
+          keys: ['Shift', 'v'],
         },
         {
           title: 'Use as Mask',
-          keys: ['control', 'meta', 'm'],
+          keys: ['Control', 'Meta', 'm'],
         },
         {
           title: 'Edit Shape or Image',
-          keys: ['enter'],
+          keys: ['Enter'],
         },
         {
           title: 'Place Image',
-          keys: ['shift', 'meta', 'k'],
+          keys: ['Shift', 'Meta', 'k'],
         },
         {
           title: 'Set Opacity to 10%',
@@ -439,55 +439,55 @@ export default {
       shortcuts: [
         {
           title: 'Bring Forward',
-          keys: ['meta', ']'],
+          keys: ['Meta', ']'],
         },
         {
           title: 'Send Backward',
-          keys: ['meta', '['],
+          keys: ['Meta', '['],
         },
         {
           title: 'Bring to Front',
-          keys: ['alt', 'meta', ']'],
+          keys: ['Alt', 'Meta', ']'],
         },
         {
           title: 'Send to Back',
-          keys: ['alt', 'meta', '['],
+          keys: ['Alt', 'Meta', '['],
         },
         {
           title: 'Align Left',
-          keys: ['alt', 'a'],
+          keys: ['Alt', 'a'],
         },
         {
           title: 'Align Right',
-          keys: ['alt', 'd'],
+          keys: ['Alt', 'd'],
         },
         {
           title: 'Align Top',
-          keys: ['alt', 'w'],
+          keys: ['Alt', 'w'],
         },
         {
           title: 'Align Bottom',
-          keys: ['alt', 's'],
+          keys: ['Alt', 's'],
         },
         {
           title: 'Align Horizontal Centers',
-          keys: ['alt', 'h'],
+          keys: ['Alt', 'h'],
         },
         {
           title: 'Align Vertical Centers',
-          keys: ['alt', 'v'],
+          keys: ['Alt', 'v'],
         },
         {
           title: 'Tidy Up',
-          keys: ['control', 'alt', 't'],
+          keys: ['Control', 'Alt', 't'],
         },
         {
           title: 'Distribute Horizontal Spacing',
-          keys: ['control', 'alt', 'h'],
+          keys: ['Control', 'Alt', 'h'],
         },
         {
           title: 'Distribute Vertical Spacing',
-          keys: ['control', 'alt', 'v'],
+          keys: ['Control', 'Alt', 'v'],
         },
       ],
     },
@@ -498,19 +498,19 @@ export default {
       shortcuts: [
         {
           title: 'Show Components',
-          keys: ['alt', '2'],
+          keys: ['Alt', '2'],
         },
         {
           title: 'Team Library',
-          keys: ['alt', 'meta', 'o'],
+          keys: ['Alt', 'Meta', 'o'],
         },
         {
           title: 'Create Component',
-          keys: ['alt', 'meta', 'k'],
+          keys: ['Alt', 'Meta', 'k'],
         },
         {
           title: 'Detach Instance',
-          keys: ['alt', 'meta', 'b'],
+          keys: ['Alt', 'Meta', 'b'],
         },
       ],
     },
