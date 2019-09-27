@@ -227,7 +227,7 @@ export default {
         },
         {
           title: 'Search and replace inside the current note',
-          keys: ['Shift', 'Meta', 'f'],
+          keys: ['Alt', 'Meta', 'f'],
         },
         {
           title: 'Search inside the note list',
