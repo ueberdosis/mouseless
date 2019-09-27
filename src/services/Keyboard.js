@@ -23,20 +23,8 @@ export default class Keyboard {
     // maybe this will break something
     .filter(key => !this.blacklist.includes(key.code))
 
-  static aliases = {
-    shift: 'Shift',
-    control: 'Control',
-    alt: 'Alt',
-    meta: 'Meta',
-    up: 'ArrowUp',
-    right: 'ArrowRight',
-    down: 'ArrowDown',
-    left: 'ArrowLeft',
-    enter: 'Enter',
-    backspace: 'Backspace',
-  }
-
   static formats = {
+    CapsLock: '⇪',
     Shift: '⇧',
     Control: '⌃',
     Alt: '⌥',
@@ -47,7 +35,11 @@ export default class Keyboard {
     ArrowLeft: '←',
     Enter: '↩',
     Backspace: '⌫',
+    Delete: '⌫',
     Escape: 'Esc',
+    Tab: '⇥',
+    PageUp: '⇞',
+    PageDown: '⇟',
   }
 
   static formatKeyCode(name) {
@@ -157,12 +149,6 @@ export default class Keyboard {
   static resolveCodesFromKeys(keys = []) {
     return keys
       .map(key => {
-        const alias = this.aliases[key.toLowerCase()]
-
-        if (alias) {
-          return alias
-        }
-
         let match = null
 
         match = this.keymap.find(item => item.value === key)
@@ -193,7 +179,7 @@ export default class Keyboard {
         match = this.keymap.find(item => item.code.toLowerCase() === key.toLowerCase())
 
         if (match) {
-          return [match.code.toLowerCase()]
+          return [match.code]
         }
 
         return match

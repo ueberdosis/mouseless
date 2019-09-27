@@ -3,8 +3,8 @@
     <div class="key__card">
       {{ name | key }}
     </div>
-    <div class="key__name" v-if="showName">
-      {{ name }}
+    <div class="key__name" v-if="altName">
+      {{ altName }}
     </div>
   </div>
 </template>
@@ -29,9 +29,21 @@ export default {
   },
 
   computed: {
-    showName() {
-      const keys = ['Shift', 'Control', 'Alt', 'Meta', 'Enter', 'Backspace']
-      return keys.includes(this.name)
+    altName() {
+      const keys = {
+        Shift: 'Shift',
+        Control: 'Ctrl',
+        Alt: 'Alt',
+        Meta: 'Cmd',
+        Enter: 'Enter',
+        Backspace: 'Back',
+        Delete: 'Delete',
+        Tab: 'Tab',
+        PageUp: 'Page Up',
+        PageDown: 'Page Down',
+      }
+
+      return keys[this.name] ? keys[this.name] : false
     },
   },
 }

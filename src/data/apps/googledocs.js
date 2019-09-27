@@ -10,85 +10,85 @@ export default {
       shortcuts: [
         {
           title: 'Copy',
-          keys: ['meta', 'c'],
+          keys: ['Meta', 'c'],
         },
         {
           title: 'Cut',
-          keys: ['meta', 'x'],
+          keys: ['Meta', 'x'],
         },
         {
           title: 'Paste',
-          keys: ['meta', 'v'],
+          keys: ['Meta', 'v'],
         },
         {
           title: 'Paste without formatting',
-          keys: ['meta', 'shift', 'v'],
+          keys: ['Meta', 'Shift', 'v'],
         },
         {
           title: 'Undo',
-          keys: ['meta', 'z'],
+          keys: ['Meta', 'z'],
         },
         {
           title: 'Redo',
-          keys: ['meta', 'shift', 'z'],
+          keys: ['Meta', 'Shift', 'z'],
         },
         {
           title: 'Insert or edit link',
-          keys: ['meta', 'k'],
+          keys: ['Meta', 'k'],
         },
         {
           title: 'Open link',
-          keys: ['alt', 'enter'],
+          keys: ['Alt', 'Enter'],
         },
         {
           title: 'Show common keyboard shortcuts',
-          keys: ['meta', '/'],
+          keys: ['Meta', '/'],
         },
         {
           title: 'Save',
           // Every change is automatically saved in Drive,
-          keys: ['meta', 's'],
+          keys: ['Meta', 's'],
         },
         {
           title: 'Print',
-          keys: ['meta', 'p'],
+          keys: ['Meta', 'p'],
         },
         {
           title: 'Open',
-          keys: ['meta', 'o'],
+          keys: ['Meta', 'o'],
         },
         {
           title: 'Find',
-          keys: ['meta', 'f'],
+          keys: ['Meta', 'f'],
         },
         {
           title: 'Find and replace',
-          keys: ['meta', 'shift', 'h'],
+          keys: ['Meta', 'Shift', 'h'],
         },
         {
           title: 'Find again',
-          keys: ['meta', 'g'],
+          keys: ['Meta', 'g'],
         },
         {
           title: 'Find previous',
-          keys: ['meta', 'shift', 'g'],
+          keys: ['Meta', 'Shift', 'g'],
         },
         {
           title: 'Hide the menus (compact mode)',
-          keys: ['control', 'shift', 'f'],
+          keys: ['Control', 'Shift', 'f'],
         },
         {
           title: 'Insert page break',
-          keys: ['meta', 'enter'],
+          keys: ['Meta', 'Enter'],
         },
         // {
         //   title: 'Search the menus',
-        //   keys: ['alt', '/'],
-        //   // keys: ['control', 'alt', 'z'],
+        //   keys: ['Alt', '/'],
+        //   // keys: ['Control', 'Alt', 'z'],
         // },
         {
           title: 'Repeat last action',
-          keys: ['meta', 'y'],
+          keys: ['Meta', 'y'],
         },
       ],
     },
@@ -99,47 +99,47 @@ export default {
       shortcuts: [
         {
           title: 'Bold',
-          keys: ['meta', 'b'],
+          keys: ['Meta', 'b'],
         },
         {
           title: 'Italicize',
-          keys: ['meta', 'i'],
+          keys: ['Meta', 'i'],
         },
         {
           title: 'Underline',
-          keys: ['meta', 'u'],
+          keys: ['Meta', 'u'],
         },
         {
           title: 'Strikethrough',
-          keys: ['meta', 'shift', 'x'],
+          keys: ['Meta', 'Shift', 'x'],
         },
         {
           title: 'Superscript',
-          keys: ['meta', '.'],
+          keys: ['Meta', '.'],
         },
         {
           title: 'Subscript',
-          keys: ['meta', ','],
+          keys: ['Meta', ','],
         },
         {
           title: 'Copy text formatting',
-          keys: ['meta', 'alt', 'c'],
+          keys: ['Meta', 'Alt', 'c'],
         },
         {
           title: 'Paste text formatting',
-          keys: ['meta', 'alt', 'v'],
+          keys: ['Meta', 'Alt', 'v'],
         },
         {
           title: 'Clear text formatting',
-          keys: ['meta', '\\'],
+          keys: ['Meta', '\\'],
         },
         {
           title: 'Increase font size',
-          keys: ['meta', 'shift', '>'],
+          keys: ['Meta', 'Shift', '>'],
         },
         {
           title: 'Decrease font size',
-          keys: ['meta', 'shift', '<'],
+          keys: ['Meta', 'Shift', '<'],
         },
       ],
     },
@@ -150,56 +150,56 @@ export default {
       shortcuts: [
         {
           title: 'Increase paragraph indentation',
-          keys: ['meta', ']'],
+          keys: ['Meta', ']'],
         },
         {
           title: 'Decrease paragraph indentation',
-          keys: ['meta', '['],
+          keys: ['Meta', '['],
         },
         {
           title: 'Apply normal text style',
-          keys: ['meta', 'alt', '0'],
+          keys: ['Meta', 'Alt', '0'],
         },
         // Apply heading style [1-6]: ⌘ + Option + [1-6]
         {
           title: 'Apply heading style 1',
-          keys: ['meta', 'alt', '1'],
+          keys: ['Meta', 'Alt', '1'],
         },
         {
           title: 'Apply heading style 2',
-          keys: ['meta', 'alt', '2'],
+          keys: ['Meta', 'Alt', '2'],
         },
         {
           title: 'Left align',
-          keys: ['meta', 'shift', 'l'],
+          keys: ['Meta', 'Shift', 'l'],
         },
         {
           title: 'Center align',
-          keys: ['meta', 'shift', 'e'],
+          keys: ['Meta', 'Shift', 'e'],
         },
         {
           title: 'Right align',
-          keys: ['meta', 'shift', 'r'],
+          keys: ['Meta', 'Shift', 'r'],
         },
         {
           title: 'Justify',
-          keys: ['meta', 'shift', 'j'],
+          keys: ['Meta', 'Shift', 'j'],
         },
         {
           title: 'Numbered list',
-          keys: ['meta', 'shift', '7'],
+          keys: ['Meta', 'Shift', '7'],
         },
         {
           title: 'Bulleted list',
-          keys: ['meta', 'shift', '8'],
+          keys: ['Meta', 'Shift', '8'],
         },
         {
           title: 'Move paragraph up',
-          keys: ['control', 'shift', 'up'],
+          keys: ['Control', 'Shift', 'ArrowUp'],
         },
         {
           title: 'Move paragraph down',
-          keys: ['control', 'shift', 'down'],
+          keys: ['Control', 'Shift', 'ArrowDown'],
         },
       ],
     },
@@ -210,53 +210,53 @@ export default {
       shortcuts: [
         {
           title: 'Alt text',
-          keys: ['meta', 'alt', 'y'],
+          keys: ['Meta', 'Alt', 'y'],
         },
         {
           title: 'Resize larger',
-          keys: ['meta', 'control', 'k'],
+          keys: ['Meta', 'Control', 'k'],
         },
         {
           title: 'Resize larger horizontally',
-          keys: ['meta', 'control', 'b'],
+          keys: ['Meta', 'Control', 'b'],
         },
         {
           title: 'Resize larger vertically',
-          keys: ['meta', 'control', 'i'],
+          keys: ['Meta', 'Control', 'i'],
         },
         {
           title: 'Resize smaller',
-          keys: ['meta', 'control', 'j'],
+          keys: ['Meta', 'Control', 'j'],
         },
         {
           title: 'Resize smaller horizontally',
-          keys: ['meta', 'control', 'w'],
+          keys: ['Meta', 'Control', 'w'],
         },
         {
           title: 'Resize smaller vertically',
-          keys: ['meta', 'control', 'q'],
+          keys: ['Meta', 'Control', 'q'],
         },
         {
           title: 'Rotate clockwise by 15°',
-          keys: ['alt', 'right'],
+          keys: ['Alt', 'ArrowRight'],
         },
         {
           title: 'Rotate counterclockwise by 15°',
-          keys: ['alt', 'left'],
+          keys: ['Alt', 'ArrowLeft'],
         },
         {
           title: 'Rotate counterclockwise by 1°',
-          keys: ['alt', 'shift', 'left'],
+          keys: ['Alt', 'Shift', 'ArrowLeft'],
         },
         {
           title: 'Rotate clockwise by 1°',
-          keys: ['alt', 'shift', 'right'],
+          keys: ['Alt', 'Shift', 'ArrowRight'],
         },
         // TODO: Two bindings
         // {
         //   title: 'Close drawing editor',
-        //   keys: ['meta', 'esc'],
-        //   keys: ['shift', 'esc'],
+        //   keys: ['Meta', 'Escape'],
+        //   keys: ['Shift', 'Escape'],
         // },
       ],
     },
@@ -267,19 +267,19 @@ export default {
       shortcuts: [
         {
           title: 'Insert comment',
-          keys: ['meta', 'alt', 'm'],
+          keys: ['Meta', 'Alt', 'm'],
         },
         {
           title: 'Open discussion thread',
-          keys: ['meta', 'alt', 'shift', 'a'],
+          keys: ['Meta', 'Alt', 'Shift', 'a'],
         },
         {
           title: 'Enter current comment',
-          keys: ['control', 'enter'],
+          keys: ['Control', 'Enter'],
         },
         {
           title: 'Insert footnote',
-          keys: ['meta', 'alt', 'f'],
+          keys: ['Meta', 'Alt', 'f'],
         },
       ],
     },
@@ -290,50 +290,50 @@ export default {
       shortcuts: [
         {
           title: 'Context (right-click) menu',
-          keys: ['meta', 'shift', '\\'],
+          keys: ['Meta', 'Shift', '\\'],
         },
         {
           title: 'File menu',
-          keys: ['control', 'alt', 'f'],
+          keys: ['Control', 'Alt', 'f'],
         },
         {
           title: 'Edit menu',
-          keys: ['control', 'alt', 'e'],
+          keys: ['Control', 'Alt', 'e'],
         },
         {
           title: 'View menu',
-          keys: ['control', 'alt', 'v'],
+          keys: ['Control', 'Alt', 'v'],
         },
         {
           title: 'Insert menu',
-          keys: ['control', 'alt', 'i'],
+          keys: ['Control', 'Alt', 'i'],
         },
         {
           title: 'Format menu',
-          keys: ['control', 'alt', 'o'],
+          keys: ['Control', 'Alt', 'o'],
         },
         {
           title: 'Tools menu',
-          keys: ['control', 'alt', 't'],
+          keys: ['Control', 'Alt', 't'],
         },
         {
           title: 'Help menu',
-          keys: ['control', 'alt', 'h'],
+          keys: ['Control', 'Alt', 'h'],
         },
         {
           title: 'Accessibility menu',
           description: 'Present when screen reader support is enabled',
-          keys: ['control', 'alt', 'a'],
+          keys: ['Control', 'Alt', 'a'],
         },
         {
           title: 'Input Tools menu',
           description: 'Available in documents in non-Latin languages',
-          keys: ['meta', 'alt', 'shift', 'k'],
+          keys: ['Meta', 'Alt', 'Shift', 'k'],
         },
         {
           title: 'Toggle input controls',
           description: 'Available in documents in non-Latin languages',
-          keys: ['meta', 'shift', 'k'],
+          keys: ['Meta', 'Shift', 'k'],
         },
       ],
     },
@@ -344,38 +344,38 @@ export default {
       shortcuts: [
         {
           title: 'Select all',
-          keys: ['meta', 'a'],
+          keys: ['Meta', 'a'],
         },
         // TODO: Two directions
         // {
         //   title: 'Extend selection one character',
-        //   keys: ['shift', 'Left/right arrow'],
+        //   keys: ['Shift', 'Left/right arrow'],
         // },
         // TODO: Two directions
         // {
         //   title: 'Extend selection one line',
-        //   keys: ['shift', 'Up/down arrow'],
+        //   keys: ['Shift', 'Up/down arrow'],
         // },
-        {
-          title: 'Extend selection to the beginning of the line',
-          keys: ['shift', 'fn', 'left'],
-        },
+        // {
+        //   title: 'Extend selection to the beginning of the line',
+        //   keys: ['Shift', 'Fn', 'ArrowLeft'],
+        // },
         // TODO: Two directions
         // {
         //   title: 'Extend selection one paragraph',
-        //   keys: ['alt', 'shift', 'up/down'],
+        //   keys: ['Alt', 'Shift', 'up/down'],
+        // },
+        // {
+        //   title: 'Extend selection to the end of the line',
+        //   keys: ['Shift', 'Fn', 'ArrowRight'],
         // },
         {
-          title: 'Extend selection to the end of the line',
-          keys: ['shift', 'fn', 'right'],
-        },
-        {
           title: 'Extend selection to the beginning of the document',
-          keys: ['meta', 'shift', 'up'],
+          keys: ['Meta', 'Shift', 'ArrowUp'],
         },
         {
           title: 'Extend selection to the end of the document',
-          keys: ['meta', 'shift', 'down'],
+          keys: ['Meta', 'Shift', 'ArrowDown'],
         },
       ],
     },
@@ -386,57 +386,57 @@ export default {
       shortcuts: [
         {
           title: 'Open revision history',
-          keys: ['meta', 'alt', 'shift', 'h'],
+          keys: ['Meta', 'Alt', 'Shift', 'h'],
         },
         {
           title: 'Open Explore tool',
-          keys: ['meta', 'alt', 'shift', 'i'],
+          keys: ['Meta', 'Alt', 'Shift', 'i'],
         },
         {
           title: 'Open spelling/grammar',
-          keys: ['meta', 'Alt', 'X'],
+          keys: ['Meta', 'Alt', 'X'],
         },
         {
           title: 'Open dictionary',
-          keys: ['meta', 'shift', 'y'],
+          keys: ['Meta', 'Shift', 'y'],
         },
         {
           title: 'Word count',
-          keys: ['meta', 'shift', 'c'],
+          keys: ['Meta', 'Shift', 'c'],
         },
         {
           title: 'Start voice typing (available in Chrome browsers)',
-          keys: ['meta', 'shift', 's'],
+          keys: ['Meta', 'Shift', 's'],
         },
         // TODO: Two bindings
         // {
         //   title: 'Go to side panel',
-        //   keys: ['meta', 'alt', '.'],
-        //   keys: ['meta', 'alt', ','],
+        //   keys: ['Meta', 'Alt', '.'],
+        //   keys: ['Meta', 'Alt', ','],
+        // },
+        // {
+        //   title: 'Page up',
+        //   keys: ['Fn', 'ArrowUp'],
+        // },
+        // {
+        //   title: 'Page down',
+        //   keys: ['Fn', 'ArrowDown'],
         // },
         {
-          title: 'Page up',
-          keys: ['fn', 'up'],
-        },
-        {
-          title: 'Page down',
-          keys: ['fn', 'down'],
-        },
-        {
           title: 'Move to next misspelling',
-          keys: ['meta', '\''],
+          keys: ['Meta', '\''],
         },
         {
           title: 'Move to previous misspelling',
-          keys: ['meta', ';'],
+          keys: ['Meta', ';'],
         },
         {
           title: 'Move focus out of document text',
-          keys: ['meta', 'alt', 'shift', 'm'],
+          keys: ['Meta', 'Alt', 'Shift', 'm'],
         },
         {
           title: 'Return focus to document text',
-          keys: ['escape'],
+          keys: ['Escape'],
         },
       ],
     },

@@ -10,55 +10,55 @@ export default {
       shortcuts: [
         {
           title: 'Copy',
-          keys: ['meta', 'c'],
+          keys: ['Meta', 'c'],
         },
         {
           title: 'Cut',
-          keys: ['meta', 'x'],
+          keys: ['Meta', 'x'],
         },
         {
           title: 'Paste',
-          keys: ['meta', 'v'],
+          keys: ['Meta', 'v'],
         },
         {
           title: 'Paste over selection',
-          keys: ['shift', 'meta', 'v'],
+          keys: ['Shift', 'Meta', 'v'],
         },
         {
           title: 'New page',
-          keys: ['shift', 'meta', 'n'],
+          keys: ['Shift', 'Meta', 'n'],
         },
         {
           title: 'Run custom plugin',
-          keys: ['control', 'meta', 'k'],
+          keys: ['Control', 'Meta', 'k'],
         },
         {
           title: 'Undo',
-          keys: ['meta', 'z'],
+          keys: ['Meta', 'z'],
         },
         {
           title: 'Redo',
-          keys: ['shift', 'meta', 'redo'],
+          keys: ['Shift', 'Meta', 'redo'],
         },
         {
           title: 'Page setup',
-          keys: ['shift', 'meta', 'p'],
+          keys: ['Shift', 'Meta', 'p'],
         },
         {
           title: 'Open Preferences window',
-          keys: ['meta', ','],
+          keys: ['Meta', ','],
         },
         {
           title: 'Quit Sketch',
-          keys: ['meta', 'q'],
+          keys: ['Meta', 'q'],
         },
         {
           title: 'Open the Help menu',
-          keys: ['shift', 'meta', '?'],
+          keys: ['Shift', 'Meta', '?'],
         },
         {
           title: 'Open Preview window',
-          keys: ['meta', 'p'],
+          keys: ['Meta', 'p'],
         },
       ],
     },
@@ -69,47 +69,47 @@ export default {
       shortcuts: [
         {
           title: 'Hide Sketch',
-          keys: ['meta', 'h'],
+          keys: ['Meta', 'h'],
         },
         {
           title: 'Zoom in',
-          keys: ['meta', '+'],
+          keys: ['Meta', '+'],
         },
         {
           title: 'Zoom out',
-          keys: ['meta', '-'],
+          keys: ['Meta', '-'],
         },
         {
           title: 'Show/hide rulers',
-          keys: ['control', 'r'],
+          keys: ['Control', 'r'],
         },
         {
           title: 'Show/hide pixels',
-          keys: ['control', 'p'],
+          keys: ['Control', 'p'],
         },
         {
           title: 'Show/hide pixel grid',
-          keys: ['control', 'x'],
+          keys: ['Control', 'x'],
         },
         {
           title: 'Show/hide grid',
-          keys: ['control', 'g'],
+          keys: ['Control', 'g'],
         },
         {
           title: 'Show/hide layout',
-          keys: ['control', 'l'],
+          keys: ['Control', 'l'],
         },
         {
           title: 'Show/hide slices',
-          keys: ['control', 'e'],
+          keys: ['Control', 'e'],
         },
         {
           title: 'Show/hide prototyping',
-          keys: ['control', 'f'],
+          keys: ['Control', 'f'],
         },
         {
           title: 'Filter in Layer List',
-          keys: ['meta', 'f'],
+          keys: ['Meta', 'f'],
         },
       ],
     },
@@ -120,27 +120,27 @@ export default {
       shortcuts: [
         {
           title: 'New document',
-          keys: ['meta', 'n'],
+          keys: ['Meta', 'n'],
         },
         {
           title: 'Open document',
-          keys: ['meta', 'o'],
+          keys: ['Meta', 'o'],
         },
         {
           title: 'Close window',
-          keys: ['meta', 'w'],
+          keys: ['Meta', 'w'],
         },
         {
           title: 'Save document',
-          keys: ['meta', 's'],
+          keys: ['Meta', 's'],
         },
         {
           title: 'Duplicate document',
-          keys: ['shift', 'meta', 's'],
+          keys: ['Shift', 'Meta', 's'],
         },
         {
           title: 'Save document as…',
-          keys: ['alt', 'shift', 'meta', 's'],
+          keys: ['Alt', 'Shift', 'Meta', 's'],
         },
       ],
     },
@@ -198,15 +198,15 @@ export default {
       shortcuts: [
         {
           title: 'Select all',
-          keys: ['meta', 'a'],
+          keys: ['Meta', 'a'],
         },
         {
           title: 'Select all Artboards',
-          keys: ['shift', 'meta', 'a'],
+          keys: ['Shift', 'Meta', 'a'],
         },
         {
           title: 'Reveal selection in Layer List',
-          keys: ['shift', 'meta', 'j'],
+          keys: ['Shift', 'Meta', 'j'],
         },
       ],
     },
@@ -217,11 +217,11 @@ export default {
       shortcuts: [
         {
           title: 'Duplicate',
-          keys: ['meta', 'd'],
+          keys: ['Meta', 'd'],
         },
         {
           title: 'Scale Layer',
-          keys: ['meta', 'k'],
+          keys: ['Meta', 'k'],
         },
         // TODO: Multiple bindings
         // Nudge layer any direction by 1 px*
@@ -239,35 +239,35 @@ export default {
       shortcuts: [
         {
           title: 'Edit layer',
-          keys: ['enter'],
+          keys: ['Enter'],
         },
         {
           title: 'Finish editing',
-          keys: ['esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Focus X position input field in the Inspector',
-          keys: ['alt', 'tab'],
+          keys: ['Alt', 'Tab'],
         },
         {
           title: 'Delete layer',
-          keys: ['backspace'],
+          keys: ['Backspace'],
         },
         {
           title: 'Copy style',
-          keys: ['alt', 'meta', 'c'],
+          keys: ['Alt', 'Meta', 'c'],
         },
         {
           title: 'Paste style',
-          keys: ['alt', 'meta', 'v'],
+          keys: ['Alt', 'Meta', 'v'],
         },
         {
           title: 'Sync shared style',
-          keys: ['control', 's'],
+          keys: ['Control', 's'],
         },
         {
           title: 'Reset shared style',
-          keys: ['alt', 'control', 's'],
+          keys: ['Alt', 'Control', 's'],
         },
         {
           title: 'Add link to Artboard',
@@ -283,7 +283,7 @@ export default {
         },
         {
           title: 'Pick color',
-          keys: ['control', 'c'],
+          keys: ['Control', 'c'],
         },
         // TODO: Multiple bindings 0-9
         // {
@@ -292,35 +292,35 @@ export default {
         // },
         {
           title: 'Transform shape',
-          keys: ['shift', 'meta', 't'],
+          keys: ['Shift', 'Meta', 't'],
         },
         {
           title: 'Rotate layer',
-          keys: ['shift', 'meta', 'r'],
+          keys: ['Shift', 'Meta', 'r'],
         },
         {
           title: 'Use as mask',
-          keys: ['ctrl', 'meta', 'm'],
+          keys: ['ctrl', 'Meta', 'm'],
         },
         {
           title: 'Return to instance',
-          keys: ['meta', 'esc'],
+          keys: ['Meta', 'Escape'],
         },
         {
           title: 'Union multiple layers',
-          keys: ['alt', 'meta', 'u'],
+          keys: ['Alt', 'Meta', 'u'],
         },
         {
           title: 'Subtract multiple layers',
-          keys: ['alt', 'meta', 's'],
+          keys: ['Alt', 'Meta', 's'],
         },
         {
           title: 'Intersect multiple layers',
-          keys: ['alt', 'meta', 'i'],
+          keys: ['Alt', 'Meta', 'i'],
         },
         {
           title: 'Difference multiple layers',
-          keys: ['alt', 'meta', 'x'],
+          keys: ['Alt', 'Meta', 'x'],
         },
       ],
     },
@@ -331,15 +331,15 @@ export default {
       shortcuts: [
         {
           title: 'Open/close path',
-          keys: ['alt', 'meta', 'o'],
+          keys: ['Alt', 'Meta', 'o'],
         },
         {
           title: 'Selects next point',
-          keys: ['tab'],
+          keys: ['Tab'],
         },
         {
           title: 'Show all handle control points',
-          keys: ['alt'],
+          keys: ['Alt'],
         },
         {
           title: 'Straight point type',
@@ -366,63 +366,63 @@ export default {
       shortcuts: [
         {
           title: 'Paste as rich text',
-          keys: ['alt', 'shift', 'meta', 'v'],
+          keys: ['Alt', 'Shift', 'Meta', 'v'],
         },
         {
           title: 'Change typeface',
-          keys: ['meta', 't'],
+          keys: ['Meta', 't'],
         },
         {
           title: 'Bold',
-          keys: ['meta', 'bold'],
+          keys: ['Meta', 'b'],
         },
         {
           title: 'Italic',
-          keys: ['meta', 'i'],
+          keys: ['Meta', 'i'],
         },
         {
           title: 'Underline',
-          keys: ['meta', 'u'],
+          keys: ['Meta', 'u'],
         },
         {
           title: 'Increase font size',
-          keys: ['alt', 'meta', '+'],
+          keys: ['Alt', 'Meta', '+'],
         },
         {
           title: 'Decrease font size',
-          keys: ['alt', 'meta', '-'],
+          keys: ['Alt', 'Meta', '-'],
         },
         {
           title: 'Increase character spacing',
-          keys: ['control', 'alt', 'l'],
+          keys: ['Control', 'Alt', 'l'],
         },
         {
           title: 'Decrease character spacing',
-          keys: ['control', 'alt', 't'],
+          keys: ['Control', 'Alt', 't'],
         },
         {
           title: 'Align left',
-          keys: ['shift', 'meta', '{'],
+          keys: ['Shift', 'Meta', '{'],
         },
         {
           title: 'Align center',
-          keys: ['shift', 'meta', '|'],
+          keys: ['Shift', 'Meta', '|'],
         },
         {
           title: 'Align right',
-          keys: ['shift', 'meta', '{'],
+          keys: ['Shift', 'Meta', '{'],
         },
         {
           title: 'Emoji & symbols',
-          keys: ['alt', 'meta', 'space'],
+          keys: ['Alt', 'Meta', 'Space'],
         },
         {
           title: 'Convert to outlines',
-          keys: ['alt', 'meta', 'o'],
+          keys: ['Alt', 'Meta', 'o'],
         },
         {
           title: 'Insert a line break',
-          keys: ['shift', 'enter'],
+          keys: ['Shift', 'Enter'],
         },
       ],
     },
@@ -433,67 +433,67 @@ export default {
       shortcuts: [
         {
           title: 'Group',
-          keys: ['meta', 'g'],
+          keys: ['Meta', 'g'],
         },
         {
           title: 'Ungroup',
-          keys: ['shift', 'meta', 'g'],
+          keys: ['Shift', 'Meta', 'g'],
         },
         {
           title: 'Rename layer',
-          keys: ['meta', 'r'],
+          keys: ['Meta', 'r'],
         },
         {
           title: 'Select next layer in group',
-          keys: ['tab'],
+          keys: ['Tab'],
         },
         {
           title: 'Select previous layer in group',
-          keys: ['shift', 'tab'],
+          keys: ['Shift', 'Tab'],
         },
         {
           title: 'Selects layer inside group',
-          keys: ['enter'],
+          keys: ['Enter'],
         },
         {
           title: 'Selects parent group',
-          keys: ['esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Bring forward',
-          keys: ['meta', ']'],
+          keys: ['Meta', ']'],
         },
         {
           title: 'Bring to front',
-          keys: ['meta', 'alt', ']'],
+          keys: ['Meta', 'Alt', ']'],
         },
         {
           title: 'Send backward',
-          keys: ['meta', '['],
+          keys: ['Meta', '['],
         },
         {
           title: 'Send to back',
-          keys: ['meta', 'alt', '['],
+          keys: ['Meta', 'Alt', '['],
         },
         {
           title: 'Move up (out of group/Artboard)',
-          keys: ['alt', 'shift', 'meta', 'up'],
+          keys: ['Alt', 'Shift', 'Meta', 'ArrowUp'],
         },
         {
           title: 'Distribute horizontally',
-          keys: ['control', 'meta', 'h'],
+          keys: ['Control', 'Meta', 'h'],
         },
         {
           title: 'Distribute vertically',
-          keys: ['control', 'meta', 'v'],
+          keys: ['Control', 'Meta', 'v'],
         },
         {
           title: 'Hide/show layer',
-          keys: ['shift', 'meta', 'h'],
+          keys: ['Shift', 'Meta', 'h'],
         },
         {
           title: 'Lock/unlock layer',
-          keys: ['shift', 'meta', 'l'],
+          keys: ['Shift', 'Meta', 'l'],
         },
       ],
     },
@@ -504,11 +504,11 @@ export default {
       shortcuts: [
         {
           title: 'Export',
-          keys: ['shift', 'meta', 'e'],
+          keys: ['Shift', 'Meta', 'e'],
         },
         {
           title: 'Export selected layer(s)',
-          keys: ['meta', 'e'],
+          keys: ['Meta', 'e'],
         },
       ],
     },
@@ -519,39 +519,39 @@ export default {
       shortcuts: [
         {
           title: 'Zoom to 100%',
-          keys: ['meta', '0'],
+          keys: ['Meta', '0'],
         },
         {
           title: 'Zoom to all elements on Canvas',
-          keys: ['meta', '1'],
+          keys: ['Meta', '1'],
         },
         {
           title: 'Zoom to selected layer(s)',
-          keys: ['meta', '2'],
+          keys: ['Meta', '2'],
         },
         {
           title: 'Center selected layer(s) in the Canvas',
-          keys: ['meta', '3'],
+          keys: ['Meta', '3'],
         },
         {
           title: 'Toggle full screen',
-          keys: ['control', 'meta', 'f'],
+          keys: ['Control', 'Meta', 'f'],
         },
         {
           title: 'Show/hide Layer List',
-          keys: ['alt', 'meta', '1'],
+          keys: ['Alt', 'Meta', '1'],
         },
         {
           title: 'Show/hide Inspector',
-          keys: ['alt', 'meta', '2'],
+          keys: ['Alt', 'Meta', '2'],
         },
         {
           title: 'Enter presentation mode',
-          keys: ['meta', '.'],
+          keys: ['Meta', '.'],
         },
         {
           title: 'Show/hide Toolbar',
-          keys: ['alt', 'meta', 't'],
+          keys: ['Alt', 'Meta', 't'],
         },
       ],
     },
@@ -562,47 +562,47 @@ export default {
       shortcuts: [
         {
           title: 'Focus Inspector',
-          keys: ['alt', 'tab'],
+          keys: ['Alt', 'Tab'],
         },
         {
           title: 'Select next field',
-          keys: ['tab'],
+          keys: ['Tab'],
         },
         {
           title: 'Select previous field',
-          keys: ['shift', 'tab'],
+          keys: ['Shift', 'Tab'],
         },
         {
           title: 'Confirm change',
-          keys: ['enter'],
+          keys: ['Enter'],
         },
         {
           title: 'Clear change',
-          keys: ['esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Increase value by 1',
-          keys: ['up'],
+          keys: ['ArrowUp'],
         },
         {
           title: 'Decrease value by 1',
-          keys: ['down'],
+          keys: ['ArrowDown'],
         },
         {
           title: 'Increase value by 10',
-          keys: ['shift', 'up'],
+          keys: ['Shift', 'ArrowUp'],
         },
         {
           title: 'Decrease value by 10',
-          keys: ['shift', 'down'],
+          keys: ['Shift', 'ArrowDown'],
         },
         {
           title: 'Increase value by 0.1',
-          keys: ['alt', 'up'],
+          keys: ['Alt', 'ArrowUp'],
         },
         {
           title: 'Decrease value by 0.1',
-          keys: ['alt', 'down'],
+          keys: ['Alt', 'ArrowDown'],
         },
       ],
     },
@@ -614,23 +614,23 @@ export default {
         {
           title: 'Launch Sketch with all plugins disabled',
           description: 'Press on startup',
-          keys: ['shift'],
+          keys: ['Shift'],
         },
         {
           title: 'Detach from Symbol',
-          keys: ['control', 'meta', 'd'],
+          keys: ['Control', 'Meta', 'd'],
         },
         {
           title: 'Detach all contents from Symbol',
-          keys: ['control', 'alt', 'meta', 'd'],
+          keys: ['Control', 'Alt', 'Meta', 'd'],
         },
         {
           title: 'Refresh Data',
-          keys: ['shift', 'meta', 'd'],
+          keys: ['Shift', 'Meta', 'd'],
         },
         {
           title: 'Run last-used plugin again',
-          keys: ['control', 'meta', 'r'],
+          keys: ['Control', 'Meta', 'r'],
         },
         {
           title: 'Position selected gradient stop directly between two existing stops',
