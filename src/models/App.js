@@ -73,7 +73,7 @@ export default {
     formatShortcut(shortcut) {
       return {
         ...shortcut,
-        id: Base64.encode(`${this.id}${shortcut.keys.sort().toString()}`),
+        id: Base64.encode(`${this.id}${collect(shortcut.keys).sort().toArray().toString()}`),
         resolvedKeys: Keyboard.resolveCodesFromKeys(shortcut.keys),
       }
     },
