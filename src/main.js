@@ -10,7 +10,9 @@ Vue.prototype.$db = DB
 
 Vue.filter('key', value => Keyboard.formatKeyCode(value))
 
-HealthCheck.run()
+if (process.env.NODE_ENV === 'development') {
+  HealthCheck.run()
+}
 
 new Vue({
   router,
