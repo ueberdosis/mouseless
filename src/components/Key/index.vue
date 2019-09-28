@@ -1,11 +1,26 @@
 <template>
-  <div class="key" :class="{ 'is-pressed': isPressed, 'is-ghost': isGhost }">
+  <div class="key" :class="{ 'is-pressed': isPressed, 'is-active': isActive, 'is-ghost': isGhost }">
+    <div class="key__placeholder">
+      {{ name | key }}
+    </div>
     <div class="key__card">
       {{ name | key }}
     </div>
     <div class="key__name" v-if="altName">
       {{ altName }}
     </div>
+    <img
+      class="key__check-badge"
+      src="@/assets/images/check.svg"
+      alt=""
+      v-if="isSuccess"
+    >
+    <img
+      class="key__fail-badge"
+      src="@/assets/images/fail.svg"
+      alt=""
+      v-if="isFailed"
+    >
   </div>
 </template>
 
@@ -22,7 +37,22 @@ export default {
       type: Boolean,
     },
 
+    isActive: {
+      default: false,
+      type: Boolean,
+    },
+
     isGhost: {
+      default: false,
+      type: Boolean,
+    },
+
+    isSuccess: {
+      default: false,
+      type: Boolean,
+    },
+
+    isFailed: {
       default: false,
       type: Boolean,
     },
@@ -49,4 +79,4 @@ export default {
 }
 </script>
 
-<style lang="scss" src="./style.scss"></style>
+<style lang="scss" src="./style.scss" scoped></style>

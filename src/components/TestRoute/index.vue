@@ -29,13 +29,23 @@
             </div>
 
             <div class="test-route__keys">
-              <key
-                v-for="(key, index) in currentShortcut.resolvedKeys"
-                :key="index"
-                :name="key"
-                :is-pressed="pressedResolvedKeys.includes(key)"
-                :is-ghost="isTest && !success"
-              />
+              <template v-if="isTest">
+                <key
+                  v-for="(key, index) in currentShortcut.resolvedKeys"
+                  :key="index"
+                  :name="key"
+                  :is-active="success"
+                />
+              </template>
+              <template v-else>
+                <key
+                  v-for="(key, index) in currentShortcut.resolvedKeys"
+                  :key="index"
+                  :name="key"
+                  :is-active="pressedResolvedKeys.includes(key) || success"
+                  :is-success="success"
+                />
+              </template>
             </div>
           </div>
         </transition>
