@@ -1,4 +1,4 @@
-import { Base64 } from 'js-base64'
+import shajs from 'sha.js'
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 
@@ -73,9 +73,14 @@ export default {
     formatShortcut(shortcut) {
       return {
         ...shortcut,
-        id: Base64.encode(`${this.id}${collect(shortcut.keys).sort().toArray().toString()}`),
+        id: this.generateShortcutId(shortcut),
         resolvedKeys: Keyboard.resolveCodesFromKeys(shortcut.keys),
       }
+    },
+
+    generateShortcutId(shortcut) {
+      const string = `${this.id}${collect(shortcut.keys).sort().toArray().toString()}`
+      return shajs('sha256').update(string).digest('hex')
     },
   },
 }
