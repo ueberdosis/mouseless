@@ -2,7 +2,7 @@ import collect from 'collect.js'
 import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
 
-// console.table(keymap.getKeyMap())
+console.table(keymap.getKeyMap())
 
 export default class Keyboard {
 
