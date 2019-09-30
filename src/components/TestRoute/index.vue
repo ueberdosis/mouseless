@@ -18,7 +18,7 @@
             class="test-route__content"
             :class="{ 'is-failed': isFailed }"
             v-if="started"
-            :key="currentShortcut.id"
+            :key="testId"
           >
             <div class="test-route__title">
               {{ currentShortcut.title }}
@@ -133,6 +133,10 @@ export default {
   },
 
   computed: {
+    testId() {
+      return `${this.isTest ? 'test:' : ''}${this.currentShortcut.id}`
+    },
+
     isTest() {
       if (!this.started) {
         return false
