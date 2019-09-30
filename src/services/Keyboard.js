@@ -12,6 +12,7 @@ export default class Keyboard {
     'NumpadSubtract',
     'NumpadAdd',
     'NumpadDecimal',
+    'NumpadEqual',
   ]
 
   static keymap = Object
