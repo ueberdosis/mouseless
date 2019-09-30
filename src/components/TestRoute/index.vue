@@ -325,15 +325,18 @@ export default {
       if (this.keyboard.is(this.currentShortcut.resolvedKeys)) {
         const { id } = this.currentShortcut
         this.success = true
+
+        if (this.isTest && !this.testFailed) {
+          this.addToLearnedIds(id)
+        } else {
+          this.addToTrainedIds(id)
+        }
+
         this.timeout = setTimeout(() => {
           this.timeout = null
-          if (this.isTest && !this.testFailed) {
-            this.addToLearnedIds(id)
-          } else {
-            this.addToTrainedIds(id)
-          }
           this.next()
         }, 1000)
+
         return
       }
 
