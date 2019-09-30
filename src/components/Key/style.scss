@@ -45,7 +45,13 @@
     height: 50px;
     background-color: $colorWhite;
     color: $colorBlack;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow:
+      0 1px 1px rgba(0, 0, 0, 0.04),
+      0 2px 2px rgba(0, 0, 0, 0.04),
+      0 4px 4px rgba(0, 0, 0, 0.04),
+      0 8px 8px rgba(0, 0, 0, 0.04),
+      0 16px 16px rgba(0, 0, 0, 0.04),
+    ;
   }
 
   &__name {
@@ -68,78 +74,8 @@
   &__check-badge,
   &__fail-badge {
     position: absolute;
-    top: -3px;
-    right: -3px;
+    top: -4px;
+    right: -4px;
   }
 
 }
-
-// .key {
-
-//   position: relative;
-//   display: inline-flex;
-//   margin-right: 8px;
-
-//   &:last-child {
-//     margin-right: 0;
-//   }
-
-//   &__card {
-//     position: relative;
-//     display: inline-flex;
-//     align-items: center;
-//     justify-content: center;
-//     color: $colorBlack;
-//     background-color: $colorWhite;
-//     border-radius: 9px;
-//     height: 50px;
-//     min-width: 50px;
-//     padding: 0 10px;
-//     font-size: 22px;
-//     font-weight: 700;
-//     text-transform: uppercase;
-//     transition: box-shadow 0.1s $ease, transform 0.1s $ease;
-//     box-shadow:
-//       0 1px 1px rgba(0, 0, 0, 0.04),
-//       0 2px 2px rgba(0, 0, 0, 0.04),
-//       0 4px 4px rgba(0, 0, 0, 0.04),
-//       0 8px 8px rgba(0, 0, 0, 0.04),
-//       0 16px 16px rgba(0, 0, 0, 0.04),
-//     ;
-//   }
-
-//   &.is-ghost &__card {
-//     border: 3px dashed rgba($colorBlack, 0.1);
-//     background-color: transparent;
-//     color: transparent;
-//     box-shadow: none;
-//   }
-
-//   &.is-pressed:not(.is-ghost) &__card {
-//     transform: translateY(3px);
-//     box-shadow:
-//       0 1px 1px rgba(0, 0, 0, 0.03),
-//       0 2px 2px rgba(0, 0, 0, 0.03),
-//       0 4px 4px rgba(0, 0, 0, 0.03),
-//       0 8px 8px rgba(0, 0, 0, 0.03),
-//     ;
-//   }
-
-//   &__name {
-//     position: absolute;
-//     bottom: -22px;
-//     left: 0;
-//     width: 100%;
-//     text-align: center;
-//     font-size: 10px;
-//     font-weight: 700;
-//     text-transform: uppercase;
-//     letter-spacing: 0.5px;
-//     opacity: 0.3;
-//   }
-
-//   &.is-ghost &__name {
-//     display: none;
-//   }
-
-// }

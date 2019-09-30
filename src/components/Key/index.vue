@@ -1,5 +1,5 @@
 <template>
-  <div class="key" :class="{ 'is-pressed': isPressed, 'is-active': isActive, 'is-test': isTest }">
+  <div class="key" :class="{ 'is-active': isActive, 'is-test': isTest }">
     <div class="key__placeholder">
       {{ name | key }}
     </div>
@@ -11,18 +11,20 @@
     <div class="key__name" v-if="altName">
       {{ altName }}
     </div>
-    <img
-      class="key__check-badge"
-      src="@/assets/images/check.svg"
-      alt=""
-      v-if="isSuccess"
-    >
-    <img
-      class="key__fail-badge"
-      src="@/assets/images/fail.svg"
-      alt=""
-      v-if="isFailed"
-    >
+    <transition name="pop-up">
+      <img
+        class="key__check-badge"
+        src="@/assets/images/check.svg"
+        alt=""
+        v-if="showResult && isSuccess"
+      >
+      <img
+        class="key__fail-badge"
+        src="@/assets/images/fail.svg"
+        alt=""
+        v-if="showResult && !isSuccess"
+      >
+    </transition>
   </div>
 </template>
 
@@ -32,11 +34,6 @@ export default {
     name: {
       default: '',
       type: String,
-    },
-
-    isPressed: {
-      default: false,
-      type: Boolean,
     },
 
     isActive: {
@@ -54,7 +51,7 @@ export default {
       type: Boolean,
     },
 
-    isFailed: {
+    showResult: {
       default: false,
       type: Boolean,
     },

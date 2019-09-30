@@ -37,19 +37,21 @@
                     :name="key"
                     :is-test="true"
                     :is-active="success"
+                    :is-success="success"
+                    :show-result="success"
                   />
                 </div>
               </template>
               <template v-else-if="isTest && testFailed">
                 <div class="test-route__key-group">
                   <key
-                    v-for="(key, index) in currentShortcut.resolvedKeys"
+                    v-for="(key, index) in failedResolvedKeys"
                     :key="index"
                     :name="key"
                     :is-test="false"
                     :is-active="true"
-                    :is-success="false"
-                    :is-failed="true"
+                    :is-success="currentShortcut.resolvedKeys.includes(key)"
+                    :show-result="true"
                   />
                 </div>
                 <div class="test-route__key-group">
@@ -60,6 +62,7 @@
                     :is-test="false"
                     :is-active="pressedResolvedKeys.includes(key) || success"
                     :is-success="success"
+                    :show-result="success"
                   />
                 </div>
               </template>
@@ -71,6 +74,7 @@
                   :is-test="false"
                   :is-active="pressedResolvedKeys.includes(key) || success"
                   :is-success="success"
+                  :show-result="success"
                 />
               </template>
             </div>
@@ -120,6 +124,7 @@ export default {
       timeout: null,
       keyboard: new Keyboard(),
       pressedResolvedKeys: [],
+      failedResolvedKeys: [],
       run: null,
       trainedIds: [],
       learnedIds: [],
@@ -226,6 +231,7 @@ export default {
       this.testFailed = false
       this.success = false
       this.pressedResolvedKeys = []
+      this.failedResolvedKeys = []
 
       this.run.update({
         trainedIds: this.trainedIds,
@@ -337,6 +343,8 @@ export default {
         this.startFailedAnimation()
 
         if (!this.testFailed) {
+          this.failedResolvedKeys = this.pressedResolvedKeys
+          this.pressedResolvedKeys = []
           this.testFailed = true
         }
       }
