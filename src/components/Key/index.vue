@@ -74,6 +74,7 @@ export default {
         Tab: 'Tab',
         PageUp: 'Page Up',
         PageDown: 'Page Down',
+        Space: 'Space',
       }
 
       return keys[this.name] ? keys[this.name] : false

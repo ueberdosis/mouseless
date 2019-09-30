@@ -41,6 +41,7 @@ export default class Keyboard {
     Tab: '⇥',
     PageUp: '⇞',
     PageDown: '⇟',
+    Space: '␣',
   }
 
   static formatKeyCode(name) {
@@ -122,6 +123,10 @@ export default class Keyboard {
 
     if (this.specialKeys.includes('Shift') && this.specialKeys.includes('Alt')) {
       value = key.withShiftAltGr
+    }
+
+    if (value === ' ') {
+      return 'Space'
     }
 
     if (value === '') {
