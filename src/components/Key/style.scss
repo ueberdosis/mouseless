@@ -43,7 +43,7 @@
     left: 0;
     width: 100%;
     height: 50px;
-    background-color: $colorWhite;
+    // background-color: $colorWhite;
     color: $colorBlack;
     box-shadow:
       0 1px 1px rgba(0, 0, 0, 0.04),
@@ -52,6 +52,28 @@
       0 8px 8px rgba(0, 0, 0, 0.04),
       0 16px 16px rgba(0, 0, 0, 0.04),
     ;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $colorWhite;
+      border-radius: inherit;
+      z-index: -1;
+    }
+
+    &::before {
+      height: calc(100% - 3px);
+    }
+
+    &::after {
+      z-index: -2;
+      background-color: #eee;
+    }
   }
 
   &__name {
