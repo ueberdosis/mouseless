@@ -160,7 +160,7 @@ export default {
         },
         {
           title: 'Stop the page loading',
-          keys: ['Esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Browse clickable items moving forward',
