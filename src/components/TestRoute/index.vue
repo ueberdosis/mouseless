@@ -1,10 +1,10 @@
 <template>
   <page>
-    <!-- <template v-slot:left>
+    <template v-slot:left>
       <router-link class="hover-button" :to="{ name: 'app.groups' }">
-        ← Groups
+        ← Sets
       </router-link>
-    </template> -->
+    </template>
     <template v-slot:center>
       {{ app.title }}
       <span style="opacity: 0.5">
