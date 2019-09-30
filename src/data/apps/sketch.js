@@ -16,50 +16,50 @@ export default {
           title: 'Cut',
           keys: ['Meta', 'x'],
         },
-        {
-          title: 'Paste',
-          keys: ['Meta', 'v'],
-        },
-        {
-          title: 'Paste over selection',
-          keys: ['Shift', 'Meta', 'v'],
-        },
-        {
-          title: 'New page',
-          keys: ['Shift', 'Meta', 'n'],
-        },
-        {
-          title: 'Run custom plugin',
-          keys: ['Control', 'Meta', 'k'],
-        },
-        {
-          title: 'Undo',
-          keys: ['Meta', 'z'],
-        },
-        {
-          title: 'Redo',
-          keys: ['Shift', 'Meta', 'redo'],
-        },
-        {
-          title: 'Page setup',
-          keys: ['Shift', 'Meta', 'p'],
-        },
-        {
-          title: 'Open Preferences window',
-          keys: ['Meta', ','],
-        },
-        {
-          title: 'Quit Sketch',
-          keys: ['Meta', 'q'],
-        },
-        {
-          title: 'Open the Help menu',
-          keys: ['Shift', 'Meta', '?'],
-        },
-        {
-          title: 'Open Preview window',
-          keys: ['Meta', 'p'],
-        },
+        // {
+        //   title: 'Paste',
+        //   keys: ['Meta', 'v'],
+        // },
+        // {
+        //   title: 'Paste over selection',
+        //   keys: ['Shift', 'Meta', 'v'],
+        // },
+        // {
+        //   title: 'New page',
+        //   keys: ['Shift', 'Meta', 'n'],
+        // },
+        // {
+        //   title: 'Run custom plugin',
+        //   keys: ['Control', 'Meta', 'k'],
+        // },
+        // {
+        //   title: 'Undo',
+        //   keys: ['Meta', 'z'],
+        // },
+        // {
+        //   title: 'Redo',
+        //   keys: ['Shift', 'Meta', 'redo'],
+        // },
+        // {
+        //   title: 'Page setup',
+        //   keys: ['Shift', 'Meta', 'p'],
+        // },
+        // {
+        //   title: 'Open Preferences window',
+        //   keys: ['Meta', ','],
+        // },
+        // {
+        //   title: 'Quit Sketch',
+        //   keys: ['Meta', 'q'],
+        // },
+        // {
+        //   title: 'Open the Help menu',
+        //   keys: ['Shift', 'Meta', '?'],
+        // },
+        // {
+        //   title: 'Open Preview window',
+        //   keys: ['Meta', 'p'],
+        // },
       ],
     },
     {

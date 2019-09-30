@@ -113,3 +113,35 @@ button {
 .slide-right-enter-active {
   z-index: -1;
 }
+
+.pop-up-enter-active {
+  animation: pop-up-enter 0.3s;
+}
+.pop-up-leave-active {
+  animation: pop-up-leave 0.2s;
+}
+
+@keyframes pop-up-enter {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pop-up-leave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}

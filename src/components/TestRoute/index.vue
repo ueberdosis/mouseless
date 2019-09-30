@@ -79,11 +79,14 @@
 
         <div class="test-route__footer">
           <div class="test-route__progress">
-            <circle-progress
-              :size="20"
-              :value="learnedIds.length"
-              :max-value="shortcuts.length"
-            />
+            <transition name="pop-up">
+              <circle-progress
+                :size="20"
+                :value="learnedIds.length"
+                :max-value="shortcuts.length"
+                v-if="learnedIds.length"
+              />
+            </transition>
           </div>
           <button class="test-route__cancel" type="button" @click="stop">
             Stop

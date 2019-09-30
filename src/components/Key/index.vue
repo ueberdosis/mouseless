@@ -3,9 +3,11 @@
     <div class="key__placeholder">
       {{ name | key }}
     </div>
-    <div class="key__card">
-      {{ name | key }}
-    </div>
+    <transition name="pop-up">
+      <div class="key__card" v-if="isActive">
+        {{ name | key }}
+      </div>
+    </transition>
     <div class="key__name" v-if="altName">
       {{ altName }}
     </div>
