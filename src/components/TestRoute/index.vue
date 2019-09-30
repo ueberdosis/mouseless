@@ -83,14 +83,10 @@
 
         <div class="test-route__footer">
           <div class="test-route__progress">
-            <transition name="pop-up">
-              <circle-progress
-                :size="20"
-                :value="learnedIds.length"
-                :max-value="shortcuts.length"
-                v-if="learnedIds.length"
-              />
-            </transition>
+            <group-progress
+              :learned-count="learnedIds.length"
+              :count="shortcuts.length"
+            />
           </div>
           <button class="test-route__cancel" type="button" @click="stop">
             Stop
@@ -108,13 +104,13 @@ import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 import Key from '@/components/Key'
 import Page from '@/components/Page'
-import CircleProgress from '@/components/CircleProgress'
+import GroupProgress from '@/components/GroupProgress'
 
 export default {
   components: {
     Key,
     Page,
-    CircleProgress,
+    GroupProgress,
   },
 
   data() {
