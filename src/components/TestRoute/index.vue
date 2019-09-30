@@ -327,7 +327,7 @@ export default {
         this.success = true
         this.timeout = setTimeout(() => {
           this.timeout = null
-          if (this.isTest) {
+          if (this.isTest && !this.testFailed) {
             this.addToLearnedIds(id)
           } else {
             this.addToTrainedIds(id)
