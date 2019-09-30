@@ -302,18 +302,16 @@ export default {
         return
       }
 
+      event.preventDefault()
+      this.pressedResolvedKeys = this.keyboard.resolvedKeys
+
       console.log({
         pressed: this.keyboard.resolvedKeys,
         expected: this.currentShortcut.resolvedKeys,
       })
 
-      this.pressedResolvedKeys = this.keyboard.resolvedKeys
-      event.preventDefault()
-      const success = this.keyboard.is(this.currentShortcut.resolvedKeys)
-      const { id } = this.currentShortcut
-
-      if (success) {
-        console.log('jep')
+      if (this.keyboard.is(this.currentShortcut.resolvedKeys)) {
+        const { id } = this.currentShortcut
         this.success = true
         this.timeout = setTimeout(() => {
           this.timeout = null
