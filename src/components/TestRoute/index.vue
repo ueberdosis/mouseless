@@ -102,6 +102,7 @@
 </template>
 
 <script>
+import uuidv4 from 'uuid/v4'
 import weighted from 'weighted'
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
@@ -129,14 +130,11 @@ export default {
       trainedIds: [],
       learnedIds: [],
       currentShortcut: null,
+      testId: uuidv4(),
     }
   },
 
   computed: {
-    testId() {
-      return `${this.isTest ? 'test:' : ''}${this.currentShortcut.id}`
-    },
-
     isTest() {
       if (!this.started) {
         return false
@@ -232,6 +230,7 @@ export default {
     },
 
     next() {
+      this.testId = uuidv4()
       this.testFailed = false
       this.success = false
       this.pressedResolvedKeys = []
