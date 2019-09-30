@@ -38,7 +38,7 @@ export default {
         },
         {
           title: 'Redo',
-          keys: ['Shift', 'Meta', 'redo'],
+          keys: ['Shift', 'Meta', 'z'],
         },
         {
           title: 'Page setup',
