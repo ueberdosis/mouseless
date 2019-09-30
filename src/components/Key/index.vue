@@ -3,25 +3,29 @@
     <div class="key__placeholder">
       {{ name | key }}
     </div>
+
     <transition name="pop-up">
       <div class="key__card" v-if="isActive">
         {{ name | key }}
       </div>
     </transition>
+
     <div class="key__name" v-if="altName">
       {{ altName }}
     </div>
+
     <transition name="pop-up">
       <img
         class="key__check-badge"
         src="@/assets/images/check.svg"
-        alt=""
         v-if="showResult && isSuccess"
       >
+    </transition>
+
+    <transition name="pop-up">
       <img
         class="key__fail-badge"
         src="@/assets/images/fail.svg"
-        alt=""
         v-if="showResult && !isSuccess"
       >
     </transition>

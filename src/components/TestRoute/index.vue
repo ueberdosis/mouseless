@@ -127,20 +127,21 @@ export default {
       learnedIds: [],
       currentShortcut: null,
       testId: uuidv4(),
+      isTest: false,
     }
   },
 
   computed: {
-    isTest() {
-      if (!this.started) {
-        return false
-      }
+    // isTest() {
+    //   if (!this.started) {
+    //     return false
+    //   }
 
-      const { id } = this.currentShortcut
-      const isTest = this.trainedIds.includes(id) || this.learnedIds.includes(id)
+    //   const { id } = this.currentShortcut
+    //   const isTest = this.trainedIds.includes(id) || this.learnedIds.includes(id)
 
-      return isTest
-    },
+    //   return isTest
+    // },
 
     isTraining() {
       return !this.isTest
@@ -242,6 +243,8 @@ export default {
         this.stop()
       } else {
         this.setShortcut()
+        const { id } = this.currentShortcut
+        this.isTest = this.trainedIds.includes(id) || this.learnedIds.includes(id)
       }
     },
 
