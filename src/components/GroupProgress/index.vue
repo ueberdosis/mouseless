@@ -2,11 +2,20 @@
   <div class="group-progress">
     <transition name="pop-up">
       <circle-progress
+        class="group-progress__bar"
         :size="20"
         :value="learnedCount"
         :max-value="count"
         v-if="learnedCount"
       />
+    </transition>
+
+    <transition name="left-to-right" mode="out-in">
+      <div class="group-progress__message" v-if="message" :key="message">
+        <div class="group-progress__text">
+          {{ message }}
+        </div>
+      </div>
     </transition>
   </div>
 </template>
@@ -29,6 +38,34 @@ export default {
       default: 0,
       type: Number,
     },
+  },
+
+  data() {
+    return {
+      timeout: null,
+      message: null,
+    }
+  },
+
+  watch: {
+    learnedCount() {
+      this.setMessage()
+    },
+  },
+
+  methods: {
+    setMessage() {
+      this.message = `${this.learnedCount} learned`
+
+      clearTimeout(this.timeout)
+      this.timeout = setTimeout(() => {
+        this.message = null
+      }, 3000)
+    },
+  },
+
+  beforeDestroy() {
+    clearTimeout(this.timeout)
   },
 }
 </script>

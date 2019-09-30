@@ -145,3 +145,18 @@ button {
     opacity: 0;
   }
 }
+
+.left-to-right-enter-active,
+.left-to-right-leave-active {
+  transition: transform 0.2s $easeInOutQuad, opacity 0.2s $easeInOutQuad;
+}
+
+.left-to-right-enter {
+  opacity: 0;
+  transform: translateX(-8px);
+}
+
+.left-to-right-leave-to {
+  opacity: 0;
+  transform: translateX(8px);
+}
