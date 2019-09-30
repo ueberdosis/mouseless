@@ -29,19 +29,46 @@
             </div>
 
             <div class="test-route__keys">
-              <template v-if="isTest">
-                <key
-                  v-for="(key, index) in currentShortcut.resolvedKeys"
-                  :key="index"
-                  :name="key"
-                  :is-active="success"
-                />
+              <template v-if="isTest && !testFailed">
+                <div class="test-route__key-group">
+                  <key
+                    v-for="(key, index) in currentShortcut.resolvedKeys"
+                    :key="index"
+                    :name="key"
+                    :is-test="true"
+                    :is-active="success"
+                  />
+                </div>
+              </template>
+              <template v-else-if="isTest && testFailed">
+                <div class="test-route__key-group">
+                  <key
+                    v-for="(key, index) in currentShortcut.resolvedKeys"
+                    :key="index"
+                    :name="key"
+                    :is-test="false"
+                    :is-active="true"
+                    :is-success="false"
+                    :is-failed="true"
+                  />
+                </div>
+                <div class="test-route__key-group">
+                  <key
+                    v-for="(key, index) in currentShortcut.resolvedKeys"
+                    :key="index"
+                    :name="key"
+                    :is-test="false"
+                    :is-active="pressedResolvedKeys.includes(key) || success"
+                    :is-success="success"
+                  />
+                </div>
               </template>
               <template v-else>
                 <key
                   v-for="(key, index) in currentShortcut.resolvedKeys"
                   :key="index"
                   :name="key"
+                  :is-test="false"
                   :is-active="pressedResolvedKeys.includes(key) || success"
                   :is-success="success"
                 />
@@ -86,13 +113,13 @@ export default {
     return {
       success: false,
       isFailed: false,
+      testFailed: false,
       timeout: null,
       keyboard: new Keyboard(),
       pressedResolvedKeys: [],
       run: null,
       trainedIds: [],
       learnedIds: [],
-      failedIds: [],
       currentShortcut: null,
     }
   },
@@ -129,7 +156,6 @@ export default {
       return this.shortcuts
         .filter(shortcut => !this.trainedIds.includes(shortcut.id))
         .filter(shortcut => !this.learnedIds.includes(shortcut.id))
-        .filter(shortcut => !this.failedIds.includes(shortcut.id))
     },
 
     trainedShortcuts() {
@@ -138,10 +164,6 @@ export default {
 
     learnedShortcuts() {
       return this.learnedIds.map(id => this.shortcuts.find(shortcut => shortcut.id === id))
-    },
-
-    failedShortcuts() {
-      return this.failedIds.map(id => this.shortcuts.find(shortcut => shortcut.id === id))
     },
 
     started() {
@@ -161,10 +183,6 @@ export default {
         {
           shortcuts: this.learnedShortcuts,
           weight: 10,
-        },
-        {
-          shortcuts: this.failedShortcuts,
-          weight: 70,
         },
         {
           shortcuts: this.unseenShortcuts,
@@ -202,13 +220,13 @@ export default {
     },
 
     next() {
+      this.testFailed = false
       this.success = false
       this.pressedResolvedKeys = []
 
       this.run.update({
         trainedIds: this.trainedIds,
         learnedIds: this.learnedIds,
-        failedIds: this.failedIds,
       })
 
       if (this.finished) {
@@ -229,19 +247,11 @@ export default {
 
     addToTrainedIds(id) {
       this.trainedIds = collect(this.trainedIds).push(id).unique().toArray()
-      this.failedIds = this.failedIds.filter(failedId => failedId !== id)
       this.learnedIds = this.learnedIds.filter(learnedId => learnedId !== id)
     },
 
     addToLearnedIds(id) {
       this.learnedIds = collect(this.learnedIds).push(id).unique().toArray()
-      this.trainedIds = this.trainedIds.filter(trainedId => trainedId !== id)
-      this.failedIds = this.failedIds.filter(failedId => failedId !== id)
-    },
-
-    addToFailedIds(id) {
-      this.failedIds = collect(this.failedIds).push(id).unique().toArray()
-      this.learnedIds = this.learnedIds.filter(learnedId => learnedId !== id)
       this.trainedIds = this.trainedIds.filter(trainedId => trainedId !== id)
     },
 
@@ -264,7 +274,6 @@ export default {
 
       this.trainedIds = [] // don't restore trained ids
       this.learnedIds = this.run.learnedIds
-      this.failedIds = this.run.failedIds
     },
 
     startFailedAnimation() {
@@ -315,13 +324,19 @@ export default {
           }
           this.next()
         }, 1000)
-      } else {
-        console.log('nope')
-        if (this.isTraining) {
-          this.startFailedAnimation()
-        } else {
-          this.addToFailedIds(id)
-          this.next()
+        return
+      }
+
+      if (this.isTraining) {
+        this.startFailedAnimation()
+        return
+      }
+
+      if (this.isTest) {
+        this.startFailedAnimation()
+
+        if (!this.testFailed) {
+          this.testFailed = true
         }
       }
     })

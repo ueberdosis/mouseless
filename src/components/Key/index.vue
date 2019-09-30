@@ -1,5 +1,5 @@
 <template>
-  <div class="key" :class="{ 'is-pressed': isPressed, 'is-active': isActive, 'is-ghost': isGhost }">
+  <div class="key" :class="{ 'is-pressed': isPressed, 'is-active': isActive, 'is-test': isTest }">
     <div class="key__placeholder">
       {{ name | key }}
     </div>
@@ -42,7 +42,7 @@ export default {
       type: Boolean,
     },
 
-    isGhost: {
+    isTest: {
       default: false,
       type: Boolean,
     },

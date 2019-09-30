@@ -38,11 +38,6 @@ export default {
       type: Array,
       default: () => ([]),
     },
-
-    failedIds: {
-      type: Array,
-      default: () => ([]),
-    },
   },
 
   methods: {

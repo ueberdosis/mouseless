@@ -27,6 +27,10 @@
     color: rgba($colorBlack, 0.5);
   }
 
+  &.is-test &__placeholder {
+    color: transparent;
+  }
+
   &__card {
     display: none;
     position: absolute;
@@ -54,6 +58,10 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     opacity: 0.5;
+  }
+
+  &.is-test:not(.is-active) &__name {
+    opacity: 0;
   }
 
   &__check-badge,

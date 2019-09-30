@@ -74,6 +74,15 @@
     margin-top: 20px;
   }
 
+  &__key-group {
+    display: inline-flex;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
   &__progress {
     font-size: 14px;
     font-weight: 600;
