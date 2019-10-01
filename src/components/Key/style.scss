@@ -23,8 +23,8 @@
   }
 
   &__placeholder {
-    border: 3px solid rgba($colorBlack, 0.2);
-    color: rgba($colorBlack, 0.5);
+    border: 3px solid rgba($colorWhite, 0.2);
+    color: rgba($colorWhite, 0.5);
   }
 
   &.is-test &__placeholder {
@@ -43,15 +43,8 @@
     left: 0;
     width: 100%;
     height: 50px;
-    // background-color: $colorWhite;
     color: $colorBlack;
-    box-shadow:
-      0 1px 1px rgba(0, 0, 0, 0.04),
-      0 2px 2px rgba(0, 0, 0, 0.04),
-      0 4px 4px rgba(0, 0, 0, 0.04),
-      0 8px 8px rgba(0, 0, 0, 0.04),
-      0 16px 16px rgba(0, 0, 0, 0.04),
-    ;
+    will-change: transform;
 
     &::before,
     &::after {
@@ -72,7 +65,7 @@
 
     &::after {
       z-index: -2;
-      background-color: #eee;
+      background-color: rgba($colorWhite, 0.8);
     }
   }
 
@@ -82,10 +75,9 @@
     left: 0;
     width: 100%;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     opacity: 0.5;
   }
 
@@ -98,6 +90,7 @@
     position: absolute;
     top: -4px;
     right: -4px;
+    will-change: transform;
   }
 
 }

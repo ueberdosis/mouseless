@@ -13,11 +13,12 @@
 	}
 
 	&__circle {
-		stroke: rgba($colorBlack, 0.2);
+		stroke: rgba($colorWhite, 0.2);
 	}
 
 	&__progress {
-		stroke: $colorBlack;
+    stroke: $colorWhite;
+    will-change: stroke-dashoffset, stroke-dasharray, stroke;
     transition:
       stroke-dashoffset 0.5s $ease,
       stroke-dasharray 0.5s $ease,

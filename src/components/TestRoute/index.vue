@@ -82,15 +82,10 @@
         </transition>
 
         <div class="test-route__footer">
-          <div class="test-route__progress">
-            <group-progress
-              :learned-count="learnedIds.length"
-              :count="shortcuts.length"
-            />
-          </div>
-          <button class="test-route__cancel" type="button" @click="stop">
-            Stop
-          </button>
+          <group-progress
+            :learned-count="learnedIds.length"
+            :count="shortcuts.length"
+          />
         </div>
       </div>
     </template>

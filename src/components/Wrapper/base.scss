@@ -162,3 +162,18 @@ button {
   opacity: 0;
   transform: translateX(8px);
 }
+
+.right-to-left-enter-active,
+.right-to-left-leave-active {
+  transition: transform 0.2s $easeInOutQuad, opacity 0.2s $easeInOutQuad;
+}
+
+.right-to-left-enter {
+  opacity: 0;
+  transform: translateX(8px);
+}
+
+.right-to-left-leave-to {
+  opacity: 0;
+  transform: translateX(-8px);
+}

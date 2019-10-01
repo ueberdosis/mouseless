@@ -1,5 +1,13 @@
 <template>
   <div class="group-progress">
+    <transition name="right-to-left" mode="out-in">
+      <div class="group-progress__message" v-if="message" :key="message">
+        <div class="group-progress__text">
+          {{ message }}
+        </div>
+      </div>
+    </transition>
+
     <transition name="pop-up">
       <circle-progress
         class="group-progress__bar"
@@ -8,14 +16,6 @@
         :max-value="count"
         v-if="learnedCount"
       />
-    </transition>
-
-    <transition name="left-to-right" mode="out-in">
-      <div class="group-progress__message" v-if="message" :key="message">
-        <div class="group-progress__text">
-          {{ message }}
-        </div>
-      </div>
     </transition>
   </div>
 </template>

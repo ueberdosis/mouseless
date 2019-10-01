@@ -5,6 +5,7 @@
   padding: 20px;
   border-radius: 12px;
   text-decoration: none;
+  will-change: background-color;
   transition: background-color 0.2s $ease;
 
   &:hover {
