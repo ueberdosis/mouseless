@@ -6,25 +6,14 @@
         {{ app.title }}
       </div>
       <div class="app-item__meta">
-        <div class="app-item__meta-item">
-          <icon name="shortcut" />
-          <span>
-            {{ app.shortcuts.length }}
-          </span>
-        </div>
+        {{ app.shortcuts.length }} Shortcuts
       </div>
     </div>
   </router-link>
 </template>
 
 <script>
-import Icon from '@/components/Icon'
-
 export default {
-  components: {
-    Icon,
-  },
-
   props: {
     app: {
       required: true,

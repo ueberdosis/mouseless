@@ -41,10 +41,10 @@
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+  background: black;
+  color: $colorWhite;
   line-height: 1.4;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -94,8 +94,9 @@ button {
   position: absolute;
   will-change: transform;
   transition:
+    border-radius 0.7s $easeInOutQuint,
     opacity 0.7s $easeInOutQuint,
-    transform 0.7s $easeInOutQuint
+    transform 0.7s $easeInOutQuint,
   ;
 }
 
@@ -106,8 +107,9 @@ button {
 
 .slide-right-enter,
 .slide-left-leave-active {
-  transform: scale(0.9);
+  transform: scale(0.8);
   opacity: 0.5;
+  border-radius: 24px;
 }
 
 .slide-right-enter-active {

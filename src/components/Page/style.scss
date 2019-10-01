@@ -2,12 +2,15 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: $colorYellow;
+  background-color: $colorBlack;
   border-radius: 30px;
   overflow: hidden;
 
   &__header {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     flex: 0 0 auto;
     height: 37px;
   }
@@ -40,6 +43,10 @@
   &__content {
     position: relative;
     flex: 1 1 auto;
+    padding-top: 37px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   &__settings {
