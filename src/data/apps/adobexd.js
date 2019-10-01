@@ -2,5 +2,17 @@
 export default {
   id: 'adobexd',
   title: 'Adobe XD',
-  shortcuts: [],
+  groups: [
+    {
+      title: 'Text Styles',
+      id: 'textstyles',
+      version: 1,
+      shortcuts: [
+        {
+          title: '',
+          keys: [''],
+        },
+      ],
+    },
+  ],
 }
