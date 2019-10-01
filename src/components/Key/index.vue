@@ -75,6 +75,7 @@ export default {
         PageUp: 'Page Up',
         PageDown: 'Page Down',
         Space: 'Space',
+        Escape: 'Esc',
       }
 
       return keys[this.name] ? keys[this.name] : false
