@@ -10,13 +10,84 @@ export default {
       version: 1,
       shortcuts: [
         {
+          title: 'Select the card below',
+          keys: ['j'],
+        },
+        {
+          title: 'Select the card above',
+          keys: ['k'],
+        },
+        {
+          title: 'Open Card',
+          keys: ['Enter'],
+        },
+        {
+          title: 'Insert New Card',
+          keys: ['n'],
+        },
+        {
+          title: 'Watch',
+          keys: ['s'],
+        },
+        {
+          title: 'Vote',
+          keys: ['v'],
+        },
+        // TODO: Hovering a card
+        // {
+        //   title: 'Copy Card',
+        //   keys: ['Meta', 'c'],
+        // },
+        // {
+        //   title: 'Move Card',
+        //   keys: ['Meta', 'x'],
+        // },
+        // {
+        //   title: 'Paste Card',
+        //   keys: ['Meta', 'v'],
+        // },
+        {
+          title: 'Open Shortcuts Page',
+          keys: ['?'],
+        },
+      ],
+    },
+    {
+      title: 'View',
+      id: 'view',
+      version: 1,
+      shortcuts: [
+        {
           title: 'Open Header Boards Menu',
           keys: ['b'],
         },
         {
-          title: 'Focus Search Box',
-          keys: ['/'],
+          title: 'Open Card Filter Menu',
+          keys: ['f'],
         },
+        {
+          title: 'Toggle Label Names',
+          keys: [';'],
+        },
+        {
+          title: 'My Cards Filter',
+          keys: ['q'],
+        },
+        {
+          title: 'Clear All Filters',
+          keys: ['x'],
+        },
+        {
+          title: 'Toggle Board Menu',
+          keys: ['w'],
+        },
+      ],
+    },
+    {
+      title: 'Cards',
+      id: 'cards',
+      version: 1,
+      shortcuts: [
         {
           title: 'Archive Card',
           keys: ['c'],
@@ -38,36 +109,12 @@ export default {
           keys: ['Meta', 'Enter'],
         },
         {
-          title: 'Open Card',
-          keys: ['Enter'],
-        },
-        {
-          title: 'Open Card Filter Menu',
-          keys: ['f'],
-        },
-        {
           title: 'Label',
           keys: ['l'],
         },
         {
-          title: 'Toggle Label Names',
-          keys: [';'],
-        },
-        {
           title: 'Add / Remove Members',
           keys: ['m'],
-        },
-        {
-          title: 'Insert New Card',
-          keys: ['n'],
-        },
-        {
-          title: 'My Cards Filter',
-          keys: ['q'],
-        },
-        {
-          title: 'Watch',
-          keys: ['s'],
         },
         {
           title: 'Assign Self',
@@ -76,34 +123,6 @@ export default {
         {
           title: 'Edit Title',
           keys: ['t'],
-        },
-        {
-          title: 'Vote',
-          keys: ['v'],
-        },
-        {
-          title: 'Toggle Board Menu',
-          keys: ['w'],
-        },
-        {
-          title: 'Clear All Filters',
-          keys: ['x'],
-        },
-        {
-          title: 'Open Shortcuts Page',
-          keys: ['?'],
-        },
-        {
-          title: 'Copy Card',
-          keys: ['Meta', 'c'],
-        },
-        {
-          title: 'Move Card',
-          keys: ['Meta', 'x'],
-        },
-        {
-          title: 'Paste Card',
-          keys: ['Meta', 'v'],
         },
       ],
     },
