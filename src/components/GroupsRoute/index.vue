@@ -5,9 +5,6 @@
         Apps
       </btn>
     </template>
-    <template v-slot:center>
-      {{ app.title }}
-    </template>
     <template v-slot>
       <div class="groups-route">
         <div class="groups-route__header">

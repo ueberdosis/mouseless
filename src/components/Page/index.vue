@@ -4,8 +4,13 @@
       <div class="page__left" v-if="$scopedSlots.left">
         <slot name="left" />
       </div>
-      <div class="page__center" v-if="$scopedSlots.center">
-        <slot name="center" />
+      <div class="page__center">
+        <span class="page__title" v-if="title">
+          {{ title }}
+        </span>
+        <span class="page__subtitle" style="opacity: 0.5" v-if="subtitle">
+          {{ subtitle }}
+        </span>
       </div>
       <div class="page__right">
         <btn icon="options" @click.native="reset" />
@@ -23,6 +28,18 @@ import Btn from '@/components/Btn'
 export default {
   components: {
     Btn,
+  },
+
+  props: {
+    title: {
+      type: String,
+      default: null,
+    },
+
+    subtitle: {
+      type: String,
+      default: null,
+    },
   },
 
   methods: {

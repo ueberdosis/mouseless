@@ -1,15 +1,9 @@
 <template>
-  <page>
+  <page :title="app.title" :subtitle="group.title">
     <template v-slot:left>
       <btn icon="arrow-left" @click.native="goBack">
         Sets
       </btn>
-    </template>
-    <template v-slot:center>
-      {{ app.title }}
-      <span style="opacity: 0.5">
-        {{ group.title }}
-      </span>
     </template>
     <template v-slot>
       <div class="test-route">

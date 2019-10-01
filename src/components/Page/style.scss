@@ -7,6 +7,7 @@
 
   &__header {
     position: absolute;
+    display: flex;
     z-index: 1;
     top: 0;
     left: 0;
@@ -21,26 +22,33 @@
   &__left,
   &__center,
   &__right {
-    position: absolute;
-    top: 2px;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+  }
+
+  &__left,
+  &__right {
+    flex: 0 0 30%;
   }
 
   &__left {
-    left: 70px;
-    z-index: 1;
+    padding-left: 78px;
   }
 
   &__center {
-    left: 0;
-    width: 100%;
-    text-align: center;
+    flex: 1 1 auto;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
   }
 
   &__right {
-    right: 0;
+    justify-content: flex-end;
+  }
+
+  &__subtitle {
+    margin-left: 4px;
   }
 
   &__content {
