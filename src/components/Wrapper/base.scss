@@ -25,7 +25,11 @@
   border: 4px solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
   border-radius: 8px;
-  background-color: rgba($colorWhite, 0.1);
+  background-color: rgba($colorWhite, 0.08);
+
+  &:hover {
+    background-color: rgba($colorWhite, 0.1);
+  }
 }
 
 ::-webkit-scrollbar-button {
