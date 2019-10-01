@@ -9,7 +9,12 @@
       {{ app.title }}
     </template>
     <template v-slot>
-      <groups :app="app" />
+      <list-section title="Recent Sets" v-if="recentGroups.length">
+        <groups :groups="recentGroups" :app="app" />
+      </list-section>
+      <list-section title="Sets" v-if="unrecentGroups.length">
+        <groups :groups="unrecentGroups" :app="app" />
+      </list-section>
     </template>
   </page>
 </template>
@@ -18,12 +23,14 @@
 import Btn from '@/components/Btn'
 import Page from '@/components/Page'
 import Groups from '@/components/Groups'
+import ListSection from '@/components/ListSection'
 
 export default {
   components: {
     Btn,
     Page,
     Groups,
+    ListSection,
   },
 
   data() {
@@ -35,6 +42,18 @@ export default {
   computed: {
     app() {
       return this.$db.app(this.$route.params.appId)
+    },
+
+    groups() {
+      return this.app.groups
+    },
+
+    recentGroups() {
+      return this.app.recentGroups
+    },
+
+    unrecentGroups() {
+      return this.app.unrecentGroups
     },
   },
 
