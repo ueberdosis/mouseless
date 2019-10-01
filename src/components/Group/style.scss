@@ -38,4 +38,14 @@
   &__progress {
     margin-left: 8px;
   }
+
+  &__arrow {
+    margin-left: 12px;
+    opacity: 0.5;
+    transition: opacity 0.2s $ease;
+  }
+
+  &:hover &__arrow {
+    opacity: 1;
+  }
 }

@@ -20,15 +20,18 @@
       <template v-else>
         {{ shortcuts.length }}
       </template>
+      <icon class="group__arrow" name="arrow-right" />
     </div>
   </router-link>
 </template>
 
 <script>
+import Icon from '@/components/Icon'
 import CircleProgress from '@/components/CircleProgress'
 
 export default {
   components: {
+    Icon,
     CircleProgress,
   },
 
