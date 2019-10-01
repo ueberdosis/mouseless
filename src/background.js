@@ -17,8 +17,9 @@ function createWindow() {
     width: 600,
     height: 480,
     resizable: false,
+    fullscreen: false,
+    // maximizable: false,
     titleBarStyle: 'hiddenInset',
-    // vibrancy: 'ultra-dark',
     transparent: true,
     backgroundColor: '#000',
     webPreferences: {
