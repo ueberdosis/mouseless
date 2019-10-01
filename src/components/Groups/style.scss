@@ -1,16 +1,3 @@
 .groups {
-  height: 100%;
-  padding: 60px 0;
 
-  .swiper-container {
-    height: 100%;
-  }
-
-  .swiper-wrapper {
-    transition-timing-function: $easeOutExpo;
-  }
-
-  &__items {
-    padding: 0 60px;
-  }
 }

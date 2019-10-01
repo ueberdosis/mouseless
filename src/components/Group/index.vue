@@ -1,30 +1,22 @@
 <template>
-  <div class="group" :class="{ 'is-active': isActive, 'has-animation': animate }">
-    <div class="group__card">
-      <div class="group__content">
-        <!-- <img class="group__image" src="@/assets/images/illustration.png"> -->
-        <div class="group__title">
-          {{ group.title }}
-        </div>
-        <div class="group__sub-title">
-          {{ shortcuts.length }} Shortcuts
-        </div>
-        <div v-if="latestRun">
-          <div v-if="finished">
-            finished
-          </div>
-          <div v-else>
-            {{ latestRun.learnedIds.length }} / {{ shortcuts.length }} learned
-          </div>
-        </div>
-      </div>
-      <div class="group__footer">
-        <div class="group__button" @click="onClick" v-if="isActive">
-          Play
-        </div>
+  <router-link class="group" :to="{ name: 'app.test', params: { groupId: group.id }}">
+    <div class="group__content">
+      <div class="group__title">
+        {{ group.title }}
       </div>
     </div>
-  </div>
+    <div class="group__meta">
+      <template v-if="latestRun && finished">
+        finished
+      </template>
+      <template v-else-if="latestRun && !finished">
+        {{ latestRun.learnedIds.length }} / {{ shortcuts.length }}
+      </template>
+      <template v-else>
+        {{ shortcuts.length }}
+      </template>
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -40,16 +32,6 @@ export default {
     group: {
       required: true,
       type: Object,
-    },
-
-    isActive: {
-      default: false,
-      type: Boolean,
-    },
-
-    animate: {
-      default: false,
-      type: Boolean,
     },
   },
 
@@ -69,7 +51,6 @@ export default {
 
   methods: {
     onClick() {
-      Event.emit('beforeAnimation', this.$el)
       this.$router.push({
         name: 'app.test',
         params: { groupId: this.group.id },

@@ -4,15 +4,18 @@
   height: 100vh;
   background-color: $colorBlack;
   border-radius: 30px;
-  overflow: hidden;
 
   &__header {
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
     flex: 0 0 auto;
-    height: 37px;
+    height: 38px;
+    background-color: rgba($colorBlack, 0.5);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid $colorBlack;
   }
 
   &__left,
@@ -43,17 +46,17 @@
   &__content {
     position: relative;
     flex: 1 1 auto;
-    padding-top: 37px;
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
+    padding: 38px 32px 32px 32px;
   }
 
   &__settings {
     position: absolute;
     top: 6px;
     right: 14px;
-    fill: $colorBlack;
+    fill: $colorWhite;
     cursor: pointer;
     opacity: 0.4;
     transition: fill 0.2s $ease;

@@ -127,17 +127,6 @@ export default {
   },
 
   computed: {
-    // isTest() {
-    //   if (!this.started) {
-    //     return false
-    //   }
-
-    //   const { id } = this.currentShortcut
-    //   const isTest = this.trainedIds.includes(id) || this.learnedIds.includes(id)
-
-    //   return isTest
-    // },
-
     isTraining() {
       return !this.isTest
     },

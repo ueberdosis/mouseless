@@ -9,7 +9,7 @@
       {{ app.title }}
     </template>
     <template v-slot>
-      <groups :app="app" :animate="animate" />
+      <groups :app="app" />
     </template>
   </page>
 </template>
@@ -34,16 +34,6 @@ export default {
     app() {
       return this.$db.app(this.$route.params.appId)
     },
-
-    animate() {
-      return this.previousRoute && this.previousRoute.name === 'apps'
-    },
-  },
-
-  beforeRouteEnter(to, from, next) {
-    next(vm => {
-      vm.previousRoute = from
-    })
   },
 }
 </script>
