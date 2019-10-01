@@ -37,7 +37,7 @@ export default class Keyboard {
     Enter: '↩',
     Backspace: '⌫',
     Delete: '⌦',
-    Escape: 'Esc',
+    Escape: '⎋',
     Tab: '⇥',
     PageUp: '⇞',
     PageDown: '⇟',

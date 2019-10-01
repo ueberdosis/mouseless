@@ -7,13 +7,23 @@
       </div>
       <div class="app-item__meta">
         {{ app.shortcuts.length }} Shortcuts
+        <!-- <circle-progress
+          :value="0"
+          :max-value="app.shortcuts.length"
+        /> -->
       </div>
     </div>
   </router-link>
 </template>
 
 <script>
+import CircleProgress from '@/components/CircleProgress'
+
 export default {
+  components: {
+    CircleProgress,
+  },
+
   props: {
     app: {
       required: true,

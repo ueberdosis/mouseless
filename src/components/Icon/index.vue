@@ -1,7 +1,5 @@
 <script>
 export default {
-  functional: true,
-
   props: {
     name: {
       type: String,
@@ -14,17 +12,17 @@ export default {
     },
   },
 
-  render(createElement, { props }) {
+  render(createElement) {
     let svgHTML = ''
     try {
-      svgHTML = require(`!html-loader!@/assets/icons/${props.name}.svg`)
+      svgHTML = require(`!html-loader!@/assets/icons/${this.name}.svg`)
     } catch (e) {
-      console.warn(`Unable to load "icon-${props.name}.svg" icon. Verify it exists in the icons directory.`, e)
+      console.warn(`Unable to load "icon-${this.name}.svg" icon. Verify it exists in the icons directory.`, e)
     }
     return createElement(
       'div',
       {
-        class: `icon icon--${props.size}`,
+        class: `icon icon--${this.size}`,
         domProps: {
           innerHTML: svgHTML,
         },

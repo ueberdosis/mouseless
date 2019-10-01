@@ -1,9 +1,9 @@
 <template>
   <page>
     <template v-slot:left>
-      <router-link class="hover-button" :to="{ name: 'apps' }">
-        ← Apps
-      </router-link>
+      <btn icon="arrow-left" @click.native="goBack">
+        Apps
+      </btn>
     </template>
     <template v-slot:center>
       {{ app.title }}
@@ -15,13 +15,15 @@
 </template>
 
 <script>
-import Groups from '@/components/Groups'
+import Btn from '@/components/Btn'
 import Page from '@/components/Page'
+import Groups from '@/components/Groups'
 
 export default {
   components: {
-    Groups,
+    Btn,
     Page,
+    Groups,
   },
 
   data() {
@@ -33,6 +35,12 @@ export default {
   computed: {
     app() {
       return this.$db.app(this.$route.params.appId)
+    },
+  },
+
+  methods: {
+    goBack() {
+      this.$router.push({ name: 'apps' })
     },
   },
 }
