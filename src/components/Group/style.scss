@@ -28,8 +28,14 @@
   }
 
   &__meta {
+    display: inline-flex;
+    align-items: center;
     font-size: 12px;
     font-weight: 700;
     opacity: 0.5;
+  }
+
+  &__progress {
+    margin-left: 8px;
   }
 }

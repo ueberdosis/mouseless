@@ -11,7 +11,6 @@
     <transition name="pop-up">
       <circle-progress
         class="group-progress__bar"
-        :size="20"
         :value="learnedCount"
         :max-value="count"
         v-if="learnedCount"

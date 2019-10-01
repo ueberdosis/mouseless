@@ -66,28 +66,6 @@ button {
   border: none;
 }
 
-.hover-button {
-  cursor: pointer;
-
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    content: '';
-    display: block;
-    background-color: currentColor;
-    opacity: 0;
-    border-radius: 6px;
-    transition: 0.2s $ease;
-  }
-
-  &:hover::after {
-    opacity: 0.06;
-  }
-}
-
 .route {
   width: 100%;
   border-radius: 4px;

@@ -28,7 +28,7 @@
 export default {
   props: {
     size: {
-      default: 50,
+      default: 16,
       type: Number,
     },
 

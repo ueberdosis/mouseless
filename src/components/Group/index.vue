@@ -11,6 +11,11 @@
       </template>
       <template v-else-if="latestRun && !finished">
         {{ latestRun.learnedIds.length }} / {{ shortcuts.length }}
+        <circle-progress
+          class="group__progress"
+          :value="latestRun.learnedIds.length"
+          :max-value="shortcuts.length"
+        />
       </template>
       <template v-else>
         {{ shortcuts.length }}
@@ -20,9 +25,13 @@
 </template>
 
 <script>
-import Event from '@/services/Event'
+import CircleProgress from '@/components/CircleProgress'
 
 export default {
+  components: {
+    CircleProgress,
+  },
+
   props: {
     app: {
       required: true,
