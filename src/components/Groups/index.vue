@@ -1,7 +1,7 @@
 <template>
   <div class="groups">
     <group
-      v-for="group in app.groups"
+      v-for="group in groups"
       :key="group.id"
       :app="app"
       :group="group"
@@ -21,6 +21,11 @@ export default {
     app: {
       required: true,
       type: Object,
+    },
+
+    groups: {
+      default: () => ([]),
+      type: Array,
     },
   },
 }

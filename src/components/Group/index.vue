@@ -6,14 +6,14 @@
       </div>
     </div>
     <div class="group__meta">
-      <template v-if="latestRun && finished">
+      <template v-if="bestRun && finished">
         finished
       </template>
-      <template v-else-if="latestRun && !finished">
-        {{ latestRun.learnedIds.length }} / {{ shortcuts.length }}
+      <template v-else-if="bestRun && !finished && bestRun.learnedIds.length">
+        {{ bestRun.learnedIds.length }} / {{ shortcuts.length }}
         <circle-progress
           class="group__progress"
-          :value="latestRun.learnedIds.length"
+          :value="bestRun.learnedIds.length"
           :max-value="shortcuts.length"
         />
       </template>
@@ -52,12 +52,12 @@ export default {
       return this.app.shortcutsByGroup(this.group.id)
     },
 
-    latestRun() {
-      return this.app.latestRunByGroup(this.group.id)
+    bestRun() {
+      return this.app.bestRunByGroup(this.group.id)
     },
 
     finished() {
-      return this.latestRun && this.latestRun.finishedAt
+      return this.bestRun && this.bestRun.finishedAt
     },
   },
 

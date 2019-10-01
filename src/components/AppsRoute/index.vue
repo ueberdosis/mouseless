@@ -1,7 +1,7 @@
 <template>
   <page>
     <template v-slot>
-      <list-section title="Recent Apps">
+      <list-section title="Recent Apps" v-if="recentApps.length">
         <apps-list :apps="recentApps" />
       </list-section>
       <list-section title="Apps">

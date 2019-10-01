@@ -1,0 +1,20 @@
+.groups-route {
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  &__logo {
+    height: 40px;
+    width: auto;
+  }
+
+  &__title {
+    font-size: 34px;
+    font-weight: 700;
+    margin-left: 12px;
+  }
+
+}

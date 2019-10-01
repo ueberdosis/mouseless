@@ -57,6 +57,23 @@ export default {
 
       return this.group(latestRun.groupId)
     },
+
+    recentGroups() {
+      return collect(this.runs)
+        .pluck('groupId')
+        .unique()
+        .map(groupId => this.bestRunByGroup(groupId))
+        .filter(run => run.learnedIds.length > 0)
+        .pluck('groupId')
+        .map(groupId => this.group(groupId))
+        .toArray()
+    },
+
+    unrecentGroups() {
+      const { recentGroups } = this
+      return this.groups
+        .filter(group => !recentGroups.find(recentGroup => recentGroup.id === group.id))
+    },
   },
 
   methods: {
