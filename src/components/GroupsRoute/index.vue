@@ -9,12 +9,20 @@
       {{ app.title }}
     </template>
     <template v-slot>
-      <list-section title="Recent Sets" v-if="recentGroups.length">
-        <groups :groups="recentGroups" :app="app" />
-      </list-section>
-      <list-section title="Sets" v-if="unrecentGroups.length">
-        <groups :groups="unrecentGroups" :app="app" />
-      </list-section>
+      <div class="groups-route">
+        <div class="groups-route__header">
+          <img class="groups-route__logo" :src="logo">
+          <div class="groups-route__title">
+            {{ app.title }}
+          </div>
+        </div>
+        <list-section title="Recent Sets" v-if="recentGroups.length">
+          <groups :groups="recentGroups" :app="app" />
+        </list-section>
+        <list-section title="Sets" v-if="unrecentGroups.length">
+          <groups :groups="unrecentGroups" :app="app" />
+        </list-section>
+      </div>
     </template>
   </page>
 </template>
@@ -54,6 +62,10 @@ export default {
 
     unrecentGroups() {
       return this.app.unrecentGroups
+    },
+
+    logo() {
+      return require(`@/assets/logos/${this.app.id}.svg`)
     },
   },
 
