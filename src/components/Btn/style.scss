@@ -1,0 +1,32 @@
+.button {
+
+  display: inline-flex;
+  padding: 6px;
+  color: rgba($colorWhite, 0.5);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 6px;
+  background-color: rgba($colorWhite, 0.06);
+  transition: color 0.2s $ease, background-color 0.2s $ease;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba($colorWhite, 1);
+    background-color: rgba($colorWhite, 0.1);
+  }
+
+  &__icon {
+
+  }
+
+  &__content {
+
+  }
+
+  &__icon + &__content {
+    margin-left: 2px;
+  }
+
+}

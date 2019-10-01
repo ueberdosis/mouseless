@@ -1,9 +1,9 @@
 <template>
   <page>
     <template v-slot:left>
-      <router-link class="hover-button" :to="{ name: 'app.groups' }">
-        ← Sets
-      </router-link>
+      <btn icon="arrow-left" @click.native="goBack">
+        Sets
+      </btn>
     </template>
     <template v-slot:center>
       {{ app.title }}
@@ -97,12 +97,14 @@ import uuidv4 from 'uuid/v4'
 import weighted from 'weighted'
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
+import Btn from '@/components/Btn'
 import Key from '@/components/Key'
 import Page from '@/components/Page'
 import GroupProgress from '@/components/GroupProgress'
 
 export default {
   components: {
+    Btn,
     Key,
     Page,
     GroupProgress,
@@ -276,6 +278,10 @@ export default {
       this.failedTimeout = setTimeout(() => {
         this.isFailed = false
       }, 500)
+    },
+
+    goBack() {
+      this.$router.push({ name: 'app.groups' })
     },
   },
 
