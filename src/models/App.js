@@ -31,6 +31,17 @@ export default {
         .toArray()
     },
 
+    learnedShortcuts() {
+      return collect(this.runs)
+        .pluck('groupId')
+        .unique()
+        .map(groupId => this.bestRunByGroup(groupId))
+        .pluck('learnedIds')
+        .flatten(1)
+        .map(shortcutId => this.shortcuts.find(shortcut => shortcut.id === shortcutId))
+        .toArray()
+    },
+
     runs() {
       return this.$db.runs.filter(run => run.appId === this.id)
     },
@@ -70,6 +81,13 @@ export default {
         .first()
     },
 
+    bestRunByGroup(id = null) {
+      return collect(this.runs)
+        .filter(run => run.groupId === id)
+        .sortBy('learnedIds')
+        .first()
+    },
+
     formatShortcut(shortcut) {
       return {
         ...shortcut,
@@ -83,4 +101,8 @@ export default {
       return shajs('sha256').update(string).digest('hex')
     },
   },
+
+  // mounted() {
+  //   console.log(this.title, this.learnedShortcuts)
+  // },
 }

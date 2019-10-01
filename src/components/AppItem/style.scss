@@ -37,6 +37,8 @@
   }
 
   &__meta {
+    display: flex;
+    justify-content: space-between;
     opacity: 0.5;
     font-size: 12px;
     font-weight: 600;

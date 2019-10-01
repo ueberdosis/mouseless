@@ -6,11 +6,16 @@
         {{ app.title }}
       </div>
       <div class="app-item__meta">
-        {{ app.shortcuts.length }} Shortcuts
-        <!-- <circle-progress
-          :value="0"
-          :max-value="app.shortcuts.length"
-        /> -->
+        <template v-if="learnedShortcuts.length">
+          {{ learnedShortcuts.length }} / {{ shortcuts.length }}
+          <circle-progress
+            :value="learnedShortcuts.length"
+            :max-value="shortcuts.length"
+          />
+        </template>
+        <template v-else>
+          {{ shortcuts.length }} Shortcuts
+        </template>
       </div>
     </div>
   </router-link>
@@ -34,6 +39,14 @@ export default {
   computed: {
     logo() {
       return require(`@/assets/logos/${this.app.id}.svg`)
+    },
+
+    learnedShortcuts() {
+      return this.app.learnedShortcuts
+    },
+
+    shortcuts() {
+      return this.app.shortcuts
     },
   },
 }
