@@ -1,5 +1,4 @@
 // https://trello.com/shortcuts
-//, Move Card to Adjacent List  ,.<>
 export default {
   id: 'trello',
   title: 'Trello',
