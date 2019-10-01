@@ -1,31 +1,38 @@
 <template>
   <page>
     <template v-slot>
-      <div class="apps-route">
-        <div class="apps-route__items">
-          <div class="apps-route__item" v-for="app in apps" :key="app.id">
-            <app-item :app="app" />
-          </div>
-        </div>
-      </div>
+      <list-section title="Recent Apps">
+        <apps-list :apps="recentApps" />
+      </list-section>
+      <list-section title="Apps">
+        <apps-list :apps="apps" />
+      </list-section>
     </template>
   </page>
 </template>
 
 <script>
 import Page from '@/components/Page'
-import AppItem from '@/components/AppItem'
+import AppsList from '@/components/AppsList'
+import ListSection from '@/components/ListSection'
 
 export default {
   components: {
     Page,
-    AppItem,
+    AppsList,
+    ListSection,
   },
 
   data() {
     return {
       apps: this.$db.apps,
     }
+  },
+
+  computed: {
+    recentApps() {
+      return this.apps.filter(app => app.learnedShortcuts.length > 0)
+    },
   },
 }
 </script>

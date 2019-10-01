@@ -1,11 +1,11 @@
 <template>
-  <router-link class="app-item" :to="{ name: 'app.groups', params: { appId: app.id } }">
-    <img class="app-item__logo" :src="logo">
-    <div class="app-item__content">
-      <div class="app-item__title">
+  <router-link class="apps-item" :to="{ name: 'app.groups', params: { appId: app.id } }">
+    <img class="apps-item__logo" :src="logo">
+    <div class="apps-item__content">
+      <div class="apps-item__title">
         {{ app.title }}
       </div>
-      <div class="app-item__meta">
+      <div class="apps-item__meta">
         <template v-if="learnedShortcuts.length">
           {{ learnedShortcuts.length }} / {{ shortcuts.length }}
           <circle-progress

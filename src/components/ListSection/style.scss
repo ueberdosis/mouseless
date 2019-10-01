@@ -1,0 +1,16 @@
+.list-section {
+
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+}
