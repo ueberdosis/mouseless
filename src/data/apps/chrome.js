@@ -196,11 +196,11 @@ export default {
         },
         {
           title: 'Make everything on the page bigger',
-          keys: ['⌘ and +'],
+          keys: ['Meta', '+'],
         },
         {
           title: 'Make everything on the page smaller',
-          keys: ['⌘ and -'],
+          keys: ['Meta', '-'],
         },
         {
           title: 'Return everything on the page to the default size',

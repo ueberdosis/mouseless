@@ -402,15 +402,15 @@ export default {
         },
         {
           title: 'Align left',
-          keys: ['Shift', 'Meta', '{'],
+          keys: ['Meta', '{'], // original: ['Shift', 'Meta', '{']
         },
         {
           title: 'Align center',
-          keys: ['Shift', 'Meta', '|'],
+          keys: ['Meta', '|'], // original: ['Shift', 'Meta', '{']
         },
         {
           title: 'Align right',
-          keys: ['Shift', 'Meta', '}'],
+          keys: ['Meta', '}'], // original: ['Shift', 'Meta', '}']
         },
         {
           title: 'Emoji & symbols',
