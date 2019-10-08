@@ -7,7 +7,7 @@
       </div>
       <div class="apps-item__meta">
         <template v-if="learnedShortcuts.length">
-          {{ learnedShortcuts.length }} / {{ shortcuts.length }}
+          {{ learnedShortcuts.length }} / {{ shortcuts.length }} mastered
           <circle-progress
             :value="learnedShortcuts.length"
             :max-value="shortcuts.length"
