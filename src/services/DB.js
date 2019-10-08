@@ -26,6 +26,7 @@ export default new class {
     const apps = context
       .keys()
       .map(filename => context(filename).default)
+      .filter(data => data.debug)
       .map(data => this.createModel(App, data))
 
     return apps
