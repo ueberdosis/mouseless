@@ -326,10 +326,11 @@ export default {
           title: 'Go Back',
           keys: ['Control', '-'],
         },
-        {
-          title: 'Go back in Quick Input',
-          keys: ['Control', '-'],
-        },
+        // Duplicated
+        // {
+        //   title: 'Go back in Quick Input',
+        //   keys: ['Control', '-'],
+        // },
         {
           title: 'Go Forward',
           keys: ['Control', 'Shift', '-'],
@@ -624,10 +625,11 @@ export default {
           title: 'Start',
           keys: ['F5'],
         },
-        {
-          title: 'Continue',
-          keys: ['F5'],
-        },
+        // Duplicated
+        // {
+        //   title: 'Continue',
+        //   keys: ['F5'],
+        // },
         {
           title: 'Start (without debugging)',
           keys: ['Control', 'F5'],

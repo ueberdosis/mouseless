@@ -125,10 +125,11 @@ export default {
           title: 'Asymmetric Control Point',
           keys: ['Alt'],
         },
-        {
-          title: 'Snap Control Point Angle',
-          keys: ['ArrowUp'],
-        },
+        // Duplicated
+        // {
+        //   title: 'Snap Control Point Angle',
+        //   keys: ['ArrowUp'],
+        // },
         {
           title: 'Snap Anchor Point Angle',
           keys: ['ArrowUp'],
