@@ -9,12 +9,12 @@ export default {
       version: 1,
       shortcuts: [
         // {
-        //   title: 'Test',
-        //   keys: ['Meta', '/'],
+        //   title: 'Impossible',
+        //   keys: ['Alt', 'Meta', ']'],
         // },
         {
-          title: 'Should not be possible on German layout',
-          keys: ['Alt', '/'],
+          title: 'Only Modifier',
+          keys: ['Alt'],
         },
       ],
     },

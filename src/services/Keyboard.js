@@ -207,7 +207,17 @@ export default class Keyboard {
   // }
 
   static isPossible(keys = []) {
-    return findDuplicatesInArray(keys).length === 0
+    // duplicated keys
+    if (findDuplicatesInArray(keys).length === 0) {
+      return false
+    }
+
+    // only modifier keys
+    if (keys.every(key => this.specialKeyNames.includes(key))) {
+      return false
+    }
+
+    return true
   }
 
   handleKeydown(event) {
