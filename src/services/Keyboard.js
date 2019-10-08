@@ -1,6 +1,7 @@
 import collect from 'collect.js'
 import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
+import { findDuplicatesInArray } from '@/helpers'
 
 console.table(keymap.getKeyMap())
 
@@ -169,6 +170,10 @@ export default class Keyboard {
       })
       .flat()
       .filter(key => key)
+  }
+
+  static isPossible(keys = []) {
+    return findDuplicatesInArray(keys).length === 0
   }
 
   handleKeydown(event) {

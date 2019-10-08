@@ -1,5 +1,6 @@
 import collect from 'collect.js'
 import DB from '@/services/DB'
+import { findDuplicatesInArray } from '@/helpers'
 
 export default new class {
 
@@ -15,8 +16,7 @@ export default new class {
         const ids = collect(shortcuts)
           .pluck('id')
           .toArray()
-        const duplicatedShortcuts = this
-          .findDuplicatesInArray(ids)
+        const duplicatedShortcuts = findDuplicatesInArray(ids)
           .map(id => shortcuts.filter(shortcut => shortcut.id === id))
 
         if (duplicatedShortcuts.length) {
@@ -35,9 +35,7 @@ export default new class {
         const shortcuts = app.shortcutsByGroup(group.id)
 
         shortcuts.forEach(shortcut => {
-          const duplicatedKeys = this.findDuplicatesInArray(shortcut.resolvedKeys)
-
-          if (duplicatedKeys.length) {
+          if (!shortcut.isPossible) {
             impossibleShortcuts.push({
               app: app.title,
               group: group.title,
@@ -53,20 +51,6 @@ export default new class {
       console.warn(`${impossibleShortcuts.length} impossible shortcuts found`)
       console.table(impossibleShortcuts)
     }
-  }
-
-  findDuplicatesInArray(data = []) {
-    const result = []
-
-    data.forEach((element, index) => {
-      if (data.indexOf(element, index + 1) > -1) {
-        if (result.indexOf(element) === -1) {
-          result.push(element)
-        }
-      }
-    })
-
-    return result
   }
 
 }()

@@ -106,10 +106,14 @@ export default {
     },
 
     formatShortcut(shortcut) {
+      const resolvedKeys = Keyboard.resolveCodesFromKeys(shortcut.keys)
+      const isPossible = Keyboard.isPossible(resolvedKeys)
+
       return {
         ...shortcut,
         id: this.generateShortcutId(shortcut),
-        resolvedKeys: Keyboard.resolveCodesFromKeys(shortcut.keys),
+        resolvedKeys,
+        isPossible,
       }
     },
 
