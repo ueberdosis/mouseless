@@ -16,6 +16,10 @@ export default {
           title: 'Only Modifier',
           keys: ['Alt'],
         },
+        {
+          title: 'System Shortcut',
+          keys: ['Meta', 'Tab'],
+        },
       ],
     },
   ],

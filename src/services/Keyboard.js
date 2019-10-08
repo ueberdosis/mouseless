@@ -33,13 +33,20 @@ export default class Keyboard {
   //   },
   // ]
 
-  static blacklist = [
+  static blockedKeys = [
     'NumpadDivide',
     'NumpadMultiply',
     'NumpadSubtract',
     'NumpadAdd',
     'NumpadDecimal',
     'NumpadEqual',
+  ]
+
+  static blockedShortcuts = [
+    ['Meta', 'Tab'],
+    ['Meta', 'Shift', '4'],
+    ['Meta', 'Shift', '5'],
+    ['Meta', 'Shift', '6'],
   ]
 
   static keymap = Object
@@ -49,7 +56,7 @@ export default class Keyboard {
       ...data,
     }))
     // maybe this will break something
-    .filter(key => !this.blacklist.includes(key.code))
+    .filter(key => !this.blockedKeys.includes(key.code))
 
   static formats = {
     CapsLock: '⇪',
@@ -208,12 +215,17 @@ export default class Keyboard {
 
   static isPossible(keys = []) {
     // duplicated keys
-    if (findDuplicatesInArray(keys).length === 0) {
+    if (findDuplicatesInArray(keys).length) {
       return false
     }
 
     // only modifier keys
     if (keys.every(key => this.specialKeyNames.includes(key))) {
+      return false
+    }
+
+    // blocked system shortcuts
+    if (this.blockedShortcuts.some(blockedShortcut => isSameArray(blockedShortcut, keys))) {
       return false
     }
 
