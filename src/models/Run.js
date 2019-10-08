@@ -38,6 +38,11 @@ export default {
       type: Array,
       default: () => ([]),
     },
+
+    locale: {
+      type: String,
+      default: null,
+    },
   },
 
   methods: {

@@ -3,12 +3,17 @@ import moment from 'moment'
 import uuidv4 from 'uuid/v4'
 import collect from 'collect.js'
 import Store from 'electron-store'
+import keymap from 'native-keymap'
 import App from '@/models/App'
 import Run from '@/models/Run'
 
 export default new class {
 
   store = new Store()
+
+  get locale() {
+    return keymap.getCurrentKeyboardLayout().localizedName
+  }
 
   createModel(model, props) {
     const Constructor = Vue.extend({
@@ -41,6 +46,7 @@ export default new class {
       .values()
       .toArray()
       .map(data => this.createModel(Run, data))
+      .filter(run => run.locale === this.locale)
   }
 
   createRun(props = {}) {
@@ -48,6 +54,7 @@ export default new class {
       ...props,
       id: uuidv4(),
       createdAt: moment.utc().format(),
+      locale: this.locale,
     })
   }
 
