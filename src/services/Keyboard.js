@@ -1,11 +1,37 @@
 import collect from 'collect.js'
 import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
-import { findDuplicatesInArray } from '@/helpers'
+import { findDuplicatesInArray, isSameArray } from '@/helpers'
 
 console.table(keymap.getKeyMap())
 
 export default class Keyboard {
+
+  static specialKeyNames = [
+    'Shift',
+    'Control',
+    'Alt',
+    'Meta',
+  ]
+
+  // static keyMapGroups = [
+  //   {
+  //     name: 'value',
+  //     keys: [],
+  //   },
+  //   {
+  //     name: 'withShiftAltGr',
+  //     keys: ['Shift', 'Alt'],
+  //   },
+  //   {
+  //     name: 'withShift',
+  //     keys: ['Shift'],
+  //   },
+  //   {
+  //     name: 'withAltGr',
+  //     keys: ['Alt'],
+  //   },
+  // ]
 
   static blacklist = [
     'NumpadDivide',
@@ -51,12 +77,6 @@ export default class Keyboard {
 
   constructor() {
     this.emitter = new Emitter()
-    this.specialKeyNames = [
-      'Shift',
-      'Control',
-      'Alt',
-      'Meta',
-    ]
     this.specialKeys = []
     this.regularKeys = []
     this.keydownHandler = this.handleKeydown.bind(this)
@@ -172,6 +192,20 @@ export default class Keyboard {
       .filter(key => key)
   }
 
+  // static findMatchingKeyMapGroups(keys = []) {
+  //   const specialKeys = keys.filter(key => ['Shift', 'Alt'].includes(key))
+  //   // const groups = this.keyMapGroups
+  //   //   .filter(keyMapGroup => specialKeys
+  //   //     .every(specialKey => !keyMapGroup.keys.includes(specialKey)))
+
+  //   if (!specialKeys.length) {
+  //     return this.keyMapGroups
+  //   }
+
+  //   return this.keyMapGroups
+  //     .filter(keyMapGroup => isSameArray(keyMapGroup.keys, specialKeys))
+  // }
+
   static isPossible(keys = []) {
     return findDuplicatesInArray(keys).length === 0
   }
@@ -186,7 +220,7 @@ export default class Keyboard {
 
     this.emitter.emit('update', event)
 
-    if (this.specialKeyNames.includes(event.key)) {
+    if (this.constructor.specialKeyNames.includes(event.key)) {
       return
     }
 
@@ -204,9 +238,7 @@ export default class Keyboard {
   is(keys = []) {
     const checkedKeys = keys.map(key => key.toLowerCase())
     const pressedKeys = this.resolvedKeys.map(key => key.toLowerCase())
-    const match1 = checkedKeys.every(key => pressedKeys.includes(key))
-    const match2 = pressedKeys.every(key => checkedKeys.includes(key))
-    return match1 && match2
+    return isSameArray(checkedKeys, pressedKeys)
   }
 
   isPressed(name = null) {

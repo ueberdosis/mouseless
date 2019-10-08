@@ -28,6 +28,7 @@ export default {
         .pluck('shortcuts')
         .flatten(1)
         .map(this.formatShortcut)
+        .filter(shortcut => shortcut.isPossible)
         .toArray()
     },
 
@@ -88,7 +89,9 @@ export default {
         return []
       }
 
-      return group.shortcuts.map(this.formatShortcut)
+      return group.shortcuts
+        .map(this.formatShortcut)
+        .filter(shortcut => shortcut.isPossible)
     },
 
     latestRunByGroup(id = null) {

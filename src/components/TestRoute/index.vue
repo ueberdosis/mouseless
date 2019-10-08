@@ -195,6 +195,11 @@ export default {
 
   methods: {
     setShortcut() {
+      if (!this.shortcutSet.length) {
+        this.stop()
+        return
+      }
+
       const shortcuts = collect(this.shortcutSet).pluck('shortcuts').toArray()
       const weights = collect(this.shortcutSet).pluck('weight').toArray()
       const weightedShortcuts = weighted(shortcuts, weights)
