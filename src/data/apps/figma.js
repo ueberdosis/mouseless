@@ -2,7 +2,7 @@
 export default {
   id: 'figma',
   title: 'Figma',
-  groups: [
+  sets: [
     {
       title: 'Essential',
       id: 'essential',

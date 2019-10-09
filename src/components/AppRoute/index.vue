@@ -10,7 +10,7 @@
 export default {
   computed: {
     transitionName() {
-      return this.$route.name === 'app.groups' ? 'slide-right' : 'slide-left'
+      return this.$route.name === 'app.sets' ? 'slide-right' : 'slide-left'
     },
   },
 }

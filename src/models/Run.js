@@ -14,7 +14,7 @@ export default {
       default: null,
     },
 
-    groupId: {
+    setId: {
       type: String,
       default: null,
     },

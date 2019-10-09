@@ -1,5 +1,5 @@
 <template>
-  <page :title="app.title" :subtitle="group.title">
+  <page :title="app.title" :subtitle="set.title">
     <template v-slot:left>
       <btn icon="arrow-left" @click.native="goBack">
         Sets
@@ -24,7 +24,7 @@
 
             <div class="test-route__keys">
               <template v-if="isTest && !testFailed">
-                <div class="test-route__key-group">
+                <div class="test-route__key-set">
                   <key
                     v-for="(key, index) in currentShortcut.resolvedKeys"
                     :key="index"
@@ -37,7 +37,7 @@
                 </div>
               </template>
               <template v-else-if="isTest && testFailed">
-                <div class="test-route__key-group">
+                <div class="test-route__key-set">
                   <key
                     v-for="(key, index) in failedResolvedKeys"
                     :key="index"
@@ -48,7 +48,7 @@
                     :show-result="true"
                   />
                 </div>
-                <div class="test-route__key-group">
+                <div class="test-route__key-set">
                   <key
                     v-for="(key, index) in currentShortcut.resolvedKeys"
                     :key="index"
@@ -76,7 +76,7 @@
         </transition>
 
         <div class="test-route__footer">
-          <group-progress
+          <set-progress
             :learned-count="learnedIds.length"
             :count="shortcuts.length"
           />
@@ -94,14 +94,14 @@ import Keyboard from '@/services/Keyboard'
 import Btn from '@/components/Btn'
 import Key from '@/components/Key'
 import Page from '@/components/Page'
-import GroupProgress from '@/components/GroupProgress'
+import SetProgress from '@/components/SetProgress'
 
 export default {
   components: {
     Btn,
     Key,
     Page,
-    GroupProgress,
+    SetProgress,
   },
 
   data() {
@@ -131,12 +131,12 @@ export default {
       return this.$db.app(this.$route.params.appId)
     },
 
-    group() {
-      return this.app.group(this.$route.params.groupId)
+    set() {
+      return this.app.set(this.$route.params.setId)
     },
 
     shortcuts() {
-      return this.app.shortcutsByGroup(this.$route.params.groupId)
+      return this.app.shortcutsBySet(this.$route.params.setId)
     },
 
     unseenShortcuts() {
@@ -238,7 +238,7 @@ export default {
     },
 
     stop() {
-      this.$router.push({ name: 'app.groups' })
+      this.$router.push({ name: 'app.sets' })
     },
 
     addToTrainedIds(id) {
@@ -254,7 +254,7 @@ export default {
     setupRun() {
       const existingRun = collect(this.$db.runs)
         .where('appId', this.app.id)
-        .where('groupId', this.group.id)
+        .where('setId', this.set.id)
         .where('finishedAt', '===', null)
         .sortByDesc('createdAt')
         .first()
@@ -264,7 +264,7 @@ export default {
       } else {
         this.run = this.$db.createRun({
           appId: this.app.id,
-          groupId: this.group.id,
+          setId: this.set.id,
         })
       }
 
@@ -280,7 +280,7 @@ export default {
     },
 
     goBack() {
-      this.$router.push({ name: 'app.groups' })
+      this.$router.push({ name: 'app.sets' })
     },
   },
 

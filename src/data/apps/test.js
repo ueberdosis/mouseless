@@ -2,7 +2,7 @@ export default {
   id: 'test',
   title: 'Test',
   debug: true,
-  groups: [
+  sets: [
     {
       title: 'Test',
       id: 'test',

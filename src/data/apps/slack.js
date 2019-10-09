@@ -2,7 +2,7 @@
 export default {
   id: 'slack',
   title: 'Slack',
-  groups: [
+  sets: [
     {
       title: 'Navigation',
       id: 'navigation',

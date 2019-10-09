@@ -2,7 +2,7 @@
 export default {
   id: 'finder',
   title: 'Finder',
-  groups: [
+  sets: [
     {
       title: 'Essential',
       id: 'essential',

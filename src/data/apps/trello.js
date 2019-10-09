@@ -2,7 +2,7 @@
 export default {
   id: 'trello',
   title: 'Trello',
-  groups: [
+  sets: [
     {
       title: 'Common Actions',
       id: 'common',

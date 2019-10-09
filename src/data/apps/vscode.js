@@ -2,7 +2,7 @@
 export default {
   id: 'vscode',
   title: 'VS Code',
-  groups: [
+  sets: [
     {
       title: 'Basic Editing',
       id: 'basic',

@@ -16,7 +16,7 @@ export default {
       default: null,
     },
 
-    groups: {
+    sets: {
       type: Array,
       default: () => ([]),
     },
@@ -24,7 +24,7 @@ export default {
 
   computed: {
     shortcuts() {
-      return collect(this.groups)
+      return collect(this.sets)
         .pluck('shortcuts')
         .flatten(1)
         .map(this.formatShortcut)
@@ -34,9 +34,9 @@ export default {
 
     learnedShortcuts() {
       return collect(this.runs)
-        .pluck('groupId')
+        .pluck('setId')
         .unique()
-        .map(groupId => this.bestRunByGroup(groupId))
+        .map(setId => this.bestRunBySet(setId))
         .pluck('learnedIds')
         .flatten(1)
         .map(shortcutId => this.shortcuts.find(shortcut => shortcut.id === shortcutId))
@@ -47,7 +47,7 @@ export default {
       return this.$db.runs.filter(run => run.appId === this.id)
     },
 
-    latestUpdatedGroup() {
+    latestUpdatedSet() {
       const latestRun = collect(this.runs)
         .sortByDesc('createdAt')
         .first()
@@ -56,54 +56,54 @@ export default {
         return null
       }
 
-      return this.group(latestRun.groupId)
+      return this.set(latestRun.setId)
     },
 
-    recentGroups() {
+    recentSets() {
       return collect(this.runs)
-        .pluck('groupId')
+        .pluck('setId')
         .unique()
-        .map(groupId => this.bestRunByGroup(groupId))
+        .map(setId => this.bestRunBySet(setId))
         .filter(run => run.learnedIds.length > 0)
-        .pluck('groupId')
-        .map(groupId => this.group(groupId))
+        .pluck('setId')
+        .map(setId => this.set(setId))
         .toArray()
     },
 
-    unrecentGroups() {
-      const { recentGroups } = this
-      return this.groups
-        .filter(group => !recentGroups.find(recentGroup => recentGroup.id === group.id))
+    unrecentSets() {
+      const { recentSets } = this
+      return this.sets
+        .filter(set => !recentSets.find(recentSet => recentSet.id === set.id))
     },
   },
 
   methods: {
-    group(id = null) {
-      return this.groups.find(group => group.id === id)
+    set(id = null) {
+      return this.sets.find(set => set.id === id)
     },
 
-    shortcutsByGroup(id = null) {
-      const group = this.groups.find(item => item.id === id)
+    shortcutsBySet(id = null) {
+      const set = this.sets.find(item => item.id === id)
 
-      if (!group) {
+      if (!set) {
         return []
       }
 
-      return group.shortcuts
+      return set.shortcuts
         .map(this.formatShortcut)
         .filter(shortcut => shortcut.isPossible)
     },
 
-    latestRunByGroup(id = null) {
+    latestRunBySet(id = null) {
       return collect(this.runs)
-        .filter(run => run.groupId === id)
+        .filter(run => run.setId === id)
         .sortByDesc('createdAt')
         .first()
     },
 
-    bestRunByGroup(id = null) {
+    bestRunBySet(id = null) {
       return collect(this.runs)
-        .filter(run => run.groupId === id)
+        .filter(run => run.setId === id)
         .sortBy('learnedIds')
         .first()
     },

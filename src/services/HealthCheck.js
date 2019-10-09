@@ -11,8 +11,8 @@ export default new class {
 
   findDuplicatedShortcuts() {
     DB.apps.forEach(app => {
-      app.groups.forEach(group => {
-        const shortcuts = app.shortcutsByGroup(group.id)
+      app.sets.forEach(set => {
+        const shortcuts = app.shortcutsBySet(set.id)
         const ids = collect(shortcuts)
           .pluck('id')
           .toArray()
@@ -20,7 +20,7 @@ export default new class {
           .map(id => shortcuts.filter(shortcut => shortcut.id === id))
 
         if (duplicatedShortcuts.length) {
-          console.warn(`Duplicated shortcuts in ${app.title} → ${group.title}`)
+          console.warn(`Duplicated shortcuts in ${app.title} → ${set.title}`)
           console.table(duplicatedShortcuts.flat())
         }
       })
@@ -31,14 +31,14 @@ export default new class {
     const impossibleShortcuts = []
 
     DB.apps.forEach(app => {
-      app.groups.forEach(group => {
-        const shortcuts = app.shortcutsByGroup(group.id)
+      app.sets.forEach(set => {
+        const shortcuts = app.shortcutsBySet(set.id)
 
         shortcuts.forEach(shortcut => {
           if (!shortcut.isPossible) {
             impossibleShortcuts.push({
               app: app.title,
-              group: group.title,
+              set: set.title,
               title: shortcut.title,
               keys: shortcut.resolvedKeys.join(', '),
             })

@@ -2,7 +2,7 @@
 export default {
   id: 'gmail',
   title: 'Gmail',
-  groups: [
+  sets: [
     {
       title: 'Compose & chat',
       id: 'compose',

@@ -2,7 +2,7 @@
 export default {
   id: 'googledocs',
   title: 'Google Docs',
-  groups: [
+  sets: [
     {
       title: 'Common actions',
       id: 'common',

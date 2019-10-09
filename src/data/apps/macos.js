@@ -2,7 +2,7 @@
 export default {
   id: 'macos',
   title: 'macOS',
-  groups: [
+  sets: [
     {
       title: 'Common actions',
       id: 'common',

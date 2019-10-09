@@ -1,18 +1,18 @@
 <template>
-  <router-link class="group" :to="{ name: 'app.test', params: { groupId: group.id }}">
-    <div class="group__content">
-      <div class="group__title">
-        {{ group.title }}
+  <router-link class="set" :to="{ name: 'app.test', params: { setId: set.id }}">
+    <div class="set__content">
+      <div class="set__title">
+        {{ set.title }}
       </div>
     </div>
-    <div class="group__meta">
+    <div class="set__meta">
       <template v-if="bestRun && finished">
         finished
       </template>
       <template v-else-if="bestRun && !finished && bestRun.learnedIds.length">
         {{ bestRun.learnedIds.length }} / {{ shortcuts.length }}
         <circle-progress
-          class="group__progress"
+          class="set__progress"
           :value="bestRun.learnedIds.length"
           :max-value="shortcuts.length"
         />
@@ -20,7 +20,7 @@
       <template v-else>
         {{ shortcuts.length }}
       </template>
-      <icon class="group__arrow" name="arrow-right" />
+      <icon class="set__arrow" name="arrow-right" />
     </div>
   </router-link>
 </template>
@@ -41,7 +41,7 @@ export default {
       type: Object,
     },
 
-    group: {
+    set: {
       required: true,
       type: Object,
     },
@@ -49,11 +49,11 @@ export default {
 
   computed: {
     shortcuts() {
-      return this.app.shortcutsByGroup(this.group.id)
+      return this.app.shortcutsBySet(this.set.id)
     },
 
     bestRun() {
-      return this.app.bestRunByGroup(this.group.id)
+      return this.app.bestRunBySet(this.set.id)
     },
 
     finished() {
@@ -65,7 +65,7 @@ export default {
     onClick() {
       this.$router.push({
         name: 'app.test',
-        params: { groupId: this.group.id },
+        params: { setId: this.set.id },
       })
     },
   },

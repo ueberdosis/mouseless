@@ -1,20 +1,20 @@
 <template>
-  <div class="groups">
-    <group
-      v-for="group in groups"
-      :key="group.id"
+  <div class="sets">
+    <set
+      v-for="set in sets"
+      :key="set.id"
       :app="app"
-      :group="group"
+      :set="set"
     />
   </div>
 </template>
 
 <script>
-import Group from '@/components/Group'
+import Set from '@/components/Set'
 
 export default {
   components: {
-    Group,
+    Set,
   },
 
   props: {
@@ -23,7 +23,7 @@ export default {
       type: Object,
     },
 
-    groups: {
+    sets: {
       default: () => ([]),
       type: Array,
     },

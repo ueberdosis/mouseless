@@ -2,7 +2,7 @@
 export default {
   id: 'notion',
   title: 'Notion',
-  groups: [
+  sets: [
     {
       title: 'Most Popular',
       id: 'popular',

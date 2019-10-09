@@ -2,7 +2,7 @@
 export default {
   id: 'sketch',
   title: 'Sketch',
-  groups: [
+  sets: [
     {
       title: 'General Shortcuts',
       id: 'general',

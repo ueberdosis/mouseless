@@ -2,7 +2,7 @@
 export default {
   id: 'bear',
   title: 'Bear',
-  groups: [
+  sets: [
     {
       title: 'Text Styles',
       id: 'textstyles',

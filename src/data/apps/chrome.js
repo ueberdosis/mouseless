@@ -2,7 +2,7 @@
 export default {
   id: 'chrome',
   title: 'Chrome',
-  groups: [
+  sets: [
     {
       title: 'Tab and window shortcuts',
       id: 'tabandwindow',

@@ -2,7 +2,7 @@
 export default {
   id: 'adobexd',
   title: 'Adobe XD',
-  groups: [
+  sets: [
     {
       title: 'General shortcuts',
       id: 'general',
