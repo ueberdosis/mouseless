@@ -90,7 +90,7 @@ button {
 
 .slide-left-enter,
 .slide-right-leave-active {
-  transform: translate(100%, 0);
+  transform: translateX(100%);
 }
 
 .slide-right-enter,
