@@ -70,6 +70,12 @@ button {
   border: none;
 }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .route {
   width: 100%;
   border-radius: 4px;

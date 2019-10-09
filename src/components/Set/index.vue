@@ -1,7 +1,7 @@
 <template>
   <router-link class="set" :to="{ name: 'app.test', params: { setId: set.id }}">
     <div class="set__content">
-      <div class="set__title">
+      <div class="set__title truncate">
         {{ set.title }}
       </div>
     </div>

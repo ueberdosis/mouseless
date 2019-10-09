@@ -2,7 +2,7 @@
   <router-link class="apps-item" :to="{ name: 'app.sets', params: { appId: app.id } }">
     <img class="apps-item__logo" :src="logo">
     <div class="apps-item__content">
-      <div class="apps-item__title">
+      <div class="apps-item__title truncate">
         {{ app.title }}
       </div>
       <div class="apps-item__meta">

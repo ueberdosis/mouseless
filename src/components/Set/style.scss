@@ -1,7 +1,6 @@
 .set {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: rgba($colorWhite, 0.06);
   padding: 16px 20px;
   margin-bottom: 2px;
@@ -22,12 +21,19 @@
     background-color: rgba($colorWhite, 0.1);
   }
 
+  &__content {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-right: 8px;
+  }
+
   &__title {
     font-size: 18px;
     font-weight: 700;
   }
 
   &__meta {
+    flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
     font-size: 12px;
