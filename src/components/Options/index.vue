@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Event from '@/services/Event'
 import Btn from '@/components/Btn'
 
@@ -39,6 +40,24 @@ export default {
     reset() {
       this.$db.store.clear()
     },
+
+    checkLicense() {
+      axios
+        .post('https://cors-anywhere.herokuapp.com/api.gumroad.com/v2/licenses/verify', {
+          product_permalink: 'oyJZx',
+          license_key: 'CEFA8043-F49D46F2-965EA1E6-11725170',
+        })
+        .then(response => {
+          console.log({ response })
+        })
+        .catch(error => {
+          console.log({ error })
+        })
+    },
+  },
+
+  mounted() {
+    this.checkLicense()
   },
 }
 </script>
