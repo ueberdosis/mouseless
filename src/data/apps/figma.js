@@ -128,7 +128,10 @@ export default {
         // },
         {
           title: 'Zoom In',
-          keys: ['+'],
+          keys: [
+            ['='],
+            ['+'],
+          ],
         },
         {
           title: 'Zoom Out',

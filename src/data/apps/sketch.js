@@ -73,7 +73,10 @@ export default {
         },
         {
           title: 'Zoom in',
-          keys: ['Meta', '+'],
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
         },
         {
           title: 'Zoom out',

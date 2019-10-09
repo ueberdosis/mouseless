@@ -396,7 +396,10 @@ export default {
       shortcuts: [
         {
           title: 'Zoom In',
-          keys: ['Meta', '+'],
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
         },
         {
           title: 'Zoom Out',

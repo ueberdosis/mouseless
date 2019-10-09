@@ -196,7 +196,10 @@ export default {
         },
         {
           title: 'Make everything on the page bigger',
-          keys: ['Meta', '+'],
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
         },
         {
           title: 'Make everything on the page smaller',
