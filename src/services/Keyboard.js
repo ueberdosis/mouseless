@@ -1,7 +1,7 @@
 import collect from 'collect.js'
 import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
-import { findDuplicatesInArray, isSameArray } from '@/helpers'
+import { findDuplicatesInArray, isSameArray, getArrayDepth } from '@/helpers'
 
 console.table(keymap.getKeyMap())
 
@@ -164,9 +164,10 @@ export default class Keyboard {
     return value
   }
 
-  static resolveCodesFromKeys(keys = []) {
-    return keys
-      .map(key => {
+  static resolveCodesFromKeys(data = []) {
+    const groups = getArrayDepth(data) > 1 ? data : [data]
+    const resolvedGroups = groups.map(keys => {
+      const resolvedKeys = keys.map(key => {
         let match = null
 
         match = this.keymap.find(item => item.value === key)
@@ -195,8 +196,16 @@ export default class Keyboard {
 
         return key
       })
-      .flat()
-      .filter(key => key)
+
+      return collect(resolvedKeys)
+        .flatten()
+        .filter()
+        .toArray()
+    })
+
+    return collect(resolvedGroups)
+      .sortBy(keys => keys.length)
+      .first()
   }
 
   // static findMatchingKeyMapGroups(keys = []) {
