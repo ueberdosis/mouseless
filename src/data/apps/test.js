@@ -23,8 +23,8 @@ export default {
         // {
         //   title: 'Multiple shortcuts',
         //   keys: [
-        //     ['='],
-        //     ['+'],
+        //     ['Meta', '='],
+        //     ['Meta', '+'],
         //   ],
         // },
       ],
