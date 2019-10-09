@@ -130,8 +130,4 @@ export default {
       return shajs('sha256').update(string).digest('hex')
     },
   },
-
-  // mounted() {
-  //   console.log(this.title, this.learnedShortcuts)
-  // },
 }
