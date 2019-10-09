@@ -81,7 +81,7 @@ export default {
         },
         {
           title: 'Increase text size',
-          keys: ['Meta', 'Shift and +'],
+          keys: ['Meta', 'Shift', '+'],
         },
         {
           title: 'Bold',
@@ -192,7 +192,7 @@ export default {
         },
         {
           title: 'Update conversation',
-          keys: ['Shift + n'],
+          keys: ['Shift', 'n'],
         },
         // TODO: Two variants
         // {

@@ -27,6 +27,10 @@ export default {
         //     ['Meta', '+'],
         //   ],
         // },
+        // {
+        //   title: 'Misspelled',
+        //   keys: ['Ctrl'],
+        // },
       ],
     },
   ],

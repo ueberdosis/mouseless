@@ -478,7 +478,7 @@ export default {
         },
         {
           title: 'Preview',
-          keys: ['⌘Enter'],
+          keys: ['Meta', 'Enter'],
         },
         {
           title: 'Start or stop recording the preview',
