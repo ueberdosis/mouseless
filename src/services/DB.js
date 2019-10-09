@@ -29,7 +29,7 @@ export default new class {
   }
 
   get apps() {
-    const context = require.context('@/data/apps', true, /\.(js)$/)
+    const context = require.context('@/apps', true, /\.(js)$/)
     const apps = context
       .keys()
       .map(filename => context(filename).default)
