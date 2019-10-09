@@ -1,12 +1,12 @@
 <template>
   <div class="key" :class="{ 'is-active': isActive, 'is-test': isTest }">
     <div class="key__placeholder">
-      {{ name | key }}
+      {{ name | key | uppercase }}
     </div>
 
     <transition name="pop-up">
       <div class="key__card" v-if="isActive">
-        {{ name | key }}
+        {{ name | key | uppercase }}
       </div>
     </transition>
 

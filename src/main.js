@@ -10,6 +10,16 @@ Vue.prototype.$db = DB
 
 Vue.filter('key', value => Keyboard.formatKeyCode(value))
 
+Vue.filter('uppercase', value => {
+  const ignoredCharacters = ['ß']
+
+  if (ignoredCharacters.includes(value)) {
+    return value
+  }
+
+  return value.toUpperCase()
+})
+
 if (process.env.NODE_ENV === 'development') {
   HealthCheck.run()
 }

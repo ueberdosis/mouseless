@@ -32,6 +32,10 @@ export default {
         //   title: 'Misspelled',
         //   keys: ['Ctrl'],
         // },
+        // {
+        //   title: 'German ß',
+        //   keys: ['ß'],
+        // },
       ],
     },
   ],
