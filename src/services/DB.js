@@ -9,7 +9,7 @@ import Run from '@/models/Run'
 
 export default new class {
 
-  debug = true
+  debug = false
 
   store = new Store()
 
@@ -33,7 +33,11 @@ export default new class {
     const apps = context
       .keys()
       .map(filename => context(filename).default)
-      .filter(data => data.debug === this.debug)
+      .filter(data => {
+        const debug = typeof data.debug === 'undefined' ? false : data.debug
+
+        return debug === this.debug
+      })
       .map(data => this.createModel(App, data))
 
     return apps
