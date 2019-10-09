@@ -17,24 +17,12 @@
     "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten"
   },
   "main": "background.js",
-  "dependencies": {
-    "axios": "^0.19.0",
-    "collect.js": "^4.16.6",
-    "core-js": "2.6.7",
-    "electron-store": "^5.0.0",
-    "moment": "^2.24.0",
-    "native-keymap": "^2.0.0",
-    "sha.js": "^2.4.11",
-    "uuid": "^3.3.3",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "weighted": "^0.3.0"
-  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "babel-eslint": "^10.0.1",
+    "copy-webpack-plugin": "^5.0.4",
     "electron": "^6.0.10",
     "electron-icon-builder": "^1.0.1",
     "eslint": "^6.4.0",
@@ -49,5 +37,18 @@
     "sass-loader": "7.3.1",
     "vue-cli-plugin-electron-builder": "^1.4.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "collect.js": "^4.16.6",
+    "core-js": "2.6.7",
+    "electron-store": "^5.0.0",
+    "moment": "^2.24.0",
+    "native-keymap": "^2.0.0",
+    "sha.js": "^2.4.11",
+    "uuid": "^3.3.3",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "weighted": "^0.3.0"
   }
 }

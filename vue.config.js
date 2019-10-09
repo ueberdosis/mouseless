@@ -1,3 +1,5 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 module.exports = {
   css: {
     loaderOptions: {
@@ -8,6 +10,7 @@ module.exports = {
       },
     },
   },
+
   chainWebpack: config => {
     config.module
       .rule('node')
@@ -17,5 +20,21 @@ module.exports = {
       .end()
 
     config.resolve.extensions.prepend('.node')
+
+    config.externals({
+      ...config.get('externals'),
+      keymapping: '/build/Release/keymapping',
+    })
+  },
+
+  configureWebpack: {
+    plugins: [
+      new CopyWebpackPlugin([
+        {
+          from: 'node_modules/native-keymap/build/Release/keymapping.node',
+          to: 'build/Release',
+        },
+      ]),
+    ],
   },
 }
