@@ -24,10 +24,11 @@ export default class Keyboard {
   ]
 
   static blockedShortcuts = [
-    ['Meta', 'Tab'],
-    ['Meta', 'Shift', '4'],
-    ['Meta', 'Shift', '5'],
-    ['Meta', 'Shift', '6'],
+    ['Meta', 'Tab'], // switch app
+    ['Meta', 'Shift', '4'], // screenshot
+    ['Meta', 'Shift', '5'], // screenshot
+    ['Meta', 'Shift', '6'], // screenshot
+    ['Alt', 'Meta', 'Escape'], // force quit
   ]
 
   static keymap = Object
