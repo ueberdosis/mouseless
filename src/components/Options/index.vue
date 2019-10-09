@@ -1,6 +1,12 @@
 <template>
   <div class="options">
     <div>
+      <h2>
+        Options
+      </h2>
+    </div>
+
+    <div>
       <btn @click.native="close">
         Close
       </btn>
