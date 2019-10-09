@@ -1,7 +1,7 @@
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 import DB from '@/services/DB'
-import { findDuplicatesInArray } from '@/helpers'
+import { findDuplicatesInArray, getArrayDepth } from '@/helpers'
 
 export default new class {
 
@@ -9,6 +9,7 @@ export default new class {
     this.findDuplicatedShortcuts()
     this.findImpossibleShortcuts()
     this.findMultipleTriggers()
+    this.findMisspelling()
   }
 
   findDuplicatedShortcuts() {
@@ -81,6 +82,46 @@ export default new class {
     if (impossibleShortcuts.length) {
       console.warn(`${impossibleShortcuts.length} shortcuts with multiple trigger keys found`)
       console.table(impossibleShortcuts)
+    }
+  }
+
+  findMisspelling() {
+    const misspelledShortcuts = []
+
+    DB.apps.forEach(app => {
+      app.sets.forEach(set => {
+        const shortcuts = app.shortcutsBySet(set.id)
+
+        shortcuts.forEach(shortcut => {
+          const groups = getArrayDepth(shortcut.keys) > 1 ? shortcut.keys : [shortcut.keys]
+
+          const misspelled = groups.some(group => group.some(key => {
+            if (key.length === 1) {
+              return false
+            }
+
+            if (Keyboard.specialKeyNames.includes(key)) {
+              return false
+            }
+
+            return !Keyboard.keymap.find(item => item.code === key)
+          }))
+
+          if (misspelled) {
+            misspelledShortcuts.push({
+              app: app.title,
+              set: set.title,
+              title: shortcut.title,
+              keys: shortcut.keys.join(', '),
+            })
+          }
+        })
+      })
+    })
+
+    if (misspelledShortcuts.length) {
+      console.warn(`${misspelledShortcuts.length} shortcuts with misspelled keys found`)
+      console.table(misspelledShortcuts)
     }
   }
 
