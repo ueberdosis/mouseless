@@ -2,6 +2,7 @@
 export default {
   id: 'trello',
   title: 'Trello',
+  category: 'Productivity',
   sets: [
     {
       title: 'Common Actions',

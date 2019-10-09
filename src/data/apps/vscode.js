@@ -2,6 +2,7 @@
 export default {
   id: 'vscode',
   title: 'VS Code',
+  category: 'Development',
   sets: [
     {
       title: 'Basic Editing',

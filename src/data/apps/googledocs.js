@@ -2,6 +2,7 @@
 export default {
   id: 'googledocs',
   title: 'Google Docs',
+  category: 'Productivity',
   sets: [
     {
       title: 'Common actions',

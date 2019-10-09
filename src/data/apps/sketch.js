@@ -2,6 +2,7 @@
 export default {
   id: 'sketch',
   title: 'Sketch',
+  category: 'Design',
   sets: [
     {
       title: 'General Shortcuts',

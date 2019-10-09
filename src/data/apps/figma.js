@@ -2,6 +2,7 @@
 export default {
   id: 'figma',
   title: 'Figma',
+  category: 'Design',
   sets: [
     {
       title: 'Essential',

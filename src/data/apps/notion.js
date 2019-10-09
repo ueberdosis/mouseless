@@ -2,6 +2,7 @@
 export default {
   id: 'notion',
   title: 'Notion',
+  category: 'Productivity',
   sets: [
     {
       title: 'Most Popular',

@@ -2,6 +2,7 @@ export default {
   id: 'test',
   title: 'Test',
   debug: true,
+  category: 'Test',
   sets: [
     {
       title: 'Test',

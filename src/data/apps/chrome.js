@@ -2,6 +2,7 @@
 export default {
   id: 'chrome',
   title: 'Chrome',
+  category: 'Utility',
   sets: [
     {
       title: 'Tab and window shortcuts',

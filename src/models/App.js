@@ -16,6 +16,11 @@ export default {
       default: null,
     },
 
+    category: {
+      type: String,
+      default: 'App',
+    },
+
     sets: {
       type: Array,
       default: () => ([]),

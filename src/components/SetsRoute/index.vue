@@ -13,7 +13,7 @@
             {{ app.title }}
           </div>
         </div>
-        <list-section title="Recent Sets" v-if="recentSets.length">
+        <list-section title="Recent" v-if="recentSets.length">
           <sets :sets="recentSets" :app="app" />
         </list-section>
         <list-section title="Sets" v-if="unrecentSets.length">

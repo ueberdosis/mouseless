@@ -2,6 +2,7 @@
 export default {
   id: 'bear',
   title: 'Bear',
+  category: 'Productivity',
   sets: [
     {
       title: 'Text Styles',
