@@ -1,24 +1,29 @@
 <template>
   <div class="options">
     <div>
-      <button @click="close">
-        close
-      </button>
+      <btn @click.native="close">
+        Close
+      </btn>
     </div>
 
     <div>
-      <button @click="reset">
-        reset
-      </button>
+      <btn @click.native="reset">
+        Reset Store
+      </btn>
     </div>
   </div>
 </template>
 
 <script>
 import Event from '@/services/Event'
+import Btn from '@/components/Btn'
 
 export default {
   name: 'Options',
+
+  components: {
+    Btn,
+  },
 
   methods: {
     close() {

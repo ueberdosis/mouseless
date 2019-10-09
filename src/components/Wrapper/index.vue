@@ -1,8 +1,11 @@
 <template>
   <div class="wrapper" :class="{ 'is-loaded': isLoaded }">
-    <transition :name="transitionName">
-      <router-view class="route" />
-    </transition>
+    <div class="wrapper__content" :class="{ 'is-hidden': showOptions }">
+      <transition :name="transitionName">
+        <router-view class="route" />
+      </transition>
+      <div class="wrapper__content-overlay" />
+    </div>
 
     <transition name="options">
       <options class="wrapper__options" v-if="showOptions" />
