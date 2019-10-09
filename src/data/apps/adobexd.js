@@ -334,7 +334,7 @@ export default {
         },
         {
           title: 'Switch between Design and Prototype mode',
-          keys: ['Ctrl', 'Tab'],
+          keys: ['Control', 'Tab'],
         },
       ],
     },

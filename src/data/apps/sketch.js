@@ -300,7 +300,7 @@ export default {
         },
         {
           title: 'Use as mask',
-          keys: ['ctrl', 'Meta', 'm'],
+          keys: ['Control', 'Meta', 'm'],
         },
         {
           title: 'Return to instance',

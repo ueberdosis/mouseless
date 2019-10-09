@@ -26,11 +26,11 @@ export default {
         },
         {
           title: 'Advance to the next chat or compose',
-          keys: ['Ctrl', '.'],
+          keys: ['Control', '.'],
         },
         {
           title: 'Advance to previous chat or compose',
-          keys: ['Ctrl', ','],
+          keys: ['Control', ','],
         },
         {
           title: 'Send',

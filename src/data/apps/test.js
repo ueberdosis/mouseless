@@ -9,17 +9,24 @@ export default {
       version: 1,
       shortcuts: [
         // {
-        //   title: 'Impossible',
+        //   title: 'Impossible for Germans',
         //   keys: ['Alt', 'Meta', ']'],
         // },
-        {
-          title: 'Only Modifier',
-          keys: ['Alt'],
-        },
-        {
-          title: 'System Shortcut',
-          keys: ['Meta', 'Tab'],
-        },
+        // {
+        //   title: 'Only Modifier',
+        //   keys: ['Alt'],
+        // },
+        // {
+        //   title: 'System Shortcut',
+        //   keys: ['Meta', 'Tab'],
+        // },
+        // {
+        //   title: 'Multiple shortcuts',
+        //   keys: [
+        //     ['='],
+        //     ['+'],
+        //   ],
+        // },
       ],
     },
   ],

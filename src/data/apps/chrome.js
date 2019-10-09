@@ -192,7 +192,7 @@ export default {
         },
         {
           title: 'Turn full-screen mode on or off',
-          keys: ['Meta', 'Ctrl', 'f'],
+          keys: ['Meta', 'Control', 'f'],
         },
         {
           title: 'Make everything on the page bigger',
