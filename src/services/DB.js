@@ -9,6 +9,8 @@ import Run from '@/models/Run'
 
 export default new class {
 
+  debug = true
+
   store = new Store()
 
   get locale() {
@@ -31,7 +33,7 @@ export default new class {
     const apps = context
       .keys()
       .map(filename => context(filename).default)
-      .filter(data => !data.debug)
+      .filter(data => data.debug === this.debug)
       .map(data => this.createModel(App, data))
 
     return apps
