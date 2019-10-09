@@ -14,25 +14,6 @@ export default class Keyboard {
     'Meta',
   ]
 
-  // static keyMapGroups = [
-  //   {
-  //     name: 'value',
-  //     keys: [],
-  //   },
-  //   {
-  //     name: 'withShiftAltGr',
-  //     keys: ['Shift', 'Alt'],
-  //   },
-  //   {
-  //     name: 'withShift',
-  //     keys: ['Shift'],
-  //   },
-  //   {
-  //     name: 'withAltGr',
-  //     keys: ['Alt'],
-  //   },
-  // ]
-
   static blockedKeys = [
     'NumpadDivide',
     'NumpadMultiply',
@@ -207,20 +188,6 @@ export default class Keyboard {
       .sortBy(keys => keys.length)
       .first()
   }
-
-  // static findMatchingKeyMapGroups(keys = []) {
-  //   const specialKeys = keys.filter(key => ['Shift', 'Alt'].includes(key))
-  //   // const groups = this.keyMapGroups
-  //   //   .filter(keyMapGroup => specialKeys
-  //   //     .every(specialKey => !keyMapGroup.keys.includes(specialKey)))
-
-  //   if (!specialKeys.length) {
-  //     return this.keyMapGroups
-  //   }
-
-  //   return this.keyMapGroups
-  //     .filter(keyMapGroup => isSameArray(keyMapGroup.keys, specialKeys))
-  // }
 
   static isPossible(keys = []) {
     // duplicated keys
