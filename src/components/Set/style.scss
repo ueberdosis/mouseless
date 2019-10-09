@@ -48,4 +48,14 @@
   &:hover &__arrow {
     opacity: 1;
   }
+
+  &__finished {
+    display: inline-flex;
+    align-items: center;
+    color: $colorGreen;
+  }
+
+  &__finished-image {
+    margin-left: 8px;
+  }
 }

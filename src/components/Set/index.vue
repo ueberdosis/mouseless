@@ -6,9 +6,10 @@
       </div>
     </div>
     <div class="set__meta">
-      <template v-if="bestRun && finished">
-        finished
-      </template>
+      <span class="set__finished" v-if="bestRun && finished">
+        {{ shortcuts.length }}
+        <img class="set__finished-image" src="@/assets/images/check.svg">
+      </span>
       <template v-else-if="bestRun && !finished && bestRun.learnedIds.length">
         {{ bestRun.learnedIds.length }} / {{ shortcuts.length }}
         <circle-progress
