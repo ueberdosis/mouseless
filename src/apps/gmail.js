@@ -2,7 +2,7 @@
 export default {
   id: 'gmail',
   title: 'Gmail',
-  category: 'Productivity',
+  category: 'Communication',
   sets: [
     {
       title: 'Compose & chat',

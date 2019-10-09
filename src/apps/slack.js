@@ -2,7 +2,7 @@
 export default {
   id: 'slack',
   title: 'Slack',
-  category: 'Productivity',
+  category: 'Communication',
   sets: [
     {
       title: 'Navigation',
