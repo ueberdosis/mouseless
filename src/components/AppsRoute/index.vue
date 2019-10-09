@@ -1,5 +1,5 @@
 <template>
-  <page>
+  <page class="apps-route">
     <template v-slot>
       <list-section title="Recent" v-if="recentApps.length">
         <apps-list :apps="recentApps" />
