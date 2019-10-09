@@ -34,6 +34,8 @@
 
 <script>
 export default {
+  name: 'Key',
+
   props: {
     name: {
       default: '',

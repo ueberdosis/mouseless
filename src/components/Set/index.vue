@@ -30,6 +30,8 @@ import Icon from '@/components/Icon'
 import CircleProgress from '@/components/CircleProgress'
 
 export default {
+  name: 'Set',
+
   components: {
     Icon,
     CircleProgress,

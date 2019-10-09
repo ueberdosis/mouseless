@@ -8,6 +8,8 @@
 
 <script>
 export default {
+  name: 'AppRoute',
+
   computed: {
     transitionName() {
       return this.$route.name === 'app.sets' ? 'slide-right' : 'slide-left'

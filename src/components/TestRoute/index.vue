@@ -97,6 +97,8 @@ import Page from '@/components/Page'
 import SetProgress from '@/components/SetProgress'
 
 export default {
+  name: 'TestRoute',
+
   components: {
     Btn,
     Key,

@@ -17,6 +17,8 @@ import AppsList from '@/components/AppsList'
 import ListSection from '@/components/ListSection'
 
 export default {
+  name: 'AppsRoute',
+
   components: {
     Page,
     AppsList,

@@ -26,6 +26,8 @@
 
 <script>
 export default {
+  name: 'CircleProgress',
+
   props: {
     size: {
       default: 16,

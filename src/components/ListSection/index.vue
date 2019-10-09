@@ -11,6 +11,8 @@
 
 <script>
 export default {
+  name: 'ListSection',
+
   props: {
     title: {
       default: null,

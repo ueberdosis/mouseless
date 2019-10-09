@@ -23,6 +23,8 @@
 import CircleProgress from '@/components/CircleProgress'
 
 export default {
+  name: 'SetProgress',
+
   components: {
     CircleProgress,
   },

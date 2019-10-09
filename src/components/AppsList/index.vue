@@ -10,6 +10,8 @@
 import AppsItem from '@/components/AppsItem'
 
 export default {
+  name: 'AppsList',
+
   components: {
     AppsItem,
   },

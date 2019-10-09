@@ -13,6 +13,8 @@
 import Set from '@/components/Set'
 
 export default {
+  name: 'Sets',
+
   components: {
     Set,
   },

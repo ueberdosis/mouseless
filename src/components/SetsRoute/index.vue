@@ -31,6 +31,8 @@ import Sets from '@/components/Sets'
 import ListSection from '@/components/ListSection'
 
 export default {
+  name: 'SetsRoute',
+
   components: {
     Btn,
     Page,

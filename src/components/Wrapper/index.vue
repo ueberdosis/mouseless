@@ -8,6 +8,8 @@
 
 <script>
 export default {
+  name: 'Wrapper',
+
   data() {
     return {
       isLoaded: false,

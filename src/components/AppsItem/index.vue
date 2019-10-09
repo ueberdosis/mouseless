@@ -25,6 +25,8 @@
 import CircleProgress from '@/components/CircleProgress'
 
 export default {
+  name: 'AppsItem',
+
   components: {
     CircleProgress,
   },

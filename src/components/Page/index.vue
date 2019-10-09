@@ -26,6 +26,8 @@
 import Btn from '@/components/Btn'
 
 export default {
+  name: 'Page',
+
   components: {
     Btn,
   },
