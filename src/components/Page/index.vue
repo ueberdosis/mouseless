@@ -13,7 +13,7 @@
         </span>
       </div>
       <div class="page__right">
-        <btn icon="options" @click.native="reset" />
+        <btn icon="options" @click.native="showOptions" />
       </div>
     </div>
     <div class="page__content">
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import Event from '@/services/Event'
 import Btn from '@/components/Btn'
 
 export default {
@@ -45,8 +46,8 @@ export default {
   },
 
   methods: {
-    reset() {
-      this.$db.store.clear()
+    showOptions() {
+      Event.emit('showOptions')
     },
   },
 }

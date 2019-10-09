@@ -18,4 +18,12 @@
     pointer-events: none;
     -webkit-app-region: drag;
   }
+
+  &__options {
+    position: absolute;
+    top: 38px;
+    left: 32px;
+    right: 32px;
+    height: 100%;
+  }
 }

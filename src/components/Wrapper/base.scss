@@ -104,6 +104,19 @@ button {
   z-index: -1;
 }
 
+
+.options-enter-active,
+.options-leave-active {
+  transform-origin: center 0%;
+  transition: transform 0.7s $easeInOutQuint;
+}
+
+.options-enter,
+.options-leave-to {
+  transform: translateY(100%) scale(1.1);
+}
+
+
 .pop-up-enter-active {
   animation: pop-up-enter 0.3s;
 }
