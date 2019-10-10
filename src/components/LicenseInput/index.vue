@@ -6,13 +6,14 @@
         'is-success': isSuccess,
         'is-error': isError,
       }"
+      v-model="licenseKey"
       :mask="licenseMask"
+      :tokens="tokens"
       :masked="true"
       :placeholder="licensePlaceholder"
       :disabled="isLoading"
-      v-model="licenseKey"
       @input="onChange"
-      :tokens="tokens"
+      @keyup.enter.native="onChange"
       ref="input"
     />
     <div class="license-input__error-wrapper">
@@ -62,6 +63,10 @@ export default {
     },
 
     verifyLicense() {
+      if (this.isLoading) {
+        return
+      }
+
       this.isError = false
       this.isLoading = true
       ipcRenderer.send('verifyLicenseKey', this.licenseKey)
@@ -93,6 +98,7 @@ export default {
   },
 
   mounted() {
+    this.focusInput()
     ipcRenderer.on('verifyLicenseKey:succeeded', this.handleSuccess)
     ipcRenderer.on('verifyLicenseKey:failed', this.handleFail)
   },
