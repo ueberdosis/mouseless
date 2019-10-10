@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { TheMask } from 'vue-the-mask'
+import { ipcRenderer } from 'electron'
 
 export default {
   name: 'LicenseInput',
@@ -56,37 +56,38 @@ export default {
   methods: {
     onChange() {
       if (this.licenseKey.length === this.licenseMask.length) {
-        this.checkLicense()
+        this.verifyLicense()
       }
     },
 
-    checkLicense() {
+    verifyLicense() {
       this.isLoading = true
+      ipcRenderer.send('verifyLicenseKey', this.licenseKey)
+    },
 
-      axios
-        .post('https://cors-anywhere.herokuapp.com/api.gumroad.com/v2/licenses/verify', {
-          product_permalink: process.env.VUE_APP_GUMROAD_PRODUCT_ID,
-          license_key: this.licenseKey,
-        })
-        .then(response => {
-          console.log({ response })
-          this.isSuccess = true
-          this.isError = false
-          this.$emit('success')
-        })
-        .catch(error => {
-          console.log({ error })
-          this.isSuccess = false
-          this.isError = true
-        })
-        .finally(() => {
-          this.isLoading = false
-        })
+    handleSuccess(_, response) {
+      console.log({ response })
+      this.isSuccess = true
+      this.isError = false
+      this.$emit('success')
+    },
+
+    handleFail(_, error) {
+      console.log({ error })
+      this.isSuccess = false
+      this.isError = true
+      this.isLoading = false
     },
   },
 
   mounted() {
-    // this.onChange()
+    ipcRenderer.on('verifyLicenseKey:succeeded', this.handleSuccess)
+    ipcRenderer.on('verifyLicenseKey:failed', this.handleFail)
+  },
+
+  beforeDestroy() {
+    ipcRenderer.removeListener('verifyLicenseKey:succeeded', this.handleSuccess)
+    ipcRenderer.removeListener('verifyLicenseKey:failed', this.handleFail)
   },
 }
 </script>

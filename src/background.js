@@ -1,6 +1,7 @@
 import path from 'path'
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol, installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
+import LicenseCheck from './services/LicenseCheck'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -28,6 +29,8 @@ function createWindow() {
     /* global __static */
     icon: path.join(__static, 'icon.png'),
   })
+
+  LicenseCheck.setWindow(win)
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
