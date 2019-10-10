@@ -4,7 +4,7 @@
       class="license-input__input"
       :mask="licenseMask"
       :masked="true"
-      :placeholder="licenseMask"
+      :placeholder="licensePlaceholder"
       :disabled="disabled"
       v-model="licenseKey"
       @input="onChange"
@@ -26,6 +26,7 @@ export default {
     return {
       disabled: false,
       licenseMask: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
+      licensePlaceholder: '00000000-00000000-00000000-00000000',
       licenseKey: null,
       // licenseKey: 'CEFA8043-F49D46F2-965EA1E6-11725170',
       tokens: {
