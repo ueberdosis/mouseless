@@ -1,7 +1,7 @@
 .apps-item {
   display: flex;
   flex-direction: column;
-  background-color: rgba($colorWhite, 0.06);
+  background-color: rgba($colorWhite, 0.1);
   padding: 20px;
   border-radius: 12px;
   text-decoration: none;
@@ -9,7 +9,7 @@
   transition: background-color 0.2s $ease;
 
   &:hover {
-    background-color: rgba($colorWhite, 0.1);
+    background-color: rgba($colorWhite, 0.15);
   }
 
   &:first-child {
