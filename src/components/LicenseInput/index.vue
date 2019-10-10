@@ -49,7 +49,7 @@ export default {
 
       axios
         .post('https://cors-anywhere.herokuapp.com/api.gumroad.com/v2/licenses/verify', {
-          product_permalink: 'oyJZx',
+          product_permalink: process.env.VUE_APP_GUMROAD_PRODUCT_ID,
           license_key: this.licenseKey,
         })
         .then(response => {
@@ -59,6 +59,10 @@ export default {
           console.log({ error })
         })
     },
+  },
+
+  mounted() {
+    console.log(process.env.VUE_APP_GUMROAD_PRODUCT_ID)
   },
 }
 </script>

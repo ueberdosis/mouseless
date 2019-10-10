@@ -19,6 +19,9 @@
     </div>
 
     <div>
+      <a :href="buyLink" target="blank">
+        Buy License
+      </a>
       <license-input />
     </div>
   </div>
@@ -35,6 +38,12 @@ export default {
   components: {
     Btn,
     LicenseInput,
+  },
+
+  data() {
+    return {
+      buyLink: `https://gumroad.com/l/${process.env.VUE_APP_GUMROAD_PRODUCT_ID}`,
+    }
   },
 
   methods: {
