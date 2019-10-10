@@ -18,6 +18,15 @@
     background-color: rgba($colorWhite, 0.1);
   }
 
+  &.is-yellow {
+    background-color: $colorYellow;
+    color: $colorBlack;
+
+    &:hover {
+      background-color: rgba($colorYellow, 0.9);
+    }
+  }
+
   &__icon {
 
   }

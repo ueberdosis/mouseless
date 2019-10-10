@@ -42,8 +42,8 @@ export default {
       isError: false,
       licenseMask: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
       licensePlaceholder: '00000000-00000000-00000000-00000000',
-      licenseKey: null,
-      // licenseKey: 'CEFA8043-F49D46F2-965EA1E6-11725170',
+      // licenseKey: null,
+      licenseKey: 'CEFA8043-F49D46F2-965EA1E6-11725170',
       tokens: {
         X: {
           pattern: /[0-9a-zA-Z]/,
@@ -72,6 +72,7 @@ export default {
           console.log({ response })
           this.isSuccess = true
           this.isError = false
+          this.$emit('success')
         })
         .catch(error => {
           console.log({ error })
@@ -85,7 +86,7 @@ export default {
   },
 
   mounted() {
-    console.log(process.env.VUE_APP_GUMROAD_PRODUCT_ID)
+    // this.onChange()
   },
 }
 </script>

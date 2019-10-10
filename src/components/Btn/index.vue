@@ -1,5 +1,5 @@
 <template>
-  <button class="button" type="button">
+  <button class="button" :class="{ 'is-yellow': isYellow }" type="button">
     <icon class="button__icon" :name="icon" v-if="icon" />
     <span class="button__content" v-if="$scopedSlots.default">
       <slot />
@@ -21,6 +21,11 @@ export default {
     icon: {
       default: null,
       type: String,
+    },
+
+    isYellow: {
+      default: false,
+      type: Boolean,
     },
   },
 }

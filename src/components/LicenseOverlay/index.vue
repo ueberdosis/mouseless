@@ -4,24 +4,20 @@
       <h1 class="license-overlay__title">
         Enter your license
       </h1>
-      <license-input />
+      <license-input @success="onSuccess" />
     </div>
     <div class="license-overlay__footer">
       <span>
         Don’t have a license yet?
       </span>
-      <btn @click.native="buyLicense">
+      <btn @click.native="buyLicense" is-yellow>
         Buy License
-      </btn>
-      <btn @click.native="close">
-        Close
       </btn>
     </div>
   </div>
 </template>
 
 <script>
-import Event from '@/services/Event'
 import Btn from '@/components/Btn'
 import LicenseInput from '@/components/LicenseInput'
 
@@ -34,12 +30,8 @@ export default {
   },
 
   methods: {
-    close() {
-      Event.emit('hideLicense')
-    },
-
-    reset() {
-      this.$db.store.clear()
+    onSuccess() {
+      this.close()
     },
 
     buyLicense() {
