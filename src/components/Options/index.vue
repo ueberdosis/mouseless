@@ -19,9 +19,9 @@
     </div>
 
     <div>
-      <a :href="buyLink" target="blank">
+      <btn @click.native="buyLicense">
         Buy License
-      </a>
+      </btn>
       <license-input />
     </div>
   </div>
@@ -40,12 +40,6 @@ export default {
     LicenseInput,
   },
 
-  data() {
-    return {
-      buyLink: `https://gumroad.com/l/${process.env.VUE_APP_GUMROAD_PRODUCT_ID}`,
-    }
-  },
-
   methods: {
     close() {
       Event.emit('hideOptions')
@@ -53,6 +47,12 @@ export default {
 
     reset() {
       this.$db.store.clear()
+    },
+
+    buyLicense() {
+      require('electron')
+        .shell
+        .openExternal(`https://gumroad.com/l/${process.env.VUE_APP_GUMROAD_PRODUCT_ID}`)
     },
   },
 }
