@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import Event from '@/services/Event'
 import Btn from '@/components/Btn'
 import LicenseInput from '@/components/LicenseInput'
 
@@ -32,6 +33,10 @@ export default {
   methods: {
     onSuccess() {
       this.close()
+    },
+
+    close() {
+      Event.emit('hideLicense')
     },
 
     buyLicense() {
