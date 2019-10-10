@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper" :class="{ 'is-loaded': isLoaded }">
-    <div class="wrapper__content" :class="{ 'is-hidden': showOptions }">
+    <div class="wrapper__content" :class="{ 'is-hidden': showOptions || showLicense }">
       <transition :name="transitionName">
         <router-view class="route" />
       </transition>
@@ -8,7 +8,11 @@
     </div>
 
     <transition name="options">
-      <options-overlay class="wrapper__options" v-if="showOptions" />
+      <options-overlay class="wrapper__overlay" v-if="showOptions" />
+    </transition>
+
+    <transition name="options">
+      <license-overlay class="wrapper__overlay" v-if="showLicense" />
     </transition>
   </div>
 </template>
@@ -16,18 +20,21 @@
 <script>
 import Event from '@/services/Event'
 import OptionsOverlay from '@/components/OptionsOverlay'
+import LicenseOverlay from '@/components/LicenseOverlay'
 
 export default {
   name: 'Wrapper',
 
   components: {
     OptionsOverlay,
+    LicenseOverlay,
   },
 
   data() {
     return {
       isLoaded: false,
       showOptions: false,
+      showLicense: true,
     }
   },
 
@@ -45,6 +52,14 @@ export default {
     onHideOptions() {
       this.showOptions = false
     },
+
+    onShowLicense() {
+      this.showLicense = true
+    },
+
+    onHideLicense() {
+      this.showLicense = false
+    },
   },
 
   mounted() {
@@ -54,11 +69,15 @@ export default {
 
     Event.on('showOptions', this.onShowOptions)
     Event.on('hideOptions', this.onHideOptions)
+    Event.on('showLicense', this.onShowLicense)
+    Event.on('hideLicense', this.onHideLicense)
   },
 
   beforeDestroy() {
     Event.off('showOptions', this.onShowOptions)
     Event.off('hideOptions', this.onHideOptions)
+    Event.off('showLicense', this.onShowLicense)
+    Event.off('hideLicense', this.onHideLicense)
   },
 }
 </script>

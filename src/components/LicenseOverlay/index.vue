@@ -1,8 +1,8 @@
 <template>
-  <div class="options-overlay">
+  <div class="license-overlay">
     <div>
       <h2>
-        Options
+        Enter your license
       </h2>
     </div>
 
@@ -13,9 +13,10 @@
     </div>
 
     <div>
-      <btn @click.native="reset">
-        Reset Store
+      <btn @click.native="buyLicense">
+        Buy License
       </btn>
+      <license-input />
     </div>
   </div>
 </template>
@@ -23,21 +24,29 @@
 <script>
 import Event from '@/services/Event'
 import Btn from '@/components/Btn'
+import LicenseInput from '@/components/LicenseInput'
 
 export default {
-  name: 'OptionsOverlay',
+  name: 'LicenseOverlay',
 
   components: {
     Btn,
+    LicenseInput,
   },
 
   methods: {
     close() {
-      Event.emit('hideOptions')
+      Event.emit('hideLicense')
     },
 
     reset() {
       this.$db.store.clear()
+    },
+
+    buyLicense() {
+      require('electron')
+        .shell
+        .openExternal(`https://gumroad.com/l/${process.env.VUE_APP_GUMROAD_PRODUCT_ID}`)
     },
   },
 }
