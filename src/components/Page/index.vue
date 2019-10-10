@@ -8,8 +8,8 @@
         <span class="page__title" v-if="title">
           {{ title }}
         </span>
-        <span class="page__subtitle" style="opacity: 0.5" v-if="subtitle">
-          {{ subtitle }}
+        <span class="page__subtitle" v-if="subtitle">
+          <span style="opacity: 0.5">/</span> {{ subtitle }}
         </span>
       </div>
       <div class="page__right">
