@@ -84,4 +84,5 @@ export default {
 
 <style lang="scss" src="./fonts.scss"></style>
 <style lang="scss" src="./base.scss"></style>
+<style lang="scss" src="./animations.scss"></style>
 <style lang="scss" src="./style.scss" scoped></style>
