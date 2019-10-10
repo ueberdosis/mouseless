@@ -13,6 +13,7 @@
       v-model="licenseKey"
       @input="onChange"
       :tokens="tokens"
+      ref="input"
     />
     <div class="license-input__error-wrapper">
       <transition name="bottom-to-top">
@@ -61,6 +62,7 @@ export default {
     },
 
     verifyLicense() {
+      this.isError = false
       this.isLoading = true
       ipcRenderer.send('verifyLicenseKey', this.licenseKey)
     },
@@ -69,6 +71,7 @@ export default {
       console.log({ response })
       this.isSuccess = true
       this.isError = false
+      this.isLoading = false
       this.$emit('success')
     },
 
@@ -77,6 +80,15 @@ export default {
       this.isSuccess = false
       this.isError = true
       this.isLoading = false
+      this.focusInput()
+    },
+
+    focusInput() {
+      this.$nextTick(() => {
+        if (this.$refs.input) {
+          this.$refs.input.$el.focus()
+        }
+      })
     },
   },
 

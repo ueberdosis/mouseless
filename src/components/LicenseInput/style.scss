@@ -20,6 +20,7 @@
 
     &.is-error {
       color: $colorRed;
+      animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
     }
 
     &:disabled {
