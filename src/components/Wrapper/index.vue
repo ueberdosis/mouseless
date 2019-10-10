@@ -34,7 +34,7 @@ export default {
     return {
       isLoaded: false,
       showOptions: false,
-      showLicense: true,
+      showLicense: !this.$db.verified,
     }
   },
 

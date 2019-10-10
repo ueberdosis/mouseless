@@ -1,9 +1,12 @@
 import axios from 'axios'
 import { ipcMain } from 'electron'
+import Store from 'electron-store'
 
 export default new class {
 
   constructor() {
+    this.store = new Store()
+
     ipcMain.on('verifyLicenseKey', (_, licenseKey) => {
       this.verifyLicenseKey(licenseKey)
     })
@@ -20,6 +23,7 @@ export default new class {
         license_key: licenseKey,
       })
       .then(response => {
+        this.store.set('verified', true)
         this.win.webContents.send('verifyLicenseKey:succeeded', response)
       })
       .catch(error => {
