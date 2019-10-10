@@ -2,14 +2,21 @@
   <div class="license-input">
     <the-mask
       class="license-input__input"
+      :class="{
+        'is-success': isSuccess,
+        'is-error': isError,
+      }"
       :mask="licenseMask"
       :masked="true"
       :placeholder="licensePlaceholder"
-      :disabled="disabled"
+      :disabled="isLoading"
       v-model="licenseKey"
       @input="onChange"
       :tokens="tokens"
     />
+    <div class="license-input__error" v-if="isError">
+      Sorry. This license does not exist.
+    </div>
   </div>
 </template>
 
@@ -26,7 +33,9 @@ export default {
 
   data() {
     return {
-      disabled: false,
+      isLoading: false,
+      isSuccess: false,
+      isError: false,
       licenseMask: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
       licensePlaceholder: '00000000-00000000-00000000-00000000',
       licenseKey: null,
@@ -48,7 +57,7 @@ export default {
     },
 
     checkLicense() {
-      this.disabled = true
+      this.isLoading = true
 
       axios
         .post('https://cors-anywhere.herokuapp.com/api.gumroad.com/v2/licenses/verify', {
@@ -57,9 +66,16 @@ export default {
         })
         .then(response => {
           console.log({ response })
+          this.isSuccess = true
+          this.isError = false
         })
         .catch(error => {
           console.log({ error })
+          this.isSuccess = false
+          this.isError = true
+        })
+        .finally(() => {
+          this.isLoading = false
         })
     },
   },

@@ -1,22 +1,18 @@
 <template>
   <div class="license-overlay">
-    <div>
-      <h2>
+    <div class="license-overlay__content">
+      <h1>
         Enter your license
-      </h2>
+      </h1>
+      <license-input />
     </div>
-
-    <div>
-      <btn @click.native="close">
-        Close
-      </btn>
-    </div>
-
-    <div>
+    <div class="license-overlay__footer">
       <btn @click.native="buyLicense">
         Buy License
       </btn>
-      <license-input />
+      <btn @click.native="close">
+        Close
+      </btn>
     </div>
   </div>
 </template>

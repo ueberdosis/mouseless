@@ -1,9 +1,19 @@
 .license-overlay {
   background-color: #191919;
   color: white;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 
-  div {
-    margin-bottom: 16px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 auto;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
   }
 }

@@ -1,26 +1,44 @@
 .license-input {
 
+  text-align: center;
+
   &__input {
     width: 100%;
     padding: 8px;
+    margin-bottom: 12px;
     background-color: transparent;
-    border-radius: 6px;
-    border: 2px solid rgba($colorWhite, 0.1);
-    color: $colorWhite;
+    color: $colorYellow;
     font-family: 'Fira Code', monospace;
     font-weight: 500;
-    font-size: 18px;
-    text-align: center;
-    letter-spacing: 2px;
+    font-size: 21px;
+    text-align: inherit;
     transition: color 0.2s $ease;
+
+    &.is-success {
+      color: $colorGreen;
+    }
+
+    &.is-error {
+      color: $colorRed;
+    }
 
     &:disabled {
       color: rgba($colorWhite, 0.5);
     }
 
     &::placeholder {
-      color: rgba($colorWhite, 0.1);
+      color: rgba($colorWhite, 0.2);
     }
+  }
+
+  &__error {
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 100px;
+    background-color: rgba($colorRed, 0.2);
+    color: $colorRed;
   }
 
 }
