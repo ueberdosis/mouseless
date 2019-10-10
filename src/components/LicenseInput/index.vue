@@ -18,6 +18,8 @@ import axios from 'axios'
 import { TheMask } from 'vue-the-mask'
 
 export default {
+  name: 'LicenseInput',
+
   components: {
     TheMask,
   },

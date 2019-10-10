@@ -8,20 +8,20 @@
     </div>
 
     <transition name="options">
-      <options class="wrapper__options" v-if="showOptions" />
+      <options-overlay class="wrapper__options" v-if="showOptions" />
     </transition>
   </div>
 </template>
 
 <script>
 import Event from '@/services/Event'
-import Options from '@/components/Options'
+import OptionsOverlay from '@/components/OptionsOverlay'
 
 export default {
   name: 'Wrapper',
 
   components: {
-    Options,
+    OptionsOverlay,
   },
 
   data() {

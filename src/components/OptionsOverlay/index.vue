@@ -1,5 +1,5 @@
 <template>
-  <div class="options">
+  <div class="options-overlay">
     <div>
       <h2>
         Options
@@ -33,7 +33,7 @@ import Btn from '@/components/Btn'
 import LicenseInput from '@/components/LicenseInput'
 
 export default {
-  name: 'Options',
+  name: 'OptionsOverlay',
 
   components: {
     Btn,
