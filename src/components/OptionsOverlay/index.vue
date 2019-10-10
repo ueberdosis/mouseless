@@ -14,7 +14,11 @@
 
     <div>
       <btn @click.native="reset">
-        Reset Store
+        Reset
+      </btn>
+
+      <btn @click.native="resetAll">
+        Reset All
       </btn>
     </div>
   </div>
@@ -37,6 +41,10 @@ export default {
     },
 
     reset() {
+      this.$db.store.delete('runs')
+    },
+
+    resetAll() {
       this.$db.store.clear()
     },
   },
