@@ -1,0 +1,21 @@
+.license-input {
+
+  &__input {
+    width: 100%;
+    padding: 8px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 2px solid rgba($colorWhite, 0.1);
+    color: $colorWhite;
+    font-family: monospace;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 2px;
+    transition: color 0.2s $ease;
+
+    &:disabled {
+      color: rgba($colorWhite, 0.5);
+    }
+  }
+
+}

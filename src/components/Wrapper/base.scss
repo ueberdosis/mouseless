@@ -64,10 +64,12 @@ a {
   text-decoration: none;
 }
 
-button {
-  cursor: pointer;
+button,
+input,
+textarea {
   background-color: transparent;
   border: none;
+  font: inherit;
   color: inherit;
 }
 
