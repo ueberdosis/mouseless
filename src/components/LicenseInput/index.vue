@@ -19,7 +19,7 @@
     <div class="license-input__error-wrapper">
       <transition name="bottom-to-top">
         <div class="license-input__error" v-if="isError">
-          Sorry. This license does not exist.
+          {{ errorMessage }}
         </div>
       </transition>
     </div>
@@ -42,9 +42,10 @@ export default {
       isLoading: false,
       isSuccess: false,
       isError: false,
+      errorMessage: null,
+      licenseUsageLimit: 2,
       licenseMask: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
       licensePlaceholder: '00000000-00000000-00000000-00000000',
-      // licenseKey: null,
       licenseKey: 'CEFA8043-F49D46F2-965EA1E6-11725170',
       tokens: {
         X: {
@@ -72,17 +73,18 @@ export default {
       ipcRenderer.send('verifyLicenseKey', this.licenseKey)
     },
 
-    handleSuccess(_, response) {
-      console.log({ response })
+    handleSuccess() {
+      if (!this.$db.verified) {
+        return
+      }
+
       this.isSuccess = true
-      this.isError = false
       this.isLoading = false
       this.$emit('success')
     },
 
-    handleFail(_, error) {
-      console.log({ error })
-      this.isSuccess = false
+    handleFail(_, errorMessage) {
+      this.errorMessage = errorMessage
       this.isError = true
       this.isLoading = false
       this.focusInput()

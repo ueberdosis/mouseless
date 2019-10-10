@@ -1,11 +1,13 @@
 import axios from 'axios'
 import { ipcMain } from 'electron'
 import Store from 'electron-store'
+import { nestedValue } from '../helpers'
 
 export default new class {
 
   constructor() {
     this.store = new Store()
+    this.limit = Infinity
 
     ipcMain.on('verifyLicenseKey', (_, licenseKey) => {
       this.verifyLicenseKey(licenseKey)
@@ -23,12 +25,27 @@ export default new class {
         license_key: licenseKey,
       })
       .then(response => {
+        const uses = nestedValue(response, 'data.uses')
+
+        if (uses > 0 && uses > this.limit) {
+          this.emitError('Sorry. This license is already in use.')
+          return
+        }
+
         this.store.set('verified', true)
-        this.win.webContents.send('verifyLicenseKey:succeeded', response)
+        this.emitSuccess()
       })
-      .catch(error => {
-        this.win.webContents.send('verifyLicenseKey:failed', error)
+      .catch(() => {
+        this.emitError('Sorry. This license does not exist.')
       })
+  }
+
+  emitSuccess() {
+    this.win.webContents.send('verifyLicenseKey:succeeded')
+  }
+
+  emitError(errorMessage = null) {
+    this.win.webContents.send('verifyLicenseKey:failed', errorMessage)
   }
 
 }()
