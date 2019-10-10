@@ -15,5 +15,16 @@
 
   &__footer {
     flex: 0 0 auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba($colorWhite, 0.5);
+
+    > * {
+      margin: 0 4px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
   }
 }

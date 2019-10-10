@@ -14,8 +14,12 @@
       @input="onChange"
       :tokens="tokens"
     />
-    <div class="license-input__error" v-if="isError">
-      Sorry. This license does not exist.
+    <div class="license-input__error-wrapper">
+      <transition name="bottom-to-top">
+        <div class="license-input__error" v-if="isError">
+          Sorry. This license does not exist.
+        </div>
+      </transition>
     </div>
   </div>
 </template>

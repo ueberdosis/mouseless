@@ -5,14 +5,14 @@
   &__input {
     width: 100%;
     padding: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     background-color: transparent;
     color: $colorYellow;
     font-family: 'Fira Code', monospace;
     font-weight: 500;
     font-size: 21px;
     text-align: inherit;
-    transition: color 0.2s $ease;
+    transition: color 0.5s $ease;
 
     &.is-success {
       color: $colorGreen;
@@ -31,11 +31,17 @@
     }
   }
 
+  &__error-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
   &__error {
     display: inline-flex;
     font-size: 14px;
     font-weight: 600;
-    padding: 8px 16px;
+    padding: 4px 12px;
     border-radius: 100px;
     background-color: rgba($colorRed, 0.2);
     color: $colorRed;

@@ -43,7 +43,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
   background: black;
@@ -181,4 +181,19 @@ textarea {
 .right-to-left-leave-to {
   opacity: 0;
   transform: translateX(-8px);
+}
+
+.bottom-to-top-enter-active,
+.bottom-to-top-leave-active {
+  transition: transform 0.2s $easeInOutQuad, opacity 0.2s $easeInOutQuad;
+}
+
+.bottom-to-top-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.bottom-to-top-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
 }

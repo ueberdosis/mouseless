@@ -1,12 +1,15 @@
 <template>
   <div class="license-overlay">
     <div class="license-overlay__content">
-      <h1>
+      <h1 class="license-overlay__title">
         Enter your license
       </h1>
       <license-input />
     </div>
     <div class="license-overlay__footer">
+      <span>
+        Don’t have a license yet?
+      </span>
       <btn @click.native="buyLicense">
         Buy License
       </btn>
