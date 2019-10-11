@@ -25,11 +25,12 @@
     display: flex;
     align-items: center;
     padding: 6px;
+    flex: 0 0 auto;
   }
 
   &__left,
   &__right {
-    flex: 0 0 30%;
+    width: 25%;
   }
 
   &__left {
@@ -37,7 +38,7 @@
   }
 
   &__center {
-    flex: 1 1 auto;
+    width: 50%;
     justify-content: center;
     font-size: 14px;
     font-weight: 600;
@@ -78,6 +79,17 @@
 
     &:hover {
       opacity: 1;
+    }
+  }
+
+  &__title {
+    display: flex;
+  }
+
+  &__sub-title {
+    &::before {
+      content: '\2009/\2009';
+      opacity: 0.5;
     }
   }
 

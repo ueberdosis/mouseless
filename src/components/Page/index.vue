@@ -1,16 +1,14 @@
 <template>
   <div class="page">
     <div class="page__header">
-      <div class="page__left" v-if="$scopedSlots.left">
+      <div class="page__left">
         <slot name="left" />
       </div>
       <div class="page__center">
-        <span class="page__title" v-if="title">
+        <template v-if="title">
           {{ title }}
-        </span>
-        <span class="page__subtitle" v-if="subtitle">
-          <span style="opacity: 0.5">/</span> {{ subtitle }}
-        </span>
+        </template>
+        <span class="page__sub-title truncate" v-if="subtitle">{{ subtitle }}</span>
       </div>
       <div class="page__right">
         <btn icon="options" @click.native="showOptions" />
