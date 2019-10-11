@@ -29,7 +29,6 @@ module.exports = {
       builderOptions: {
         artifactName: '${productName}-${version}-${os}.${ext}', // eslint-disable-line
         mac: {
-          target: ['dmg'],
           extendInfo: {
             NSUserNotificationAlertStyle: 'alert',
           },

@@ -1,10 +1,12 @@
 import path from 'path'
 import { app, protocol, BrowserWindow } from 'electron'
-import { autoUpdater } from 'electron-updater'
 import { createProtocol, installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
 import LicenseCheck from './services/LicenseCheck'
+import Updater from './services/Updater'
+import MenuBuilder from './services/MenuBuilder'
 
-const isDevelopment = process.env.NODE_ENV !== 'production'
+const isProduction = process.env.NODE_ENV === 'production'
+const isDevelopment = !!isProduction
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -14,6 +16,9 @@ let win
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
 
 function createWindow() {
+
+  MenuBuilder.setMenu()
+
   // Create the browser window.
   win = new BrowserWindow({
     width: 600,
@@ -41,7 +46,10 @@ function createWindow() {
     createProtocol('app')
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
-    autoUpdater.checkForUpdatesAndNotify()
+  }
+
+  if (isProduction) {
+    Updater.silentlyCheckForUpdates()
   }
 
   win.on('closed', () => {
@@ -85,6 +93,7 @@ app.on('ready', async () => {
 
   }
   createWindow()
+
 })
 
 // Exit cleanly on request from parent process in development mode.
