@@ -2,7 +2,7 @@
   "name": "mouseless",
   "version": "0.1.0",
   "productName": "Mouseless",
-  "author": "Philipp Kühn <philipp.kuehn@scrumpy.io>",
+  "author": "Philipp Kühn <philipp.kuehn@ueber.io>",
   "description": "A shortcut app.",
   "private": true,
   "scripts": {
