@@ -7,7 +7,13 @@
       </div>
       <div class="apps-item__meta">
         <template v-if="learnedShortcuts.length">
-          {{ learnedShortcuts.length }} / {{ shortcuts.length }} mastered
+          <div>
+            <text-progress
+              :value="learnedShortcuts.length"
+              :max-value="shortcuts.length"
+            />
+            mastered
+          </div>
           <circle-progress
             :value="learnedShortcuts.length"
             :max-value="shortcuts.length"
@@ -22,12 +28,14 @@
 </template>
 
 <script>
+import TextProgress from '@/components/TextProgress'
 import CircleProgress from '@/components/CircleProgress'
 
 export default {
   name: 'AppsItem',
 
   components: {
+    TextProgress,
     CircleProgress,
   },
 

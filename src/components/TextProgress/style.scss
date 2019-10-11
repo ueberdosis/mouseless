@@ -1,0 +1,10 @@
+.text-progress {
+  display: inline-flex;
+
+  & > span {
+    &:not(:first-child)::before {
+      content: '\2009/\2009';
+      opacity: 0.5;
+    }
+  }
+}
