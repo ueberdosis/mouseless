@@ -63,7 +63,6 @@ export default new class {
   onUpdateAvailable() {
     dialog.showMessageBox({
       type: 'info',
-      title: 'Found Updates',
       message: 'Found Updates, do you want update now?',
       buttons: ['Yes', 'No'],
     }, buttonIndex => {
@@ -83,15 +82,15 @@ export default new class {
     }
 
     dialog.showMessageBox({
-      title: 'No Updates',
-      message: 'Current version is up-to-date.',
+      message: 'No Updates available',
+      detail: 'You already have the latest version installed.',
     })
   }
 
   onUpdateDownloaded() {
     dialog.showMessageBox({
-      title: 'Install Updates',
-      message: 'Updates downloaded, application will be quit for update …',
+      message: 'Install Updates',
+      detail: 'Updates downloaded, application will be quit for update …',
     }, () => {
       setImmediate(() => {
         this.ensureSafeQuitAndInstall()
