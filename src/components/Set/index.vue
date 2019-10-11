@@ -11,7 +11,10 @@
         <img class="set__finished-image" src="@/assets/images/check.svg">
       </span>
       <template v-else-if="bestRun && !finished && bestRun.learnedIds.length">
-        {{ bestRun.learnedIds.length }} / {{ shortcuts.length }}
+        <text-progress
+          :value="bestRun.learnedIds.length"
+          :max-value="shortcuts.length"
+        />
         <circle-progress
           class="set__progress"
           :value="bestRun.learnedIds.length"
@@ -28,6 +31,7 @@
 
 <script>
 import Icon from '@/components/Icon'
+import TextProgress from '@/components/TextProgress'
 import CircleProgress from '@/components/CircleProgress'
 
 export default {
@@ -35,6 +39,7 @@ export default {
 
   components: {
     Icon,
+    TextProgress,
     CircleProgress,
   },
 
