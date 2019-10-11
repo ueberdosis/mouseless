@@ -23,4 +23,27 @@ module.exports = {
 
     config.resolve.extensions.prepend('.node')
   },
+
+  pluginOptions: {
+    electronBuilder: {
+      builderOptions: {
+        artifactName: '${productName}-${version}-${os}.${ext}', // eslint-disable-line
+        mac: {
+          extendInfo: {
+            NSUserNotificationAlertStyle: 'alert',
+          },
+          publish: [
+            {
+              provider: 'spaces',
+              name: 'ueber',
+              region: 'fra1',
+              channel: 'latest',
+              path: '/mouseless/mac',
+              acl: 'public-read',
+            },
+          ],
+        },
+      },
+    },
+  },
 }

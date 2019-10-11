@@ -9,12 +9,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "electron:build": "yarn electron:generate-icons && vue-cli-service electron:build",
-    "electron:serve": "vue-cli-service electron:serve",
     "start": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
-    "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten"
+    "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten",
+    "electron:build": "yarn electron:generate-icons && vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "electron:publish": "yarn electron:build -p always"
   },
   "main": "background.js",
   "devDependencies": {
@@ -43,6 +44,7 @@
     "collect.js": "^4.16.6",
     "core-js": "2.6.7",
     "electron-store": "^5.0.0",
+    "electron-updater": "^4.1.2",
     "moment": "^2.24.0",
     "native-keymap": "^2.0.0",
     "sha.js": "^2.4.11",
