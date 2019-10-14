@@ -17,7 +17,8 @@
     border-bottom-right-radius: 9px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: rgba($colorWhite, 0.12);
   }
 

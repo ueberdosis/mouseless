@@ -1,5 +1,5 @@
 <template>
-  <router-link class="set" :to="{ name: 'app.test', params: { setId: set.id }}">
+  <router-link class="set" :to="{ name: 'app.test', params: { setId: set.id }}" data-focusable>
     <div class="set__content">
       <div class="set__title truncate">
         {{ set.title }}

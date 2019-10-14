@@ -59,6 +59,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
+    scroll-behavior: smooth;
     padding: 38px 32px 32px 32px;
 
     &::-webkit-scrollbar-button:vertical:start {

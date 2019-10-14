@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import SpatialNavigation from 'spatial-navigation-js'
 import Event from '@/services/Event'
 import OptionsOverlay from '@/components/OptionsOverlay'
 import LicenseOverlay from '@/components/LicenseOverlay'
@@ -66,6 +67,10 @@ export default {
     setTimeout(() => {
       this.isLoaded = true
     }, 0)
+
+    SpatialNavigation.init()
+    SpatialNavigation.add({ selector: '[data-focusable]' })
+    SpatialNavigation.makeFocusable()
 
     Event.on('showOptions', this.onShowOptions)
     Event.on('hideOptions', this.onHideOptions)

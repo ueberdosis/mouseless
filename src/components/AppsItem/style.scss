@@ -8,7 +8,8 @@
   will-change: background-color;
   transition: background-color 0.2s $ease;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: rgba($colorWhite, 0.12);
   }
 

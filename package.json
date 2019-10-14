@@ -49,6 +49,7 @@
     "moment": "^2.24.0",
     "native-keymap": "^2.0.0",
     "sha.js": "^2.4.11",
+    "spatial-navigation-js": "^1.0.0",
     "uuid": "^3.3.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
