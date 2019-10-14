@@ -25,8 +25,8 @@
     height: 100%;
     overflow: hidden;
     transition:
-      transform 0.7s $easeInOutQuint,
-      border-radius 0.7s $easeInOutQuint,
+      transform 0.6s $easeInOutQuint,
+      border-radius 0.6s $easeInOutQuint,
     ;
     transform-origin: center 100%;
 
@@ -47,8 +47,8 @@
     visibility: hidden;
     opacity: 0;
     transition:
-      visibility 0.7s $easeInOutQuint,
-      opacity 0.7s $easeInOutQuint,
+      visibility 0.6s $easeInOutQuint,
+      opacity 0.6s $easeInOutQuint,
     ;
   }
 
