@@ -77,6 +77,18 @@ export default {
       })
     },
   },
+
+  mounted() {
+    this.$el.addEventListener('sn:willmove', event => {
+      if (event.detail.direction === 'left') {
+        this.$router.push({ name: 'apps' })
+      }
+
+      if (event.detail.direction === 'right') {
+        this.onClick()
+      }
+    })
+  },
 }
 </script>
 
