@@ -17,7 +17,7 @@
   &__shortcut {
     display: flex;
     justify-content: space-between;
-    margin: 4px 0;
+    margin: 6px 0;
     padding: 0 0 0 16px;
     font-size: 14px;
     color: rgba($colorWhite, 0.5);
@@ -25,6 +25,7 @@
 
   &__shortcut-keys {
     display: flex;
+    white-space: nowrap;
   }
 
   &__shortcut-key {
