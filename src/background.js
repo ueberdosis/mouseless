@@ -14,23 +14,20 @@ const isDevelopment = !!isProduction
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
-let secondWin
-let createdAppProtocol = false
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
 
-function createWindow(winVar, devPath, prodPath, windowOptions) {
+function createWindow() {
 
   MenuBuilder.setMenu()
 
   // Create the browser window.
-  winVar = new BrowserWindow({
+  win = new BrowserWindow({
     width: 600,
     height: 480,
     resizable: false,
     fullscreen: false,
-    // maximizable: false,
     titleBarStyle: 'hiddenInset',
     transparent: true,
     backgroundColor: '#000',
@@ -39,32 +36,26 @@ function createWindow(winVar, devPath, prodPath, windowOptions) {
     },
     /* global __static */
     icon: path.join(__static, 'icon.png'),
-    ...windowOptions,
   })
 
   LicenseCheck.setWindow(win)
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
-    winVar.loadURL(process.env.WEBPACK_DEV_SERVER_URL + devPath)
-    // if (!process.env.IS_TEST) winVar.webContents.openDevTools()
+    win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
+    if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
-    if (!createdAppProtocol) {
-      createProtocol('app')
-      createdAppProtocol = true
-    }
+    createProtocol('app')
     // Load the index.html when not in development
-    winVar.loadURL(`app://./${prodPath}`)
+    win.loadURL('app://./index.html')
   }
-
-  // winVar.webContents.executeJavaScript('window.location.hash = "/shortcuts"')
 
   if (isProduction) {
     Updater.silentlyCheckForUpdates()
   }
 
-  winVar.on('closed', () => {
-    winVar = null
+  win.on('closed', () => {
+    win = null
   })
 }
 
@@ -103,13 +94,10 @@ app.on('ready', async () => {
     }
 
   }
-  // createWindow()
-  createWindow(win, '', 'index.html', {})
-  // createWindow(secondWin, 'menubar', 'menubar.html', { show: false })
+
+  createWindow()
 
   const mb = menubar({
-    // index: process.env.WEBPACK_DEV_SERVER_URL ? `http://${
-    //   process.env.WEBPACK_DEV_SERVER_URL}menubar` : 'app://./menubar.html',
     index: process.env.WEBPACK_DEV_SERVER_URL
       ? process.env.WEBPACK_DEV_SERVER_URL
       : 'app://./index.html',
@@ -119,7 +107,7 @@ app.on('ready', async () => {
       width: 300,
       height: 400,
       movable: false,
-      alwaysOnTop: true,
+      alwaysOnTop: isDevelopment,
       webPreferences: {
         nodeIntegration: true,
       },
@@ -134,10 +122,10 @@ app.on('ready', async () => {
   })
 
   mb.on('show', () => {
-    const app = activeWin.sync()
+    const currentApp = activeWin.sync()
 
-    if (app) {
-      mb.window.webContents.send('currentApp', app.owner.name)
+    if (currentApp) {
+      mb.window.webContents.send('currentApp', currentApp.owner.name)
     }
   })
 })
