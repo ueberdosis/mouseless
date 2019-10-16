@@ -7,7 +7,6 @@ import LicenseCheck from './services/LicenseCheck'
 import Updater from './services/Updater'
 import MenuBuilder from './services/MenuBuilder'
 
-
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !!isProduction
 
@@ -107,7 +106,7 @@ app.on('ready', async () => {
       width: 300,
       height: 400,
       movable: false,
-      alwaysOnTop: isDevelopment,
+      alwaysOnTop: true,
       webPreferences: {
         nodeIntegration: true,
       },
@@ -118,7 +117,10 @@ app.on('ready', async () => {
 
   mb.on('after-create-window', () => {
     mb.window.webContents.executeJavaScript('window.location.hash = "/shortcuts"')
-    mb.window.openDevTools()
+
+    if (!process.env.IS_TEST) {
+      mb.window.openDevTools()
+    }
   })
 
   mb.on('show', () => {
