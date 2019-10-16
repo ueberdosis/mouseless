@@ -1,9 +1,12 @@
 import path from 'path'
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol, installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
+import { menubar } from 'menubar'
+import activeWin from 'active-win'
 import LicenseCheck from './services/LicenseCheck'
 import Updater from './services/Updater'
 import MenuBuilder from './services/MenuBuilder'
+
 
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !!isProduction
@@ -11,16 +14,18 @@ const isDevelopment = !!isProduction
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+let secondWin
+let createdAppProtocol = false
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
 
-function createWindow() {
+function createWindow(winVar, devPath, prodPath, windowOptions) {
 
   MenuBuilder.setMenu()
 
   // Create the browser window.
-  win = new BrowserWindow({
+  winVar = new BrowserWindow({
     width: 600,
     height: 480,
     resizable: false,
@@ -34,26 +39,32 @@ function createWindow() {
     },
     /* global __static */
     icon: path.join(__static, 'icon.png'),
+    ...windowOptions,
   })
 
   LicenseCheck.setWindow(win)
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
-    win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
-    if (!process.env.IS_TEST) win.webContents.openDevTools()
+    winVar.loadURL(process.env.WEBPACK_DEV_SERVER_URL + devPath)
+    // if (!process.env.IS_TEST) winVar.webContents.openDevTools()
   } else {
-    createProtocol('app')
+    if (!createdAppProtocol) {
+      createProtocol('app')
+      createdAppProtocol = true
+    }
     // Load the index.html when not in development
-    win.loadURL('app://./index.html')
+    winVar.loadURL(`app://./${prodPath}`)
   }
+
+  // winVar.webContents.executeJavaScript('window.location.hash = "/shortcuts"')
 
   if (isProduction) {
     Updater.silentlyCheckForUpdates()
   }
 
-  win.on('closed', () => {
-    win = null
+  winVar.on('closed', () => {
+    winVar = null
   })
 }
 
@@ -92,8 +103,43 @@ app.on('ready', async () => {
     }
 
   }
-  createWindow()
+  // createWindow()
+  createWindow(win, '', 'index.html', {})
+  // createWindow(secondWin, 'menubar', 'menubar.html', { show: false })
 
+  const mb = menubar({
+    // index: process.env.WEBPACK_DEV_SERVER_URL ? `http://${
+    //   process.env.WEBPACK_DEV_SERVER_URL}menubar` : 'app://./menubar.html',
+    index: process.env.WEBPACK_DEV_SERVER_URL
+      ? process.env.WEBPACK_DEV_SERVER_URL
+      : 'app://./index.html',
+    browserWindow: {
+      transparent: true,
+      backgroundColor: '#000',
+      width: 300,
+      height: 400,
+      movable: false,
+      alwaysOnTop: true,
+      webPreferences: {
+        nodeIntegration: true,
+      },
+    },
+    icon: path.join(__static, 'MenuIconTemplate.png'),
+    preloadWindow: true,
+  })
+
+  mb.on('after-create-window', () => {
+    mb.window.webContents.executeJavaScript('window.location.hash = "/shortcuts"')
+    mb.window.openDevTools()
+  })
+
+  mb.on('show', () => {
+    const app = activeWin.sync()
+
+    if (app) {
+      mb.window.webContents.send('currentApp', app.owner.name)
+    }
+  })
 })
 
 // Exit cleanly on request from parent process in development mode.

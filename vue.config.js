@@ -1,4 +1,9 @@
 module.exports = {
+  pages: {
+    index: 'src/main.js',
+    menubar: 'src/menubar.js',
+  },
+
   css: {
     loaderOptions: {
       sass: {
