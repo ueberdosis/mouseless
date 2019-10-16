@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="page__header">
-      <div class="page__left">
+      <div class="page__left" :class="{ 'has-traffic-light-spacing': trafficLightSpacing }">
         <slot name="left" />
       </div>
       <div class="page__center">
@@ -40,6 +40,11 @@ export default {
     subtitle: {
       type: String,
       default: null,
+    },
+
+    trafficLightSpacing: {
+      type: Boolean,
+      default: true,
     },
   },
 

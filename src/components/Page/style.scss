@@ -34,7 +34,9 @@
   }
 
   &__left {
-    padding-left: 78px;
+    &.has-traffic-light-spacing {
+      padding-left: 78px;
+    }
   }
 
   &__center {
