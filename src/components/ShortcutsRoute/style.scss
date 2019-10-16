@@ -11,20 +11,35 @@
     font-size: 14px;
     font-weight: 500;
     border-bottom: 0.5px solid rgba($colorWhite, 0.1);
-    padding: 4px 16px;
+    padding: 4px 0 4px 16px;
   }
 
   &__shortcut {
     display: flex;
     justify-content: space-between;
     margin: 4px 0;
-    padding: 0 16px;
+    padding: 0 0 0 16px;
     font-size: 14px;
     color: rgba($colorWhite, 0.5);
   }
 
   &__shortcut-keys {
     display: flex;
+  }
+
+  &__shortcut-key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    color: $colorWhite;
+    line-height: 1;
+    border-radius: 3px;
+    background-color: rgba($colorWhite, 0.1);
+    margin-left: 4px;
   }
 
 }

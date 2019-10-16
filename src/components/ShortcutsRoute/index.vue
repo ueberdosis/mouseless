@@ -16,8 +16,8 @@
               {{ shortcut.title }}
             </div>
             <div class="shortcuts-route__shortcut-keys">
-              <div v-for="key in shortcut.resolvedKeys" :key="key">
-                {{ key }}
+              <div class="shortcuts-route__shortcut-key" v-for="key in shortcut.resolvedKeys" :key="key">
+                {{ key | key | uppercase }}
               </div>
             </div>
           </div>
