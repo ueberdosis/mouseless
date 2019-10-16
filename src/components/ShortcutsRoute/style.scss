@@ -1,0 +1,30 @@
+.shortcuts-route {
+
+  &__set {
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    position: sticky;
+    top: 0;
+    background-color: $colorBlack;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 0.5px solid rgba($colorWhite, 0.1);
+    padding: 4px 16px;
+  }
+
+  &__shortcut {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+    padding: 0 16px;
+    font-size: 14px;
+    color: rgba($colorWhite, 0.5);
+  }
+
+  &__shortcut-keys {
+    display: flex;
+  }
+
+}

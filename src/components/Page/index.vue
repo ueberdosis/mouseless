@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="page__header">
+    <div class="page__header" :class="{ 'has-blur': blur }">
       <div class="page__left" :class="{ 'has-traffic-light-spacing': trafficLightSpacing }">
         <slot name="left" />
       </div>
@@ -43,6 +43,11 @@ export default {
     },
 
     trafficLightSpacing: {
+      type: Boolean,
+      default: true,
+    },
+
+    blur: {
       type: Boolean,
       default: true,
     },

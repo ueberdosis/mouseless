@@ -1,15 +1,24 @@
 <template>
-  <page :title="title" :traffic-light-spacing="false">
+  <page
+    class="shortcuts-route"
+    :title="title"
+    :traffic-light-spacing="false"
+    :blur="false"
+  >
     <template v-slot>
       <template v-if="app">
-        <div v-for="set in app.sets" :key="set.id">
-          <div>
+        <div class="shortcuts-route__set" v-for="set in app.sets" :key="set.id">
+          <div class="shortcuts-route__title">
             {{ set.title }}
           </div>
-          <div v-for="shortcut in app.shortcutsBySet(set.id)" :key="shortcut.id">
-            {{ shortcut.title }}
-            <div v-for="key in shortcut.resolvedKeys" :key="key">
-              {{ key }}
+          <div class="shortcuts-route__shortcut" v-for="shortcut in app.shortcutsBySet(set.id)" :key="shortcut.id">
+            <div class="shortcuts-route__shortcut-title">
+              {{ shortcut.title }}
+            </div>
+            <div class="shortcuts-route__shortcut-keys">
+              <div v-for="key in shortcut.resolvedKeys" :key="key">
+                {{ key }}
+              </div>
             </div>
           </div>
         </div>
@@ -58,3 +67,5 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" src="./style.scss" scoped></style>

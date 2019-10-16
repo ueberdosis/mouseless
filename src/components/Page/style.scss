@@ -14,9 +14,13 @@
     width: 100%;
     flex: 0 0 auto;
     height: 38px;
-    background-color: rgba($colorBlack, 0.5);
-    backdrop-filter: blur(20px);
+    background-color: $colorBlack;
     border-bottom: 1px solid $colorBlack;
+
+    &.has-blur {
+      backdrop-filter: blur(20px);
+      background-color: rgba($colorBlack, 0.5);
+    }
   }
 
   &__left,
@@ -63,6 +67,12 @@
     overscroll-behavior: contain;
     scroll-behavior: smooth;
     padding: 38px 32px 32px 32px;
+
+    @media screen and (max-width: 300px) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
 
     &::-webkit-scrollbar-button:vertical:start {
       display: block;
