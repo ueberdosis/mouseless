@@ -2,6 +2,7 @@
 export default {
   id: 'macos',
   title: 'macOS',
+  systemTitle: null,
   category: 'Utility',
   sets: [
     {

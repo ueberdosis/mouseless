@@ -2,6 +2,7 @@
 export default {
   id: 'bear',
   title: 'Bear',
+  systemTitle: 'Bear',
   category: 'Productivity',
   sets: [
     {

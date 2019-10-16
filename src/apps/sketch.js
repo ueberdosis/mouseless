@@ -2,6 +2,7 @@
 export default {
   id: 'sketch',
   title: 'Sketch',
+  systemTitle: 'Sketch',
   category: 'Design',
   sets: [
     {

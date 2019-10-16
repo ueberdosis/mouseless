@@ -2,6 +2,7 @@
 export default {
   id: 'notion',
   title: 'Notion',
+  systemTitle: 'Notion',
   category: 'Productivity',
   sets: [
     {

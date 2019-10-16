@@ -2,6 +2,7 @@
 export default {
   id: 'vscode',
   title: 'VS Code',
+  systemTitle: 'Code',
   category: 'Development',
   sets: [
     {

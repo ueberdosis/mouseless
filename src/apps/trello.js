@@ -2,6 +2,7 @@
 export default {
   id: 'trello',
   title: 'Trello',
+  systemTitle: 'Trello',
   category: 'Productivity',
   sets: [
     {

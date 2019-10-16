@@ -2,6 +2,7 @@
 export default {
   id: 'chrome',
   title: 'Chrome',
+  systemTitle: 'Google Chrome',
   category: 'Utility',
   sets: [
     {

@@ -2,6 +2,7 @@
 export default {
   id: 'adobexd',
   title: 'Adobe XD',
+  systemTitle: 'Adobe XD',
   category: 'Design',
   sets: [
     {
