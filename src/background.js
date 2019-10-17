@@ -8,7 +8,7 @@ import Updater from './services/Updater'
 import MenuBuilder from './services/MenuBuilder'
 
 const isProduction = process.env.NODE_ENV === 'production'
-const isDevelopment = !!isProduction
+const isDevelopment = !isProduction
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -106,7 +106,7 @@ app.on('ready', async () => {
       width: 300,
       height: 480,
       movable: false,
-      alwaysOnTop: true,
+      alwaysOnTop: isDevelopment,
       webPreferences: {
         nodeIntegration: true,
       },
