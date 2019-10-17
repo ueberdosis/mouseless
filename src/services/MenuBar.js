@@ -30,6 +30,8 @@ export default new class {
       /* global __static */
       icon: path.join(__static, 'MenuIconTemplate.png'),
       preloadWindow: true,
+      showDockIcon: true,
+      tooltip: 'Mouseless',
     })
 
     this.menubar.on('after-create-window', () => {
