@@ -111,7 +111,7 @@ export default {
       }
 
       const fuse = new Fuse(shortcuts, {
-        threshold: 0.2,
+        threshold: 0.3,
         keys: ['title'],
       })
 
