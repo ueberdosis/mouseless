@@ -15,21 +15,23 @@
     </div>
     <div class="shortcuts-route__content">
       <template v-if="app">
-        <div class="shortcuts-route__set" v-for="set in app.sets" :key="set.id">
-          <div class="shortcuts-route__set-title">
-            {{ set.title }}
-          </div>
-          <div class="shortcuts-route__shortcut" v-for="shortcut in app.shortcutsBySet(set.id)" :key="shortcut.id">
-            <div class="shortcuts-route__shortcut-title">
-              {{ shortcut.title }}
+        <template v-for="set in app.sets">
+          <div class="shortcuts-route__set" :key="set.id" v-if="shortcutsBySet(set.id).length">
+            <div class="shortcuts-route__set-title">
+              {{ set.title }}
             </div>
-            <div class="shortcuts-route__shortcut-keys">
-              <div class="shortcuts-route__shortcut-key" v-for="key in shortcut.resolvedKeys" :key="key">
-                {{ key | key | uppercase }}
+            <div class="shortcuts-route__shortcut" v-for="shortcut in shortcutsBySet(set.id)" :key="shortcut.id">
+              <div class="shortcuts-route__shortcut-title">
+                {{ shortcut.title }}
+              </div>
+              <div class="shortcuts-route__shortcut-keys">
+                <div class="shortcuts-route__shortcut-key" v-for="key in shortcut.resolvedKeys" :key="key">
+                  {{ key | key | uppercase }}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </template>
       </template>
       <div class="shortcuts-route__empty-state" v-else>
         <template v-if="title">
@@ -44,6 +46,7 @@
 </template>
 
 <script>
+import Fuse from 'fuse.js'
 import { ipcRenderer } from 'electron'
 
 export default {
@@ -75,6 +78,21 @@ export default {
       if (systemTitle !== 'Electron') {
         this.systemTitle = systemTitle
       }
+    },
+
+    shortcutsBySet(id) {
+      const shortcuts = this.app.shortcutsBySet(id)
+
+      if (!this.query) {
+        return shortcuts
+      }
+
+      const fuse = new Fuse(shortcuts, {
+        threshold: 0.2,
+        keys: ['title'],
+      })
+
+      return fuse.search(this.query)
     },
   },
 

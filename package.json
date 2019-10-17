@@ -47,6 +47,7 @@
     "electron-log": "^3.0.8",
     "electron-store": "^5.0.0",
     "electron-updater": "^4.1.2",
+    "fuse.js": "^3.4.5",
     "menubar": "^6.0.8",
     "moment": "^2.24.0",
     "native-keymap": "^2.0.0",
