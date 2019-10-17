@@ -2,7 +2,10 @@
   <div class="shortcuts-route">
     <div class="shortcuts-route__header">
       <div class="shortcuts-route__title">
-        {{ title }}
+        {{ title || 'Mouseless' }}
+        <button class="shortcuts-route__maximize" @click="maximize">
+          <icon name="maximize" />
+        </button>
       </div>
       <input
         class="shortcuts-route__search"
@@ -48,8 +51,13 @@
 <script>
 import Fuse from 'fuse.js'
 import { ipcRenderer } from 'electron'
+import Icon from '@/components/Icon'
 
 export default {
+  components: {
+    Icon,
+  },
+
   data() {
     return {
       systemTitle: null,
@@ -78,6 +86,10 @@ export default {
       if (systemTitle !== 'Electron') {
         this.systemTitle = systemTitle
       }
+    },
+
+    maximize() {
+      ipcRenderer.send('show')
     },
 
     shortcutsBySet(id) {

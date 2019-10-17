@@ -14,6 +14,18 @@
     color: rgba($colorWhite, 0.5);
   }
 
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__maximize {
+    &:hover {
+      color: $colorWhite;
+    }
+  }
+
   &__search {
     margin-top: 12px;
     padding: 6px 8px;

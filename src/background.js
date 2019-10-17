@@ -1,5 +1,7 @@
 import path from 'path'
-import { app, protocol, BrowserWindow } from 'electron'
+import {
+  app, protocol, BrowserWindow, ipcMain,
+} from 'electron'
 import { createProtocol, installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
 import { menubar } from 'menubar'
 import activeWin from 'active-win'
@@ -134,6 +136,16 @@ app.on('ready', async () => {
     if (!process.env.IS_TEST) {
       mb.window.closeDevTools()
     }
+  })
+
+  ipcMain.on('show', () => {
+    if (win === null) {
+      createWindow()
+    } else {
+      win.show()
+    }
+
+    mb.hideWindow()
   })
 })
 
