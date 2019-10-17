@@ -56,14 +56,22 @@ export default {
     },
   },
 
-  mounted() {
-    ipcRenderer.on('currentApp', (event, systemTitle) => {
+  methods: {
+    onCurrentApp(event, systemTitle) {
       console.log({ systemTitle })
 
       if (systemTitle !== 'Electron') {
         this.systemTitle = systemTitle
       }
-    })
+    },
+  },
+
+  mounted() {
+    ipcRenderer.on('currentApp', this.onCurrentApp)
+  },
+
+  beforeDestroy() {
+    ipcRenderer.removeListener('currentApp', this.onCurrentApp)
   },
 }
 </script>
