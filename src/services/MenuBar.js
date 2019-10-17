@@ -1,14 +1,19 @@
 import path from 'path'
 import { menubar } from 'menubar'
 import activeWin from 'active-win'
+import Store from 'electron-store'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
 
 export default new class {
 
+  constructor() {
+    this.store = new Store()
+  }
+
   create() {
-    if (this.menubar) {
+    if (this.menubar || !this.store.get('verified')) {
       return
     }
 

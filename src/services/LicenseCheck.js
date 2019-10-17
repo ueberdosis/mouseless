@@ -2,6 +2,7 @@ import axios from 'axios'
 import { ipcMain } from 'electron'
 import Store from 'electron-store'
 import { nestedValue } from '../helpers'
+import MenuBar from './MenuBar'
 
 export default new class {
 
@@ -32,7 +33,8 @@ export default new class {
           return
         }
 
-        this.store.set('verified', true)
+        this.store.set('verified', response.data.purchase.email)
+        MenuBar.create()
         this.emitSuccess()
       })
       .catch(() => {

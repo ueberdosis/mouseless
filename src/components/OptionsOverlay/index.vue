@@ -6,6 +6,10 @@
       </h2>
     </div>
 
+    <div v-if="licensed">
+      Licenced to {{ licensed }}
+    </div>
+
     <div>
       <btn @click.native="close">
         Close
@@ -33,6 +37,12 @@ export default {
 
   components: {
     Btn,
+  },
+
+  computed: {
+    licensed() {
+      return this.$db.verified
+    },
   },
 
   methods: {
