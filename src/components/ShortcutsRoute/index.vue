@@ -10,6 +10,7 @@
         v-model="query"
         type="text"
         autofocus
+        v-if="app"
       >
     </div>
     <div class="shortcuts-route__content">
@@ -30,6 +31,14 @@
           </div>
         </div>
       </template>
+      <div class="shortcuts-route__empty-state" v-else>
+        <template v-if="title">
+          Sorry but {{ title }} is not yet supported :-(
+        </template>
+        <template v-else>
+          First open an app to see shortcuts.
+        </template>
+      </div>
     </div>
   </div>
 </template>
