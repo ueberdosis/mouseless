@@ -1,13 +1,16 @@
 import path from 'path'
 import {
-  app, protocol, BrowserWindow, ipcMain,
+  app,
+  protocol,
+  BrowserWindow,
+  ipcMain,
 } from 'electron'
 import { createProtocol, installVueDevtools } from 'vue-cli-plugin-electron-builder/lib'
-import { menubar } from 'menubar'
-import activeWin from 'active-win'
+
 import LicenseCheck from './services/LicenseCheck'
 import Updater from './services/Updater'
 import MenuBuilder from './services/MenuBuilder'
+import MenuBar from './services/MenuBar'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
@@ -97,46 +100,7 @@ app.on('ready', async () => {
 
   createWindow()
 
-  const mb = menubar({
-    index: process.env.WEBPACK_DEV_SERVER_URL
-      ? process.env.WEBPACK_DEV_SERVER_URL
-      : 'app://./index.html',
-    browserWindow: {
-      transparent: true,
-      backgroundColor: '#000',
-      width: 300,
-      height: 480,
-      movable: false,
-      alwaysOnTop: isDevelopment,
-      webPreferences: {
-        nodeIntegration: true,
-      },
-    },
-    icon: path.join(__static, 'MenuIconTemplate.png'),
-    preloadWindow: true,
-  })
-
-  mb.on('after-create-window', () => {
-    mb.window.webContents.executeJavaScript('window.location.hash = "/shortcuts"')
-  })
-
-  mb.on('show', () => {
-    const currentApp = activeWin.sync()
-
-    if (currentApp) {
-      mb.window.webContents.send('currentApp', currentApp.owner.name)
-    }
-
-    if (!process.env.IS_TEST) {
-      mb.window.openDevTools()
-    }
-  })
-
-  mb.on('hide', () => {
-    if (!process.env.IS_TEST) {
-      mb.window.closeDevTools()
-    }
-  })
+  MenuBar.create()
 
   ipcMain.on('show', () => {
     if (win === null) {
@@ -145,7 +109,7 @@ app.on('ready', async () => {
       win.show()
     }
 
-    mb.hideWindow()
+    MenuBar.hide()
   })
 })
 
