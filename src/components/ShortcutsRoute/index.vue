@@ -1,8 +1,11 @@
 <template>
   <div class="shortcuts-route">
     <div class="shortcuts-route__header">
-      <div class="shortcuts-route__title">
-        {{ title || 'Mouseless' }}
+      <div class="shortcuts-route__header-bar">
+        <div class="shortcuts-route__title">
+          <img class="shortcuts-route__logo" :src="logo" v-if="logo">
+          {{ title || 'Mouseless' }}
+        </div>
         <button class="shortcuts-route__maximize" @click="maximize">
           <icon name="maximize" />
         </button>
@@ -68,6 +71,14 @@ export default {
   computed: {
     title() {
       return this.app ? this.app.title : this.systemTitle
+    },
+
+    logo() {
+      if (!this.app) {
+        return null
+      }
+
+      return require(`@/assets/logos/${this.app.id}.svg`)
     },
 
     app() {

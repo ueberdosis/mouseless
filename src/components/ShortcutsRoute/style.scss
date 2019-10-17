@@ -14,9 +14,20 @@
     color: rgba($colorWhite, 0.5);
   }
 
-  &__title {
+  &__header-bar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 16px;
+    width: auto;
+    margin-right: 6px;
+  }
+
+  &__title {
+    display: flex;
     align-items: center;
   }
 
@@ -30,6 +41,7 @@
     margin-top: 12px;
     padding: 6px 8px;
     width: 100%;
+    color: $colorWhite;
     background-color: rgba($colorWhite, 0.06);
     border-radius: 4px;
     font-weight: 400;
