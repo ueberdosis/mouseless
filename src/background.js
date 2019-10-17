@@ -117,10 +117,6 @@ app.on('ready', async () => {
 
   mb.on('after-create-window', () => {
     mb.window.webContents.executeJavaScript('window.location.hash = "/shortcuts"')
-
-    if (!process.env.IS_TEST) {
-      mb.window.openDevTools()
-    }
   })
 
   mb.on('show', () => {
@@ -128,6 +124,16 @@ app.on('ready', async () => {
 
     if (currentApp) {
       mb.window.webContents.send('currentApp', currentApp.owner.name)
+    }
+
+    if (!process.env.IS_TEST) {
+      mb.window.openDevTools()
+    }
+  })
+
+  mb.on('hide', () => {
+    if (!process.env.IS_TEST) {
+      mb.window.closeDevTools()
     }
   })
 })

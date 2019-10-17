@@ -41,6 +41,10 @@ export default {
 
   computed: {
     transitionName() {
+      if (this.$route.name === 'shortcuts') {
+        return null
+      }
+
       return this.$route.name === 'apps' ? 'slide-right' : 'slide-left'
     },
   },
