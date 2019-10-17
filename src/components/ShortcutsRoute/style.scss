@@ -1,10 +1,42 @@
 .shortcuts-route {
 
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  background-color: $colorBlack;
+  color: $colorWhite;
+
+  &__header {
+    flex: 0 0 auto;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba($colorWhite, 0.5);
+  }
+
+  &__search {
+    margin-top: 12px;
+    padding: 6px 8px;
+    width: 100%;
+    background-color: rgba($colorWhite, 0.06);
+    border-radius: 4px;
+    font-weight: 400;
+
+    &::placeholder {
+      color: rgba($colorWhite, 0.2);
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+
   &__set {
     margin-bottom: 12px;
   }
 
-  &__title {
+  &__set-title {
     position: sticky;
     top: 0;
     background-color: $colorBlack;
@@ -17,16 +49,20 @@
   &__shortcut {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 6px 0;
     padding: 0 0 0 16px;
     font-size: 14px;
     color: rgba($colorWhite, 0.5);
   }
 
+  &__shortcut-title {
+    max-width: 200px;
+  }
+
   &__shortcut-keys {
     display: flex;
     white-space: nowrap;
+    padding: 1px 0;
   }
 
   &__shortcut-key {
@@ -38,11 +74,16 @@
     height: 18px;
     font-size: 12px;
     font-weight: 700;
-    color: $colorWhite;
+    color: rgba($colorWhite, 0.7);
     line-height: 1;
     border-radius: 3px;
     background-color: rgba($colorWhite, 0.1);
     margin-left: 4px;
+  }
+
+  &__shortcut:hover,
+  &__shortcut:hover &__shortcut-key {
+    color: $colorWhite;
   }
 
 }

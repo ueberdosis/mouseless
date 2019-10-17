@@ -1,14 +1,21 @@
 <template>
-  <page
-    class="shortcuts-route"
-    :title="title"
-    :traffic-light-spacing="false"
-    :blur="false"
-  >
-    <template v-slot>
+  <div class="shortcuts-route">
+    <div class="shortcuts-route__header">
+      <div class="shortcuts-route__title">
+        {{ title }}
+      </div>
+      <input
+        class="shortcuts-route__search"
+        placeholder="Search…"
+        v-model="query"
+        type="text"
+        autofocus
+      >
+    </div>
+    <div class="shortcuts-route__content">
       <template v-if="app">
         <div class="shortcuts-route__set" v-for="set in app.sets" :key="set.id">
-          <div class="shortcuts-route__title">
+          <div class="shortcuts-route__set-title">
             {{ set.title }}
           </div>
           <div class="shortcuts-route__shortcut" v-for="shortcut in app.shortcutsBySet(set.id)" :key="shortcut.id">
@@ -23,22 +30,18 @@
           </div>
         </div>
       </template>
-    </template>
-  </page>
+    </div>
+  </div>
 </template>
 
 <script>
 import { ipcRenderer } from 'electron'
-import Page from '@/components/Page'
 
 export default {
-  components: {
-    Page,
-  },
-
   data() {
     return {
       systemTitle: null,
+      query: null,
     }
   },
 

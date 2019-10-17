@@ -104,7 +104,7 @@ app.on('ready', async () => {
       transparent: true,
       backgroundColor: '#000',
       width: 300,
-      height: 400,
+      height: 480,
       movable: false,
       alwaysOnTop: true,
       webPreferences: {
