@@ -50,13 +50,13 @@ export default new class {
         this.menubar.window.webContents.send('currentApp', currentApp.owner.name)
       }
 
-      if (!process.env.IS_TEST) {
+      if (isDevelopment) {
         this.menubar.window.openDevTools()
       }
     })
 
     this.menubar.on('hide', () => {
-      if (!process.env.IS_TEST) {
+      if (isDevelopment) {
         this.menubar.window.closeDevTools()
       }
     })
