@@ -22,7 +22,20 @@
           Menubar
         </div>
         <div>
-          Show in menu bar
+          <label class="options-overlay__label">
+            <input type="checkbox" v-model="showMenubar">
+            <span>
+              Show in menu bar
+            </span>
+            <button
+              class="options-overlay__restart"
+              type="button"
+              @click="restart"
+              v-if="showRestartButton"
+            >
+              Restart App
+            </button>
+          </label>
         </div>
       </div>
 
@@ -44,6 +57,7 @@
 </template>
 
 <script>
+import { remote } from 'electron'
 import Event from '@/services/Event'
 import Btn from '@/components/Btn'
 
@@ -57,7 +71,16 @@ export default {
   data() {
     return {
       isDevelopment: process.env.NODE_ENV === 'development',
+      showMenubar: this.$db.store.get('showMenubar', true),
+      showRestartButton: false,
     }
+  },
+
+  watch: {
+    showMenubar() {
+      this.$db.store.set('showMenubar', this.showMenubar)
+      this.showRestartButton = true
+    },
   },
 
   computed: {
@@ -83,6 +106,11 @@ export default {
         this.$db.store.clear()
         window.location.reload()
       }
+    },
+
+    restart() {
+      remote.app.relaunch()
+      remote.app.exit(0)
     },
   },
 }

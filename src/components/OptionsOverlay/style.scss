@@ -3,7 +3,6 @@
   color: white;
   border-radius: 12px 12px 0 0;
 
-
   &__header {
     display: flex;
     align-items: center;
@@ -30,5 +29,19 @@
     > div:last-child {
       flex: 1 1 auto;
     }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+
+    > * {
+      margin-right: 6px;
+    }
+  }
+
+  &__restart {
+    color: $colorRed;
+    font-weight: 600;
   }
 }

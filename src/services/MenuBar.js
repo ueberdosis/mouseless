@@ -13,7 +13,11 @@ export default new class {
   }
 
   create() {
-    if (this.menubar || !this.store.get('verified')) {
+    if (
+      this.menubar
+      || !this.store.get('verified', false)
+      || !this.store.get('showMenubar', true)
+    ) {
       return
     }
 
