@@ -65,7 +65,7 @@ export default new class {
       type: 'info',
       message: 'Oh, there\'s a newer version of this app available.',
       detail: 'Do you want to update now?',
-      buttons: ['Later', 'Yes, Download'],
+      buttons: ['Yes, Download', 'Later'],
     }, buttonIndex => {
       if (buttonIndex === 1) {
         autoUpdater.downloadUpdate()
@@ -92,7 +92,7 @@ export default new class {
     dialog.showMessageBox({
       message: 'Download completed.',
       detail: 'To install the update, the application needs to be restarted.',
-      buttons: ['Later', 'Restart'],
+      buttons: ['Restart', 'Later'],
     }, buttonIndex => {
       if (buttonIndex === 1) {
         setImmediate(() => {
