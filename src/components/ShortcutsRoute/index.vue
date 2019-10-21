@@ -94,7 +94,7 @@ export default {
     onCurrentApp(event, systemTitle) {
       console.log({ systemTitle })
 
-      if (systemTitle !== 'Electron') {
+      if (!['Electron', 'Mouseless'].includes(systemTitle)) {
         this.systemTitle = systemTitle
       }
     },
