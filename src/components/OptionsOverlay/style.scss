@@ -3,7 +3,32 @@
   color: white;
   border-radius: 12px 12px 0 0;
 
-  div {
-    margin-bottom: 16px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__section {
+    display: flex;
+    margin-bottom: 24px;
+
+    > div:first-child {
+      flex: 0 0 auto;
+      width: 120px;
+      color: rgba($colorWhite, 0.5);
+      font-weight: 600;
+    }
+
+    > div:last-child {
+      flex: 1 1 auto;
+    }
   }
 }

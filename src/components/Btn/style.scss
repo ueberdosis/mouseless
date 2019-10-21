@@ -24,8 +24,20 @@
     }
   }
 
+  &.is-red {
+    background-color: $colorRed;
+    color: $colorBlack;
+
+    &:hover {
+      background-color: rgba($colorRed, 0.9);
+    }
+  }
+
   &__icon + &__content {
     margin-left: 2px;
   }
 
+  & + & {
+    margin-left: 6px;
+  }
 }
