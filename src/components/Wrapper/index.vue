@@ -70,6 +70,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isLoaded = true
+      document.body.classList.add('is-loaded')
     }, 0)
 
     SpatialNavigation.init()
