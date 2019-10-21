@@ -72,11 +72,17 @@ export default {
     },
 
     resetProgress() {
-      this.$db.store.delete('runs')
+      if (confirm('Do you really want to reset your progress?')) { // eslint-disable-line
+        this.$db.store.delete('runs')
+        window.location.reload()
+      }
     },
 
     resetAll() {
-      this.$db.store.clear()
+      if (confirm('Do you really want to reset everything?')) { // eslint-disable-line
+        this.$db.store.clear()
+        window.location.reload()
+      }
     },
   },
 }
