@@ -65,9 +65,9 @@ export default new class {
       type: 'info',
       message: 'Oh, there\'s a newer version of this app available.',
       detail: 'Do you want to update now?',
-      buttons: ['Yes', 'No'],
+      buttons: ['Later', 'Yes, Download'],
     }, buttonIndex => {
-      if (buttonIndex === 0) {
+      if (buttonIndex === 1) {
         autoUpdater.downloadUpdate()
       } else {
         this.enableMenuItem()
@@ -91,11 +91,14 @@ export default new class {
   onUpdateDownloaded() {
     dialog.showMessageBox({
       message: 'Download completed.',
-      detail: 'The application quits to update.',
-    }, () => {
-      setImmediate(() => {
-        this.ensureSafeQuitAndInstall()
-      })
+      detail: 'To install the update, the application needs to be restarted.',
+      buttons: ['Later', 'Restart'],
+    }, buttonIndex => {
+      if (buttonIndex === 1) {
+        setImmediate(() => {
+          this.ensureSafeQuitAndInstall()
+        })
+      }
     })
   }
 
