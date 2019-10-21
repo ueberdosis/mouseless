@@ -34,6 +34,7 @@ export default new class {
         }
 
         this.store.set('verified', response.data.purchase.email)
+        this.store.set('showMenubar', true)
         MenuBar.create()
         this.emitSuccess()
       })
