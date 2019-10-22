@@ -29,8 +29,11 @@ function createWindow() {
 
   MenuBuilder.setMenu()
 
+  const { wasOpenedAsHidden } = app.getLoginItemSettings()
+
   // Create the browser window.
   win = new BrowserWindow({
+    show: !wasOpenedAsHidden,
     width: 600,
     height: 480,
     resizable: false,
