@@ -13,6 +13,7 @@ export default new class {
     if (isProduction) {
       app.setLoginItemSettings({
         openAtLogin: this.store.get('autoStart', true),
+        openAsHidden: true,
         path: app.getPath('exe'),
       })
     }
