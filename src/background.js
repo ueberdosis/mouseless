@@ -11,6 +11,7 @@ import LicenseCheck from './services/LicenseCheck'
 import Updater from './services/Updater'
 import MenuBuilder from './services/MenuBuilder'
 import MenuBar from './services/MenuBar'
+import AutoStart from './services/AutoStart'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
@@ -21,6 +22,8 @@ let win
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
+
+AutoStart.init()
 
 function createWindow() {
 
