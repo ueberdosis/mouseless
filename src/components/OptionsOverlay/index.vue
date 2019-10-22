@@ -41,6 +41,20 @@
 
       <div class="options-overlay__section" v-if="licensed">
         <div>
+          Autostart
+        </div>
+        <div>
+          <label class="options-overlay__label">
+            <input type="checkbox" v-model="autoStart">
+            <span>
+              Start app on launch
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="options-overlay__section" v-if="licensed">
+        <div>
           Danger Zone
         </div>
         <div>
@@ -72,6 +86,7 @@ export default {
     return {
       isDevelopment: process.env.NODE_ENV === 'development',
       showMenubar: this.$db.store.get('showMenubar', true),
+      autoStart: this.$db.store.get('autoStart', true),
       showRestartButton: false,
     }
   },
@@ -80,6 +95,10 @@ export default {
     showMenubar() {
       this.$db.store.set('showMenubar', this.showMenubar)
       this.showRestartButton = true
+    },
+
+    autoStart() {
+      this.$db.store.set('autoStart', this.autoStart)
     },
   },
 
