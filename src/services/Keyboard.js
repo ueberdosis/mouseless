@@ -3,6 +3,7 @@ import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
 import { findDuplicatesInArray, isSameArray, getArrayDepth } from '@/helpers'
 
+// eslint-disable-next-line
 console.table(keymap.getKeyMap())
 
 export default class Keyboard {
