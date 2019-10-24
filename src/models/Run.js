@@ -19,6 +19,11 @@ export default {
       default: null,
     },
 
+    setVersion: {
+      type: Number,
+      default: null,
+    },
+
     createdAt: {
       type: String,
       default: null,

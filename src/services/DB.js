@@ -55,6 +55,13 @@ export default new class {
     return collect(this.store.get('runs') || {})
       .values()
       .toArray()
+      // TODO: filter old shortcuts ids?
+      // .map(data => {
+      //   const app = this.app(data.appId)
+      //   const learnedIds = data.learnedIds
+      //     .filter(shortcutId => app.shortcuts.find(shortcut => shortcut.id === shortcutId))
+      //   return this.createModel(Run, { ...data, learnedIds })
+      // })
       .map(data => this.createModel(Run, data))
       .filter(run => run.locale === this.locale)
   }

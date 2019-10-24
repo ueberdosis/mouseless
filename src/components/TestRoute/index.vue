@@ -267,6 +267,7 @@ export default {
         this.run = this.$db.createRun({
           appId: this.app.id,
           setId: this.set.id,
+          setVersion: this.set.version,
         })
       }
 
