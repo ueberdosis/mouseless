@@ -30,6 +30,8 @@ export default class Keyboard {
     ['Meta', 'Shift', '5'], // screenshot
     ['Meta', 'Shift', '6'], // screenshot
     ['Alt', 'Meta', 'Escape'], // force quit
+    ['F11'], // show desktop
+    ['Meta', 'Space'], // spotlight
   ]
 
   static keymap = Object
