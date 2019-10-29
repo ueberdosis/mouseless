@@ -1,6 +1,6 @@
 <template>
   <div class="sets">
-    <set
+    <set-item
       v-for="set in sets"
       :key="set.id"
       :app="app"
@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import Set from '@/components/Set'
+import SetItem from '@/components/Set'
 
 export default {
   name: 'Sets',
 
   components: {
-    Set,
+    SetItem,
   },
 
   props: {

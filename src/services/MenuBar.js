@@ -1,6 +1,7 @@
 import path from 'path'
 import { menubar } from 'menubar'
 import activeWin from 'active-win'
+import activeWindowShortcuts from 'active-window-shortcuts'
 import Store from 'electron-store'
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -48,10 +49,16 @@ export default new class {
     })
 
     this.menubar.on('show', () => {
-      const currentApp = activeWin.sync()
+      // const currentApp = activeWin.sync()
 
-      if (currentApp) {
-        this.menubar.window.webContents.send('currentApp', currentApp.owner.name)
+      // if (currentApp) {
+      //   this.menubar.window.webContents.send('currentApp', currentApp.owner.name)
+      // }
+
+      const activeWindow = activeWindowShortcuts()
+
+      if (activeWindow) {
+        this.menubar.window.webContents.send('activeWindow', activeWindow)
       }
 
       if (isDevelopment) {

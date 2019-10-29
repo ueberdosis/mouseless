@@ -26,12 +26,20 @@
             <div class="shortcuts-route__set-title">
               {{ set.title }}
             </div>
-            <div class="shortcuts-route__shortcut" v-for="shortcut in shortcutsBySet(set.id)" :key="shortcut.id">
+            <div
+              class="shortcuts-route__shortcut"
+              v-for="shortcut in shortcutsBySet(set.id)"
+              :key="shortcut.id"
+            >
               <div class="shortcuts-route__shortcut-title">
                 {{ shortcut.title }}
               </div>
               <div class="shortcuts-route__shortcut-keys">
-                <div class="shortcuts-route__shortcut-key" v-for="key in shortcut.resolvedKeys" :key="key">
+                <div
+                  class="shortcuts-route__shortcut-key"
+                  v-for="key in shortcut.resolvedKeys"
+                  :key="key"
+                >
                   {{ key | key | uppercase }}
                 </div>
               </div>
@@ -91,11 +99,11 @@ export default {
   },
 
   methods: {
-    onCurrentApp(event, systemTitle) {
-      console.log({ systemTitle })
+    onActiveWindow(event, { app, shortcuts }) {
+      console.log({ app, shortcuts })
 
-      if (!['Electron', 'Mouseless'].includes(systemTitle)) {
-        this.systemTitle = systemTitle
+      if (!['Electron', 'Mouseless'].includes(app)) {
+        this.systemTitle = app
       }
     },
 
@@ -120,11 +128,11 @@ export default {
   },
 
   mounted() {
-    ipcRenderer.on('currentApp', this.onCurrentApp)
+    ipcRenderer.on('activeWindow', this.onActiveWindow)
   },
 
   beforeDestroy() {
-    ipcRenderer.removeListener('currentApp', this.onCurrentApp)
+    ipcRenderer.removeListener('activeWindow', this.onActiveWindow)
   },
 }
 </script>
