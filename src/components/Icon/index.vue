@@ -19,6 +19,7 @@ export default {
     try {
       svgHTML = require(`!html-loader!@/assets/icons/${this.name}.svg`)
     } catch (e) {
+      // eslint-disable-next-line
       console.warn(`Unable to load "icon-${this.name}.svg" icon. Verify it exists in the icons directory.`, e)
     }
     return createElement(

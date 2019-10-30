@@ -308,6 +308,7 @@ export default {
       event.preventDefault()
       this.pressedResolvedKeys = this.keyboard.resolvedKeys
 
+      // eslint-disable-next-line
       console.log({
         pressed: this.keyboard.resolvedKeys,
         expected: this.currentShortcut.resolvedKeys,
