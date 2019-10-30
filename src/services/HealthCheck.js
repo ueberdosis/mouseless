@@ -23,7 +23,9 @@ export default new class {
           .map(id => shortcuts.filter(shortcut => shortcut.id === id))
 
         if (duplicatedShortcuts.length) {
+          // eslint-disable-next-line
           console.warn(`Duplicated shortcuts in ${app.title} → ${set.title}`)
+          // eslint-disable-next-line
           console.table(duplicatedShortcuts.flat())
         }
       })
@@ -51,7 +53,9 @@ export default new class {
     })
 
     if (impossibleShortcuts.length) {
+      // eslint-disable-next-line
       console.warn(`${impossibleShortcuts.length} impossible shortcuts found`)
+      // eslint-disable-next-line
       console.table(impossibleShortcuts)
     }
   }
@@ -80,7 +84,9 @@ export default new class {
     })
 
     if (impossibleShortcuts.length) {
+      // eslint-disable-next-line
       console.warn(`${impossibleShortcuts.length} shortcuts with multiple trigger keys found`)
+      // eslint-disable-next-line
       console.table(impossibleShortcuts)
     }
   }
@@ -120,7 +126,9 @@ export default new class {
     })
 
     if (misspelledShortcuts.length) {
+      // eslint-disable-next-line
       console.warn(`${misspelledShortcuts.length} shortcuts with misspelled keys found`)
+      // eslint-disable-next-line
       console.table(misspelledShortcuts)
     }
   }
