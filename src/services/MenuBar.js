@@ -55,6 +55,8 @@ export default new class {
       //   this.menubar.window.webContents.send('currentApp', currentApp.owner.name)
       // }
 
+      // console.log(activeWin.sync())
+
       const activeWindow = activeWindowShortcuts()
 
       if (activeWindow) {
