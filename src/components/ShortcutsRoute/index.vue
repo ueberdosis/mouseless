@@ -16,45 +16,35 @@
         v-model="query"
         type="text"
         autofocus
-        v-if="app"
+        v-if="sets.length"
       >
     </div>
     <div class="shortcuts-route__content">
-      <template v-if="app">
-        <template v-for="set in app.sets">
-          <div class="shortcuts-route__set" :key="set.id" v-if="shortcutsBySet(set.id).length">
-            <div class="shortcuts-route__set-title">
-              {{ set.title }}
+      <template v-for="set in sets">
+        <div class="shortcuts-route__set" :key="set.id" v-if="set.shortcuts.length">
+          <div class="shortcuts-route__set-title">
+            {{ set.title }}
+          </div>
+          <div
+            class="shortcuts-route__shortcut"
+            v-for="shortcut in set.shortcuts"
+            :key="shortcut.id"
+          >
+            <div class="shortcuts-route__shortcut-title">
+              {{ shortcut.title }}
             </div>
-            <div
-              class="shortcuts-route__shortcut"
-              v-for="shortcut in shortcutsBySet(set.id)"
-              :key="shortcut.id"
-            >
-              <div class="shortcuts-route__shortcut-title">
-                {{ shortcut.title }}
-              </div>
-              <div class="shortcuts-route__shortcut-keys">
-                <div
-                  class="shortcuts-route__shortcut-key"
-                  v-for="key in shortcut.resolvedKeys"
-                  :key="key"
-                >
-                  {{ key | key | uppercase }}
-                </div>
+            <div class="shortcuts-route__shortcut-keys">
+              <div
+                class="shortcuts-route__shortcut-key"
+                v-for="key in shortcut.resolvedKeys"
+                :key="key"
+              >
+                {{ key | key | uppercase }}
               </div>
             </div>
           </div>
-        </template>
+        </div>
       </template>
-      <div class="shortcuts-route__empty-state" v-else>
-        <template v-if="title">
-          Sorry but {{ title }} is not yet supported :-(
-        </template>
-        <template v-else>
-          First open an app to see shortcuts.
-        </template>
-      </div>
     </div>
   </div>
 </template>
@@ -74,6 +64,7 @@ export default {
 
   data() {
     return {
+      activeWindow: null,
       systemTitle: null,
       query: null,
     }
@@ -99,13 +90,22 @@ export default {
 
       return this.$db.apps.find(app => app.systemTitle === this.systemTitle)
     },
-  },
 
-  methods: {
-    onActiveWindow(event, { app, shortcuts }) {
-      console.log({ app, shortcuts })
+    sets() {
+      if (this.app) {
+        return this.app.sets
+          .map(set => ({
+            ...set,
+            shortcuts: this.filterShortcuts(this.app.shortcutsBySet(set.id)),
+          }))
+          .filter(set => set.shortcuts.length)
+      }
 
-      const resolvedShortcuts = shortcuts
+      if (!this.activeWindow) {
+        return []
+      }
+
+      const resolvedShortcuts = this.activeWindow.shortcuts
         .map(item => {
           const id = uuidv4()
           const keys = [...item.mods, ...item.char]
@@ -128,26 +128,27 @@ export default {
         .map(group => ({
           id: uuidv4(),
           title: group,
-          shortcuts: resolvedShortcuts
-            .filter(resolvedShortcut => resolvedShortcut.group === group),
+          shortcuts: this.filterShortcuts(resolvedShortcuts
+            .filter(resolvedShortcut => resolvedShortcut.group === group)),
         }))
         .filter(set => set.shortcuts.length)
         .toArray()
 
-      console.log({ resolvedShortcuts, sets })
+      return sets
+    },
+  },
 
-      if (!['Electron', 'Mouseless'].includes(app)) {
-        this.systemTitle = app
-      }
+  methods: {
+    onActiveWindow(event, activeWindow) {
+      this.activeWindow = activeWindow
+      this.systemTitle = activeWindow.app
     },
 
     maximize() {
       ipcRenderer.send('show')
     },
 
-    shortcutsBySet(id) {
-      const shortcuts = this.app.shortcutsBySet(id)
-
+    filterShortcuts(shortcuts) {
       if (!this.query) {
         return shortcuts
       }

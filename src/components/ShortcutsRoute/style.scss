@@ -110,15 +110,4 @@
     color: $colorWhite;
   }
 
-  &__empty-state {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba($colorWhite, 0.5);
-    font-size: 14px;
-    height: 100%;
-    padding: 50px;
-    text-align: center;
-  }
-
 }
