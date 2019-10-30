@@ -60,9 +60,12 @@
 </template>
 
 <script>
+import collect from 'collect.js'
 import Fuse from 'fuse.js'
+import uuidv4 from 'uuid/v4'
 import { ipcRenderer } from 'electron'
 import Icon from '@/components/Icon'
+import Keyboard from '@/services/Keyboard'
 
 export default {
   components: {
@@ -101,6 +104,37 @@ export default {
   methods: {
     onActiveWindow(event, { app, shortcuts }) {
       console.log({ app, shortcuts })
+
+      const resolvedShortcuts = shortcuts
+        .map(item => {
+          const id = uuidv4()
+          const keys = [...item.mods, ...item.char]
+          const resolvedKeys = Keyboard.resolveCodesFromKeys(keys)
+          const isPossible = Keyboard.isPossible(resolvedKeys)
+
+          return {
+            ...item,
+            id,
+            keys,
+            resolvedKeys,
+            isPossible,
+          }
+        })
+        .filter(shortcut => shortcut.isPossible)
+
+      const sets = collect(resolvedShortcuts)
+        .pluck('group')
+        .unique()
+        .map(group => ({
+          id: uuidv4(),
+          title: group,
+          shortcuts: resolvedShortcuts
+            .filter(resolvedShortcut => resolvedShortcut.group === group),
+        }))
+        .filter(set => set.shortcuts.length)
+        .toArray()
+
+      console.log({ resolvedShortcuts, sets })
 
       if (!['Electron', 'Mouseless'].includes(app)) {
         this.systemTitle = app
