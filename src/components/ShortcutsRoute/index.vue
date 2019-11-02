@@ -108,14 +108,12 @@ export default {
       const resolvedShortcuts = this.activeWindow.shortcuts
         .map(item => {
           const id = uuidv4()
-          const keys = [...item.mods, ...item.char]
-          const resolvedKeys = Keyboard.resolveCodesFromKeys(keys)
+          const resolvedKeys = Keyboard.resolveCodesFromKeys(item.keys)
           const isPossible = Keyboard.isPossible(resolvedKeys)
 
           return {
             ...item,
             id,
-            keys,
             resolvedKeys,
             isPossible,
           }

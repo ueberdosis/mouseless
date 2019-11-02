@@ -2884,10 +2884,10 @@ concat-stream@1.6.2, concat-stream@^1.5.0:
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
-conf@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/conf/-/conf-6.1.0.tgz#6a667ec511f4b717c9aaba35551f34f912fa74aa"
-  integrity sha512-NjzT0zGZ7iy88ybk4ysz4YDMcGTEJzS2wFNKyQd1ChqcZfF6IKY1j+1+q5Dubu8si2skcMfA86t13vNz1mJckA==
+conf@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/conf/-/conf-6.2.0.tgz#274d37a0a2e50757ffb89336e954d08718eb359a"
+  integrity sha512-fvl40R6YemHrFsNiyP7TD0tzOe3pQD2dfT2s20WvCaq57A1oV+RImbhn2Y4sQGDz1lB0wNSb7dPcPIvQB69YNA==
   dependencies:
     ajv "^6.10.2"
     debounce-fn "^3.0.1"
@@ -3034,15 +3034,20 @@ core-js-pure@^3.0.0:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.3.5.tgz#23dc7e44bb946bf1752b377709e8591faffb0bac"
   integrity sha512-njLfaPe3tS+8Swgx/itYgJ1jiizCWtNXrK1VzMoXbT6LhiYbIAQioukPmZlB2wTieJY2g4fLRUh96WfXpN61oA==
 
-core-js@3.3.5, core-js@^3.3.2, core-js@^3.3.3:
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.3.5.tgz#58d20f48a95a07304b62ff752742b82b56431ed8"
-  integrity sha512-0J3K+Par/ZydhKg8pEiTcK/9d65/nqJOzY62uMkjeBmt05fDOt/khUVjDdh8TpeIuGQDy1yLDDCjiWN/8pFIuw==
+core-js@3.3.6:
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.3.6.tgz#6ad1650323c441f45379e176ed175c0d021eac92"
+  integrity sha512-u4oM8SHwmDuh5mWZdDg9UwNVq5s1uqq6ZDLLIs07VY+VJU91i3h4f3K/pgFvtUQPGdeStrZ+odKyfyt4EnKHfA==
 
 core-js@^2.4.0, core-js@^2.5.7:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
   integrity sha512-I39t74+4t+zau64EN1fE5v2W31Adtc/REhzWN+gWRRXg6WH5qAsZm62DHpQ1+Yhe4047T55jvzz7MUqF/dBBlA==
+
+core-js@^3.3.2, core-js@^3.3.3:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.3.5.tgz#58d20f48a95a07304b62ff752742b82b56431ed8"
+  integrity sha512-0J3K+Par/ZydhKg8pEiTcK/9d65/nqJOzY62uMkjeBmt05fDOt/khUVjDdh8TpeIuGQDy1yLDDCjiWN/8pFIuw==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -3842,12 +3847,12 @@ electron-publish@21.2.0:
     lazy-val "^1.0.4"
     mime "^2.4.4"
 
-electron-store@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/electron-store/-/electron-store-5.0.0.tgz#d4dc410a49c50c8ef3a8db34b3bdc4097188247f"
-  integrity sha512-J5avTKTnT1AaXzins/Zm92kHU41GLvKm94xyvlDJchkIVF1T7i2V0ozVEzHx51zcEpRbp3WN7JrS4/Ir4UWE8w==
+electron-store@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/electron-store/-/electron-store-5.1.0.tgz#0b3cb66b15d0002678fc5c13e8b0c38a8678d670"
+  integrity sha512-uhAF/4+zDb+y0hWqlBirEPEAR4ciCZDp4fRWGFNV62bG+ArdQPpXk7jS0MEVj3CfcG5V7hx7Dpq5oD+1j6GD8Q==
   dependencies:
-    conf "^6.0.0"
+    conf "^6.2.0"
     type-fest "^0.7.1"
 
 electron-to-chromium@^1.3.295:
@@ -9026,10 +9031,10 @@ sass-loader@8.0.0:
     schema-utils "^2.1.0"
     semver "^6.3.0"
 
-sass@^1.23.2:
-  version "1.23.2"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.23.2.tgz#eef0163c7670c80e8824ff75e76a5b4004fe2fd2"
-  integrity sha512-ZfOl81QxcWmjxOgjPbyog3uELzOxd4X9OaqEIAi9r/d2kEjtEYaMAD9a3E+xgjcKeP3NDLMhU9GB/WMv+rAeSw==
+sass@^1.23.3:
+  version "1.23.3"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.23.3.tgz#f07503b9e8d2bcf06ef69e8beea5d085589b1620"
+  integrity sha512-1DKRZxJMOh4Bme16AbWTyYeJAjTlrvw2+fWshHHaepeJfGq2soFZTnt0YhWit+bohtDu4LdyPoEj6VFD4APHog==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
@@ -10810,10 +10815,10 @@ widest-line@^2.0.0:
   dependencies:
     string-width "^2.1.1"
 
-window-shortcuts@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/window-shortcuts/-/window-shortcuts-0.1.0.tgz#62684fc94beabafe1f903adfd25f866bbae09014"
-  integrity sha512-QxibONYgozxt8uch0KbCTPRbXbEkLekBkKfclkyETPIte6MAa9m3B4/wuVLMyxSKUD8sk/pKmbVErh9MuQvgAg==
+window-shortcuts@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/window-shortcuts/-/window-shortcuts-0.2.0.tgz#17ebc607b3afd0cf0c02df9d6eaef862ee0c4c7d"
+  integrity sha512-wsY3v6lmC+22Db76HwXo318yXNXoA3DAQPr2/PVb6AoVjOAK8BZBnewO/gWZhB8z0DgbkYOC5E5Kbj1+kTJxKw==
 
 wordwrap@~0.0.2:
   version "0.0.3"
