@@ -1,7 +1,7 @@
 import path from 'path'
 import { menubar } from 'menubar'
 import activeWin from 'active-win'
-import activeWindowShortcuts from 'active-window-shortcuts'
+import windowShortcuts from 'window-shortcuts'
 import Store from 'electron-store'
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -49,18 +49,15 @@ export default new class {
     })
 
     this.menubar.on('show', () => {
-      // const currentApp = activeWin.sync()
+      const activeWindow = activeWin.sync()
+      const appName = activeWindow.owner.name
+      const shortcuts = windowShortcuts.sync(appName)
 
-      // if (currentApp) {
-      //   this.menubar.window.webContents.send('currentApp', currentApp.owner.name)
-      // }
-
-      // console.log(activeWin.sync())
-
-      const activeWindow = activeWindowShortcuts()
-
-      if (activeWindow) {
-        this.menubar.window.webContents.send('activeWindow', activeWindow)
+      if (!shortcuts.error) {
+        this.menubar.window.webContents.send('activeWindow', {
+          app: appName,
+          shortcuts,
+        })
       }
 
       if (isDevelopment) {
