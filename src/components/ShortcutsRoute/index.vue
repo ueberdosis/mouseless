@@ -19,7 +19,7 @@
         v-model="query"
         type="text"
         autofocus
-        v-if="sets.length"
+        v-if="sets.length || query"
       >
     </div>
     <div class="shortcuts-route__content" v-if="!loading">
