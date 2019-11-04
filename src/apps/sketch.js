@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // https://www.sketch.com/docs/shortcuts/
 export default {
   id: 'sketch',

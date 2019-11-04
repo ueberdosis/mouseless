@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // https://help.figma.com/article/77-keyboard-shortcuts
 export default {
   id: 'figma',

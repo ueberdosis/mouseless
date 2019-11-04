@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // https://trello.com/shortcuts
 export default {
   id: 'trello',

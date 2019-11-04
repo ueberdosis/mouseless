@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable max-len */
 // https://support.apple.com/en-gb/HT201236
 export default {
   id: 'finder',

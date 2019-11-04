@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // https://support.google.com/mail/answer/6594?co=GENIE.Platform%3DDesktop&hl=en
 export default {
   id: 'gmail',
