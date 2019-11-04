@@ -142,6 +142,7 @@ export default {
 
   methods: {
     onLoading() {
+      this.query = null
       this.loading = true
     },
 
