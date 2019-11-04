@@ -19,6 +19,7 @@
         v-model="query"
         type="text"
         autofocus
+        ref="search"
         v-if="sets.length || query"
       >
     </div>
@@ -150,6 +151,12 @@ export default {
       this.loading = false
       this.activeWindow = activeWindow
       this.systemTitle = activeWindow.app
+
+      this.$nextTick(() => {
+        if (this.$refs.search) {
+          this.$refs.search.focus()
+        }
+      })
     },
 
     maximize() {
