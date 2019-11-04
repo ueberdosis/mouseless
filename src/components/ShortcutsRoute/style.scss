@@ -6,6 +6,16 @@
   background-color: $colorBlack;
   color: $colorWhite;
 
+  &__loader {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba($colorWhite, 0.5);
+  }
+
   &__header {
     flex: 0 0 auto;
     padding: 10px 16px;
@@ -21,8 +31,8 @@
   }
 
   &__logo {
-    height: 16px;
-    width: auto;
+    width: 16px;
+    height: auto;
     margin-right: 6px;
   }
 

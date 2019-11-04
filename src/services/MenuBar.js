@@ -51,16 +51,26 @@ export default new class {
     this.menubar.on('show', () => {
       const activeWindow = activeWin.sync()
       const appName = activeWindow.owner.name
+      const defaultResponse = {
+        app: appName,
+        shortcuts: [],
+      }
 
-      if (!['Electron', 'Mouseless'].includes(appName)) {
-        const shortcuts = windowShortcuts.sync(appName)
+      this.menubar.window.webContents.send('activeWindow:loading')
 
-        if (!shortcuts.error) {
-          this.menubar.window.webContents.send('activeWindow', {
-            app: appName,
-            shortcuts,
+      if (['Electron', 'Mouseless'].includes(appName)) {
+        this.menubar.window.webContents.send('activeWindow:response', defaultResponse)
+      } else {
+        windowShortcuts(appName)
+          .then(shortcuts => {
+            this.menubar.window.webContents.send('activeWindow:response', {
+              app: appName,
+              shortcuts,
+            })
           })
-        }
+          .catch(() => {
+            this.menubar.window.webContents.send('activeWindow:response', defaultResponse)
+          })
       }
 
       if (isDevelopment) {

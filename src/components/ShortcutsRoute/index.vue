@@ -1,6 +1,9 @@
 <template>
   <div class="shortcuts-route">
-    <div class="shortcuts-route__header">
+    <div class="shortcuts-route__loader" v-if="loading">
+      Loading…
+    </div>
+    <div class="shortcuts-route__header" v-if="!loading">
       <div class="shortcuts-route__header-bar">
         <div class="shortcuts-route__title">
           <img class="shortcuts-route__logo" :src="logo" v-if="logo">
@@ -19,7 +22,7 @@
         v-if="sets.length"
       >
     </div>
-    <div class="shortcuts-route__content">
+    <div class="shortcuts-route__content" v-if="!loading">
       <template v-for="set in sets">
         <div class="shortcuts-route__set" :key="set.id" v-if="set.shortcuts.length">
           <div class="shortcuts-route__set-title">
@@ -64,6 +67,7 @@ export default {
 
   data() {
     return {
+      loading: true,
       activeWindow: null,
       systemTitle: null,
       query: null,
@@ -137,7 +141,12 @@ export default {
   },
 
   methods: {
+    onLoading() {
+      this.loading = true
+    },
+
     onActiveWindow(event, activeWindow) {
+      this.loading = false
       this.activeWindow = activeWindow
       this.systemTitle = activeWindow.app
     },
@@ -161,11 +170,13 @@ export default {
   },
 
   mounted() {
-    ipcRenderer.on('activeWindow', this.onActiveWindow)
+    ipcRenderer.on('activeWindow:loading', this.onLoading)
+    ipcRenderer.on('activeWindow:response', this.onActiveWindow)
   },
 
   beforeDestroy() {
-    ipcRenderer.removeListener('activeWindow', this.onActiveWindow)
+    ipcRenderer.removeListener('activeWindow:loading', this.onLoading)
+    ipcRenderer.removeListener('activeWindow:response', this.onActiveWindow)
   },
 }
 </script>
