@@ -50,10 +50,14 @@ export default new class {
 
     this.menubar.on('show', () => {
       const activeWindow = activeWin.sync()
-      const appName = activeWindow.owner.name
+      const appName = activeWindow ? activeWindow.owner.name : null
       const defaultResponse = {
         app: appName,
         shortcuts: [],
+      }
+
+      if (!appName) {
+        return
       }
 
       this.menubar.window.webContents.send('activeWindow:loading')
