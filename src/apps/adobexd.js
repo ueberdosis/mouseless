@@ -7,8 +7,8 @@ export default {
   category: 'Design',
   sets: [
     {
-      title: 'General shortcuts',
-      id: 'general',
+      title: 'Essentials',
+      id: 'essentials',
       version: 1,
       shortcuts: [
         {
@@ -23,13 +23,6 @@ export default {
           title: 'Preview',
           keys: ['Meta', 'Enter'],
         },
-      ],
-    },
-    {
-      title: 'Edit menu',
-      id: 'edit',
-      version: 1,
-      shortcuts: [
         {
           title: 'Undo',
           keys: ['Meta', 'z'],
@@ -73,7 +66,7 @@ export default {
       ],
     },
     {
-      title: 'File menu',
+      title: 'File',
       id: 'file',
       version: 1,
       shortcuts: [
@@ -302,47 +295,40 @@ export default {
         },
       ],
     },
+    // TODO: only modifiers are not supported yet
+    // {
+    //   title: 'Operations menu',
+    //   id: 'operations',
+    //   version: 1,
+    //   shortcuts: [
+    //     {
+    //       title: 'From Center',
+    //       keys: ['Alt'],
+    //     },
+    //     {
+    //       title: 'Constrain',
+    //       keys: ['Shift'],
+    //     },
+    //     {
+    //       title: 'Edit Text',
+    //       keys: ['Enter'],
+    //     },
+    //     {
+    //       title: 'Constrain Rotate',
+    //       keys: ['Shift'],
+    //     },
+    //     {
+    //       title: 'Constrain From Center',
+    //       keys: ['Shift', 'Alt'],
+    //     },
+    //     {
+    //       title: 'Direct Select',
+    //       keys: ['Meta'],
+    //     },
+    //   ],
+    // },
     {
-      title: 'Operations menu',
-      id: 'operations',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'From Center',
-          keys: ['Alt'],
-        },
-        {
-          title: 'Constrain',
-          keys: ['Shift'],
-        },
-        {
-          title: 'Edit Text',
-          keys: ['Enter'],
-        },
-        {
-          title: 'Constrain Rotate (15°)',
-          keys: ['Shift'],
-        },
-        {
-          title: 'Line Constrain Rotate (45°)',
-          keys: ['Shift'],
-        },
-        {
-          title: 'Constrain From Center',
-          keys: ['Shift', 'Alt'],
-        },
-        {
-          title: 'Direct Select',
-          keys: ['Meta'],
-        },
-        {
-          title: 'Switch between Design and Prototype mode',
-          keys: ['Control', 'Tab'],
-        },
-      ],
-    },
-    {
-      title: 'Tools menu',
+      title: 'Tools',
       id: 'tools',
       version: 1,
       shortcuts: [
@@ -393,8 +379,8 @@ export default {
       ],
     },
     {
-      title: 'Interface and Viewing Options',
-      id: 'interface',
+      title: 'Layout',
+      id: 'layout',
       version: 1,
       shortcuts: [
         {
@@ -452,6 +438,13 @@ export default {
           title: 'Switch between Windows (Files)',
           keys: ['Meta', '~'],
         },
+      ],
+    },
+    {
+      title: 'Fields',
+      id: 'fields',
+      version: 1,
+      shortcuts: [
         {
           title: 'Increase a value in a field by 1',
           keys: ['ArrowUp'],
