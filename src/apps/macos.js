@@ -12,6 +12,14 @@ export default {
       version: 1,
       shortcuts: [
         {
+          title: 'Show all windows of the front app',
+          keys: ['Control', 'ArrowDown'],
+        },
+        {
+          title: 'Show or hide the Dock',
+          keys: ['Alt', 'Meta', 'd'],
+        },
+        {
           title: 'Cut the selected item and copy it to the Clipboard',
           keys: ['Meta', 'x'],
         },
