@@ -7,8 +7,8 @@ export default {
   category: 'Productivity',
   sets: [
     {
-      title: 'Common Actions',
-      id: 'common',
+      title: 'Essentials',
+      id: 'essentials',
       version: 1,
       shortcuts: [
         {
@@ -55,37 +55,6 @@ export default {
       ],
     },
     {
-      title: 'View',
-      id: 'view',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Open Header Boards Menu',
-          keys: ['b'],
-        },
-        {
-          title: 'Open Card Filter Menu',
-          keys: ['f'],
-        },
-        {
-          title: 'Toggle Label Names',
-          keys: [';'],
-        },
-        {
-          title: 'My Cards Filter',
-          keys: ['q'],
-        },
-        {
-          title: 'Clear All Filters',
-          keys: ['x'],
-        },
-        {
-          title: 'Toggle Board Menu',
-          keys: ['w'],
-        },
-      ],
-    },
-    {
       title: 'Cards',
       id: 'cards',
       version: 1,
@@ -125,6 +94,37 @@ export default {
         {
           title: 'Edit Title',
           keys: ['t'],
+        },
+      ],
+    },
+    {
+      title: 'View',
+      id: 'view',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Open Header Boards Menu',
+          keys: ['b'],
+        },
+        {
+          title: 'Open Card Filter Menu',
+          keys: ['f'],
+        },
+        {
+          title: 'Toggle Label Names',
+          keys: [';'],
+        },
+        {
+          title: 'My Cards Filter',
+          keys: ['q'],
+        },
+        {
+          title: 'Clear All Filters',
+          keys: ['x'],
+        },
+        {
+          title: 'Toggle Board Menu',
+          keys: ['w'],
         },
       ],
     },
