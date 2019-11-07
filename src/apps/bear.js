@@ -7,6 +7,25 @@ export default {
   category: 'Productivity',
   sets: [
     {
+      title: 'Essentials',
+      id: 'essentials',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Create a new note',
+          keys: ['Meta', 'n'],
+        },
+        {
+          title: 'Create a new note in a new window',
+          keys: ['Alt', 'Meta', 'n'],
+        },
+        {
+          title: 'Edit the selected note',
+          keys: ['Enter'],
+        },
+      ],
+    },
+    {
       title: 'Text Styles',
       id: 'textstyles',
       version: 1,
@@ -170,35 +189,8 @@ export default {
       ],
     },
     {
-      title: 'Control',
-      id: 'control',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Select all',
-          keys: ['Meta', 'a'],
-        },
-        {
-          title: 'End editing',
-          keys: ['Meta', 'Enter'],
-        },
-        {
-          title: 'Print note',
-          keys: ['Meta', 'p'],
-        },
-        {
-          title: 'Lock Bear\'s interface',
-          keys: ['Control', 'Meta', 'Shift', 'l'],
-        },
-        {
-          title: 'Lock notes with encryption',
-          keys: ['Control', 'Meta', 'l'],
-        },
-      ],
-    },
-    {
-      title: 'Zoom',
-      id: 'zoom',
+      title: 'Layout',
+      id: 'layout',
       version: 1,
       shortcuts: [
         {
@@ -247,18 +239,6 @@ export default {
       version: 1,
       shortcuts: [
         {
-          title: 'Create a new note',
-          keys: ['Meta', 'n'],
-        },
-        {
-          title: 'Create a new note in a new window',
-          keys: ['Alt', 'Meta', 'n'],
-        },
-        {
-          title: 'Edit the selected note',
-          keys: ['Enter'],
-        },
-        {
           title: 'Search in the current note list',
           keys: ['Alt', 'Meta', 'f'],
         },
@@ -275,12 +255,23 @@ export default {
           keys: ['Shift', 'Meta', 'p'],
         },
         {
-          title: 'Select all the notes in the list',
-          keys: ['Meta', 'a'],
+          title: 'Navigate back in visualized notes history',
+          keys: ['Alt', 'Meta', 'ArrowLeft'],
         },
         {
-          title: 'Empty Trash',
-          keys: ['Shift', 'Meta', 'Backspace'],
+          title: 'Navigate forward in visualized notes history',
+          keys: ['Alt', 'Meta', 'ArrowRight'],
+        },
+      ],
+    },
+    {
+      title: 'Selections',
+      id: 'selections',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Select all the notes in the list',
+          keys: ['Meta', 'a'],
         },
         {
           title: 'Select Notes in the sidebar',
@@ -309,14 +300,6 @@ export default {
         {
           title: 'Select Locked in the sidebar',
           keys: ['Meta', '7'],
-        },
-        {
-          title: 'Navigate back in visualized notes history',
-          keys: ['Alt', 'Meta', 'ArrowLeft'],
-        },
-        {
-          title: 'Navigate forward in visualized notes history',
-          keys: ['Alt', 'Meta', 'ArrowRight'],
         },
       ],
     },
@@ -363,6 +346,37 @@ export default {
         {
           title: 'Open main window',
           keys: ['Meta', '\\'],
+        },
+      ],
+    },
+    {
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Empty Trash',
+          keys: ['Shift', 'Meta', 'Backspace'],
+        },
+        {
+          title: 'Select all',
+          keys: ['Meta', 'a'],
+        },
+        {
+          title: 'End editing',
+          keys: ['Meta', 'Enter'],
+        },
+        {
+          title: 'Print note',
+          keys: ['Meta', 'p'],
+        },
+        {
+          title: 'Lock Bear\'s interface',
+          keys: ['Control', 'Meta', 'Shift', 'l'],
+        },
+        {
+          title: 'Lock notes with encryption',
+          keys: ['Control', 'Meta', 'l'],
         },
       ],
     },
