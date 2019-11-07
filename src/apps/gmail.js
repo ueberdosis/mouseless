@@ -7,7 +7,42 @@ export default {
   category: 'Communication',
   sets: [
     {
-      title: 'Compose & chat',
+      title: 'Essentials',
+      id: 'essentials',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Send',
+          keys: ['Meta', 'Enter'],
+        },
+        {
+          title: 'Archive',
+          keys: ['e'],
+        },
+        {
+          title: 'Mute conversation',
+          keys: ['m'],
+        },
+        {
+          title: 'Report as spam',
+          keys: ['!'],
+        },
+        {
+          title: 'Delete',
+          keys: ['#'],
+        },
+        {
+          title: 'Forward',
+          keys: ['f'],
+        },
+        {
+          title: 'Undo last action',
+          keys: ['z'],
+        },
+      ],
+    },
+    {
+      title: 'Compose & Chat',
       id: 'compose',
       version: 1,
       shortcuts: [
@@ -34,10 +69,6 @@ export default {
         {
           title: 'Advance to previous chat or compose',
           keys: ['Control', ','],
-        },
-        {
-          title: 'Send',
-          keys: ['Meta', 'Enter'],
         },
         {
           title: 'Add cc recipients',
@@ -84,7 +115,10 @@ export default {
         },
         {
           title: 'Increase text size',
-          keys: ['Meta', 'Shift', '+'],
+          keys: [
+            ['Meta', 'Shift', '='],
+            ['Meta', 'Shift', '+'],
+          ],
         },
         {
           title: 'Bold',
@@ -137,6 +171,59 @@ export default {
       ],
     },
     {
+      title: 'Reply',
+      id: 'reply',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Reply',
+          keys: ['r'],
+        },
+        {
+          title: 'Reply in a new window',
+          keys: ['Shift', 'r'],
+        },
+        {
+          title: 'Reply all',
+          keys: ['a'],
+        },
+        {
+          title: 'Reply all in a new window',
+          keys: ['Shift', 'a'],
+        },
+      ],
+    },
+    {
+      title: 'Mark As',
+      id: 'mark-as',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Mark as read',
+          keys: ['Shift', 'i'],
+        },
+        {
+          title: 'Mark as unread',
+          keys: ['Shift', 'u'],
+        },
+        {
+          title: 'Mark unread from the selected message',
+          keys: ['_'],
+        },
+        {
+          title: 'Mark as important',
+          keys: [
+            ['+'],
+            ['='],
+          ],
+        },
+        {
+          title: 'Mark as not important',
+          keys: ['-'],
+        },
+      ],
+    },
+    {
       title: 'Actions',
       id: 'actions',
       version: 1,
@@ -154,42 +241,6 @@ export default {
           keys: ['s'],
         },
         {
-          title: 'Archive',
-          keys: ['e'],
-        },
-        {
-          title: 'Mute conversation',
-          keys: ['m'],
-        },
-        {
-          title: 'Report as spam',
-          keys: ['!'],
-        },
-        {
-          title: 'Delete',
-          keys: ['#'],
-        },
-        {
-          title: 'Reply',
-          keys: ['r'],
-        },
-        {
-          title: 'Reply in a new window',
-          keys: ['Shift', 'r'],
-        },
-        {
-          title: 'Reply all',
-          keys: ['a'],
-        },
-        {
-          title: 'Reply all in a new window',
-          keys: ['Shift', 'a'],
-        },
-        {
-          title: 'Forward',
-          keys: ['f'],
-        },
-        {
           title: 'Forward in a new window',
           keys: ['Shift', 'f'],
         },
@@ -197,35 +248,13 @@ export default {
           title: 'Update conversation',
           keys: ['Shift', 'n'],
         },
-        // TODO: Two variants
-        // {
-        //   title: 'Archive conversation and go previous/next',
-        //   keys: ['] or ['],
-        // },
         {
-          title: 'Undo last action',
-          keys: ['z'],
+          title: 'Archive conversation and go previous',
+          keys: ['['],
         },
         {
-          title: 'Mark as read',
-          keys: ['Shift', 'i'],
-        },
-        {
-          title: 'Mark as unread',
-          keys: ['Shift', 'u'],
-        },
-        {
-          title: 'Mark unread from the selected message',
-          keys: ['_'],
-        },
-        // TODO: two variants
-        // {
-        //   title: 'Mark as important',
-        //   keys: ['+ or ='],
-        // },
-        {
-          title: 'Mark as not important',
-          keys: ['-'],
+          title: 'Archive conversation and go next',
+          keys: [']'],
         },
         {
           title: 'Snooze',
