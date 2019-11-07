@@ -13,7 +13,10 @@ export default {
       shortcuts: [
         {
           title: 'Quick Switcher',
-          keys: ['Meta', 'k'],
+          keys: [
+            ['Meta', 'k'],
+            ['Meta', 't'],
+          ],
         },
         {
           title: 'Navigate by section',
@@ -129,10 +132,6 @@ export default {
           title: 'Switch to next workspace',
           keys: ['Meta', 'Shift', ']'],
         },
-        // {
-        //   title: 'Switch to a specific workspace (see assigned number under the workspace icon in your Slack app)',
-        //   keys: ['Meta', [number]],
-        // },
         {
           title: 'Switch to workspace #1',
           keys: ['Meta', '1'],
@@ -165,7 +164,7 @@ export default {
       shortcuts: [
         {
           title: 'Edit your last message',
-          // in empty message field
+          description: 'In empty message field',
           keys: ['ArrowUp'],
         },
         {
@@ -247,12 +246,13 @@ export default {
           title: 'Toggle video on and off',
           keys: ['v'],
         },
-        // TODO: Two bindings
-        // {
-        //   title: 'Show invitation list',
-        //   keys: ['+'],
-        //   keys: ['a'],
-        // },
+        {
+          title: 'Show invitation list',
+          keys: [
+            ['+'],
+            ['a'],
+          ],
+        },
         // TODO: Multiple directions
         // {
         //   title: 'View and select an emoji reaction',
@@ -260,7 +260,5 @@ export default {
         // },
       ],
     },
-  ],
-  shortcuts: [
   ],
 }
