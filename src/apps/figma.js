@@ -7,8 +7,8 @@ export default {
   category: 'Design',
   sets: [
     {
-      title: 'Essential',
-      id: 'essential',
+      title: 'Essentials',
+      id: 'essentials',
       version: 1,
       shortcuts: [
         {
