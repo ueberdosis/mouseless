@@ -52,6 +52,15 @@ export default new class {
           { role: 'zoomout' },
           { type: 'separator' },
           { role: 'togglefullscreen' },
+          {
+            label: 'Show Developer Tools',
+            accelerator: 'Alt+Command+I',
+            click(item, focusedWindow) {
+              if (focusedWindow) {
+                focusedWindow.toggleDevTools()
+              }
+            },
+          },
         ],
       },
       {

@@ -1,6 +1,6 @@
 {
   "name": "mouseless",
-  "version": "0.19.0",
+  "version": "0.22.0",
   "productName": "Mouseless",
   "author": "Philipp Kühn <philipp.kuehn@ueber.io>",
   "description": "A shortcut app.",
@@ -23,8 +23,10 @@
     "@vue/cli-plugin-eslint": "^4.0.5",
     "@vue/cli-service": "^4.0.5",
     "babel-eslint": "^10.0.1",
+    "dotenv": "^8.2.0",
     "electron": "^7.1.0",
     "electron-icon-builder": "^1.0.1",
+    "electron-notarize": "^0.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-scrumpy": "^1.0.0",

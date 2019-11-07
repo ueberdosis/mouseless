@@ -33,7 +33,13 @@ module.exports = {
     electronBuilder: {
       builderOptions: {
         artifactName: '${productName}-${version}-${os}.${ext}', // eslint-disable-line
+        afterSign: 'src/notarize.js',
+        productName: 'Mouseless',
         mac: {
+          hardenedRuntime: true,
+          gatekeeperAssess: false,
+          entitlements: 'build/entitlements.mac.plist',
+          entitlementsInherit: 'build/entitlements.mac.plist',
           extendInfo: {
             NSUserNotificationAlertStyle: 'alert',
           },
