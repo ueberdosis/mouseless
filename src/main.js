@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import router from '@/router'
 import DB from '@/services/DB'
+import CleanUp from '@/services/CleanUp'
 import HealthCheck from '@/services/HealthCheck'
 import Keyboard from '@/services/Keyboard'
 import Wrapper from '@/components/Wrapper'
@@ -19,6 +20,8 @@ Vue.filter('uppercase', value => {
 
   return value.toUpperCase()
 })
+
+CleanUp.run()
 
 if (process.env.NODE_ENV === 'development') {
   HealthCheck.run()
