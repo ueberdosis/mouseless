@@ -7,8 +7,8 @@ export default {
   category: 'Productivity',
   sets: [
     {
-      title: 'Common actions',
-      id: 'common',
+      title: 'Essentials',
+      id: 'essentials',
       version: 1,
       shortcuts: [
         {
@@ -96,7 +96,7 @@ export default {
       ],
     },
     {
-      title: 'Text formatting',
+      title: 'Text Formatting',
       id: 'text',
       version: 1,
       shortcuts: [
@@ -147,7 +147,7 @@ export default {
       ],
     },
     {
-      title: 'Paragraph formatting',
+      title: 'Paragraph Formatting',
       id: 'paragraph',
       version: 1,
       shortcuts: [
@@ -207,7 +207,7 @@ export default {
       ],
     },
     {
-      title: 'Images and drawings',
+      title: 'Images and Drawings',
       id: 'images',
       version: 1,
       shortcuts: [
@@ -264,7 +264,7 @@ export default {
       ],
     },
     {
-      title: 'Comments and footnotes',
+      title: 'Comments and Footnotes',
       id: 'comments',
       version: 1,
       shortcuts: [
@@ -341,7 +341,7 @@ export default {
       ],
     },
     {
-      title: 'Text selection',
+      title: 'Text Selection',
       id: 'selection',
       version: 1,
       shortcuts: [
@@ -383,7 +383,7 @@ export default {
       ],
     },
     {
-      title: 'Other tools and navigation',
+      title: 'Other Tools and Navigation',
       id: 'other',
       version: 1,
       shortcuts: [
