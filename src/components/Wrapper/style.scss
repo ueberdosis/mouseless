@@ -46,6 +46,7 @@
     background-color: $colorBlack;
     visibility: hidden;
     opacity: 0;
+    z-index: 1;
     transition:
       visibility 0.6s $easeInOutQuint,
       opacity 0.6s $easeInOutQuint,
