@@ -27,12 +27,43 @@ export default {
           keys: ['Meta', 'Shift', 'k'],
         },
         {
+          title: 'Open the Threads view',
+          keys: ['Meta', 'Shift', 't'],
+        },
+        {
+          title: 'Open or close right pane',
+          keys: ['Meta', '.'],
+        },
+        {
+          title: 'Activity',
+          keys: ['Meta', 'Shift', 'm'],
+        },
+        {
+          title: 'Directory',
+          keys: ['Meta', 'Shift', 'e'],
+        },
+        {
+          title: 'Starred items',
+          keys: ['Meta', 'Shift', 's'],
+        },
+        {
+          title: 'Open previous search',
+          keys: ['Meta', 'g'],
+        },
+      ],
+    },
+    {
+      title: 'Channels',
+      id: 'channels',
+      version: 1,
+      shortcuts: [
+        {
           title: 'Browse all channels',
           keys: ['Meta', 'Shift', 'l'],
         },
         {
-          title: 'Open the Threads view',
-          keys: ['Meta', 'Shift', 't'],
+          title: 'Channel info pane',
+          keys: ['Meta', 'Shift', 'i'],
         },
         {
           title: 'Previous unread channel or DM',
@@ -51,40 +82,8 @@ export default {
           keys: ['Meta', ']'],
         },
         {
-          title: 'Preferences',
-          keys: ['Meta', ','],
-        },
-        {
-          title: 'Open or close right pane',
-          keys: ['Meta', '.'],
-        },
-        {
-          title: 'Channel info pane',
-          keys: ['Meta', 'Shift', 'i'],
-        },
-        {
-          title: 'Activity',
-          keys: ['Meta', 'Shift', 'm'],
-        },
-        {
-          title: 'Directory',
-          keys: ['Meta', 'Shift', 'e'],
-        },
-        {
-          title: 'Starred items',
-          keys: ['Meta', 'Shift', 's'],
-        },
-        {
           title: 'Search current channel or conversation',
           keys: ['Meta', 'f'],
-        },
-        {
-          title: 'Open previous search',
-          keys: ['Meta', 'g'],
-        },
-        {
-          title: 'Toggle full screen view',
-          keys: ['Control', 'Meta', 'f'],
         },
       ],
     },
@@ -258,6 +257,21 @@ export default {
         //   title: 'View and select an emoji reaction',
         //   keys: ['e' then 1-9],
         // },
+      ],
+    },
+    {
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Preferences',
+          keys: ['Meta', ','],
+        },
+        {
+          title: 'Toggle full screen view',
+          keys: ['Control', 'Meta', 'f'],
+        },
       ],
     },
   ],
