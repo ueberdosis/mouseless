@@ -7,8 +7,8 @@ export default {
   category: 'Productivity',
   sets: [
     {
-      title: 'Most Popular',
-      id: 'popular',
+      title: 'Essentials',
+      id: 'essentials',
       version: 1,
       shortcuts: [
         {
@@ -128,8 +128,8 @@ export default {
       ],
     },
     {
-      title: 'Zoom',
-      id: 'zoom',
+      title: 'Layout',
+      id: 'layout',
       version: 1,
       shortcuts: [
         {
@@ -177,23 +177,8 @@ export default {
       ],
     },
     {
-      title: 'Move Blocks',
-      id: 'move',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Move a selected block up',
-          keys: ['Meta', 'Shift', 'ArrowUp'],
-        },
-        {
-          title: 'Move a selected block down',
-          keys: ['Meta', 'Shift', 'ArrowDown'],
-        },
-      ],
-    },
-    {
-      title: 'Edit Blocks',
-      id: 'edit',
+      title: 'Blocks',
+      id: 'blocks',
       version: 1,
       shortcuts: [
         {
@@ -219,6 +204,14 @@ export default {
         {
           title: 'Apply the last text or highlight color you used',
           keys: ['Meta', 'Shift', 'h'],
+        },
+        {
+          title: 'Move a selected block up',
+          keys: ['Meta', 'Shift', 'ArrowUp'],
+        },
+        {
+          title: 'Move a selected block down',
+          keys: ['Meta', 'Shift', 'ArrowDown'],
         },
       ],
     },
