@@ -15,7 +15,7 @@ export default new class {
       .values()
       .toArray()
 
-    if (!Array.isArray(runs)) {
+    if (!Array.isArray(runs) || !runs.length) {
       return
     }
 
@@ -44,9 +44,13 @@ export default new class {
         const shortcuts = app.shortcutsBySet(set.id)
         const learnedIds = run.learnedIds
           .filter(learnedId => shortcuts.find(shortcut => shortcut.id === learnedId))
+        const finishedAt = run.finishedAt && shortcuts.length === learnedIds.length
+          ? run.finishedAt
+          : null
 
         return {
           ...run,
+          finishedAt,
           learnedIds,
         }
       })
