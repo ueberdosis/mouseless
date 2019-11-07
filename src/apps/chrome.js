@@ -7,8 +7,51 @@ export default {
   category: 'Utility',
   sets: [
     {
-      title: 'Tab and window shortcuts',
-      id: 'tabandwindow',
+      title: 'Essentials',
+      id: 'essentials',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Save your current webpage as a bookmark',
+          keys: ['Meta', 'd'],
+        },
+        {
+          title: 'Open options to print the current page',
+          keys: ['Meta', 'p'],
+        },
+        {
+          title: 'Open options to save the current page',
+          keys: ['Meta', 's'],
+        },
+        {
+          title: 'Open the Find Bar to search the current page',
+          keys: ['Meta', 'f'],
+        },
+        {
+          title: 'Jump to the next match to your Find Bar search',
+          keys: ['Meta', 'g'],
+        },
+        {
+          title: 'Reload your current page, ignoring cached content',
+          keys: ['Meta', 'Shift', 'r'],
+        },
+        {
+          title: 'Browse clickable items moving forward',
+          keys: ['Tab'],
+        },
+        {
+          title: 'Browse clickable items moving backward',
+          keys: ['Shift', 'Tab'],
+        },
+        {
+          title: 'Search the web',
+          keys: ['Meta', 'Alt', 'f'],
+        },
+      ],
+    },
+    {
+      title: 'Windows',
+      id: 'windows',
       version: 1,
       shortcuts: [
         {
@@ -19,6 +62,25 @@ export default {
           title: 'Open a new window in Incognito mode',
           keys: ['Meta', 'Shift', 'n'],
         },
+        {
+          title: 'Close the current window',
+          keys: ['Meta', 'Shift', 'w'],
+        },
+        {
+          title: 'Minimize the window',
+          keys: ['Meta', 'm'],
+        },
+        {
+          title: 'Turn full-screen mode on or off',
+          keys: ['Meta', 'Control', 'f'],
+        },
+      ],
+    },
+    {
+      title: 'Tabs',
+      id: 'tabs',
+      version: 1,
+      shortcuts: [
         {
           title: 'Open a new tab, and jump to it',
           keys: ['Meta', 't'],
@@ -44,6 +106,10 @@ export default {
           keys: ['Meta', '9'],
         },
         {
+          title: 'Close the current tab or pop-up',
+          keys: ['Meta', 'w'],
+        },
+        {
           title: 'Open the previous page in your browsing history for the current tab',
           keys: ['Meta', 'ArrowLeft'],
         },
@@ -51,37 +117,58 @@ export default {
           title: 'Open the next page in your browsing history for the current tab',
           keys: ['Meta', 'ArrowRight'],
         },
-        {
-          title: 'Close the current tab or pop-up',
-          keys: ['Meta', 'w'],
-        },
-        {
-          title: 'Close the current window',
-          keys: ['Meta', 'Shift', 'w'],
-        },
-        {
-          title: 'Minimize the window',
-          keys: ['Meta', 'm'],
-        },
-        {
-          title: 'Hide Google Chrome',
-          keys: ['Meta', 'h'],
-        },
-        {
-          title: 'Quit Google Chrome',
-          keys: ['Meta', 'q'],
-        },
       ],
     },
     {
-      title: 'Google Chrome feature shortcuts',
-      id: 'chrome',
+      title: 'Layout',
+      id: 'layout',
       version: 1,
       shortcuts: [
+        {
+          title: 'Make everything on the page bigger',
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
+        },
+        {
+          title: 'Make everything on the page smaller',
+          keys: ['Meta', '-'],
+        },
+        {
+          title: 'Return everything on the page to the default size',
+          keys: ['Meta', '0'],
+        },
         {
           title: 'Show or hide the Bookmarks Bar',
           keys: ['Meta', 'Shift', 'b'],
         },
+      ],
+    },
+    {
+      title: 'Text',
+      id: 'text',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Move your cursor to the beginning of the previous word in a text field',
+          keys: ['Alt', 'ArrowLeft'],
+        },
+        {
+          title: 'Move your cursor to the back of the next word in a text field',
+          keys: ['Alt', 'ArrowRight'],
+        },
+        {
+          title: 'Delete the previous word in a text field',
+          keys: ['Alt', 'Delete'],
+        },
+      ],
+    },
+    {
+      title: 'Features',
+      id: 'features',
+      version: 1,
+      shortcuts: [
         {
           title: 'Open the Bookmark Manager',
           keys: ['Meta', 'Alt', 'b'],
@@ -99,24 +186,12 @@ export default {
           keys: ['Meta', 'Shift', 'j'],
         },
         {
-          title: 'Open the Find Bar to search the current page',
-          keys: ['Meta', 'f'],
-        },
-        {
-          title: 'Jump to the next match to your Find Bar search',
-          keys: ['Meta', 'g'],
-        },
-        {
           title: 'Jump to the previous match to your Find Bar search',
           keys: ['Meta', 'Shift', 'g'],
         },
         {
           title: 'When Find Bar is open, search for selected text',
           keys: ['Meta', 'e'],
-        },
-        {
-          title: 'Open Developer Tools',
-          keys: ['Meta', 'Alt', 'i'],
         },
         {
           title: 'Open the Clear Browsing Data options',
@@ -128,89 +203,53 @@ export default {
         },
       ],
     },
-    // TODO: Typing
-    // {
-    //   title: 'Address bar shortcuts',
-    //   id: 'addressbar',
-    //   version: 1,
-    //   shortcuts: [
-    //     {
-    //       title: '',
-    //       keys: [],
-    //     },
-    //   ],
-    // },
     {
-      title: 'Webpage shortcuts',
-      id: 'webpageshortcuts',
+      title: 'Developer Tools',
+      id: 'developer-tools',
       version: 1,
       shortcuts: [
         {
-          title: 'Open options to print the current page',
-          keys: ['Meta', 'p'],
-        },
-        {
-          title: 'Open options to save the current page',
-          keys: ['Meta', 's'],
-        },
-        {
-          title: 'Open the Page Setup dialog',
-          keys: ['Meta', 'Alt', 'p'],
-        },
-        {
-          title: 'Reload your current page, ignoring cached content',
-          keys: ['Meta', 'Shift', 'r'],
-        },
-        {
-          title: 'Stop the page loading',
-          keys: ['Escape'],
-        },
-        {
-          title: 'Browse clickable items moving forward',
-          keys: ['Tab'],
-        },
-        {
-          title: 'Browse clickable items moving backward',
-          keys: ['Shift', 'Tab'],
-        },
-        {
-          title: 'Open a file from your computer in Google Chrome',
-          keys: ['Meta', 'o'],
-        },
-        {
-          title: 'Display non-editable HTML source code for the current page',
-          keys: ['Meta', 'Alt', 'u'],
+          title: 'Open Developer Tools',
+          keys: ['Meta', 'Alt', 'i'],
         },
         {
           title: 'Open the JavaScript Console',
           keys: ['Meta', 'Alt', 'j'],
         },
         {
-          title: 'Save your current webpage as a bookmark',
-          keys: ['Meta', 'd'],
+          title: 'Display non-editable HTML source code for the current page',
+          keys: ['Meta', 'Alt', 'u'],
+        },
+      ],
+    },
+    {
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Hide Google Chrome',
+          keys: ['Meta', 'h'],
+        },
+        {
+          title: 'Quit Google Chrome',
+          keys: ['Meta', 'q'],
+        },
+        {
+          title: 'Stop the page loading',
+          keys: ['Escape'],
+        },
+        {
+          title: 'Open the Page Setup dialog',
+          keys: ['Meta', 'Alt', 'p'],
+        },
+        {
+          title: 'Open a file from your computer in Google Chrome',
+          keys: ['Meta', 'o'],
         },
         {
           title: 'Save all open tabs as bookmarks in a new folder',
           keys: ['Meta', 'Shift', 'd'],
-        },
-        {
-          title: 'Turn full-screen mode on or off',
-          keys: ['Meta', 'Control', 'f'],
-        },
-        {
-          title: 'Make everything on the page bigger',
-          keys: [
-            ['Meta', '='],
-            ['Meta', '+'],
-          ],
-        },
-        {
-          title: 'Make everything on the page smaller',
-          keys: ['Meta', '-'],
-        },
-        {
-          title: 'Return everything on the page to the default size',
-          keys: ['Meta', '0'],
         },
         {
           title: 'Scroll down a webpage, a screen at a time',
@@ -219,22 +258,6 @@ export default {
         {
           title: 'Scroll up a webpage, a screen at a time',
           keys: ['Shift', 'Space'],
-        },
-        {
-          title: 'Search the web',
-          keys: ['Meta', 'Alt', 'f'],
-        },
-        {
-          title: 'Move your cursor to the beginning of the previous word in a text field',
-          keys: ['Alt', 'ArrowLeft'],
-        },
-        {
-          title: 'Move your cursor to the back of the next word in a text field',
-          keys: ['Alt', 'ArrowRight'],
-        },
-        {
-          title: 'Delete the previous word in a text field',
-          keys: ['Alt', 'Delete'],
         },
         {
           title: 'Open your home page in the current tab',
