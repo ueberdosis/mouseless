@@ -7,22 +7,10 @@ export default {
   category: 'Utility',
   sets: [
     {
-      title: 'Common actions',
-      id: 'common',
+      title: 'Essentials',
+      id: 'essentials',
       version: 1,
       shortcuts: [
-        {
-          title: 'Show all windows of the front app',
-          keys: ['Control', 'ArrowDown'],
-        },
-        {
-          title: 'Show or hide the Dock',
-          keys: ['Alt', 'Meta', 'd'],
-        },
-        {
-          title: 'Cut the selected item and copy it to the Clipboard',
-          keys: ['Meta', 'x'],
-        },
         {
           title: 'Copy the selected item to the Clipboard',
           keys: ['Meta', 'c'],
@@ -40,9 +28,71 @@ export default {
           keys: ['Shift', 'Meta', 'z'],
         },
         {
+          title: 'Cut the selected item and copy it to the Clipboard',
+          keys: ['Meta', 'x'],
+        },
+        {
           title: 'Select All items',
           keys: ['Meta', 'a'],
         },
+        {
+          title: 'Save the current document',
+          keys: ['Meta', 's'],
+        },
+        {
+          title: 'Open a new tab',
+          keys: ['Meta', 't'],
+        },
+        {
+          title: 'Show the Character Viewer, from which you can choose emoji and other symbols',
+          keys: ['Control', 'Meta', 'Space'],
+        },
+      ],
+    },
+    {
+      title: 'Windows',
+      id: 'windows',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Show all windows of the front app',
+          keys: ['Control', 'ArrowDown'],
+        },
+        {
+          title: 'Hide the windows of the front app',
+          keys: ['Meta', 'h'],
+        },
+        {
+          title: 'Minimize all windows of the front app',
+          keys: ['Alt', 'Meta', 'm'],
+        },
+        {
+          title: 'Close the front window',
+          keys: ['Meta', 'w'],
+        },
+        {
+          title: 'Close all windows of the app',
+          keys: ['Alt', 'Meta', 'w'],
+        },
+        {
+          title: 'Use the app in full screen',
+          keys: ['Control', 'Meta', 'f'],
+        },
+        {
+          title: 'View the front app but hide all other apps',
+          keys: ['Alt', 'Meta', 'h'],
+        },
+        {
+          title: 'Minimize the front window to the Dock',
+          keys: ['Meta', 'm'],
+        },
+      ],
+    },
+    {
+      title: 'Search',
+      id: 'search',
+      version: 1,
+      shortcuts: [
         {
           title: 'Find items in a document or open a Find window',
           keys: ['Meta', 'f'],
@@ -56,21 +106,28 @@ export default {
           title: 'Find the previous occurrence',
           keys: ['Shift', 'Meta', 'g'],
         },
+      ],
+    },
+    // blocked shortcuts
+    // {
+    //   title: 'Screen Capturing',
+    //   id: 'screen-capturing',
+    //   version: 1,
+    //   shortcuts: [
+    //     {
+    //       title: 'Capture a selected portion of the screen',
+    //       keys: ['Shift', 'Meta', '5'],
+    //     },
+    //   ],
+    // },
+    {
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
+      version: 1,
+      shortcuts: [
         {
-          title: 'Hide the windows of the front app',
-          keys: ['Meta', 'h'],
-        },
-        {
-          title: 'View the front app but hide all other apps',
-          keys: ['Alt', 'Meta', 'h'],
-        },
-        {
-          title: 'Minimize the front window to the Dock',
-          keys: ['Meta', 'm'],
-        },
-        {
-          title: 'Minimize all windows of the front app',
-          keys: ['Alt', 'Meta', 'm'],
+          title: 'Show or hide the Dock',
+          keys: ['Alt', 'Meta', 'd'],
         },
         {
           title: 'Open the selected item, or open a dialog to select a file to open',
@@ -81,44 +138,8 @@ export default {
           keys: ['Meta', 'p'],
         },
         {
-          title: 'Save the current document',
-          keys: ['Meta', 's'],
-        },
-        {
-          title: 'Open a new tab',
-          keys: ['Meta', 't'],
-        },
-        {
-          title: 'Close the front window',
-          keys: ['Meta', 'w'],
-        },
-        {
-          title: 'Close all windows of the app',
-          keys: ['Alt', 'Meta', 'w'],
-        },
-        {
-          title: 'Force quit an app',
-          keys: ['Alt', 'Meta', 'Escape'],
-        },
-        {
           title: 'Show or hide the Spotlight search field',
           keys: ['Meta', 'Space'],
-        },
-        {
-          title: 'Show the Character Viewer, from which you can choose emoji and other symbols',
-          keys: ['Control', 'Meta', 'Space'],
-        },
-        {
-          title: 'Use the app in full screen',
-          keys: ['Control', 'Meta', 'f'],
-        },
-        {
-          title: 'Use Quick Look to preview the selected item',
-          keys: ['Space'],
-        },
-        {
-          title: 'Take a screenshot or make a screen recording',
-          keys: ['Shift', 'Meta', '5'],
         },
         {
           title: 'Open preferences for the front app',
@@ -126,16 +147,5 @@ export default {
         },
       ],
     },
-    // {
-    //   title: 'Document shortcuts',
-    //   id: 'document',
-    //   version: 1,
-    //   shortcuts: [
-    //     {
-    //       title: '',
-    //       keys: [],
-    //     },
-    //   ],
-    // },
   ],
 }
