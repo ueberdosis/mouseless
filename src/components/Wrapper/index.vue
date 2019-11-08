@@ -67,9 +67,9 @@ export default {
       this.showLicense = false
     },
 
-    onError(event, error) {
+    onLog(event, log) {
       // eslint-disable-next-line
-      console.error(error)
+      console.log(log)
     },
   },
 
@@ -88,7 +88,7 @@ export default {
     Event.on('showLicense', this.onShowLicense)
     Event.on('hideLicense', this.onHideLicense)
 
-    ipcRenderer.on('updater:error', this.onError)
+    ipcRenderer.on('log', this.onLog)
   },
 
   beforeDestroy() {
@@ -97,7 +97,7 @@ export default {
     Event.off('showLicense', this.onShowLicense)
     Event.off('hideLicense', this.onHideLicense)
 
-    ipcRenderer.removeListener('updater:error', this.onError)
+    ipcRenderer.removeListener('log', this.onLog)
   },
 }
 </script>

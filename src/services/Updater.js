@@ -20,6 +20,13 @@ export default new class {
     autoUpdater.on('update-not-available', this.onUpdateNotAvailable.bind(this))
     autoUpdater.on('download-progress', this.onDownloadProgress.bind(this))
     autoUpdater.on('update-downloaded', this.onUpdateDownloaded.bind(this))
+    autoUpdater.on('checking-for-update', this.onCheckingForUpdate.bind(this))
+  }
+
+  sendStatusToWindow(text) {
+    this.browserWindows.forEach(browserWindow => {
+      browserWindow.webContents.send('log', text)
+    })
   }
 
   get browserWindows() {
@@ -62,12 +69,12 @@ export default new class {
 
   onError(error) {
     this.enableMenuItem()
-    this.browserWindows.forEach(browserWindow => {
-      browserWindow.webContents.send('updater:error', error)
-    })
+    this.sendStatusToWindow(`Error in auto-updater. ${error}`)
   }
 
   onUpdateAvailable() {
+    this.sendStatusToWindow('Update available.')
+
     dialog.showMessageBox({
       type: 'info',
       message: 'Oh, there\'s a newer version of this app available.',
@@ -84,6 +91,8 @@ export default new class {
   }
 
   onUpdateNotAvailable() {
+    this.sendStatusToWindow('Update not available.')
+
     this.enableMenuItem()
 
     if (this.silent) {
@@ -97,6 +106,8 @@ export default new class {
   }
 
   onUpdateDownloaded() {
+    this.sendStatusToWindow('Update downloaded.')
+
     dialog.showMessageBox({
       message: 'Download completed.',
       detail: 'To install the update, the application needs to be restarted.',
@@ -111,7 +122,16 @@ export default new class {
     })
   }
 
+  onCheckingForUpdate() {
+    this.sendStatusToWindow('Checking for update…')
+  }
+
   onDownloadProgress(progress) {
+    let logMessage = `Download speed: ${progress.bytesPerSecond}`
+    logMessage = `${logMessage} - Downloaded ${progress.percent}%`
+    logMessage = `${logMessage} (${progress.transferred}/${progress.total})`
+    this.sendStatusToWindow(logMessage)
+
     this.browserWindows.forEach(browserWindow => {
       browserWindow.setProgressBar(progress.percent / 100)
     })
