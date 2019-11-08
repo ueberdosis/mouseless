@@ -46,6 +46,13 @@ export default new class {
           return
         }
 
+        const chargebacked = nestedValue(response, 'data.purchase.chargebacked')
+
+        if (chargebacked) {
+          this.emitError('Sorry. This purchase has been chargebacked.')
+          return
+        }
+
         this.store.set('verification', response.data)
         this.store.set('showMenubar', true)
         MenuBar.create()
