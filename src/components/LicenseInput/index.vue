@@ -46,7 +46,7 @@ export default {
       licenseUsageLimit: 2,
       licenseMask: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
       licensePlaceholder: '00000000-00000000-00000000-00000000',
-      licenseKey: 'CEFA8043-F49D46F2-965EA1E6-11725170',
+      licenseKey: null,
       tokens: {
         X: {
           pattern: /[0-9a-zA-Z]/,
