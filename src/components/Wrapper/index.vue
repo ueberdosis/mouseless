@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron'
 import SpatialNavigation from 'spatial-navigation-js'
 import Event from '@/services/Event'
 import OptionsOverlay from '@/components/OptionsOverlay'
@@ -65,6 +66,11 @@ export default {
     onHideLicense() {
       this.showLicense = false
     },
+
+    onError(event, error) {
+      // eslint-disable-next-line
+      console.error(error)
+    },
   },
 
   mounted() {
@@ -81,6 +87,8 @@ export default {
     Event.on('hideOptions', this.onHideOptions)
     Event.on('showLicense', this.onShowLicense)
     Event.on('hideLicense', this.onHideLicense)
+
+    ipcRenderer.on('updater:error', this.onError)
   },
 
   beforeDestroy() {
@@ -88,6 +96,8 @@ export default {
     Event.off('hideOptions', this.onHideOptions)
     Event.off('showLicense', this.onShowLicense)
     Event.off('hideLicense', this.onHideLicense)
+
+    ipcRenderer.removeListener('updater:error', this.onError)
   },
 }
 </script>

@@ -22,6 +22,10 @@ export default new class {
     autoUpdater.on('update-downloaded', this.onUpdateDownloaded.bind(this))
   }
 
+  get browserWindows() {
+    return BrowserWindow.getAllWindows()
+  }
+
   enableMenuItem() {
     if (this.menuItem) {
       this.menuItem.enabled = true
@@ -56,8 +60,11 @@ export default new class {
     autoUpdater.quitAndInstall()
   }
 
-  onError() {
+  onError(error) {
     this.enableMenuItem()
+    this.browserWindows.forEach(browserWindow => {
+      browserWindow.webContents.send('updater:error', error)
+    })
   }
 
   onUpdateAvailable() {
@@ -105,8 +112,7 @@ export default new class {
   }
 
   onDownloadProgress(progress) {
-    const browserWindows = BrowserWindow.getAllWindows()
-    browserWindows.forEach(browserWindow => {
+    this.browserWindows.forEach(browserWindow => {
       browserWindow.setProgressBar(progress.percent / 100)
     })
   }
