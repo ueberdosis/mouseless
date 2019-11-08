@@ -7,8 +7,8 @@ export default {
   category: 'Design',
   sets: [
     {
-      title: 'General Shortcuts',
-      id: 'general',
+      title: 'Essentials',
+      id: 'essentials',
       version: 1,
       shortcuts: [
         {
@@ -229,13 +229,30 @@ export default {
           title: 'Scale Layer',
           keys: ['Meta', 'k'],
         },
-        // TODO: Multiple bindings
-        // Nudge layer any direction by 1 px*
-        // Nudge layer any direction by 10 px*
-        // Expand by 1 px
-        // Contract by 1 px
-        // Expand by 10 px
-        // Contract by 10 px
+        {
+          title: 'Nudge layer 1 px to top',
+          keys: ['ArrowUp'],
+        },
+        {
+          title: 'Nudge layer 1 px to bottom',
+          keys: ['Shift', 'ArrowBottom'],
+        },
+        {
+          title: 'Expand by 1 px to right',
+          keys: ['Meta', 'ArrowRight'],
+        },
+        {
+          title: 'Expand by 10 px to right',
+          keys: ['Shift', 'Meta', 'ArrowRight'],
+        },
+        {
+          title: 'Contract by 1 px to left',
+          keys: ['Meta', 'ArrowLeft'],
+        },
+        {
+          title: 'Contract by 10 px to left',
+          keys: ['Shift', 'Meta', 'ArrowLeft'],
+        },
       ],
     },
     {
@@ -258,22 +275,6 @@ export default {
         {
           title: 'Delete layer',
           keys: ['Backspace'],
-        },
-        {
-          title: 'Copy style',
-          keys: ['Alt', 'Meta', 'c'],
-        },
-        {
-          title: 'Paste style',
-          keys: ['Alt', 'Meta', 'v'],
-        },
-        {
-          title: 'Sync shared style',
-          keys: ['Control', 's'],
-        },
-        {
-          title: 'Reset shared style',
-          keys: ['Alt', 'Control', 's'],
         },
         {
           title: 'Add link to Artboard',
@@ -327,6 +328,28 @@ export default {
         {
           title: 'Difference multiple layers',
           keys: ['Alt', 'Meta', 'x'],
+        },
+      ],
+    },
+    {
+      title: 'Layer Styles',
+      id: 'layer-styles',
+      shortcuts: [
+        {
+          title: 'Copy style',
+          keys: ['Alt', 'Meta', 'c'],
+        },
+        {
+          title: 'Paste style',
+          keys: ['Alt', 'Meta', 'v'],
+        },
+        {
+          title: 'Sync shared style',
+          keys: ['Control', 's'],
+        },
+        {
+          title: 'Reset shared style',
+          keys: ['Alt', 'Control', 's'],
         },
       ],
     },
@@ -417,10 +440,6 @@ export default {
         {
           title: 'Align right',
           keys: ['Meta', '}'], // original: ['Shift', 'Meta', '}']
-        },
-        {
-          title: 'Emoji & symbols',
-          keys: ['Alt', 'Meta', 'Space'],
         },
         {
           title: 'Convert to outlines',
@@ -614,7 +633,7 @@ export default {
     },
     {
       title: 'Miscellaneous',
-      id: 'misc',
+      id: 'miscellaneous',
       version: 1,
       shortcuts: [
         {
@@ -641,6 +660,10 @@ export default {
         {
           title: 'Position selected gradient stop directly between two existing stops',
           keys: ['='],
+        },
+        {
+          title: 'Emoji & symbols',
+          keys: ['Alt', 'Meta', 'Space'],
         },
       ],
     },
