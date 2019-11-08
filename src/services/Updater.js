@@ -1,16 +1,17 @@
 import { dialog, app, BrowserWindow } from 'electron'
 import { autoUpdater } from 'electron-updater'
-import log from 'electron-log'
 
 export default new class {
 
   constructor() {
     autoUpdater.autoDownload = false
 
-    if (process.env.NODE_ENV === 'development') {
-      autoUpdater.logger = log
-      autoUpdater.logger.transports.file.level = 'info'
-    }
+    // if (process.env.NODE_ENV === 'development') {
+    //   // logs to ~/Library/Logs/<app name>/log.log
+    //   const log = require('electron-log')
+    //   autoUpdater.logger = log
+    //   autoUpdater.logger.transports.file.level = 'debug'
+    // }
 
     this.menuItem = null
     this.silent = false
@@ -60,10 +61,7 @@ export default new class {
 
   ensureSafeQuitAndInstall() {
     app.removeAllListeners('window-all-closed')
-    const browserWindows = BrowserWindow.getAllWindows()
-    browserWindows.forEach(browserWindow => {
-      browserWindow.removeAllListeners('close')
-    })
+    this.browserWindows.forEach(browserWindow => browserWindow.removeAllListeners('close'))
     autoUpdater.quitAndInstall()
   }
 
@@ -72,22 +70,22 @@ export default new class {
     this.sendStatusToWindow(`Error in auto-updater. ${error}`)
   }
 
-  onUpdateAvailable() {
+  async onUpdateAvailable() {
     this.sendStatusToWindow('Update available.')
 
-    dialog.showMessageBox({
+    const { response } = await dialog.showMessageBox({
       type: 'info',
       message: 'Oh, there\'s a newer version of this app available.',
       detail: 'Do you want to update now?',
       buttons: ['Yes, Download', 'Later'],
       defaultId: 0,
-    }, buttonIndex => {
-      if (buttonIndex === 0) {
-        autoUpdater.downloadUpdate()
-      } else {
-        this.enableMenuItem()
-      }
     })
+
+    if (response === 0) {
+      autoUpdater.downloadUpdate()
+    } else {
+      this.enableMenuItem()
+    }
   }
 
   onUpdateNotAvailable() {
@@ -105,21 +103,21 @@ export default new class {
     })
   }
 
-  onUpdateDownloaded() {
+  async onUpdateDownloaded() {
     this.sendStatusToWindow('Update downloaded.')
 
-    dialog.showMessageBox({
+    const { response } = await dialog.showMessageBox({
       message: 'Download completed.',
       detail: 'To install the update, the application needs to be restarted.',
       buttons: ['Restart', 'Later'],
       defaultId: 0,
-    }, buttonIndex => {
-      if (buttonIndex === 0) {
-        setImmediate(() => {
-          this.ensureSafeQuitAndInstall()
-        })
-      }
     })
+
+    if (response === 0) {
+      setImmediate(() => {
+        this.ensureSafeQuitAndInstall()
+      })
+    }
   }
 
   onCheckingForUpdate() {
