@@ -17,8 +17,12 @@ export default new class {
     return keymap.getCurrentKeyboardLayout().localizedName
   }
 
+  get verification() {
+    return this.store.get('verification', null)
+  }
+
   get verified() {
-    return this.store.get('verified', false)
+    return !!this.verification?.success
   }
 
   createModel(model, props) {

@@ -1,6 +1,6 @@
 {
   "name": "mouseless",
-  "version": "0.32.0",
+  "version": "0.33.0",
   "productName": "Mouseless",
   "author": "Philipp Kühn <philipp.kuehn@ueber.io>",
   "description": "A shortcut app.",
@@ -19,6 +19,7 @@
   },
   "main": "background.js",
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@vue/cli-plugin-babel": "^4.0.5",
     "@vue/cli-plugin-eslint": "^4.0.5",
     "@vue/cli-service": "^4.0.5",

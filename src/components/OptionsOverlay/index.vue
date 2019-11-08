@@ -8,16 +8,16 @@
     </div>
 
     <div class="options-overlay__content">
-      <div class="options-overlay__section" v-if="licensed">
+      <div class="options-overlay__section" v-if="verified">
         <div>
           License
         </div>
         <div>
-          Licenced to {{ licensed }}
+          Licenced to {{ licenseEmail }}
         </div>
       </div>
 
-      <div class="options-overlay__section" v-if="licensed">
+      <div class="options-overlay__section" v-if="verified">
         <div>
           Menubar
         </div>
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="options-overlay__section" v-if="licensed">
+      <div class="options-overlay__section" v-if="verified">
         <div>
           Autostart
         </div>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="options-overlay__section" v-if="licensed">
+      <div class="options-overlay__section" v-if="verified">
         <div>
           Danger Zone
         </div>
@@ -103,8 +103,12 @@ export default {
   },
 
   computed: {
-    licensed() {
+    verified() {
       return this.$db.verified
+    },
+
+    licenseEmail() {
+      return this.$db.verification.purchase.email
     },
   },
 

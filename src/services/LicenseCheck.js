@@ -24,16 +24,29 @@ export default new class {
       .post('https://api.gumroad.com/v2/licenses/verify', {
         product_permalink: process.env.VUE_APP_GUMROAD_PRODUCT_ID,
         license_key: licenseKey,
+        increment_uses_count: true,
       })
       .then(response => {
+        // if (!data?.success) {
+        //   this.emitError('Sorry. Something went wrong.')
+        //   return
+        // }
+
         const uses = nestedValue(response, 'data.uses')
 
-        if (uses > 0 && uses > this.limit) {
+        if (uses > this.limit) {
           this.emitError('Sorry. This license is already in use.')
           return
         }
 
-        this.store.set('verified', response.data.purchase.email)
+        const refunded = nestedValue(response, 'data.purchase.refunded')
+
+        if (refunded) {
+          this.emitError('Sorry. This purchase has been refunded.')
+          return
+        }
+
+        this.store.set('verification', response.data)
         this.store.set('showMenubar', true)
         MenuBar.create()
         this.emitSuccess()
