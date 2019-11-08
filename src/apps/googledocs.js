@@ -44,15 +44,6 @@ export default {
           keys: ['Alt', 'Enter'],
         },
         {
-          title: 'Show common keyboard shortcuts',
-          keys: ['Meta', '/'],
-        },
-        {
-          title: 'Save',
-          // Every change is automatically saved in Drive,
-          keys: ['Meta', 's'],
-        },
-        {
           title: 'Print',
           keys: ['Meta', 'p'],
         },
@@ -77,18 +68,9 @@ export default {
           keys: ['Meta', 'Shift', 'g'],
         },
         {
-          title: 'Hide the menus (compact mode)',
-          keys: ['Control', 'Shift', 'f'],
-        },
-        {
           title: 'Insert page break',
           keys: ['Meta', 'Enter'],
         },
-        // {
-        //   title: 'Search the menus',
-        //   keys: ['Alt', '/'],
-        //   // keys: ['Control', 'Alt', 'z'],
-        // },
         {
           title: 'Repeat last action',
           keys: ['Meta', 'y'],
@@ -349,25 +331,34 @@ export default {
           title: 'Select all',
           keys: ['Meta', 'a'],
         },
-        // TODO: Two directions
-        // {
-        //   title: 'Extend selection one character',
-        //   keys: ['Shift', 'Left/right arrow'],
-        // },
-        // TODO: Two directions
-        // {
-        //   title: 'Extend selection one line',
-        //   keys: ['Shift', 'Up/down arrow'],
-        // },
+        {
+          title: 'Extend selection one character to left',
+          keys: ['Shift', 'ArrowLeft'],
+        },
+        {
+          title: 'Extend selection one character to right',
+          keys: ['Shift', 'ArrowRight'],
+        },
+        {
+          title: 'Extend selection one line up',
+          keys: ['Shift', 'ArrowUp'],
+        },
+        {
+          title: 'Extend selection one line down',
+          keys: ['Shift', 'ArrowDown'],
+        },
         // {
         //   title: 'Extend selection to the beginning of the line',
         //   keys: ['Shift', 'Fn', 'ArrowLeft'],
         // },
-        // TODO: Two directions
-        // {
-        //   title: 'Extend selection one paragraph',
-        //   keys: ['Alt', 'Shift', 'up/down'],
-        // },
+        {
+          title: 'Extend selection one paragraph up',
+          keys: ['Alt', 'Shift', 'ArrowUp'],
+        },
+        {
+          title: 'Extend selection one paragraph down',
+          keys: ['Alt', 'Shift', 'ArrowDown'],
+        },
         // {
         //   title: 'Extend selection to the end of the line',
         //   keys: ['Shift', 'Fn', 'ArrowRight'],
@@ -383,7 +374,7 @@ export default {
       ],
     },
     {
-      title: 'Other Tools and Navigation',
+      title: 'Other Tools',
       id: 'other',
       version: 1,
       shortcuts: [
@@ -440,6 +431,21 @@ export default {
         {
           title: 'Return focus to document text',
           keys: ['Escape'],
+        },
+      ],
+    },
+    {
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Show common keyboard shortcuts',
+          keys: ['Meta', '/'],
+        },
+        {
+          title: 'Hide the menus (compact mode)',
+          keys: ['Control', 'Shift', 'f'],
         },
       ],
     },
