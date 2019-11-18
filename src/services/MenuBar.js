@@ -14,9 +14,14 @@ export default new class {
   }
 
   create() {
+    const verification = this.store.get('verification', null)
+    const verified = verification
+      ? !!verification.success
+      : false
+
     if (
       this.menubar
-      || !this.store.get('verified', false)
+      || !verified
       || !this.store.get('showMenubar', true)
     ) {
       return
@@ -86,6 +91,8 @@ export default new class {
       if (isDevelopment) {
         this.menubar.window.closeDevTools()
       }
+
+      this.menubar.window.webContents.send('activeWindow:hide')
     })
   }
 
