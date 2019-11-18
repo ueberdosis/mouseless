@@ -11,7 +11,13 @@ export default new class {
 
   debug = false
 
-  store = new Store()
+  store = new Store({
+    migrations: {
+      '1.0.0': store => {
+        store.clear()
+      },
+    },
+  })
 
   get locale() {
     return keymap.getCurrentKeyboardLayout().localizedName
