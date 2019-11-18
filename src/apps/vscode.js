@@ -7,8 +7,79 @@ export default {
   category: 'Development',
   sets: [
     {
-      title: 'Basic Editing',
-      id: 'basic',
+      title: 'Essentials',
+      id: 'essentials',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Find',
+          keys: ['Meta', 'f'],
+        },
+        {
+          title: 'Replace',
+          keys: ['Alt', 'Meta', 'f'],
+        },
+        {
+          title: 'Find Next',
+          keys: ['Enter'],
+        },
+        {
+          title: 'Find Previous',
+          keys: ['Shift', 'Meta', 'g'],
+        },
+        {
+          title: 'Toggle Line Comment',
+          keys: ['Meta', '/'],
+        },
+        {
+          title: 'Toggle Block Comment',
+          keys: ['Shift', 'Alt', 'a'],
+        },
+
+      ],
+    },
+    {
+      title: 'Selections',
+      id: 'selections',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Select current line',
+          keys: ['Meta', 'l'],
+        },
+        {
+          title: 'Add Selection To Next Find Match',
+          keys: ['Meta', 'd'],
+        },
+        {
+          title: 'Select all occurrences of current word',
+          keys: ['Meta', 'F2'],
+        },
+        {
+          title: 'Select All Occurrences of Find Match',
+          keys: ['Alt', 'Enter'],
+        },
+        {
+          title: 'Select all occurrences of current selection',
+          keys: ['Shift', 'Meta', 'l'],
+        },
+        // {
+        //   title: 'Move Last Selection To Next Find Match',
+        //   keys: ['⌘K ⌘D'],
+        // },
+        {
+          title: 'Expand AST Selection',
+          keys: ['Control', 'Shift', 'Meta', 'ArrowRight'],
+        },
+        {
+          title: 'Shrink AST Selection',
+          keys: ['Control', 'Shift', 'Meta', 'ArrowLeft'],
+        },
+      ],
+    },
+    {
+      title: 'Lines',
+      id: 'lines',
       version: 1,
       shortcuts: [
         {
@@ -48,46 +119,6 @@ export default {
           keys: ['Shift', 'Alt', 'ArrowUp'],
         },
         {
-          title: 'Add Selection To Next Find Match',
-          keys: ['Meta', 'd'],
-        },
-        // {
-        //   title: 'Move Last Selection To Next Find Match',
-        //   keys: ['⌘K ⌘D'],
-        // },
-        {
-          title: 'Undo last cursor operation',
-          keys: ['Meta', 'u'],
-        },
-        {
-          title: 'Insert cursor at end of each line selected',
-          keys: ['Shift', 'Alt', 'i'],
-        },
-        {
-          title: 'Select all occurrences of current selection',
-          keys: ['Shift', 'Meta', 'l'],
-        },
-        {
-          title: 'Select all occurrences of current word',
-          keys: ['Meta', 'F2'],
-        },
-        {
-          title: 'Select current line',
-          keys: ['Meta', 'l'],
-        },
-        {
-          title: 'Insert Cursor Below',
-          keys: ['Alt', 'Meta', 'ArrowDown'],
-        },
-        {
-          title: 'Insert Cursor Above',
-          keys: ['Alt', 'Meta', 'ArrowUp'],
-        },
-        {
-          title: 'Jump to matching bracket',
-          keys: ['Shift', 'Meta', '\\'],
-        },
-        {
           title: 'Indent Line',
           keys: ['Meta', ']'],
         },
@@ -102,6 +133,40 @@ export default {
         {
           title: 'Go to End of Line',
           keys: ['End'],
+        },
+      ],
+    },
+    {
+      title: 'Cursors',
+      id: 'cursors',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Undo last cursor operation',
+          keys: ['Meta', 'u'],
+        },
+        {
+          title: 'Insert cursor at end of each line selected',
+          keys: ['Shift', 'Alt', 'i'],
+        },
+        {
+          title: 'Insert Cursor Below',
+          keys: ['Alt', 'Meta', 'ArrowDown'],
+        },
+        {
+          title: 'Insert Cursor Above',
+          keys: ['Alt', 'Meta', 'ArrowUp'],
+        },
+      ],
+    },
+    {
+      title: 'Basic Editing',
+      id: 'basic',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Jump to matching bracket',
+          keys: ['Shift', 'Meta', '\\'],
         },
         {
           title: 'Go to End of File',
@@ -159,34 +224,6 @@ export default {
         //   title: 'Remove Line Comment',
         //   keys: ['⌘K ⌘U'],
         // },
-        {
-          title: 'Toggle Line Comment',
-          keys: ['Meta', '/'],
-        },
-        {
-          title: 'Toggle Block Comment',
-          keys: ['Shift', 'Alt', 'a'],
-        },
-        {
-          title: 'Find',
-          keys: ['Meta', 'f'],
-        },
-        {
-          title: 'Replace',
-          keys: ['Alt', 'Meta', 'f'],
-        },
-        {
-          title: 'Find Next',
-          keys: ['Enter'],
-        },
-        {
-          title: 'Find Previous',
-          keys: ['Shift', 'Meta', 'g'],
-        },
-        {
-          title: 'Select All Occurrences of Find Match',
-          keys: ['Alt', 'Enter'],
-        },
         {
           title: 'Toggle Find Case Sensitive',
           keys: ['Alt', 'Meta', 'c'],
@@ -265,14 +302,6 @@ export default {
         {
           title: 'Replace with Previous Value',
           keys: ['Shift', 'Meta', ','],
-        },
-        {
-          title: 'Expand AST Selection',
-          keys: ['Control', 'Shift', 'Meta', 'ArrowRight'],
-        },
-        {
-          title: 'Shrink AST Selection',
-          keys: ['Control', 'Shift', 'Meta', 'ArrowLeft'],
         },
         // {
         //   title: 'Trim Trailing Whitespace',
