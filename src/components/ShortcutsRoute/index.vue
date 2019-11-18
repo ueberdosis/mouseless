@@ -147,6 +147,11 @@ export default {
       this.loading = true
     },
 
+    onHide() {
+      this.query = null
+      this.loading = true
+    },
+
     onActiveWindow(event, activeWindow) {
       this.loading = false
       this.activeWindow = activeWindow
@@ -180,11 +185,13 @@ export default {
   mounted() {
     ipcRenderer.on('activeWindow:loading', this.onLoading)
     ipcRenderer.on('activeWindow:response', this.onActiveWindow)
+    ipcRenderer.on('activeWindow:hide', this.onHide)
   },
 
   beforeDestroy() {
     ipcRenderer.removeListener('activeWindow:loading', this.onLoading)
     ipcRenderer.removeListener('activeWindow:response', this.onActiveWindow)
+    ipcRenderer.removeListener('activeWindow:hide', this.onHide)
   },
 }
 </script>
