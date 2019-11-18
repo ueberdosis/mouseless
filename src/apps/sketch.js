@@ -235,7 +235,7 @@ export default {
         },
         {
           title: 'Nudge layer 1 px to bottom',
-          keys: ['Shift', 'ArrowBottom'],
+          keys: ['Shift', 'ArrowDown'],
         },
         {
           title: 'Expand by 1 px to right',
