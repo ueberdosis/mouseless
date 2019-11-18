@@ -1,4 +1,5 @@
 import moment from 'moment'
+import Store from '@/services/Store'
 
 export default {
   name: 'Run',
@@ -52,14 +53,14 @@ export default {
 
   methods: {
     update(data = {}) {
-      this.$db.store.set(`runs.${this.id}`, {
+      Store.set(`runs.${this.id}`, {
         ...this._props,
         ...data,
       })
     },
 
     finish() {
-      this.$db.store.set(`runs.${this.id}.finishedAt`, moment.utc().format())
+      Store.set(`runs.${this.id}.finishedAt`, moment.utc().format())
     },
   },
 }

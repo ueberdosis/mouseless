@@ -1,13 +1,12 @@
 import axios from 'axios'
 import { ipcMain } from 'electron'
-import Store from 'electron-store'
+import Store from './Store'
 import { nestedValue } from '../helpers'
 import MenuBar from './MenuBar'
 
 export default new class {
 
   constructor() {
-    this.store = new Store()
     this.limit = Infinity
 
     ipcMain.on('verifyLicenseKey', (_, licenseKey) => {
@@ -53,8 +52,8 @@ export default new class {
           return
         }
 
-        this.store.set('verification', response.data)
-        this.store.set('showMenubar', true)
+        Store.set('verification', response.data)
+        Store.set('showMenubar', true)
         MenuBar.create()
         this.emitSuccess()
       })

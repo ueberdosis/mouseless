@@ -1,17 +1,15 @@
 import collect from 'collect.js'
-import Store from 'electron-store'
+import Store from '@/services/Store'
 import DB from '@/services/DB'
 
 export default new class {
-
-  store = new Store()
 
   run() {
     this.cleanUpRuns()
   }
 
   cleanUpRuns() {
-    const runs = collect(this.store.get('runs') || {})
+    const runs = collect(Store.get('runs') || {})
       .values()
       .toArray()
 
@@ -60,7 +58,7 @@ export default new class {
       }), {})
 
     if (typeof cleanRuns !== 'undefined') {
-      this.store.set('runs', cleanRuns)
+      Store.set('runs', cleanRuns)
     }
   }
 

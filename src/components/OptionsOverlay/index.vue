@@ -74,6 +74,7 @@
 import { remote } from 'electron'
 import Event from '@/services/Event'
 import Btn from '@/components/Btn'
+import Store from '@/services/Store'
 
 export default {
   name: 'OptionsOverlay',
@@ -85,20 +86,20 @@ export default {
   data() {
     return {
       isDevelopment: process.env.NODE_ENV === 'development',
-      showMenubar: this.$db.store.get('showMenubar', true),
-      autoStart: this.$db.store.get('autoStart', true),
+      showMenubar: Store.get('showMenubar', true),
+      autoStart: Store.get('autoStart', true),
       showRestartButton: false,
     }
   },
 
   watch: {
     showMenubar() {
-      this.$db.store.set('showMenubar', this.showMenubar)
+      Store.set('showMenubar', this.showMenubar)
       this.showRestartButton = true
     },
 
     autoStart() {
-      this.$db.store.set('autoStart', this.autoStart)
+      Store.set('autoStart', this.autoStart)
     },
   },
 
@@ -119,14 +120,14 @@ export default {
 
     resetProgress() {
       if (confirm('Do you really want to reset your progress?')) { // eslint-disable-line
-        this.$db.store.delete('runs')
+        Store.delete('runs')
         window.location.reload()
       }
     },
 
     resetAll() {
       if (confirm('Do you really want to reset everything?')) { // eslint-disable-line
-        this.$db.store.clear()
+        Store.clear()
         window.location.reload()
       }
     },

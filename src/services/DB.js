@@ -2,8 +2,8 @@ import Vue from 'vue'
 import moment from 'moment'
 import uuidv4 from 'uuid/v4'
 import collect from 'collect.js'
-import Store from 'electron-store'
 import keymap from 'native-keymap'
+import Store from '@/services/Store'
 import App from '@/models/App'
 import Run from '@/models/Run'
 
@@ -11,20 +11,12 @@ export default new class {
 
   debug = false
 
-  store = new Store({
-    migrations: {
-      '1.0.0': store => {
-        store.clear()
-      },
-    },
-  })
-
   get locale() {
     return keymap.getCurrentKeyboardLayout().localizedName
   }
 
   get verification() {
-    return this.store.get('verification', null)
+    return Store.get('verification', null)
   }
 
   get verified() {
@@ -62,7 +54,7 @@ export default new class {
   }
 
   get runs() {
-    return collect(this.store.get('runs') || {})
+    return collect(Store.get('runs') || {})
       .values()
       .toArray()
       // TODO: filter old shortcuts ids?

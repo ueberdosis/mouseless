@@ -1,18 +1,14 @@
 import { app } from 'electron'
-import Store from 'electron-store'
+import Store from './Store'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
 export default new class {
 
-  constructor() {
-    this.store = new Store()
-  }
-
   init() {
     if (isProduction) {
       app.setLoginItemSettings({
-        openAtLogin: this.store.get('autoStart', true),
+        openAtLogin: Store.get('autoStart', true),
         openAsHidden: true,
         path: app.getPath('exe'),
       })
