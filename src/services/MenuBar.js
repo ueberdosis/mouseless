@@ -33,7 +33,7 @@ export default new class {
         width: 300,
         height: 480,
         movable: false,
-        alwaysOnTop: isDevelopment,
+        // alwaysOnTop: isDevelopment,
         webPreferences: {
           nodeIntegration: true,
         },
@@ -78,17 +78,21 @@ export default new class {
           })
       }
 
-      if (isDevelopment) {
-        this.menubar.window.openDevTools()
-      }
+      // if (isDevelopment) {
+      //   this.menubar.window.openDevTools()
+      // }
     })
 
     this.menubar.on('hide', () => {
-      if (isDevelopment) {
-        this.menubar.window.closeDevTools()
-      }
+      // if (isDevelopment) {
+      //   this.menubar.window.closeDevTools()
+      // }
 
       this.menubar.window.webContents.send('activeWindow:hide')
+    })
+
+    this.menubar.on('after-hide', () => {
+      this.menubar.app.hide()
     })
   }
 
