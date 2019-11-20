@@ -7,7 +7,9 @@ import MenuBar from './MenuBar'
 export default new class {
 
   constructor() {
-    this.limit = Infinity
+    this.limit = process.env.NODE_ENV === 'development'
+      ? Infinity
+      : 1
 
     ipcMain.on('verifyLicenseKey', (_, licenseKey) => {
       this.verifyLicenseKey(licenseKey)
