@@ -35,7 +35,22 @@ export default {
           title: 'Toggle Block Comment',
           keys: ['Shift', 'Alt', 'a'],
         },
-
+        {
+          title: 'Scroll Line Down',
+          keys: ['Control', 'PageDown'],
+        },
+        {
+          title: 'Scroll Line Up',
+          keys: ['Control', 'PageUp'],
+        },
+        {
+          title: 'Scroll Page Down',
+          keys: ['Meta', 'PageDown'],
+        },
+        {
+          title: 'Scroll Page Up',
+          keys: ['Meta', 'PageUp'],
+        },
       ],
     },
     {
@@ -160,93 +175,6 @@ export default {
       ],
     },
     {
-      title: 'Basic Editing',
-      id: 'basic',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Jump to matching bracket',
-          keys: ['Shift', 'Meta', '\\'],
-        },
-        {
-          title: 'Go to End of File',
-          keys: ['Meta', 'ArrowDown'],
-        },
-        {
-          title: 'Go to Beginning of File',
-          keys: ['Meta', 'ArrowUp'],
-        },
-        {
-          title: 'Scroll Line Down',
-          keys: ['Control', 'PageDown'],
-        },
-        {
-          title: 'Scroll Line Up',
-          keys: ['Control', 'PageUp'],
-        },
-        {
-          title: 'Scroll Page Down',
-          keys: ['Meta', 'PageDown'],
-        },
-        {
-          title: 'Scroll Page Up',
-          keys: ['Meta', 'PageUp'],
-        },
-        {
-          title: 'Fold (collapse) region',
-          keys: ['Alt', 'Meta', '['],
-        },
-        {
-          title: 'Unfold (uncollapse) region',
-          keys: ['Alt', 'Meta', ']'],
-        },
-        // {
-        //   title: 'Fold (collapse) all subregions',
-        //   keys: ['⌘K ⌘['],
-        // },
-        // {
-        //   title: 'Unfold (uncollapse) all subregions',
-        //   keys: ['⌘K ⌘]'],
-        // },
-        // {
-        //   title: 'Fold (collapse) all regions',
-        //   keys: ['⌘K ⌘0'],
-        // },
-        // {
-        //   title: 'Unfold (uncollapse) all regions',
-        //   keys: ['⌘K ⌘J'],
-        // },
-        // {
-        //   title: 'Add Line Comment',
-        //   keys: ['⌘K ⌘C'],
-        // },
-        // {
-        //   title: 'Remove Line Comment',
-        //   keys: ['⌘K ⌘U'],
-        // },
-        {
-          title: 'Toggle Find Case Sensitive',
-          keys: ['Alt', 'Meta', 'c'],
-        },
-        {
-          title: 'Toggle Find Regex',
-          keys: ['Alt', 'Meta', 'r'],
-        },
-        {
-          title: 'Toggle Find Whole Word',
-          keys: ['Alt', 'Meta', 'w'],
-        },
-        {
-          title: 'Toggle Use of Tab Key for Setting Focus',
-          keys: ['Control', 'Shift', 'm'],
-        },
-        {
-          title: 'Toggle Word Wrap',
-          keys: ['Alt', 'z'],
-        },
-      ],
-    },
-    {
       title: 'Rich Languages Editing',
       id: 'rich',
       version: 1,
@@ -366,6 +294,14 @@ export default {
         {
           title: 'Go Forward',
           keys: ['Control', 'Shift', '-'],
+        },
+        {
+          title: 'Go to End of File',
+          keys: ['Meta', 'ArrowDown'],
+        },
+        {
+          title: 'Go to Beginning of File',
+          keys: ['Meta', 'ArrowUp'],
         },
       ],
     },
@@ -692,6 +628,69 @@ export default {
         // {
         //   title: 'Show Hover',
         //   keys: ['⌘K ⌘I'],
+        // },
+      ],
+    },
+    {
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Jump to matching bracket',
+          keys: ['Shift', 'Meta', '\\'],
+        },
+        {
+          title: 'Fold (collapse) region',
+          keys: ['Alt', 'Meta', '['],
+        },
+        {
+          title: 'Unfold (uncollapse) region',
+          keys: ['Alt', 'Meta', ']'],
+        },
+        // {
+        //   title: 'Fold (collapse) all subregions',
+        //   keys: ['⌘K ⌘['],
+        // },
+        // {
+        //   title: 'Unfold (uncollapse) all subregions',
+        //   keys: ['⌘K ⌘]'],
+        // },
+        // {
+        //   title: 'Fold (collapse) all regions',
+        //   keys: ['⌘K ⌘0'],
+        // },
+        // {
+        //   title: 'Unfold (uncollapse) all regions',
+        //   keys: ['⌘K ⌘J'],
+        // },
+        {
+          title: 'Toggle Find Case Sensitive',
+          keys: ['Alt', 'Meta', 'c'],
+        },
+        {
+          title: 'Toggle Find Regex',
+          keys: ['Alt', 'Meta', 'r'],
+        },
+        {
+          title: 'Toggle Find Whole Word',
+          keys: ['Alt', 'Meta', 'w'],
+        },
+        {
+          title: 'Toggle Use of Tab Key for Setting Focus',
+          keys: ['Control', 'Shift', 'm'],
+        },
+        {
+          title: 'Toggle Word Wrap',
+          keys: ['Alt', 'z'],
+        },
+        // {
+        //   title: 'Add Line Comment',
+        //   keys: ['⌘K ⌘C'],
+        // },
+        // {
+        //   title: 'Remove Line Comment',
+        //   keys: ['⌘K ⌘U'],
         // },
       ],
     },
