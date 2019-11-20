@@ -10,6 +10,17 @@
     <div class="options-overlay__content">
       <div class="options-overlay__section" v-if="verified">
         <div>
+          Support
+        </div>
+        <div>
+          <a href="mailto:support@mouseless.app">
+            support@mouseless.app
+          </a>
+        </div>
+      </div>
+
+      <div class="options-overlay__section" v-if="verified">
+        <div>
           License
         </div>
         <div>
