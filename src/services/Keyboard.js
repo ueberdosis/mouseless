@@ -138,7 +138,7 @@ export default class Keyboard {
       value = key.withShiftAltGr
     }
 
-    if (value === ' ') {
+    if (value === ' ' || value === ' ') {
       return 'Space'
     }
 

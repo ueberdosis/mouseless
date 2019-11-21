@@ -12,6 +12,10 @@ export default {
       version: 1,
       shortcuts: [
         // {
+        //   title: 'Special Space',
+        //   keys: ['Alt', 'Space'],
+        // },
+        // {
         //   title: 'Impossible for Germans',
         //   keys: ['Alt', 'Meta', ']'],
         // },
