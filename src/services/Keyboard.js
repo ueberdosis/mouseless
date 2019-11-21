@@ -32,6 +32,11 @@ export default class Keyboard {
     ['Alt', 'Meta', 'Escape'], // force quit
     ['F11'], // show desktop
     ['Meta', 'Space'], // spotlight
+    ['Control', 'ArrowUp'], // window navigation
+    ['Control', 'ArrowDown'], // window navigation
+    ['Control', 'ArrowLeft'], // window navigation
+    ['Control', 'ArrowRight'], // window navigation
+    ['Alt', 'Meta', 'd'], // toggle dock
   ]
 
   static keymap = Object
