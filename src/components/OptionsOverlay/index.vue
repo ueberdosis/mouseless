@@ -30,6 +30,28 @@
 
       <div class="options-overlay__section" v-if="verified">
         <div>
+          Dock icon
+        </div>
+        <div>
+          <label class="options-overlay__label">
+            <input type="checkbox" v-model="showDockIcon">
+            <span>
+              Show in dock
+            </span>
+            <button
+              class="options-overlay__restart"
+              type="button"
+              @click="restart"
+              v-if="showDockIconRestartButton"
+            >
+              Restart App
+            </button>
+          </label>
+        </div>
+      </div>
+
+      <div class="options-overlay__section" v-if="verified">
+        <div>
           Menubar
         </div>
         <div>
@@ -42,7 +64,7 @@
               class="options-overlay__restart"
               type="button"
               @click="restart"
-              v-if="showRestartButton"
+              v-if="showMenubarRestartButton"
             >
               Restart App
             </button>
@@ -97,16 +119,23 @@ export default {
   data() {
     return {
       isDevelopment: process.env.NODE_ENV === 'development',
+      showDockIcon: Store.get('showDockIcon', true),
       showMenubar: Store.get('showMenubar', true),
       autoStart: Store.get('autoStart', true),
-      showRestartButton: false,
+      showDockIconRestartButton: false,
+      showMenubarRestartButton: false,
     }
   },
 
   watch: {
+    showDockIcon() {
+      Store.set('showDockIcon', this.showDockIcon)
+      this.showDockIconRestartButton = true
+    },
+
     showMenubar() {
       Store.set('showMenubar', this.showMenubar)
-      this.showRestartButton = true
+      this.showMenubarRestartButton = true
     },
 
     autoStart() {

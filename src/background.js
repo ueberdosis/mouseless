@@ -12,6 +12,7 @@ import Updater from './services/Updater'
 import MenuBuilder from './services/MenuBuilder'
 import MenuBar from './services/MenuBar'
 import AutoStart from './services/AutoStart'
+import Store from './services/Store'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
@@ -67,6 +68,10 @@ function createWindow() {
   win.on('closed', () => {
     win = null
   })
+}
+
+if (!Store.get('showDockIcon', true)) {
+  app.dock.hide()
 }
 
 // Quit when all windows are closed.
