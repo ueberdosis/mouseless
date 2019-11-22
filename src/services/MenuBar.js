@@ -67,7 +67,7 @@ export default new class {
       const activeWindow = activeWin.sync()
       const appName = activeWindow ? activeWindow.owner.name : null
       const defaultResponse = {
-        app: appName,
+        app: 'Mouseless',
         shortcuts: [],
       }
 
