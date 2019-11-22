@@ -1,5 +1,6 @@
 import path from 'path'
 import { menubar } from 'menubar'
+import { Menu } from 'electron'
 import activeWin from 'active-win'
 import windowShortcuts from 'window-shortcuts'
 import Store from './Store'
@@ -47,6 +48,19 @@ export default new class {
 
     this.menubar.on('after-create-window', () => {
       this.menubar.window.webContents.executeJavaScript('window.location.hash = "/shortcuts"')
+
+      const contextMenu = Menu.buildFromTemplate([
+        {
+          label: 'Quit',
+          click: () => {
+            this.menubar.app.quit()
+          },
+        },
+      ])
+
+      this.menubar.tray.on('right-click', () => {
+        this.menubar.tray.popUpContextMenu(contextMenu)
+      })
     })
 
     this.menubar.on('show', () => {
