@@ -24,30 +24,39 @@
       >
     </div>
     <div class="shortcuts-route__content" v-if="!loading">
-      <template v-for="set in sets">
-        <div class="shortcuts-route__set" :key="set.id" v-if="set.shortcuts.length">
-          <div class="shortcuts-route__set-title">
-            {{ set.title }}
-          </div>
-          <div
-            class="shortcuts-route__shortcut"
-            v-for="shortcut in set.shortcuts"
-            :key="shortcut.id"
-          >
-            <div class="shortcuts-route__shortcut-title">
-              {{ shortcut.title }}
+      <div class="shortcuts-route__placeholder" v-if="showPlaceholder">
+        <img class="shortcuts-route__placeholder-image" src="~@/assets/images/logo.png">
+        <p>
+          Open this to see the keyboard shortcuts for your current app.
+          Nothing to see for Mouseless here though.
+        </p>
+      </div>
+      <template v-else>
+        <template v-for="set in sets">
+          <div class="shortcuts-route__set" :key="set.id" v-if="set.shortcuts.length">
+            <div class="shortcuts-route__set-title">
+              {{ set.title }}
             </div>
-            <div class="shortcuts-route__shortcut-keys">
-              <div
-                class="shortcuts-route__shortcut-key"
-                v-for="key in shortcut.resolvedKeys"
-                :key="key"
-              >
-                {{ key | key | uppercase }}
+            <div
+              class="shortcuts-route__shortcut"
+              v-for="shortcut in set.shortcuts"
+              :key="shortcut.id"
+            >
+              <div class="shortcuts-route__shortcut-title">
+                {{ shortcut.title }}
+              </div>
+              <div class="shortcuts-route__shortcut-keys">
+                <div
+                  class="shortcuts-route__shortcut-key"
+                  v-for="key in shortcut.resolvedKeys"
+                  :key="key"
+                >
+                  {{ key | key | uppercase }}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </template>
       </template>
     </div>
   </div>
@@ -138,6 +147,10 @@ export default {
         .toArray()
 
       return sets
+    },
+
+    showPlaceholder() {
+      return this.systemTitle === 'Mouseless'
     },
   },
 
