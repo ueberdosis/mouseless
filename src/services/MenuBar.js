@@ -10,6 +10,10 @@ const isDevelopment = !isProduction
 
 export default new class {
 
+  constructor() {
+    this.mainWindow = null
+  }
+
   create() {
     const verification = Store.get('verification', null)
     const verified = verification
@@ -106,8 +110,17 @@ export default new class {
     })
 
     this.menubar.on('after-hide', () => {
-      this.menubar.app.hide()
+      // restore focus of previous app only if there is no main window of mouseless
+      const isMainWindowVisible = !this.mainWindow.isDestroyed() && this.mainWindow.isVisible()
+
+      if (!isMainWindowVisible) {
+        this.menubar.app.hide()
+      }
     })
+  }
+
+  setMainWindow(win) {
+    this.mainWindow = win
   }
 
   hide() {

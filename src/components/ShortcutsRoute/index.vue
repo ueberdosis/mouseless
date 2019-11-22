@@ -165,7 +165,7 @@ export default {
     },
 
     maximize() {
-      ipcRenderer.send('show')
+      ipcRenderer.send('showMainWindow')
     },
 
     filterShortcuts(shortcuts) {

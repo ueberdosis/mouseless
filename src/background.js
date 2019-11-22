@@ -68,6 +68,8 @@ function createWindow() {
   win.on('closed', () => {
     win = null
   })
+
+  MenuBar.setMainWindow(win)
 }
 
 if (!Store.get('showDockIcon', true)) {
@@ -113,7 +115,7 @@ app.on('ready', async () => {
 
   MenuBar.create()
 
-  ipcMain.on('show', () => {
+  ipcMain.on('showMainWindow', () => {
     if (win === null) {
       createWindow()
     } else {
