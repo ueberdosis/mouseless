@@ -3,8 +3,20 @@ import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
 import { findDuplicatesInArray, isSameArray, getArrayDepth } from '@/helpers'
 
+const isISOKeyboard = keymap.isISOKeyboard()
+const basicKeyMap = keymap.getKeyMap()
+
+// swap Backquote and IntlBackslash
+// see: https://github.com/microsoft/vscode/issues/24153
+if (isISOKeyboard) {
+  const { Backquote, IntlBackslash } = basicKeyMap
+
+  basicKeyMap.IntlBackslash = Backquote
+  basicKeyMap.Backquote = IntlBackslash
+}
+
 // eslint-disable-next-line
-console.table(keymap.getKeyMap())
+console.table(basicKeyMap)
 
 export default class Keyboard {
 
@@ -40,7 +52,7 @@ export default class Keyboard {
   ]
 
   static keymap = Object
-    .entries(keymap.getKeyMap())
+    .entries(basicKeyMap)
     .map(([code, data]) => ({
       code,
       ...data,
