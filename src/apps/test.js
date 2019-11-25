@@ -11,10 +11,10 @@ export default {
       id: 'test',
       version: 1,
       shortcuts: [
-        // {
-        //   title: 'Special Space',
-        //   keys: ['Alt', 'Space'],
-        // },
+        {
+          title: 'Special Space',
+          keys: ['#'],
+        },
         // {
         //   title: 'Impossible for Germans',
         //   keys: ['Alt', 'Meta', ']'],

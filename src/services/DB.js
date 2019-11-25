@@ -9,7 +9,7 @@ import Run from '@/models/Run'
 
 export default new class {
 
-  debug = false
+  debug = true
 
   get locale() {
     return keymap.getCurrentKeyboardLayout().localizedName
