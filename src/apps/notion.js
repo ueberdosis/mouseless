@@ -21,7 +21,7 @@ export default {
         },
         {
           title: 'Open search',
-          keys: ['Meta', 'o'],
+          keys: ['Meta', 'p'],
         },
         {
           title: 'Go back a page',
