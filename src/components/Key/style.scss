@@ -70,9 +70,9 @@
 
   &__name {
     position: absolute;
-    bottom: -22px;
-    left: 0;
-    width: 100%;
+    top: calc(100% + 8px);
+    left: -2px;
+    width: calc(100% + 4px);
     text-align: center;
     font-size: 12px;
     font-weight: 700;
