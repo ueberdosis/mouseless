@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-// https://ia.net/writer/support/general/keyboard
+// https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly#w_media-shortcuts
+// https://developer.mozilla.org/en-US/docs/Tools/Keyboard_shortcuts
 export default {
   id: 'firefox',
   title: 'Firefox',
