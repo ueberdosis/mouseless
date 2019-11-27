@@ -53,7 +53,7 @@ export default {
         },
         {
           title: 'Increase Text Size',
-          keys: ['Meta', '-'],
+          keys: ['Meta', '+'],
         },
         {
           title: 'Decrease Text Size',
