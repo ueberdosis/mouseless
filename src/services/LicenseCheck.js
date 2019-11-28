@@ -59,8 +59,14 @@ export default new class {
         MenuBar.create()
         this.emitSuccess()
       })
-      .catch(() => {
-        this.emitError('Sorry. This license does not exist.')
+      .catch(error => {
+        if (!error.response) {
+          this.emitError('Please check your internet connection.')
+        } else if (error.response.status && error.response.status >= 500) {
+          this.emitError('Oh no. Gumroad can\'t be reached. Please try again later.')
+        } else {
+          this.emitError('Sorry. This license does not exist.')
+        }
       })
   }
 

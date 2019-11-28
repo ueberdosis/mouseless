@@ -40,12 +40,17 @@
 
   &__error {
     display: inline-flex;
+    align-items: center;
     font-size: 14px;
     font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 100px;
-    background-color: rgba($colorRed, 0.2);
     color: $colorRed;
+  }
+
+  &__retry {
+    margin-left: 4px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background-color: rgba($colorRed, 0.2);
   }
 
 }
