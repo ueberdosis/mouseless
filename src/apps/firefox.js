@@ -243,38 +243,39 @@ export default {
           title: 'Open Address or Search in New Window',
           keys: ['Shift', 'Enter'],
         },
-        {
-          title: 'Open Search in New Background Tab',
-          keys: ['Meta', 'Shift', 'Enter'],
-        },
-        {
-          title: 'Open Search in New Foreground Tab',
-          keys: ['Meta', 'Enter'],
-        },
-        {
-          title: 'Open Focused Bookmark or Link in Current Tab',
-          keys: ['Enter'],
-        },
-        {
-          title: 'Open Focused Bookmark in New Foreground Tab',
-          keys: ['Meta', 'Enter'],
-        },
-        {
-          title: 'Open Focused Bookmark in New Background Tab',
-          keys: ['Meta', 'Shift', 'Enter'],
-        },
-        {
-          title: 'Open Focused Link in New Background Tab',
-          keys: ['Meta', 'Enter'],
-        },
-        {
-          title: 'Open Focused Link in New Foreground Tab',
-          keys: ['Meta', 'Shift', 'Enter'],
-        },
-        {
-          title: 'Open Focused Bookmark or Link in New Window',
-          keys: ['Shift', 'Enter'],
-        },
+        // Unrelevant
+        // {
+        //   title: 'Open Search in New Background Tab',
+        //   keys: ['Meta', 'Shift', 'Enter'],
+        // },
+        // {
+        //   title: 'Open Search in New Foreground Tab',
+        //   keys: ['Meta', 'Enter'],
+        // },
+        // {
+        //   title: 'Open Focused Bookmark or Link in Current Tab',
+        //   keys: ['Enter'],
+        // },
+        // {
+        //   title: 'Open Focused Bookmark in New Foreground Tab',
+        //   keys: ['Meta', 'Enter'],
+        // },
+        // {
+        //   title: 'Open Focused Bookmark in New Background Tab',
+        //   keys: ['Meta', 'Shift', 'Enter'],
+        // },
+        // {
+        //   title: 'Open Focused Link in New Background Tab',
+        //   keys: ['Meta', 'Enter'],
+        // },
+        // {
+        //   title: 'Open Focused Link in New Foreground Tab',
+        //   keys: ['Meta', 'Shift', 'Enter'],
+        // },
+        // {
+        //   title: 'Open Focused Bookmark or Link in New Window',
+        //   keys: ['Shift', 'Enter'],
+        // },
         {
           title: 'Undo Close Tab',
           keys: ['Meta', 'Shift', 't'],
