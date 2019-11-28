@@ -1,6 +1,11 @@
 import path from 'path'
 import { menubar } from 'menubar'
-import { Menu, app, globalShortcut } from 'electron'
+import {
+  Menu,
+  app,
+  globalShortcut,
+  ipcMain,
+} from 'electron'
 import activeWin from 'active-win'
 import windowShortcuts from 'window-shortcuts'
 import Store from './Store'
@@ -12,7 +17,18 @@ export default new class {
 
   constructor() {
     this.mainWindow = null
-    this.shortcut = 'Command+M'
+  }
+
+  getShortcut() {
+    const electronKeyMap = {
+      Meta: 'Command',
+    }
+
+    const shortcut = Store.get('shortcut')
+      .map(key => (electronKeyMap[key] ? electronKeyMap[key] : key))
+      .join('+')
+
+    return shortcut
   }
 
   create() {
@@ -117,16 +133,14 @@ export default new class {
       }
     })
 
-    globalShortcut.register(this.shortcut, () => {
-      if (this.isWindowVisible(this.menubar.window)) {
-        this.hide()
-      } else {
-        this.show()
-      }
+    this.addShortcutListener()
+
+    ipcMain.on('shortcutChanged', () => {
+      this.addShortcutListener()
     })
 
     app.on('will-quit', () => {
-      globalShortcut.unregister(this.shortcut)
+      globalShortcut.unregisterAll()
     })
   }
 
@@ -152,6 +166,21 @@ export default new class {
     }
 
     this.menubar.hideWindow()
+  }
+
+  addShortcutListener() {
+    // unregister previously added event listener
+    globalShortcut.unregisterAll()
+
+    const shortcut = this.getShortcut()
+
+    globalShortcut.register(shortcut, () => {
+      if (this.isWindowVisible(this.menubar.window)) {
+        this.hide()
+      } else {
+        this.show()
+      }
+    })
   }
 
 }()

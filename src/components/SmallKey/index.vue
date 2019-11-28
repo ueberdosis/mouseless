@@ -1,5 +1,5 @@
 <template>
-  <div class="small-key">
+  <div class="small-key" :title="name">
     {{ name | key | uppercase }}
   </div>
 </template>

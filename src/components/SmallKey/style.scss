@@ -13,4 +13,8 @@
   background-color: rgba($colorWhite, 0.1);
   margin-left: 4px;
   transition: color 0.1s $ease;
+
+  &:first-child {
+    margin-left: 0;
+  }
 }

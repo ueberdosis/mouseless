@@ -38,14 +38,9 @@
             <span>
               Show in menu bar
             </span>
-            <button
-              class="options-overlay__restart"
-              type="button"
-              @click="restart"
-              v-if="showMenubarRestartButton"
-            >
+            <btn @click.native="restart" is-red-text v-if="showMenubarRestartButton">
               Restart App
-            </button>
+            </btn>
           </label>
         </div>
       </div>
@@ -55,13 +50,26 @@
           Shortcut
         </div>
         <div>
-          <label class="options-overlay__label">
-            <span>
-              Toggle Mouseless
-              <small-key name="Meta" />
-              <small-key name="m" />
+          <template v-if="isListening">
+            <span class="grey">
+              Press any shortcut…
             </span>
-          </label>
+            <btn @click.native="cancelListening">
+              Cancel
+            </btn>
+          </template>
+          <template v-else>
+            <span>
+              <small-key
+                v-for="key in shortcut"
+                :key="key"
+                :name="key"
+              />
+            </span>
+            <btn @click.native="listenToNewShortcut">
+              Change
+            </btn>
+          </template>
         </div>
       </div>
 
@@ -75,14 +83,9 @@
             <span>
               Show in dock
             </span>
-            <button
-              class="options-overlay__restart"
-              type="button"
-              @click="restart"
-              v-if="showDockIconRestartButton"
-            >
+            <btn @click.native="restart" is-red-text v-if="showDockIconRestartButton">
               Restart App
-            </button>
+            </btn>
           </label>
         </div>
       </div>
@@ -119,8 +122,9 @@
 </template>
 
 <script>
-import { remote } from 'electron'
+import { remote, ipcRenderer } from 'electron'
 import Event from '@/services/Event'
+import Keyboard from '@/services/Keyboard'
 import Btn from '@/components/Btn'
 import Store from '@/services/Store'
 import SmallKey from '@/components/SmallKey'
@@ -141,6 +145,8 @@ export default {
       autoStart: Store.get('autoStart', true),
       showDockIconRestartButton: false,
       showMenubarRestartButton: false,
+      keyboard: null,
+      shortcut: Store.get('shortcut'),
     }
   },
 
@@ -168,6 +174,10 @@ export default {
     licenseEmail() {
       return this.$db.verification.purchase.email
     },
+
+    isListening() {
+      return !!this.keyboard
+    },
   },
 
   methods: {
@@ -192,6 +202,23 @@ export default {
     restart() {
       remote.app.relaunch()
       remote.app.exit(0)
+    },
+
+    listenToNewShortcut() {
+      this.keyboard = new Keyboard()
+
+      this.keyboard.on('shortcut', event => {
+        event.preventDefault()
+        Store.set('shortcut', this.keyboard.resolvedKeys)
+        ipcRenderer.send('shortcutChanged')
+        this.shortcut = this.keyboard.resolvedKeys
+        this.cancelListening()
+      })
+    },
+
+    cancelListening() {
+      this.keyboard.destroy()
+      this.keyboard = null
     },
   },
 }

@@ -81,6 +81,10 @@ textarea {
   text-overflow: ellipsis;
 }
 
+.grey {
+  color: rgba($colorWhite, 0.5);
+}
+
 .route {
   width: 100%;
   border-radius: 4px;

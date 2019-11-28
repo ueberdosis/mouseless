@@ -13,5 +13,8 @@ export default new Store({
     '1.0.0': store => {
       store.clear()
     },
+    '1.1.0': store => {
+      store.set('shortcut', ['Meta', 'Shift', 'm'])
+    },
   },
 })
