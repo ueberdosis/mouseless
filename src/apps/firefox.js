@@ -82,18 +82,6 @@ export default {
           title: 'Save Page As',
           keys: ['Meta', 's'],
         },
-        {
-          title: 'Zoom In',
-          keys: ['Meta', '+'],
-        },
-        {
-          title: 'Zoom Out',
-          keys: ['Meta', '-'],
-        },
-        {
-          title: 'Zoom Reset',
-          keys: ['Meta', '0'],
-        },
       ],
     },
     {
@@ -307,6 +295,28 @@ export default {
       ],
     },
     {
+      title: 'Layout',
+      id: 'layout',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Zoom In',
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
+        },
+        {
+          title: 'Zoom Out',
+          keys: ['Meta', '-'],
+        },
+        {
+          title: 'Zoom Reset',
+          keys: ['Meta', '0'],
+        },
+      ],
+    },
+    {
       title: 'History',
       id: 'history',
       version: 1,
@@ -362,52 +372,12 @@ export default {
           keys: ['Meta', 'Shift', 'a'],
         },
         {
-          title: 'Toggle Developer Tools',
-          keys: ['Meta', 'Alt', 'i'],
-        },
-        {
-          title: 'Web Console',
-          keys: ['Meta', 'Alt', 'k'],
-        },
-        {
-          title: 'Inspector',
-          keys: ['Meta', 'Alt', 'c'],
-        },
-        {
-          title: 'Debugger',
-          keys: ['Meta', 'Alt', 's'],
-        },
-        {
-          title: 'Style Editor',
-          keys: ['Shift', 'F7'],
-        },
-        {
-          title: 'Profiler',
-          keys: ['Shift', 'F5'],
-        },
-        {
-          title: 'Network',
-          keys: ['Meta', 'Alt', 'E'],
-        },
-        {
-          title: 'Developer Toolbar',
-          keys: ['Shift', 'F2'],
-        },
-        {
-          title: 'Responsive Design View',
-          keys: ['Meta', 'Alt', 'm'],
-        },
-        {
           title: 'Scratchpad',
           keys: ['Shift', 'F4'],
         },
         {
           title: 'PageSource',
           keys: ['Meta', 'u'],
-        },
-        {
-          title: 'Browser Console',
-          keys: ['Meta', 'Shift', 'j'],
         },
         {
           title: 'PageInfo',
@@ -575,7 +545,7 @@ export default {
       version: 1,
       shortcuts: [
         {
-          title: 'Open Toolbox',
+          title: 'Toggle Developer Tools',
           keys: ['Meta', 'Alt', 'i'],
         },
         // {
@@ -603,7 +573,7 @@ export default {
           keys: ['Shift', 'F5'],
         },
         {
-          title: 'Open Network Monitor 2',
+          title: 'Open Network Monitor',
           keys: ['Meta', 'Alt', 'e'],
         },
         {
