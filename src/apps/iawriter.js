@@ -50,26 +50,6 @@ export default {
           title: 'Find',
           keys: ['Meta', 'f'],
         },
-        {
-          title: 'Increase Text Size',
-          keys: ['Meta', '+'],
-        },
-        {
-          title: 'Decrease Text Size',
-          keys: ['Meta', '-'],
-        },
-        {
-          title: 'Show Library',
-          keys: ['Meta', 'e'],
-        },
-        {
-          title: 'Show Preview',
-          keys: ['Meta', 'r'],
-        },
-        {
-          title: 'Night Mode',
-          keys: ['Control', 'Meta', 'n'],
-        },
       ],
     },
     {
@@ -167,6 +147,36 @@ export default {
         {
           title: 'End of the document',
           keys: ['Meta', 'ArrowDown'],
+        },
+      ],
+    },
+    {
+      title: 'Layout',
+      id: 'layout',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Show Library',
+          keys: ['Meta', 'e'],
+        },
+        {
+          title: 'Show Preview',
+          keys: ['Meta', 'r'],
+        },
+        {
+          title: 'Night Mode',
+          keys: ['Control', 'Meta', 'n'],
+        },
+        {
+          title: 'Increase Text Size',
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
+        },
+        {
+          title: 'Decrease Text Size',
+          keys: ['Meta', '-'],
         },
       ],
     },
