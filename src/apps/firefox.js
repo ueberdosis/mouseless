@@ -175,8 +175,8 @@ export default {
       ],
     },
     {
-      title: 'Windows & Tabs',
-      id: 'windows',
+      title: 'Tabs',
+      id: 'tabs',
       version: 1,
       shortcuts: [
         {
@@ -184,16 +184,8 @@ export default {
           keys: ['Meta', 'w'],
         },
         {
-          title: 'Close Window',
-          keys: ['Meta', 'Shift', 'w'],
-        },
-        {
           title: 'Cycle through Tabs in Recently Used Order',
           keys: ['Control', 'Tab'],
-        },
-        {
-          title: 'Quit',
-          keys: ['Meta', 'q'],
         },
         {
           title: 'Go one Tab to the Left',
@@ -228,20 +220,24 @@ export default {
           keys: ['Meta', 't'],
         },
         {
-          title: 'New Window',
-          keys: ['Meta', 'n'],
-        },
-        {
-          title: 'New Private Window',
-          keys: ['Meta', 'Shift', 'p'],
-        },
-        {
           title: 'Open Address or Search in New Foreground Tab',
           keys: ['Alt', 'Enter'],
         },
         {
-          title: 'Open Address or Search in New Window',
-          keys: ['Shift', 'Enter'],
+          title: 'Select Tab 1',
+          keys: ['Meta', '1'],
+        },
+        {
+          title: 'Select Tab 8',
+          keys: ['Meta', '8'],
+        },
+        {
+          title: 'Select Last Tab',
+          keys: ['Meta', '9'],
+        },
+        {
+          title: 'Undo Close Tab',
+          keys: ['Meta', 'Shift', 't'],
         },
         // Unrelevant
         // {
@@ -272,29 +268,37 @@ export default {
         //   title: 'Open Focused Link in New Foreground Tab',
         //   keys: ['Meta', 'Shift', 'Enter'],
         // },
+      ],
+    },
+    {
+      title: 'Windows',
+      id: 'windows',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Close Window',
+          keys: ['Meta', 'Shift', 'w'],
+        },
+        {
+          title: 'New Window',
+          keys: ['Meta', 'n'],
+        },
+        {
+          title: 'New Private Window',
+          keys: ['Meta', 'Shift', 'p'],
+        },
+        {
+          title: 'Open Address or Search in New Window',
+          keys: ['Shift', 'Enter'],
+        },
+        // Unrelevant
         // {
         //   title: 'Open Focused Bookmark or Link in New Window',
         //   keys: ['Shift', 'Enter'],
         // },
         {
-          title: 'Undo Close Tab',
-          keys: ['Meta', 'Shift', 't'],
-        },
-        {
           title: 'Undo Close Window',
           keys: ['Meta', 'Shift', 'n'],
-        },
-        {
-          title: 'Select Tab 1',
-          keys: ['Meta', '1'],
-        },
-        {
-          title: 'Select Tab 8',
-          keys: ['Meta', '8'],
-        },
-        {
-          title: 'Select Last Tab',
-          keys: ['Meta', '9'],
         },
         {
           title: 'Moves the URL left or right',
