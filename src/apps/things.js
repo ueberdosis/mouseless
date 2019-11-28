@@ -32,7 +32,7 @@ export default {
         },
         {
           title: 'Create a new project',
-          keys: ['Meta', 'Alt', 'n'],
+          keys: ['Meta', 'Alt', 'n'], // TODO: need to check
         },
         {
           title: 'Open Quick Entry',
@@ -79,7 +79,7 @@ export default {
         },
         {
           title: 'Cancel selected items',
-          keys: ['Meta', 'Alt', '.'],
+          keys: ['Meta', 'Alt', '.'], // TODO: need to check
         },
         {
           title: 'Delete selected items',
@@ -192,11 +192,11 @@ export default {
         },
         {
           title: 'Start date +1 week',
-          keys: ['Control', 'Shift', ']'],
+          keys: ['Control', '}'], // original: ['Control', 'Shift', ']']
         },
         {
           title: 'Start date -1 week',
-          keys: ['Control', 'Shift', '['],
+          keys: ['Control', '{'], // original: ['Control', 'Shift', '[']
         },
         {
           title: 'Direct access to set a Deadline',
@@ -212,11 +212,11 @@ export default {
         },
         {
           title: 'Deadline +1 week',
-          keys: ['Control', 'Shift', '>'],
+          keys: ['Control', 'Shift', '>'], // TODO: need to check
         },
         {
           title: 'Deadline -1 week',
-          keys: ['Control', 'Shift', '<'],
+          keys: ['Control', 'Shift', '<'], // TODO: need to check
         },
         {
           title: 'Make to-do or project repeating',
@@ -235,7 +235,7 @@ export default {
         },
         {
           title: 'Cycle through open windows',
-          keys: ['Meta', 'Shift', '`'],
+          keys: ['Meta', 'Shift', '`'], // TODO: need to check
         },
         {
           title: 'Close current window',
@@ -260,8 +260,8 @@ export default {
       ],
     },
     {
-      title: 'Navigate',
-      id: 'navigate',
+      title: 'Navigation',
+      id: 'navigation',
       version: 1,
       shortcuts: [
         {
