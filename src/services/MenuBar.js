@@ -1,6 +1,6 @@
 import path from 'path'
 import { menubar } from 'menubar'
-import { Menu } from 'electron'
+import { Menu, app, globalShortcut } from 'electron'
 import activeWin from 'active-win'
 import windowShortcuts from 'window-shortcuts'
 import Store from './Store'
@@ -12,6 +12,7 @@ export default new class {
 
   constructor() {
     this.mainWindow = null
+    this.shortcut = 'Command+M'
   }
 
   create() {
@@ -111,16 +112,38 @@ export default new class {
 
     this.menubar.on('after-hide', () => {
       // restore focus of previous app only if there is no main window of mouseless
-      const isMainWindowVisible = !this.mainWindow.isDestroyed() && this.mainWindow.isVisible()
-
-      if (!isMainWindowVisible) {
+      if (!this.isWindowVisible(this.mainWindow)) {
         this.menubar.app.hide()
       }
     })
+
+    globalShortcut.register(this.shortcut, () => {
+      if (this.isWindowVisible(this.menubar.window)) {
+        this.hide()
+      } else {
+        this.show()
+      }
+    })
+
+    app.on('will-quit', () => {
+      globalShortcut.unregister(this.shortcut)
+    })
+  }
+
+  isWindowVisible(window) {
+    return !window.isDestroyed() && window.isVisible()
   }
 
   setMainWindow(win) {
     this.mainWindow = win
+  }
+
+  show() {
+    if (!this.menubar) {
+      return
+    }
+
+    this.menubar.showWindow()
   }
 
   hide() {

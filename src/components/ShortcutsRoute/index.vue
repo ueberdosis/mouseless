@@ -46,13 +46,11 @@
                 {{ shortcut.title }}
               </div>
               <div class="shortcuts-route__shortcut-keys">
-                <div
-                  class="shortcuts-route__shortcut-key"
+                <small-key
                   v-for="key in shortcut.resolvedKeys"
                   :key="key"
-                >
-                  {{ key | key | uppercase }}
-                </div>
+                  :name="key"
+                />
               </div>
             </div>
           </div>
@@ -69,10 +67,12 @@ import uuidv4 from 'uuid/v4'
 import { ipcRenderer } from 'electron'
 import Icon from '@/components/Icon'
 import Keyboard from '@/services/Keyboard'
+import SmallKey from '@/components/SmallKey'
 
 export default {
   components: {
     Icon,
+    SmallKey,
   },
 
   data() {

@@ -49,6 +49,7 @@ export default class Keyboard {
     ['Control', 'ArrowLeft'], // window navigation
     ['Control', 'ArrowRight'], // window navigation
     ['Alt', 'Meta', 'd'], // toggle dock
+    ['Meta', 'm'], // mouseless shortcut
   ]
 
   static keymap = Object

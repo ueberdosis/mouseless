@@ -1,0 +1,16 @@
+.small-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  padding: 0 3px;
+  height: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba($colorWhite, 0.7);
+  line-height: 1;
+  border-radius: 3px;
+  background-color: rgba($colorWhite, 0.1);
+  margin-left: 4px;
+  transition: color 0.1s $ease;
+}

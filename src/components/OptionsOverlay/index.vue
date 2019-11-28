@@ -1,5 +1,5 @@
 <template>
-  <div class="options-overlay">
+  <div class="options-overlay" v-if="verified">
     <div class="options-overlay__header">
       <h2>
         Options
@@ -8,7 +8,7 @@
     </div>
 
     <div class="options-overlay__content">
-      <div class="options-overlay__section" v-if="verified">
+      <div class="options-overlay__section">
         <div>
           Support
         </div>
@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <div class="options-overlay__section" v-if="verified">
+      <div class="options-overlay__section">
         <div>
           License
         </div>
@@ -28,7 +28,44 @@
         </div>
       </div>
 
-      <div class="options-overlay__section" v-if="verified">
+      <div class="options-overlay__section">
+        <div>
+          Menu bar
+        </div>
+        <div>
+          <label class="options-overlay__label">
+            <input type="checkbox" v-model="showMenubar">
+            <span>
+              Show in menu bar
+            </span>
+            <button
+              class="options-overlay__restart"
+              type="button"
+              @click="restart"
+              v-if="showMenubarRestartButton"
+            >
+              Restart App
+            </button>
+          </label>
+        </div>
+      </div>
+
+      <div class="options-overlay__section">
+        <div>
+          Shortcut
+        </div>
+        <div>
+          <label class="options-overlay__label">
+            <span>
+              Toggle Mouseless
+              <small-key name="Meta" />
+              <small-key name="m" />
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="options-overlay__section">
         <div>
           Dock icon
         </div>
@@ -50,29 +87,7 @@
         </div>
       </div>
 
-      <div class="options-overlay__section" v-if="verified">
-        <div>
-          Menubar
-        </div>
-        <div>
-          <label class="options-overlay__label">
-            <input type="checkbox" v-model="showMenubar">
-            <span>
-              Show in menu bar
-            </span>
-            <button
-              class="options-overlay__restart"
-              type="button"
-              @click="restart"
-              v-if="showMenubarRestartButton"
-            >
-              Restart App
-            </button>
-          </label>
-        </div>
-      </div>
-
-      <div class="options-overlay__section" v-if="verified">
+      <div class="options-overlay__section">
         <div>
           Autostart
         </div>
@@ -86,7 +101,7 @@
         </div>
       </div>
 
-      <div class="options-overlay__section" v-if="verified">
+      <div class="options-overlay__section">
         <div>
           Danger Zone
         </div>
@@ -108,12 +123,14 @@ import { remote } from 'electron'
 import Event from '@/services/Event'
 import Btn from '@/components/Btn'
 import Store from '@/services/Store'
+import SmallKey from '@/components/SmallKey'
 
 export default {
   name: 'OptionsOverlay',
 
   components: {
     Btn,
+    SmallKey,
   },
 
   data() {
