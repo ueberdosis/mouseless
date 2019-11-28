@@ -68,7 +68,7 @@ export default {
         },
         {
           title: 'Night Mode',
-          keys: ['⌃', 'Meta', 'n'],
+          keys: ['Control', 'Meta', 'n'],
         },
       ],
     },
@@ -131,7 +131,7 @@ export default {
         },
         {
           title: 'Add Footnote',
-          keys: ['⌃', 'Meta', 'k'],
+          keys: ['Control', 'Meta', 'k'],
         },
         {
           title: 'Clear Styles',
