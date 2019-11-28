@@ -205,11 +205,11 @@ export default {
         },
         {
           title: 'Move Tab Left',
-          keys: ['Ctrl', 'Shift', 'PageUp'],
+          keys: ['Control', 'Shift', 'PageUp'],
         },
         {
           title: 'Move Tab Right',
-          keys: ['Ctrl', 'Shift', 'PageDown'],
+          keys: ['Control', 'Shift', 'PageDown'],
         },
         // {
         //   title: 'Move Tab in focus to start',
@@ -494,22 +494,23 @@ export default {
           title: 'Go to Search Field in Library',
           keys: ['Meta', 'f'],
         },
-        {
-          title: 'Stop Autoscroll Mode',
-          keys: ['Escape'],
-        },
-        {
-          title: 'Cancel Drag-and-Drop Operation',
-          keys: ['Escape'],
-        },
-        {
-          title: 'Clear Search Field in Library or Sidebar',
-          keys: ['Escape'],
-        },
-        {
-          title: 'Close a Menu',
-          keys: ['Escape'],
-        },
+        // duplicates
+        // {
+        //   title: 'Stop Autoscroll Mode',
+        //   keys: ['Escape'],
+        // },
+        // {
+        //   title: 'Cancel Drag-and-Drop Operation',
+        //   keys: ['Escape'],
+        // },
+        // {
+        //   title: 'Clear Search Field in Library or Sidebar',
+        //   keys: ['Escape'],
+        // },
+        // {
+        //   title: 'Close a Menu',
+        //   keys: ['Escape'],
+        // },
       ],
     },
     {
