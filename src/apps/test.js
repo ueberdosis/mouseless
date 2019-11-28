@@ -2,7 +2,6 @@
 export default {
   id: 'test',
   title: 'Test',
-  systemTitle: null,
   debug: true,
   category: 'Test',
   sets: [

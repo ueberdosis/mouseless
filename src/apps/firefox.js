@@ -4,7 +4,6 @@
 export default {
   id: 'firefox',
   title: 'Firefox',
-  systemTitle: 'Firefox',
   category: 'Utility',
   sets: [
     {

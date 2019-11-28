@@ -3,7 +3,6 @@
 export default {
   id: 'googledocs',
   title: 'Google Docs',
-  systemTitle: null,
   category: 'Productivity',
   sets: [
     {

@@ -2,8 +2,7 @@
 // https://code.visualstudio.com/docs/getstarted/keybindings#_basic-editing
 export default {
   id: 'vscode',
-  title: 'VS Code',
-  systemTitle: 'Code',
+  title: 'Code',
   category: 'Development',
   sets: [
     {

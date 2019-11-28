@@ -3,7 +3,6 @@
 export default {
   id: 'iawriter',
   title: 'iA Writer',
-  systemTitle: 'iA Writer',
   category: 'Productivity',
   sets: [
     {

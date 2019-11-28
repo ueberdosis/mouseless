@@ -3,7 +3,6 @@
 export default {
   id: 'slack',
   title: 'Slack',
-  systemTitle: 'Slack',
   category: 'Communication',
   sets: [
     {

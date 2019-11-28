@@ -7,7 +7,7 @@
       <div class="shortcuts-route__header-bar">
         <div class="shortcuts-route__title">
           <img class="shortcuts-route__logo" :src="logo" v-if="logo">
-          {{ title || 'Mouseless' }}
+          {{ appTitle || 'Mouseless' }}
         </div>
         <button class="shortcuts-route__maximize" @click="maximize">
           <icon name="maximize" />
@@ -79,14 +79,14 @@ export default {
     return {
       loading: true,
       activeWindow: null,
-      systemTitle: null,
+      title: null,
       query: null,
     }
   },
 
   computed: {
-    title() {
-      return this.app ? this.app.title : this.systemTitle
+    appTitle() {
+      return this.app ? this.app.title : this.title
     },
 
     logo() {
@@ -98,11 +98,11 @@ export default {
     },
 
     app() {
-      if (!this.systemTitle) {
+      if (!this.title) {
         return null
       }
 
-      return this.$db.apps.find(app => app.systemTitle === this.systemTitle)
+      return this.$db.apps.find(app => app.title === this.title)
     },
 
     sets() {
@@ -150,7 +150,7 @@ export default {
     },
 
     showPlaceholder() {
-      return this.systemTitle === 'Mouseless'
+      return this.title === 'Mouseless'
     },
   },
 
@@ -168,7 +168,7 @@ export default {
     onActiveWindow(event, activeWindow) {
       this.loading = false
       this.activeWindow = activeWindow
-      this.systemTitle = activeWindow.app
+      this.title = activeWindow.app
 
       this.$nextTick(() => {
         if (this.$refs.search) {

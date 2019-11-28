@@ -3,7 +3,6 @@
 export default {
   id: 'things',
   title: 'Things',
-  systemTitle: 'Things',
   category: 'Productivity',
   sets: [
     {

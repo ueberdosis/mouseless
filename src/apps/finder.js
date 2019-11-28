@@ -3,7 +3,6 @@
 export default {
   id: 'finder',
   title: 'Finder',
-  systemTitle: 'Finder',
   category: 'Utility',
   sets: [
     {

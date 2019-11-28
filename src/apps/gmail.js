@@ -3,7 +3,6 @@
 export default {
   id: 'gmail',
   title: 'Gmail',
-  systemTitle: null,
   category: 'Communication',
   sets: [
     {

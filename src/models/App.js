@@ -16,11 +16,6 @@ export default {
       default: null,
     },
 
-    systemTitle: {
-      type: String,
-      default: null,
-    },
-
     category: {
       type: String,
       default: 'App',
