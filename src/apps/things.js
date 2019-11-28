@@ -32,7 +32,7 @@ export default {
         },
         {
           title: 'Create a new project',
-          keys: ['Meta', 'Alt', 'n'], // TODO: need to check
+          keys: ['Meta', 'Alt', 'n'],
         },
         {
           title: 'Open Quick Entry',
@@ -79,7 +79,7 @@ export default {
         },
         {
           title: 'Cancel selected items',
-          keys: ['Meta', 'Alt', '.'], // TODO: need to check
+          keys: ['Meta', 'Alt', '.'],
         },
         {
           title: 'Delete selected items',
@@ -212,11 +212,11 @@ export default {
         },
         {
           title: 'Deadline +1 week',
-          keys: ['Control', 'Shift', '>'], // TODO: need to check
+          keys: ['Control', 'Shift', '.'],
         },
         {
           title: 'Deadline -1 week',
-          keys: ['Control', 'Shift', '<'], // TODO: need to check
+          keys: ['Control', 'Shift', ','],
         },
         {
           title: 'Make to-do or project repeating',
@@ -235,7 +235,7 @@ export default {
         },
         {
           title: 'Cycle through open windows',
-          keys: ['Meta', 'Shift', '`'], // TODO: need to check
+          keys: ['Meta', 'Shift', '<'], // original ['Meta', 'Shift', '`']
         },
         {
           title: 'Close current window',
