@@ -30,23 +30,6 @@
 
       <div class="options-overlay__section">
         <div>
-          Menu bar
-        </div>
-        <div>
-          <label class="options-overlay__label">
-            <input type="checkbox" v-model="showMenubar">
-            <span>
-              Show in menu bar
-            </span>
-            <btn @click.native="restart" is-red-text v-if="showMenubarRestartButton">
-              Restart App
-            </btn>
-          </label>
-        </div>
-      </div>
-
-      <div class="options-overlay__section">
-        <div>
           Shortcut
         </div>
         <div>
@@ -70,6 +53,23 @@
               Change
             </btn>
           </template>
+        </div>
+      </div>
+
+      <div class="options-overlay__section">
+        <div>
+          Menu bar
+        </div>
+        <div>
+          <label class="options-overlay__label">
+            <input type="checkbox" v-model="showMenubar">
+            <span>
+              Show in menu bar
+            </span>
+            <btn @click.native="restart" is-red-text v-if="showMenubarRestartButton">
+              Restart App
+            </btn>
+          </label>
         </div>
       </div>
 
