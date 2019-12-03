@@ -140,7 +140,7 @@ export default {
         },
         {
           title: 'Pen tool',
-          keys: ['P'],
+          keys: ['p'],
         },
         {
           title: 'Type tool',
@@ -177,22 +177,6 @@ export default {
         {
           title: 'Toggle Standard/Quick Mask modes',
           keys: ['q'],
-        },
-        {
-          title: 'Content-Aware Move tool',
-          keys: ['j'],
-        },
-        {
-          title: 'Perspective Crop tool',
-          keys: ['c'],
-        },
-        {
-          title: 'Artboard tool',
-          keys: ['v'],
-        },
-        {
-          title: 'Rotate View tool',
-          keys: ['r'],
         },
         {
           title: 'Toggle Preserve Transparency',
@@ -254,14 +238,6 @@ export default {
           keys: ['Shift', 'f'],
         },
         {
-          title: 'Toggle forward canvas color',
-          keys: ['Space', 'f'],
-        },
-        {
-          title: 'Toggle backward canvas color',
-          keys: ['Space', 'Shift', 'f'],
-        },
-        {
           title: 'Magnify 100%',
           keys: ['Meta', '1'],
         },
@@ -300,13 +276,13 @@ export default {
       ],
     },
     {
-      title: 'View Images',
-      id: 'images',
+      title: 'Puppet Warp',
+      id: 'puppet',
       version: 1,
       shortcuts: [
         {
           title: 'Cancel completely',
-          keys: ['Esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Undo last pin adjustment',
@@ -349,7 +325,7 @@ export default {
         },
         {
           title: 'Toggle between original selection & refined version',
-          keys: ['P'],
+          keys: ['p'],
         },
         {
           title: 'Toggle radius preview',
@@ -603,7 +579,7 @@ export default {
         },
         {
           title: 'Cancel',
-          keys: ['Esc'],
+          keys: ['Escape'],
         },
         {
           title: 'Free transform with duplicate data',
@@ -762,10 +738,6 @@ export default {
         {
           title: 'Luminosity',
           keys: ['Shift', 'Alt', 'y'],
-        },
-        {
-          title: 'Set blending mode to Threshold',
-          keys: ['Shift', 'Alt', 'n'],
         },
       ],
     },
