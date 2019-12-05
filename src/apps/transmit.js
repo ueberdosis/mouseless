@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://library.panic.com/transmit/transmit5/shortcuts/
-export default {
+module.exports = {
   id: 'transmit',
   title: 'Transmit',
   category: 'Utility',
@@ -214,30 +214,30 @@ export default {
           title: 'Back',
           keys: ['Meta', '['],
         },
-          {
-            title: 'Forward',
-            keys: ['Meta', ']'],
-          },
-          {
-            title: 'Enclosing Folder',
-            keys: ['Meta', 'ArrowUp'],
-          },
-          {
-            title: 'Go to Folder…',
-            keys: ['Alt', 'Meta', 'g'],
-          },
-          {
-            title: 'Open in Terminal',
-            keys: ['Alt', 'Meta', 't'],
-          },
-          {
-            title: 'Link Folder Navigation',
-            keys: ['Shift', 'Meta', 'l'],
-          },
-          {
-            title: 'Connect To > Last Used Protocol',
-            keys: ['Meta', 'k'],
-          },
+        {
+          title: 'Forward',
+          keys: ['Meta', ']'],
+        },
+        {
+          title: 'Enclosing Folder',
+          keys: ['Meta', 'ArrowUp'],
+        },
+        {
+          title: 'Go to Folder…',
+          keys: ['Alt', 'Meta', 'g'],
+        },
+        {
+          title: 'Open in Terminal',
+          keys: ['Alt', 'Meta', 't'],
+        },
+        {
+          title: 'Link Folder Navigation',
+          keys: ['Shift', 'Meta', 'l'],
+        },
+        {
+          title: 'Connect To > Last Used Protocol',
+          keys: ['Meta', 'k'],
+        },
       ],
     },
     {
