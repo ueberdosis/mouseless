@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://www.sketch.com/docs/shortcuts/
-export default {
+module.exports = {
   id: 'sketch',
   title: 'Sketch',
   category: 'Design',

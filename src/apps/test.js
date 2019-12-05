@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-export default {
+module.exports = {
   id: 'test',
   title: 'Test',
   debug: true,
