@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://university.webflow.com/article/keyboard-shortcuts-in-the-webflow-designer
-export default {
+module.exports = {
   id: 'webflow',
   title: 'Webflow',
   systemTitle: 'Webflow',
