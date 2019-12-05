@@ -80,6 +80,9 @@
             :learned-count="learnedIds.length"
             :count="shortcuts.length"
           />
+          <btn is-grey-text @click.native="skip">
+            Skip
+          </btn>
         </div>
       </div>
     </template>
@@ -118,6 +121,7 @@ export default {
       run: null,
       trainedIds: [],
       learnedIds: [],
+      skippedIds: [],
       currentShortcut: null,
       testId: uuidv4(),
       isTest: false,
@@ -153,6 +157,10 @@ export default {
 
     learnedShortcuts() {
       return this.learnedIds.map(id => this.shortcuts.find(shortcut => shortcut.id === id))
+    },
+
+    skippedShortcuts() {
+      return this.skippedIds.map(id => this.shortcuts.find(shortcut => shortcut.id === id))
     },
 
     started() {
@@ -213,6 +221,11 @@ export default {
       this.next()
     },
 
+    skip() {
+      this.addToSkippedIds(this.currentShortcut.id)
+      this.next()
+    },
+
     next() {
       this.testId = uuidv4()
       this.testFailed = false
@@ -223,6 +236,7 @@ export default {
       this.run.update({
         trainedIds: this.trainedIds,
         learnedIds: this.learnedIds,
+        skippedIds: this.skippedIds,
       })
 
       if (this.finished) {
@@ -251,6 +265,10 @@ export default {
     addToLearnedIds(id) {
       this.learnedIds = collect(this.learnedIds).push(id).unique().toArray()
       this.trainedIds = this.trainedIds.filter(trainedId => trainedId !== id)
+    },
+
+    addToSkippedIds(id) {
+      this.skippedIds = collect(this.skippedIds).push(id).unique().toArray()
     },
 
     setupRun() {
