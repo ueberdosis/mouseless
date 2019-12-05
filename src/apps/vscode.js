@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://code.visualstudio.com/docs/getstarted/keybindings#_basic-editing
-export default {
+module.exports = {
   id: 'vscode',
   title: 'Code',
   category: 'Development',
