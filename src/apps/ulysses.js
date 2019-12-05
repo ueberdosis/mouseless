@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://ulysses.app/tutorials/shortcuts
-export default {
+module.exports = {
   id: 'ulysses',
   title: 'Ulysses',
   category: 'Productivity',
