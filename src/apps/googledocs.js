@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://support.google.com/docs/answer/179738?co=GENIE.Platform%3DDesktop&hl=en
-export default {
+module.exports = {
   id: 'googledocs',
   title: 'Google Docs',
   category: 'Productivity',

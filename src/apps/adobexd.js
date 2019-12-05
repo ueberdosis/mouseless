@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://helpx.adobe.com/xd/help/keyboard-shortcuts.html
-export default {
+module.exports = {
   id: 'adobexd',
   title: 'Adobe XD',
   category: 'Design',

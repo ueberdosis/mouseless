@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://ia.net/writer/support/general/keyboard
-export default {
+module.exports = {
   id: 'iawriter',
   title: 'iA Writer',
   category: 'Productivity',
