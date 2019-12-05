@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://helpx.adobe.com/photoshop/using/default-keyboard-shortcuts.html
-export default {
+module.exports = {
   id: 'photoshop',
   title: 'Photoshop',
   systemTitle: 'Photoshop',
