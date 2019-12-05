@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://bear.app/faq/Shortcuts%20and%20more/Mac%20shortcuts/
-export default {
+module.exports = {
   id: 'bear',
   title: 'Bear',
   category: 'Productivity',

@@ -38,7 +38,7 @@ export default new class {
     const context = require.context('@/apps', true, /\.(js)$/)
     const apps = context
       .keys()
-      .map(filename => context(filename).default)
+      .map(filename => context(filename))
       .filter(data => {
         const debug = typeof data.debug === 'undefined' ? false : data.debug
 

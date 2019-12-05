@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // https://support.google.com/chrome/answer/157179?hl=en
-export default {
+module.exports = {
   id: 'chrome',
   title: 'Google Chrome',
   category: 'Utility',
