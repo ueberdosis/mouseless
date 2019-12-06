@@ -1,7 +1,12 @@
 <template>
   <button
     class="button"
-    :class="{ 'is-yellow': isYellow, 'is-red': isRed, 'is-red-text': isRedText }"
+    :class="{
+      'is-yellow': isYellow,
+      'is-red': isRed,
+      'is-red-text': isRedText,
+      'is-grey-text': isGreyText,
+    }"
     type="button"
   >
     <icon class="button__icon" :name="icon" v-if="icon" />
@@ -38,6 +43,11 @@ export default {
     },
 
     isRedText: {
+      default: false,
+      type: Boolean,
+    },
+
+    isGreyText: {
       default: false,
       type: Boolean,
     },

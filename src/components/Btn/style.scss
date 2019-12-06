@@ -44,6 +44,15 @@
     padding: 0;
   }
 
+  &.is-grey-text {
+    background-color: transparent;
+
+    &:hover {
+      color: rgba($colorWhite, 1);
+      background-color: rgba($colorWhite, 0.12);
+    }
+  }
+
   &__icon + &__content {
     margin-left: 2px;
   }

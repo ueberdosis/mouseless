@@ -80,6 +80,7 @@
             :learned-count="learnedIds.length"
             :count="shortcuts.length"
           />
+          <skip-button @click.native="skip" />
         </div>
       </div>
     </template>
@@ -92,6 +93,7 @@ import weighted from 'weighted'
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 import Btn from '@/components/Btn'
+import SkipButton from '@/components/SkipButton'
 import Key from '@/components/Key'
 import Page from '@/components/Page'
 import SetProgress from '@/components/SetProgress'
@@ -104,6 +106,7 @@ export default {
     Key,
     Page,
     SetProgress,
+    SkipButton,
   },
 
   data() {
@@ -118,6 +121,7 @@ export default {
       run: null,
       trainedIds: [],
       learnedIds: [],
+      skippedIds: [],
       currentShortcut: null,
       testId: uuidv4(),
       isTest: false,
@@ -137,8 +141,13 @@ export default {
       return this.app.set(this.$route.params.setId)
     },
 
-    shortcuts() {
+    unfilteredShortcuts() {
       return this.app.shortcutsBySet(this.$route.params.setId)
+    },
+
+    shortcuts() {
+      return this.unfilteredShortcuts
+        .filter(shortcut => !this.skippedIds.includes(shortcut.id))
     },
 
     unseenShortcuts() {
@@ -213,6 +222,11 @@ export default {
       this.next()
     },
 
+    skip() {
+      this.addToSkippedIds(this.currentShortcut.id)
+      this.next()
+    },
+
     next() {
       this.testId = uuidv4()
       this.testFailed = false
@@ -223,10 +237,13 @@ export default {
       this.run.update({
         trainedIds: this.trainedIds,
         learnedIds: this.learnedIds,
+        skippedIds: this.skippedIds,
       })
 
       if (this.finished) {
-        this.run.finish()
+        if (this.skippedIds.length === 0) {
+          this.run.finish()
+        }
         this.stop()
       } else {
         this.setShortcut()
@@ -251,6 +268,10 @@ export default {
     addToLearnedIds(id) {
       this.learnedIds = collect(this.learnedIds).push(id).unique().toArray()
       this.trainedIds = this.trainedIds.filter(trainedId => trainedId !== id)
+    },
+
+    addToSkippedIds(id) {
+      this.skippedIds = collect(this.skippedIds).push(id).unique().toArray()
     },
 
     setupRun() {
@@ -358,4 +379,4 @@ export default {
 }
 </script>
 
-<style lang="scss" src="./style.scss" ></style>
+<style lang="scss" src="./style.scss"></style>
