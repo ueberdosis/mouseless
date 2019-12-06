@@ -45,6 +45,11 @@ export default {
       default: () => ([]),
     },
 
+    skippedIds: {
+      type: Array,
+      default: () => ([]),
+    },
+
     locale: {
       type: String,
       default: null,
