@@ -4,6 +4,7 @@ module.exports = {
   id: 'trello',
   title: 'Trello',
   category: 'Productivity',
+  description: null,
   sets: [
     {
       title: 'Essentials',

@@ -4,6 +4,7 @@ module.exports = {
   id: 'macos',
   title: 'macOS',
   category: 'Utility',
+  description: null,
   sets: [
     {
       title: 'Essentials',

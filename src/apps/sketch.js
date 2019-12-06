@@ -4,6 +4,7 @@ module.exports = {
   id: 'sketch',
   title: 'Sketch',
   category: 'Design',
+  description: null,
   sets: [
     {
       title: 'Essentials',

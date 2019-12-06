@@ -4,6 +4,7 @@ module.exports = {
   title: 'Test',
   debug: true,
   category: 'Test',
+  description: null,
   sets: [
     {
       title: 'Test',

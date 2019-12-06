@@ -4,6 +4,7 @@ module.exports = {
   id: 'iawriter',
   title: 'iA Writer',
   category: 'Productivity',
+  description: null,
   sets: [
     {
       title: 'Essentials',

@@ -5,6 +5,7 @@ module.exports = {
   id: 'firefox',
   title: 'Firefox',
   category: 'Utility',
+  description: null,
   sets: [
     {
       title: 'Navigation',

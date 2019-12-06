@@ -4,6 +4,7 @@ module.exports = {
   id: 'finder',
   title: 'Finder',
   category: 'Utility',
+  description: null,
   sets: [
     {
       title: 'Essentials',

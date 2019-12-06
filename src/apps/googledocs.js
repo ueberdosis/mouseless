@@ -4,6 +4,7 @@ module.exports = {
   id: 'googledocs',
   title: 'Google Docs',
   category: 'Productivity',
+  description: null,
   sets: [
     {
       title: 'Essentials',

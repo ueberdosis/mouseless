@@ -4,6 +4,7 @@ module.exports = {
   id: 'gmail',
   title: 'Gmail',
   category: 'Communication',
+  description: null,
   sets: [
     {
       title: 'Essentials',

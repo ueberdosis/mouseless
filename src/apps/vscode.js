@@ -4,6 +4,7 @@ module.exports = {
   id: 'vscode',
   title: 'Code',
   category: 'Development',
+  description: null,
   sets: [
     {
       title: 'Essentials',

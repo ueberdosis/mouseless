@@ -4,6 +4,7 @@ module.exports = {
   id: 'slack',
   title: 'Slack',
   category: 'Communication',
+  description: null,
   sets: [
     {
       title: 'Navigation',

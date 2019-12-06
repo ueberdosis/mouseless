@@ -4,6 +4,7 @@ module.exports = {
   id: 'adobexd',
   title: 'Adobe XD',
   category: 'Design',
+  description: null,
   sets: [
     {
       title: 'Essentials',

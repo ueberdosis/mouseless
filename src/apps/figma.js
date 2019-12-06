@@ -4,6 +4,7 @@ module.exports = {
   id: 'figma',
   title: 'Figma',
   category: 'Design',
+  description: null,
   sets: [
     {
       title: 'Essentials',

@@ -4,6 +4,7 @@ module.exports = {
   id: 'chrome',
   title: 'Google Chrome',
   category: 'Utility',
+  description: null,
   sets: [
     {
       title: 'Essentials',

@@ -4,6 +4,7 @@ module.exports = {
   id: 'things',
   title: 'Things',
   category: 'Productivity',
+  description: null,
   sets: [
     {
       title: 'Create new items',

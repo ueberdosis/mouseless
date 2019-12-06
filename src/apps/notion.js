@@ -4,6 +4,7 @@ module.exports = {
   id: 'notion',
   title: 'Notion',
   category: 'Productivity',
+  description: null,
   sets: [
     {
       title: 'Essentials',
