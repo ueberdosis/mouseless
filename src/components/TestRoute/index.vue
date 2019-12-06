@@ -141,8 +141,13 @@ export default {
       return this.app.set(this.$route.params.setId)
     },
 
-    shortcuts() {
+    unfilteredShortcuts() {
       return this.app.shortcutsBySet(this.$route.params.setId)
+    },
+
+    shortcuts() {
+      return this.unfilteredShortcuts
+        .filter(shortcut => !this.skippedIds.includes(shortcut.id))
     },
 
     unseenShortcuts() {
@@ -157,10 +162,6 @@ export default {
 
     learnedShortcuts() {
       return this.learnedIds.map(id => this.shortcuts.find(shortcut => shortcut.id === id))
-    },
-
-    skippedShortcuts() {
-      return this.skippedIds.map(id => this.shortcuts.find(shortcut => shortcut.id === id))
     },
 
     started() {
@@ -240,7 +241,9 @@ export default {
       })
 
       if (this.finished) {
-        this.run.finish()
+        if (this.skippedIds.length === 0) {
+          this.run.finish()
+        }
         this.stop()
       } else {
         this.setShortcut()
