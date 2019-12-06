@@ -109,7 +109,7 @@ export default {
     bestRunBySet(id = null) {
       return collect(this.runs)
         .filter(run => run.setId === id)
-        .sortBy('learnedIds')
+        .sortByDesc(set => set.learnedIds.length)
         .first()
     },
 

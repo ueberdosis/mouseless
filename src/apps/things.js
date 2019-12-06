@@ -34,14 +34,15 @@ module.exports = {
           title: 'Create a new project',
           keys: ['Meta', 'Alt', 'n'],
         },
-        {
-          title: 'Open Quick Entry',
-          keys: ['Control', 'Space'],
-        },
-        {
-          title: 'Open Quick Entry with Autofill',
-          keys: ['Alt', 'Control', 'Space'],
-        },
+        // mouseless can't block these shortcuts
+        // {
+        //   title: 'Open Quick Entry',
+        //   keys: ['Control', 'Space'],
+        // },
+        // {
+        //   title: 'Open Quick Entry with Autofill',
+        //   keys: ['Alt', 'Control', 'Space'],
+        // },
       ],
     },
     {
