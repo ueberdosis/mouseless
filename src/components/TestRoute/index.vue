@@ -80,9 +80,7 @@
             :learned-count="learnedIds.length"
             :count="shortcuts.length"
           />
-          <btn is-grey-text @click.native="skip">
-            Skip
-          </btn>
+          <skip-button @click.native="skip" />
         </div>
       </div>
     </template>
@@ -95,6 +93,7 @@ import weighted from 'weighted'
 import collect from 'collect.js'
 import Keyboard from '@/services/Keyboard'
 import Btn from '@/components/Btn'
+import SkipButton from '@/components/SkipButton'
 import Key from '@/components/Key'
 import Page from '@/components/Page'
 import SetProgress from '@/components/SetProgress'
@@ -107,6 +106,7 @@ export default {
     Key,
     Page,
     SetProgress,
+    SkipButton,
   },
 
   data() {
@@ -379,4 +379,4 @@ export default {
 }
 </script>
 
-<style lang="scss" src="./style.scss" ></style>
+<style lang="scss" src="./style.scss"></style>

@@ -1,0 +1,33 @@
+.skip-button {
+
+  display: inline-flex;
+  align-items: center;
+  color: rgba($colorWhite, 0.5);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 6px;
+  border-radius: 6px;
+  background-color: transparent;
+  transition: color 0.2s $ease, background-color 0.2s $ease;
+
+  &:hover {
+    color: rgba($colorWhite, 1);
+    background-color: rgba($colorWhite, 0.08);
+  }
+
+  &__label {
+    margin-right: 4px;
+    opacity: 0;
+    transition: opacity 0.2s $ease;
+  }
+
+  &:hover &__label {
+    opacity: 1;
+  }
+
+  &__icon {
+
+  }
+
+}
