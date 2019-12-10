@@ -14,6 +14,12 @@ import MenuBar from './services/MenuBar'
 import AutoStart from './services/AutoStart'
 import Store from './services/Store'
 
+const setapp = require('../setapp-nodejs-wrapper/build/Release/setapp.node')
+
+console.log({ setapp })
+
+console.log('SCCanShowReleaseNotesWindow', setapp.SCCanShowReleaseNotesWindow())
+
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
 
