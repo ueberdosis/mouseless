@@ -5,10 +5,6 @@ import CleanUp from '@/services/CleanUp'
 import HealthCheck from '@/services/HealthCheck'
 import Keyboard from '@/services/Keyboard'
 import Wrapper from '@/components/Wrapper'
-import Setapp from '@/services/Setapp'
-
-console.log('Setapp.isActive', Setapp.isActive)
-
 
 Vue.config.productionTip = false
 Vue.prototype.$db = DB
