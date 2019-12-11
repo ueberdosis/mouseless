@@ -13,12 +13,11 @@ import MenuBuilder from './services/MenuBuilder'
 import MenuBar from './services/MenuBar'
 import AutoStart from './services/AutoStart'
 import Store from './services/Store'
+import Setapp from './services/Setapp'
 
-const setapp = require('../setapp-nodejs-wrapper/build/Release/setapp.node')
+Setapp.init()
 
-console.log({ setapp })
-
-console.log('SCCanShowReleaseNotesWindow', setapp.SCCanShowReleaseNotesWindow())
+console.log('setapp is active', Setapp.isActive)
 
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
@@ -75,6 +74,7 @@ function createWindow() {
     win = null
   })
 
+  // Setapp.setMainWindow(win)
   MenuBar.setMainWindow(win)
 }
 

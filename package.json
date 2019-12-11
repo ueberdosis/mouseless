@@ -15,7 +15,9 @@
     "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten",
     "electron:build": "yarn electron:generate-icons && vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
-    "electron:publish": "yarn electron:build -p always"
+    "electron:publish": "yarn electron:build -p always",
+    "setapp:start": "cross-env IS_SETAPP=true yarn start",
+    "setapp:build": "cross-env IS_SETAPP=true yarn electron:build"
   },
   "main": "background.js",
   "devDependencies": {
@@ -25,6 +27,7 @@
     "@vue/cli-plugin-eslint": "^4.1.1",
     "@vue/cli-service": "^4.1.1",
     "babel-eslint": "^10.0.1",
+    "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
     "electron": "5.0.12",
     "electron-icon-builder": "^1.0.1",
