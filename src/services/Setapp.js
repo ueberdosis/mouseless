@@ -1,36 +1,29 @@
-import { app, ipcMain } from 'electron'
+import { app, BrowserWindow } from 'electron'
 
 export default new class {
 
   constructor() {
+    this.heartBeatInterval = 1000
     this.isActive = !!process.env.IS_SETAPP
+    this.beforeQuit = false
 
     this.reportUsageEvent('launch')
 
-    app.on('window-all-closed', () => {
-      console.log('event:window-all-closed')
-    })
+    this.startHeartBeat()
 
-    app.on('activate', () => {
-      console.log('event:activate')
+    app.on('browser-window-focus', () => {
+      this.reportUsageEvent('activate')
     })
 
     app.on('browser-window-blur', () => {
-      console.log('event:browser-window-blur')
-    })
-
-    app.on('browser-window-focus', () => {
-      console.log('event:browser-window-focus')
+      if (!this.visibleWindows.length) {
+        this.reportUsageEvent('deactivate')
+      }
     })
 
     app.on('before-quit', () => {
-      console.log('event:before-quit')
-
       this.reportUsageEvent('terminate')
-    })
-
-    ipcMain.on('showMainWindow', () => {
-      console.log('event:showMainWindow')
+      this.beforeQuit = true
     })
   }
 
@@ -40,17 +33,53 @@ export default new class {
     }
 
     this.setapp = require('../../setapp-nodejs-wrapper/build/Release/setapp.node')
-    console.log({ setapp: this.setapp })
+    // console.log({ setapp: this.setapp })
+  }
+
+  setMainWindow(win) {
+    this.mainWindow = win
+
+    this.mainWindow.on('close', () => {
+      this.reportUsageEvent('deactivate')
+    })
+
+    this.mainWindow.on('hide', () => {
+      this.reportUsageEvent('deactivate')
+    })
+  }
+
+  get visibleWindows() {
+    return BrowserWindow
+      .getAllWindows()
+      .filter(window => {
+        if (window.isDestroyed()) {
+          return false
+        }
+
+        return window.isFocused() || window.webContents.isDevToolsFocused()
+      })
+  }
+
+  startHeartBeat() {
+    if (!this.isActive) {
+      return
+    }
+
+    setInterval(() => {
+      if (this.visibleWindows.length) {
+        this.reportUsageEvent('heart-beat-active')
+      } else {
+        this.reportUsageEvent('heart-beat-inactive')
+      }
+    }, this.heartBeatInterval)
   }
 
   reportUsageEvent(name = null) {
-    console.log('send event:', name)
+    if (!this.isActive || this.beforeQuit || !name) {
+      return
+    }
 
-    // if (!this.isActive || !name) {
-    //   return
-    // }
-
-    // this.setapp.SCReportUsageEvent(name)
+    this.setapp.SCReportUsageEvent(name)
   }
 
 }()

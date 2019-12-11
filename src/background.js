@@ -17,8 +17,6 @@ import Setapp from './services/Setapp'
 
 Setapp.init()
 
-console.log('setapp is active', Setapp.isActive)
-
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
 
@@ -74,7 +72,7 @@ function createWindow() {
     win = null
   })
 
-  // Setapp.setMainWindow(win)
+  Setapp.setMainWindow(win)
   MenuBar.setMainWindow(win)
 }
 
