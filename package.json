@@ -17,7 +17,8 @@
     "electron:serve": "vue-cli-service electron:serve",
     "electron:publish": "yarn electron:build -p always",
     "setapp:start": "cross-env IS_SETAPP=true yarn start",
-    "setapp:build": "cross-env IS_SETAPP=true yarn electron:build"
+    "setapp:build": "cross-env IS_SETAPP=true yarn electron:build",
+    "setapp:sign": "./setapp-nodejs-wrapper/integrate_setapp.sh -app ./dist_electron/mac/Mouseless.app -sign 4059EB328525CEA031269896FF794545316A64A4 -entitlements ./build/entitlements.mac.plist"
   },
   "main": "background.js",
   "devDependencies": {
