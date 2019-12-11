@@ -6,6 +6,12 @@ export default new class {
     this.heartBeatInterval = 1000
     this.isActive = !!process.env.IS_SETAPP
     this.beforeQuit = false
+  }
+
+  init() {
+    if (!this.isActive) {
+      return
+    }
 
     this.reportUsageEvent('launch')
 
@@ -25,12 +31,6 @@ export default new class {
       this.reportUsageEvent('terminate')
       this.beforeQuit = true
     })
-  }
-
-  init() {
-    if (!this.isActive) {
-      return
-    }
 
     this.setapp = require('../../setapp-nodejs-wrapper/build/Release/setapp.node')
     // console.log({ setapp: this.setapp })
@@ -79,7 +79,8 @@ export default new class {
       return
     }
 
-    this.setapp.SCReportUsageEvent(name)
+    console.log(name)
+    // this.setapp.SCReportUsageEvent(name)
   }
 
 }()
