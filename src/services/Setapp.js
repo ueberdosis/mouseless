@@ -3,8 +3,8 @@ import { app, BrowserWindow } from 'electron'
 export default new class {
 
   constructor() {
-    this.heartBeatInterval = 1000
-    this.isActive = !!process.env.IS_SETAPP
+    this.heartBeatInterval = 10000
+    this.isActive = !!process.env.VUE_APP_IS_SETAPP
     this.beforeQuit = false
   }
 
@@ -32,7 +32,7 @@ export default new class {
       this.beforeQuit = true
     })
 
-    this.setapp = require('../../setapp-nodejs-wrapper/build/Release/setapp.node')
+    // this.setapp = require('../../setapp-nodejs-wrapper/build/Release/setapp.node')
     // console.log({ setapp: this.setapp })
   }
 

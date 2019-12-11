@@ -46,7 +46,7 @@ module.exports = {
         config.resolve.extensions.add('.js').add('.node')
       },
       builderOptions: {
-        appId: process.env.IS_SETAPP
+        appId: process.env.VUE_APP_IS_SETAPP
           ? 'com.ueberclub.mouseless-setapp'
           : 'com.ueberclub.mouseless',
         artifactName: '${productName}-${version}-${os}.${ext}', // eslint-disable-line

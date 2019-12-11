@@ -12,7 +12,7 @@ module.exports = async context => {
   try {
     await notarize({
       // appBundleId: 'com.Mouseless.app',
-      appBundleId: process.env.IS_SETAPP
+      appBundleId: process.env.VUE_APP_IS_SETAPP
         ? 'com.ueberclub.mouseless-setapp'
         : 'com.ueberclub.mouseless',
       appPath: `${appOutDir}/${appName}.app`,
