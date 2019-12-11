@@ -9,6 +9,7 @@ import {
 import activeWin from 'active-win'
 import windowShortcuts from 'window-shortcuts'
 import Store from './Store'
+import User from './User'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
@@ -32,14 +33,9 @@ export default new class {
   }
 
   create() {
-    const verification = Store.get('verification', null)
-    const verified = verification
-      ? !!verification.success
-      : false
-
     if (
       this.menubar
-      || !verified
+      || !User.isVerified
       || !Store.get('showMenubar', true)
     ) {
       return

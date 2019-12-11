@@ -15,14 +15,6 @@ export default new class {
     return keymap.getCurrentKeyboardLayout().localizedName
   }
 
-  get verification() {
-    return Store.get('verification', null)
-  }
-
-  get verified() {
-    return !!this.verification?.success
-  }
-
   createModel(model, props) {
     const Constructor = Vue.extend({
       render: () => false,
