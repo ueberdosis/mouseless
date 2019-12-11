@@ -75,7 +75,7 @@ export default new class {
   }
 
   reportUsageEvent(name = null) {
-    if (!this.isActive || this.beforeQuit || !name) {
+    if (!this.isActive || !this.setapp || this.beforeQuit || !name) {
       return
     }
 
