@@ -79,6 +79,7 @@ export default new class {
       return
     }
 
+    // eslint-disable-next-line
     console.log(name)
     // this.setapp.SCReportUsageEvent(name)
   }

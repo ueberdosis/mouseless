@@ -48,8 +48,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    /* global __static */
-    icon: path.join(__static, 'icon.png'),
+    icon: path.resolve(__dirname, 'build/icon.icns'),
   })
 
   LicenseCheck.setWindow(win)
