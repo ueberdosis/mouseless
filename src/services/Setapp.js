@@ -13,6 +13,9 @@ export default new class {
       return
     }
 
+    this.setapp = require('../../setapp-nodejs-wrapper/build/Release/setapp.node')
+    // console.log({ setapp: this.setapp })
+
     this.reportUsageEvent('launch')
 
     this.startHeartBeat()
@@ -31,9 +34,6 @@ export default new class {
       this.reportUsageEvent('terminate')
       this.beforeQuit = true
     })
-
-    // this.setapp = require('../../setapp-nodejs-wrapper/build/Release/setapp.node')
-    // console.log({ setapp: this.setapp })
   }
 
   setMainWindow(win) {
@@ -81,7 +81,7 @@ export default new class {
 
     // eslint-disable-next-line
     console.log(name)
-    // this.setapp.SCReportUsageEvent(name)
+    this.setapp.SCReportUsageEvent(name)
   }
 
 }()
