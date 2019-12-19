@@ -84,7 +84,7 @@ check_result $?
 # copy localized resources to application bundle
 LIB_RESOURCES_DIR="$SCRIPT_DIR/libSetapp/Resources"
 LOCALIZED_FILES=$(find "$LIB_RESOURCES_DIR" -name "*.strings")
-IFS=$(echo "\n\b")
+IFS=$'\n\b'
 for FILE in $LOCALIZED_FILES; do
     DIR_NAME="$(basename $(dirname $FILE))"
     if [ -d "$APP_RESOURCES_DIR/$DIR_NAME" ]; then

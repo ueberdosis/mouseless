@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { app, BrowserWindow } from 'electron'
 
 export default new class {
@@ -14,38 +15,38 @@ export default new class {
     }
 
     this.setapp = require('../../setapp-nodejs-wrapper/build/Release/setapp.node')
-    // console.log({ setapp: this.setapp })
+    console.log({ setapp: this.setapp })
 
     this.reportUsageEvent('launch')
 
-    this.startHeartBeat()
+    // this.startHeartBeat()
 
-    app.on('browser-window-focus', () => {
-      this.reportUsageEvent('activate')
-    })
+    // app.on('browser-window-focus', () => {
+    //   this.reportUsageEvent('activate')
+    // })
 
-    app.on('browser-window-blur', () => {
-      if (!this.visibleWindows.length) {
-        this.reportUsageEvent('deactivate')
-      }
-    })
+    // app.on('browser-window-blur', () => {
+    //   if (!this.visibleWindows.length) {
+    //     this.reportUsageEvent('deactivate')
+    //   }
+    // })
 
-    app.on('before-quit', () => {
-      this.reportUsageEvent('terminate')
-      this.beforeQuit = true
-    })
+    // app.on('before-quit', () => {
+    //   this.reportUsageEvent('terminate')
+    //   this.beforeQuit = true
+    // })
   }
 
   setMainWindow(win) {
     this.mainWindow = win
 
-    this.mainWindow.on('close', () => {
-      this.reportUsageEvent('deactivate')
-    })
+    // this.mainWindow.on('close', () => {
+    //   this.reportUsageEvent('deactivate')
+    // })
 
-    this.mainWindow.on('hide', () => {
-      this.reportUsageEvent('deactivate')
-    })
+    // this.mainWindow.on('hide', () => {
+    //   this.reportUsageEvent('deactivate')
+    // })
   }
 
   get visibleWindows() {
@@ -81,7 +82,7 @@ export default new class {
 
     // eslint-disable-next-line
     console.log(name)
-    this.setapp.SCReportUsageEvent(name)
+    this.setapp.SCReportUsageEvent(name, name)
   }
 
 }()

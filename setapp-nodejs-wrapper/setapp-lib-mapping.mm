@@ -1,19 +1,31 @@
 #import "Setapp.h"
 #import <nan.h>
 
+using v8::Context;
+using v8::Isolate;
+using v8::Local;
+using v8::Object;
+using v8::FunctionCallbackInfo;
+using v8::FunctionTemplate;
+using v8::Function;
+using v8::String;
+using v8::Value;
+using v8::NewStringType;
+using v8::Exception;
+
 #pragma mark - Release Notes API
 
-void _SCShowReleaseNotesWindowIfNeeded(const Nan::FunctionCallbackInfo<v8::Value>& info)
+void _SCShowReleaseNotesWindowIfNeeded(const FunctionCallbackInfo<Value>& info)
 {
     SCShowReleaseNotesWindowIfNeeded();
 }
 
-void _SCShowReleaseNotesWindow(const Nan::FunctionCallbackInfo<v8::Value>& info)
+void _SCShowReleaseNotesWindow(const FunctionCallbackInfo<Value>& info)
 {
     SCShowReleaseNotesWindow();
 }
 
-void _SCCanShowReleaseNotesWindow(const Nan::FunctionCallbackInfo<v8::Value>& info)
+void _SCCanShowReleaseNotesWindow(const FunctionCallbackInfo<Value>& info)
 {
     BOOL canShow = SCCanShowReleaseNotesWindow();
     info.GetReturnValue().Set(canShow ? Nan::True() : Nan::False());
@@ -21,15 +33,17 @@ void _SCCanShowReleaseNotesWindow(const Nan::FunctionCallbackInfo<v8::Value>& in
 
 #pragma mark - Usage Events API
 
-void _SCReportUsageEvent(const Nan::FunctionCallbackInfo<v8::Value>& info)
+void _SCReportUsageEvent(const FunctionCallbackInfo<Value>& info)
 {
+    Isolate* isolate = info.GetIsolate();
+
     if (info.Length() < 1)
     {
         Nan::ThrowTypeError("Wrong number of arguments. Should be at least 1 string arg.");
         return;
     }
     
-    v8::String::Utf8Value utf8Str(info[0].As<v8::String>());
+    String::Utf8Value utf8Str(isolate, info[0].As<String>());
     NSString *eventName = [NSString stringWithUTF8String:*utf8Str] ?: @"";
     
     if (info.Length() > 1)
@@ -42,13 +56,13 @@ void _SCReportUsageEvent(const Nan::FunctionCallbackInfo<v8::Value>& info)
 
 #pragma mark - User Permissions API
 
-void _SCGetLastUserEmailSharingResponse(const Nan::FunctionCallbackInfo<v8::Value>& info)
+void _SCGetLastUserEmailSharingResponse(const FunctionCallbackInfo<Value>& info)
 {
     SCUserEmailSharingResponse response = SCGetLastUserEmailSharingResponse();
     info.GetReturnValue().Set(Nan::New((int32_t)response));
 }
 
-void _SCAskUserToShareEmail(const Nan::FunctionCallbackInfo<v8::Value>& info)
+void _SCAskUserToShareEmail(const FunctionCallbackInfo<Value>& info)
 {
     void (^completionHandler)(SCUserEmailSharingResponse) = nil;
     if (info.Length() > 0)
@@ -66,7 +80,7 @@ void _SCAskUserToShareEmail(const Nan::FunctionCallbackInfo<v8::Value>& info)
 
 #pragma mark - Debug Logging API
 
-void _SCEnableDebugLogging(const Nan::FunctionCallbackInfo<v8::Value>& info)
+void _SCEnableDebugLogging(const FunctionCallbackInfo<Value>& info)
 {
     if (info.Length() < 1)
     {
@@ -85,28 +99,38 @@ void _SCEnableDebugLogging(const Nan::FunctionCallbackInfo<v8::Value>& info)
 }
 
 /**********************************************************/
-void Init(v8::Local<v8::Object> exports)
+void Init(Local<Object> exports)
 {
+    Isolate* isolate = exports->GetIsolate();
+    Local<Context> context = isolate->GetCurrentContext();
+    
     // Release Notes API
-    exports->Set(Nan::New("SCShowReleaseNotesWindowIfNeeded").ToLocalChecked(),
-                 Nan::New<v8::FunctionTemplate>(_SCShowReleaseNotesWindowIfNeeded)->GetFunction());
-    exports->Set(Nan::New("SCShowReleaseNotesWindow").ToLocalChecked(),
-                 Nan::New<v8::FunctionTemplate>(_SCShowReleaseNotesWindow)->GetFunction());
-    exports->Set(Nan::New("SCCanShowReleaseNotesWindow").ToLocalChecked(),
-                 Nan::New<v8::FunctionTemplate>(_SCCanShowReleaseNotesWindow)->GetFunction());
+    exports->Set(context,
+                 String::NewFromUtf8(isolate, "SCShowReleaseNotesWindowIfNeeded", NewStringType::kNormal).ToLocalChecked(),
+                 FunctionTemplate::New(isolate, _SCShowReleaseNotesWindowIfNeeded)->GetFunction(context).ToLocalChecked());
+    exports->Set(context,
+                 String::NewFromUtf8(isolate, "SCShowReleaseNotesWindow", NewStringType::kNormal).ToLocalChecked(),
+                 FunctionTemplate::New(isolate, _SCShowReleaseNotesWindow)->GetFunction(context).ToLocalChecked());
+    exports->Set(context,
+                 String::NewFromUtf8(isolate, "SCCanShowReleaseNotesWindow", NewStringType::kNormal).ToLocalChecked(),
+                 FunctionTemplate::New(isolate, _SCCanShowReleaseNotesWindow)->GetFunction(context).ToLocalChecked());
 
     // Usage Events API
-    exports->Set(Nan::New("SCReportUsageEvent").ToLocalChecked(),
-                 Nan::New<v8::FunctionTemplate>(_SCReportUsageEvent)->GetFunction());
+    exports->Set(context,
+                 String::NewFromUtf8(isolate, "SCReportUsageEvent", NewStringType::kNormal).ToLocalChecked(),
+                 FunctionTemplate::New(isolate, _SCReportUsageEvent)->GetFunction(context).ToLocalChecked());
     // User Permissions API
-    exports->Set(Nan::New("SCGetLastUserEmailSharingResponse").ToLocalChecked(),
-                 Nan::New<v8::FunctionTemplate>(_SCGetLastUserEmailSharingResponse)->GetFunction());
-    exports->Set(Nan::New("SCAskUserToShareEmail").ToLocalChecked(),
-                 Nan::New<v8::FunctionTemplate>(_SCAskUserToShareEmail)->GetFunction());
+    exports->Set(context,
+                 String::NewFromUtf8(isolate, "SCGetLastUserEmailSharingResponse", NewStringType::kNormal).ToLocalChecked(),
+                 FunctionTemplate::New(isolate, _SCGetLastUserEmailSharingResponse)->GetFunction(context).ToLocalChecked());
+    exports->Set(context,
+                 String::NewFromUtf8(isolate, "SCAskUserToShareEmail", NewStringType::kNormal).ToLocalChecked(),
+                 FunctionTemplate::New(isolate, _SCAskUserToShareEmail)->GetFunction(context).ToLocalChecked());
 
     // Debug Logging API
-    exports->Set(Nan::New("SCEnableDebugLogging").ToLocalChecked(),
-                 Nan::New<v8::FunctionTemplate>(_SCEnableDebugLogging)->GetFunction());
+    exports->Set(context,
+                 String::NewFromUtf8(isolate, "SCEnableDebugLogging", NewStringType::kNormal).ToLocalChecked(),
+                 FunctionTemplate::New(isolate, _SCEnableDebugLogging)->GetFunction(context).ToLocalChecked());
 }
 
 NODE_MODULE(setapp, Init)

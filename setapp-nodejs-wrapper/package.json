@@ -8,7 +8,7 @@
     "nan": "^2.4.0"
   },
   "scripts": {
-    "build": "node-gyp rebuild --target=5.0.12 --arch=x64 --dist-url=https://electronjs.org/headers"
+    "build": "node-gyp rebuild --target=7.1.4 --arch=x64 --dist-url=https://electronjs.org/headers"
   },
   "gypfile": true,
   "devDependencies": {

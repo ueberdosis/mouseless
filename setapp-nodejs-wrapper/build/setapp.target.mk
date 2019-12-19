@@ -12,6 +12,7 @@ DEFS_Debug := \
 	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
+	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION' \
 	'-DDEBUG' \
@@ -48,13 +49,13 @@ CFLAGS_OBJC_Debug :=
 CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/include/node \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/src \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/openssl/config \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/openssl/openssl/include \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/uv/include \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/zlib \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/v8/include \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/include/node \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/src \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/openssl/config \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/openssl/openssl/include \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/uv/include \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/zlib \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/v8/include \
 	-I$(srcdir)/node_modules/nan \
 	-I$(srcdir)/libSetapp
 
@@ -68,6 +69,7 @@ DEFS_Release := \
 	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
+	'-DOPENSSL_NO_PINSHARED' \
 	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION'
 
@@ -101,13 +103,13 @@ CFLAGS_OBJC_Release :=
 CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/include/node \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/src \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/openssl/config \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/openssl/openssl/include \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/uv/include \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/zlib \
-	-I/Users/philippkuehn/.node-gyp/5.0.12/deps/v8/include \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/include/node \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/src \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/openssl/config \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/openssl/openssl/include \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/uv/include \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/zlib \
+	-I/Users/philippkuehn/.node-gyp/7.1.4/deps/v8/include \
 	-I$(srcdir)/node_modules/nan \
 	-I$(srcdir)/libSetapp
 
