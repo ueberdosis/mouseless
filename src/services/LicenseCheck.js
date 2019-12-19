@@ -9,7 +9,7 @@ export default new class {
   constructor() {
     this.limit = process.env.NODE_ENV === 'development'
       ? Infinity
-      : 1
+      : 2
 
     ipcMain.on('verifyLicenseKey', (_, licenseKey) => {
       this.verifyLicenseKey(licenseKey)
