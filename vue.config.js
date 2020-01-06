@@ -50,7 +50,7 @@ module.exports = {
           ? 'com.ueberclub.mouseless-setapp'
           : 'com.ueberclub.mouseless',
         artifactName: '${productName}-${version}-${os}.${ext}', // eslint-disable-line
-        // afterSign: 'src/notarize.js',
+        afterSign: 'src/notarize.js',
         productName: 'Mouseless',
         mac: {
           hardenedRuntime: true,
