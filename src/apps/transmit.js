@@ -11,59 +11,12 @@ module.exports = {
       version: 1,
       shortcuts: [
         {
-          title: 'Preferences…',
-          keys: ['Meta', ','],
-        },
-        {
-          title: 'Hide Transmit',
-          keys: ['Meta', 'h'],
-        },
-        {
-          title: 'Hide Others',
-          keys: ['Alt', 'Meta', 'h'],
-        },
-        {
-          title: 'Quit Transmit',
-          keys: ['Meta', 'q'],
-        },
-        {
-          title: 'Quit and Close All Windows',
-          keys: ['Alt', 'Meta', 'q'],
-        },
-      ],
-    },
-    {
-      title: 'File',
-      id: 'file',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'New Window',
-          keys: ['Meta', 'n'],
-        },
-        {
-          title: 'New Tab',
-          keys: ['Meta', 't'],
-        },
-        {
           title: 'New Folder',
           keys: ['Shift', 'Meta', 'n'],
         },
         {
           title: 'New File',
           keys: ['Alt', 'Meta', 'n'],
-        },
-        {
-          title: 'Close Tab',
-          keys: ['Meta', 'w'],
-        },
-        {
-          title: 'Close Window',
-          keys: ['Shift', 'Meta', 'w'],
-        },
-        {
-          title: 'Close All',
-          keys: ['Alt', 'Meta', 'w'],
         },
         {
           title: 'Disconnect',
@@ -94,149 +47,12 @@ module.exports = {
           keys: ['Meta', 'd'],
         },
         {
-          title: 'Quick Look “selected-file”',
-          keys: ['Meta', 'y'],
-        },
-        {
           title: 'Print…',
           keys: ['Meta', 'p'],
         },
-      ],
-    },
-    {
-      title: 'Edit',
-      id: 'edit',
-      version: 1,
-      shortcuts: [
         {
-          title: 'Undo',
-          keys: ['Meta', 'z'],
-        },
-        {
-          title: 'Redo',
-          keys: ['Shift', 'Meta', 'z'],
-        },
-        {
-          title: 'Cut',
-          keys: ['Meta', 'x'],
-        },
-        {
-          title: 'Copy',
-          keys: ['Meta', 'c'],
-        },
-        {
-          title: 'Paste',
-          keys: ['Meta', 'v'],
-        },
-        {
-          title: 'Select All',
-          keys: ['Meta', 'a'],
-        },
-        {
-          title: 'Jump to Selection',
-          keys: ['Meta', 'j'],
-        },
-        {
-          title: 'Show Spelling and Grammar',
-          keys: ['Meta', ':'],
-        },
-        {
-          title: 'Check Spelling',
-          keys: ['Meta', ';'],
-        },
-      ],
-    },
-    {
-      title: 'View',
-      id: 'view',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Show Transfers',
-          keys: ['Meta', 'l'],
-        },
-        {
-          title: 'Show Transfers Window',
-          keys: ['Alt', 'Meta', 'l'],
-        },
-        {
-          title: 'View as Thumbnails',
-          keys: ['Meta', '1'],
-        },
-        {
-          title: 'View as List',
-          keys: ['Meta', '2'],
-        },
-        {
-          title: 'View as Columns',
-          keys: ['Meta', '3'],
-        },
-        {
-          title: 'View as Cover Flow',
-          keys: ['Meta', '4'],
-        },
-        {
-          title: 'Refresh',
-          keys: ['Meta', 'r'],
-        },
-        {
-          title: 'Show Invisible Files',
-          keys: ['Shift', 'Meta', 'b'],
-        },
-        {
-          title: 'Hide Places Bar',
-          keys: ['Shift', 'Meta', 's'],
-        },
-        {
-          title: 'Show View Options',
-          keys: ['Shift', 'Meta', 'j'],
-        },
-        {
-          title: 'Enter Full Screen',
-          keys: ['Control', 'Meta', 'f'],
-        },
-        {
-          title: 'Focus on Local',
-          keys: ['Alt', 'Meta', 'ArrowLeft'],
-        },
-        {
-          title: 'Focus on Remote',
-          keys: ['Alt', 'Meta', 'ArrowRight'],
-        },
-      ],
-    },
-    {
-      title: 'Go',
-      id: 'go',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Back',
-          keys: ['Meta', '['],
-        },
-        {
-          title: 'Forward',
-          keys: ['Meta', ']'],
-        },
-        {
-          title: 'Enclosing Folder',
-          keys: ['Meta', 'ArrowUp'],
-        },
-        {
-          title: 'Go to Folder…',
-          keys: ['Alt', 'Meta', 'g'],
-        },
-        {
-          title: 'Open in Terminal',
-          keys: ['Alt', 'Meta', 't'],
-        },
-        {
-          title: 'Link Folder Navigation',
-          keys: ['Shift', 'Meta', 'l'],
-        },
-        {
-          title: 'Connect To > Last Used Protocol',
-          keys: ['Meta', 'k'],
+          title: 'Preferences',
+          keys: ['Meta', ','],
         },
       ],
     },
@@ -279,10 +95,112 @@ module.exports = {
       ],
     },
     {
+      title: 'View',
+      id: 'view',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Show Transfers',
+          keys: ['Meta', 'l'],
+        },
+        {
+          title: 'Show Transfers Window',
+          keys: ['Alt', 'Meta', 'l'],
+        },
+        {
+          title: 'View as Thumbnails',
+          keys: ['Meta', '1'],
+        },
+        {
+          title: 'View as List',
+          keys: ['Meta', '2'],
+        },
+        {
+          title: 'View as Columns',
+          keys: ['Meta', '3'],
+        },
+        {
+          title: 'View as Cover Flow',
+          keys: ['Meta', '4'],
+        },
+        {
+          title: 'Refresh',
+          keys: ['Meta', 'r'],
+        },
+        {
+          title: 'Hide Places Bar',
+          keys: ['Shift', 'Meta', 's'],
+        },
+        {
+          title: 'Show View Options',
+          keys: ['Shift', 'Meta', 'j'],
+        },
+        // {
+        //   title: 'Enter Full Screen',
+        //   keys: ['Control', 'Meta', 'f'],
+        // },
+      ],
+    },
+    {
+      title: 'Navigation',
+      id: 'navigation',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Back',
+          keys: ['Meta', '['],
+        },
+        {
+          title: 'Forward',
+          keys: ['Meta', ']'],
+        },
+        {
+          title: 'Enclosing Folder',
+          keys: ['Meta', 'ArrowUp'],
+        },
+        {
+          title: 'Go to Folder…',
+          keys: ['Alt', 'Meta', 'g'],
+        },
+        {
+          title: 'Open in Terminal',
+          keys: ['Alt', 'Meta', 't'],
+        },
+        {
+          title: 'Link Folder Navigation',
+          keys: ['Shift', 'Meta', 'l'],
+        },
+        {
+          title: 'Connect To > Last Used Protocol',
+          keys: ['Meta', 'k'],
+        },
+      ],
+    },
+    {
       title: 'Window',
       id: 'window',
       version: 1,
       shortcuts: [
+        {
+          title: 'New Window',
+          keys: ['Meta', 'n'],
+        },
+        {
+          title: 'New Tab',
+          keys: ['Meta', 't'],
+        },
+        {
+          title: 'Close Tab',
+          keys: ['Meta', 'w'],
+        },
+        {
+          title: 'Close Window',
+          keys: ['Shift', 'Meta', 'w'],
+        },
+        {
+          title: 'Close All',
+          keys: ['Alt', 'Meta', 'w'],
+        },
         {
           title: 'Minimize',
           keys: ['Meta', 'm'],
@@ -306,6 +224,29 @@ module.exports = {
         {
           title: 'Show Inspector',
           keys: ['Alt', 'Meta', 'i'],
+        },
+      ],
+    },
+    {
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Quick Look “selected-file”',
+          keys: ['Meta', 'y'],
+        },
+        {
+          title: 'Show Invisible Files',
+          keys: ['Shift', 'Meta', 'b'],
+        },
+        {
+          title: 'Focus on Local',
+          keys: ['Alt', 'Meta', 'ArrowLeft'],
+        },
+        {
+          title: 'Focus on Remote',
+          keys: ['Alt', 'Meta', 'ArrowRight'],
         },
       ],
     },
