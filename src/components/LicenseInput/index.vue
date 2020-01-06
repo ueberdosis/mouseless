@@ -32,6 +32,7 @@
 <script>
 import { TheMask } from 'vue-the-mask'
 import { ipcRenderer } from 'electron'
+import User from '@/services/User'
 
 export default {
   name: 'LicenseInput',
@@ -81,7 +82,7 @@ export default {
     },
 
     handleSuccess() {
-      if (!this.$db.verified) {
+      if (!User.isVerified) {
         return
       }
 
