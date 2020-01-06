@@ -170,8 +170,8 @@ module.exports = {
       ],
     },
     {
-      title: 'Advanced',
-      id: 'advanced',
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
       version: 1,
       shortcuts: [
         {
