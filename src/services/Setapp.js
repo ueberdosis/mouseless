@@ -5,7 +5,7 @@ export default new class {
 
   constructor() {
     this.heartBeatInterval = 10000
-    this.isActive = !!process.env.VUE_APP_IS_SETAPP
+    this.isActive = process.env.VUE_APP_IS_SETAPP === 'true'
     this.beforeQuit = false
   }
 
