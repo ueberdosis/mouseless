@@ -6,8 +6,8 @@ module.exports = {
   category: 'Productivity',
   sets: [
     {
-      title: 'Sheet and Group Handling',
-      id: 'sheet',
+      title: 'Essentials',
+      id: 'essentials',
       version: 1,
       shortcuts: [
         {
@@ -26,6 +26,13 @@ module.exports = {
           title: 'New Window',
           keys: ['Alt', 'Meta', 'n'],
         },
+      ],
+    },
+    {
+      title: 'Sheet and Group Handling',
+      id: 'sheet',
+      version: 1,
+      shortcuts: [
         {
           title: 'Open from Library',
           keys: ['Meta', 'o'],
@@ -70,10 +77,6 @@ module.exports = {
           title: 'Glue Sheets',
           keys: ['Meta', 'j'],
         },
-        {
-          title: 'Copy Callback URL',
-          keys: ['Control', 'Alt', 'Meta', 'c'],
-        },
       ],
     },
     {
@@ -81,22 +84,6 @@ module.exports = {
       id: 'editor',
       version: 1,
       shortcuts: [
-        {
-          title: 'Smart Paste',
-          keys: ['Shift', 'Meta', 'v'],
-        },
-        {
-          title: 'Copy as Markdown',
-          keys: ['Alt', 'Meta', 'c'],
-        },
-        {
-          title: 'Paste as Plain Text',
-          keys: ['Alt', 'Shift', 'Meta', 'v'],
-        },
-        {
-          title: 'Paste from Markdown',
-          keys: ['Alt', 'Meta', 'v'],
-        },
         {
           title: 'Move Line Up',
           keys: ['Control', 'Meta', 'ArrowUp'],
@@ -108,18 +95,6 @@ module.exports = {
         {
           title: 'Split at Selection',
           keys: ['Shift', 'Meta', 'b'],
-        },
-        {
-          title: 'Export Preview',
-          keys: ['Shift', 'Meta', 'p'],
-        },
-        {
-          title: 'Refresh Export Preview',
-          keys: ['Meta', 'r'],
-        },
-        {
-          title: 'Print Editor',
-          keys: ['Meta', 'p'],
         },
         {
           title: 'Search in Sheet List',
@@ -153,10 +128,11 @@ module.exports = {
           title: 'End Smart List/Code Block',
           keys: ['Alt', 'Enter'],
         },
-        {
-          title: 'Move Focus to Sheet',
-          keys: ['Meta', 'ArrowLeft'],
-        },
+        // wat
+        // {
+        //   title: 'Move Focus to Sheet',
+        //   keys: ['Meta', 'ArrowLeft'],
+        // },
       ],
     },
     {
@@ -191,14 +167,29 @@ module.exports = {
       ],
     },
     {
-      title: 'View',
-      id: 'view',
+      title: 'Export',
+      id: 'export',
       version: 1,
       shortcuts: [
         {
-          title: 'Enable Typewriter Mode',
-          keys: ['Alt', 'Meta', 't'],
+          title: 'Export Preview',
+          keys: ['Shift', 'Meta', 'p'],
         },
+        {
+          title: 'Refresh Export Preview',
+          keys: ['Meta', 'r'],
+        },
+        {
+          title: 'Print Editor',
+          keys: ['Meta', 'p'],
+        },
+      ],
+    },
+    {
+      title: 'Navigation',
+      id: 'navigation',
+      version: 1,
+      shortcuts: [
         {
           title: 'Library',
           keys: ['Meta', '1'],
@@ -239,17 +230,16 @@ module.exports = {
           title: 'Keywords',
           keys: ['Shift', 'Meta', 'k'],
         },
+      ],
+    },
+    {
+      title: 'View',
+      id: 'view',
+      version: 1,
+      shortcuts: [
         {
-          title: 'Default Zoom',
-          keys: ['Meta', '0'],
-        },
-        {
-          title: 'Increase Zoom',
-          keys: ['Meta', '+'],
-        },
-        {
-          title: 'Decrease Zoom',
-          keys: ['Meta', '-'],
+          title: 'Enable Typewriter Mode',
+          keys: ['Alt', 'Meta', 't'],
         },
         {
           title: 'Light/Dark Mode',
@@ -259,35 +249,51 @@ module.exports = {
           title: 'Light/Dark Theme',
           keys: ['Alt', 'Meta', 'x'],
         },
-      ],
-    },
-    {
-      title: 'Window Management',
-      id: 'window',
-      version: 1,
-      shortcuts: [
         {
-          title: 'Minimize Window',
-          keys: ['Meta', 'm'],
+          title: 'Default Zoom',
+          keys: ['Meta', '0'],
         },
         {
-          title: 'Enter Full Screen',
-          keys: ['Control', 'Meta', 'f'],
+          title: 'Increase Zoom',
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
         },
         {
-          title: 'Zoom Window',
-          keys: ['Control', 'Meta', 'z'],
+          title: 'Decrease Zoom',
+          keys: ['Meta', '-'],
         },
       ],
     },
     {
-      title: 'One Shortcut to Find Them All',
-      id: 'search',
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
       version: 1,
       shortcuts: [
         {
           title: 'Search for Menu Actions',
           keys: ['Shift', 'Meta', '/'],
+        },
+        {
+          title: 'Smart Paste',
+          keys: ['Shift', 'Meta', 'v'],
+        },
+        {
+          title: 'Copy as Markdown',
+          keys: ['Alt', 'Meta', 'c'],
+        },
+        {
+          title: 'Paste as Plain Text',
+          keys: ['Alt', 'Shift', 'Meta', 'v'],
+        },
+        {
+          title: 'Paste from Markdown',
+          keys: ['Alt', 'Meta', 'v'],
+        },
+        {
+          title: 'Copy Callback URL',
+          keys: ['Control', 'Alt', 'Meta', 'c'],
         },
       ],
     },
