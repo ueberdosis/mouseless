@@ -1,5 +1,6 @@
 import { dialog, app, BrowserWindow } from 'electron'
 import { autoUpdater } from 'electron-updater'
+import Setapp from './Setapp'
 
 export default new class {
 
@@ -15,6 +16,10 @@ export default new class {
 
     this.menuItem = null
     this.silent = false
+
+    if (Setapp.isActive) {
+      return
+    }
 
     autoUpdater.on('error', this.onError.bind(this))
     autoUpdater.on('update-available', this.onUpdateAvailable.bind(this))
