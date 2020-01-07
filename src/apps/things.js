@@ -4,7 +4,7 @@ module.exports = {
   id: 'things',
   title: 'Things',
   category: 'Productivity',
-  description: null,
+  description: 'Things is one of the most loved todo apps on iOS and macOS. With a few learned keyboard shortcuts you can boost your productivity even more.',
   sets: [
     {
       title: 'Create new items',

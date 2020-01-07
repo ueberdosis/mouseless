@@ -4,7 +4,7 @@ module.exports = {
   id: 'slack',
   title: 'Slack',
   category: 'Communication',
-  description: null,
+  description: 'Slack replaced emails in so many companies. It\'s open all the time, you are probably checking it every few minutes. Some say the ultimative productivity boost is to stop using Slack. In case you keep using it anyway (like us) learn a few keyboard shortcuts to handle things faster.',
   sets: [
     {
       title: 'Navigation',

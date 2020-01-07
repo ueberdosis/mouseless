@@ -4,7 +4,7 @@ module.exports = {
   id: 'sketch',
   title: 'Sketch',
   category: 'Design',
-  description: null,
+  description: 'Keyboard shortcuts are the fastest way to speed up your workflow. Many of them are depend on what you’ve selected and what you’re doing, but you’ll find the full list of Sketch Keyboard shortcuts below.',
   sets: [
     {
       title: 'Essentials',

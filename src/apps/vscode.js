@@ -4,7 +4,7 @@ module.exports = {
   id: 'vscode',
   title: 'Code',
   category: 'Development',
-  description: 'Visual Studio Code is an open source code editor that runs everywhere. VS Code comes with so many features and has an amazing support for keyboard shortcuts. Tip: Learn one or two every week.',
+  description: 'Visual Studio Code is an open source code editor that runs everywhere. VS Code comes with many features and has an amazing support for keyboard shortcuts. Tip: Learn one or two every week.',
   sets: [
     {
       title: 'Essentials',

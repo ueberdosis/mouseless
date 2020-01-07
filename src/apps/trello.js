@@ -4,7 +4,7 @@ module.exports = {
   id: 'trello',
   title: 'Trello',
   category: 'Productivity',
-  description: null,
+  description: 'Did you know that Trello can be fully controlled with keyboard shortcuts? With a few hits on your keyboard you can create new cards, move them to another column and assign someone. Learn these shortcuts to become a professional Trello user.',
   sets: [
     {
       title: 'Essentials',
