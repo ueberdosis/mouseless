@@ -41,11 +41,11 @@ module.exports = {
         },
         {
           title: 'Next track',
-          keys: ['Ctrl', 'Meta', 'ArrowRight'],
+          keys: ['Control', 'Meta', 'ArrowRight'],
         },
         {
           title: 'Previous track',
-          keys: ['Ctrl', 'Meta', 'ArrowLeft'],
+          keys: ['Control', 'Meta', 'ArrowLeft'],
         },
       ],
     },

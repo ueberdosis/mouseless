@@ -47,10 +47,6 @@ module.exports = {
           keys: ['Control', 'Shift', 'm'],
         },
         {
-          title: 'Delete from cursor to start of line',
-          keys: ['Meta', 'K', '⌫'],
-        },
-        {
           title: 'Indent current line(s)',
           keys: ['Meta', ']'],
         },
