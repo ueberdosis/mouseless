@@ -16,30 +16,6 @@ module.exports = {
           keys: ['Meta', 't'],
         },
         {
-          title: 'Decrease Brush Size',
-          keys: ['['],
-        },
-        {
-          title: 'Increase Brush Size',
-          keys: [']'],
-        },
-        {
-          title: 'Decrease Brush Hardness',
-          keys: ['{'],
-        },
-        {
-          title: 'Increase Brush Hardness',
-          keys: ['}'],
-        },
-        {
-          title: 'Rotate the brush tip anti-clockwise',
-          keys: ['Shift', 'ArrowLeft'],
-        },
-        {
-          title: 'Rotate the brush tip clockwise',
-          keys: ['Shift', 'ArrowRight'],
-        },
-        {
           title: 'Default Foreground/Background colors',
           keys: ['d'],
         },
@@ -79,11 +55,19 @@ module.exports = {
           title: 'Change Cancel to Reset',
           keys: ['Alt'],
         },
+        {
+          title: 'Toggle Standard/Quick Mask modes',
+          keys: ['q'],
+        },
+        {
+          title: 'Toggle Preserve Transparency',
+          keys: ['/'],
+        },
       ],
     },
     {
-      title: 'Tools',
-      id: 'tools',
+      title: 'Tools I',
+      id: 'tools-1',
       version: 1,
       shortcuts: [
         {
@@ -110,6 +94,13 @@ module.exports = {
           title: 'Eyedropper tool',
           keys: ['i'],
         },
+      ],
+    },
+    {
+      title: 'Tools II',
+      id: 'tools-2',
+      version: 1,
+      shortcuts: [
         {
           title: 'Healing Brush tool',
           keys: ['j'],
@@ -138,6 +129,13 @@ module.exports = {
           title: 'Dodge tool',
           keys: ['o'],
         },
+      ],
+    },
+    {
+      title: 'Tools III',
+      id: 'tools-3',
+      version: 1,
+      shortcuts: [
         {
           title: 'Pen tool',
           keys: ['p'],
@@ -166,30 +164,99 @@ module.exports = {
           title: 'Zoom tool',
           keys: ['z'],
         },
+      ],
+    },
+    {
+      title: 'Layers',
+      id: 'layers',
+      version: 1,
+      shortcuts: [
         {
-          title: 'Default Foreground/Background colors',
-          keys: ['d'],
+          title: 'New layer',
+          keys: ['Meta', 'Shift', 'n'],
         },
         {
-          title: 'Switch Foreground/Background colors',
-          keys: ['x'],
+          title: 'New layer via copy',
+          keys: ['Meta', 'j'],
         },
         {
-          title: 'Toggle Standard/Quick Mask modes',
-          keys: ['q'],
+          title: 'New layer via cut',
+          keys: ['Shift', 'Meta', 'j'],
         },
         {
-          title: 'Toggle Preserve Transparency',
+          title: 'Group layers',
+          keys: ['Meta', 'g'],
+        },
+        {
+          title: 'Ungroup layers',
+          keys: ['Meta', 'Shift', 'g'],
+        },
+        {
+          title: 'Create/release clipping mask',
+          keys: ['Meta', 'Alt', 'g'],
+        },
+        {
+          title: 'Merge visible layers',
+          keys: ['Meta', 'Shift', 'e'],
+        },
+        {
+          title: 'Move target layer up',
+          keys: ['Meta', ']'],
+        },
+        {
+          title: 'Merge a copy of all visible layers into target layer',
+          keys: ['Meta', 'Shift', 'Alt', 'e'],
+        },
+        {
+          title: 'Merge layers',
+          keys: ['Meta', 'e'],
+        },
+        {
+          title: 'Move layer to top',
+          keys: ['Meta', '{'],
+        },
+        {
+          title: 'Move layer to bottom',
+          keys: ['Meta', '}'],
+        },
+        {
+          title: 'Toggle lock transparency for target layer, or last applied lock',
           keys: ['/'],
         },
+      ],
+    },
+    {
+      title: 'Select Layers',
+      id: 'select-layers',
+      version: 1,
+      shortcuts: [
         {
-          title: 'Decrease Brush Hardness',
-          keys: ['{'],
+          title: 'Select all layers',
+          keys: ['Meta', 'Alt', 'a'],
         },
         {
-          title: 'Increase Brush Hardness',
-          keys: ['}'],
+          title: 'Select top layer',
+          keys: ['Alt', '.'],
         },
+        {
+          title: 'Select bottom layer',
+          keys: ['Alt', ','],
+        },
+        {
+          title: 'Add to layer selection in Layers panel',
+          keys: ['Shift', 'Alt', '['],
+        },
+        {
+          title: 'Select next layer down',
+          keys: ['Alt', '['],
+        },
+      ],
+    },
+    {
+      title: 'Brushes',
+      id: 'brushes',
+      version: 1,
+      shortcuts: [
         {
           title: 'Previous Brush',
           keys: [','],
@@ -205,6 +272,30 @@ module.exports = {
         {
           title: 'Last Brush',
           keys: ['>'],
+        },
+        {
+          title: 'Decrease Brush Size',
+          keys: ['['],
+        },
+        {
+          title: 'Increase Brush Size',
+          keys: [']'],
+        },
+        {
+          title: 'Decrease Brush Hardness',
+          keys: ['{'],
+        },
+        {
+          title: 'Increase Brush Hardness',
+          keys: ['}'],
+        },
+        {
+          title: 'Rotate the brush tip anti-clockwise',
+          keys: ['Shift', 'ArrowLeft'],
+        },
+        {
+          title: 'Rotate the brush tip clockwise',
+          keys: ['Shift', 'ArrowRight'],
         },
       ],
     },
@@ -276,260 +367,6 @@ module.exports = {
       ],
     },
     {
-      title: 'Puppet Warp',
-      id: 'puppet',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Cancel completely',
-          keys: ['Escape'],
-        },
-        {
-          title: 'Undo last pin adjustment',
-          keys: ['Meta', 'z'],
-        },
-        {
-          title: 'Select all pins',
-          keys: ['Meta', 'a'],
-        },
-        {
-          title: 'Deselect all pins',
-          keys: ['Meta', 'd'],
-        },
-        {
-          title: 'Temporarily hide pins',
-          keys: ['h'],
-        },
-      ],
-    },
-    {
-      title: 'Refine Edge',
-      id: 'refine',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Open the Refine Edge dialog box',
-          keys: ['Meta', 'Alt', 'r'],
-        },
-        {
-          title: 'Cycle forward through preview modes',
-          keys: ['f'],
-        },
-        {
-          title: 'Cycle backward through preview modes',
-          keys: ['Shift', 'f'],
-        },
-        {
-          title: 'Toggle between original image & selection preview',
-          keys: ['x'],
-        },
-        {
-          title: 'Toggle between original selection & refined version',
-          keys: ['p'],
-        },
-        {
-          title: 'Toggle radius preview',
-          keys: ['j'],
-        },
-        {
-          title: 'Toggle between Refine Radius & Erase Refinements tools',
-          keys: ['Shift', 'e'],
-        },
-      ],
-    },
-    {
-      title: 'Filter Gallery',
-      id: 'filter',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Reapply last-used filter',
-          keys: ['Control', 'Meta', 'f'],
-        },
-        {
-          title: 'Change Cancel button to Default',
-          keys: ['Meta'],
-        },
-        {
-          title: 'Change Cancel button to Reset',
-          keys: ['Alt'],
-        },
-        {
-          title: 'Undo/Redo',
-          keys: ['Meta', 'z'],
-        },
-        {
-          title: 'Step forward',
-          keys: ['Meta', 'Shift', 'z'],
-        },
-        {
-          title: 'Step backward',
-          keys: ['Meta', 'Alt', 'z'],
-        },
-      ],
-    },
-    {
-      title: 'Liquify Filter',
-      id: 'liquify',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Forward Warp tool',
-          keys: ['w'],
-        },
-        {
-          title: 'Reconstruct tool',
-          keys: ['r'],
-        },
-        {
-          title: 'Twirl Clockwise tool',
-          keys: ['c'],
-        },
-        {
-          title: 'Pucker tool',
-          keys: ['s'],
-        },
-        {
-          title: 'Bloat tool',
-          keys: ['b'],
-        },
-        {
-          title: 'Push Left tool',
-          keys: ['o'],
-        },
-        {
-          title: 'Mirror tool',
-          keys: ['m'],
-        },
-        {
-          title: 'Turbulence tool',
-          keys: ['t'],
-        },
-        {
-          title: 'Freeze Mask tool',
-          keys: ['f'],
-        },
-        {
-          title: 'Thaw Mask tool',
-          keys: ['d'],
-        },
-        {
-          title: 'Cycle through controls on right from top',
-          keys: ['Tab'],
-        },
-        {
-          title: 'Cycle through controls on right from bottom',
-          keys: ['Shift', 'Tab'],
-        },
-        {
-          title: 'Change Cancel to Reset',
-          keys: ['Alt'],
-        },
-      ],
-    },
-    {
-      title: 'Vanishing Point',
-      id: 'vanishing',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Zoom 2x (temporary)',
-          keys: ['x'],
-        },
-        {
-          title: 'Zoom in',
-          keys: ['Meta', '+'],
-        },
-        {
-          title: 'Zoom out',
-          keys: ['Meta', '-'],
-        },
-        {
-          title: 'Fit in view',
-          keys: ['Meta', '0'],
-        },
-        {
-          title: 'Increase brush size',
-          keys: [']'],
-        },
-        {
-          title: 'Decrease brush size',
-          keys: ['['],
-        },
-        {
-          title: 'Increase brush hardness',
-          keys: ['Shift', ']'],
-        },
-        {
-          title: 'Decrease brush hardness',
-          keys: ['Shift', '['],
-        },
-        {
-          title: 'Undo last action',
-          keys: ['Meta', 'z'],
-        },
-        {
-          title: 'Redo last action',
-          keys: ['Meta', 'Shift', 'z'],
-        },
-        {
-          title: 'Deselect all',
-          keys: ['Meta', 'd'],
-        },
-        {
-          title: 'Hide selection and planes',
-          keys: ['Meta', 'h'],
-        },
-        {
-          title: 'Move selection 1 pixel left',
-          keys: ['ArrowLeft'],
-        },
-        {
-          title: 'Move selection 10 pixels right',
-          keys: ['Shift', 'ArrowRight'],
-        },
-        {
-          title: 'Copy',
-          keys: ['Meta', 'c'],
-        },
-        {
-          title: 'Paste',
-          keys: ['Meta', 'v'],
-        },
-        {
-          title: 'Repeat last duplicate and move',
-          keys: ['Meta', 'Shift', 't'],
-        },
-        {
-          title: 'Constrain selection to a 15° rotation',
-          keys: ['Alt', 'Shift'],
-        },
-        {
-          title: 'Delete last node while creating plane',
-          keys: ['Delete'],
-        },
-      ],
-    },
-    {
-      title: 'Black-and-White Dialog',
-      id: 'bw',
-      version: 1,
-      shortcuts: [
-        {
-          title: 'Open the Black-and-White dialog box',
-          keys: ['Shift', 'Meta', 'Alt', 'b'],
-        },
-        {
-          title: 'Increase selected value by 1%',
-          keys: ['ArrowUp'],
-        },
-        {
-          title: 'Decrease selected value by 10%',
-          keys: ['ArrowDown'],
-        },
-      ],
-    },
-    {
       title: 'Curves',
       id: 'curves',
       version: 1,
@@ -561,18 +398,18 @@ module.exports = {
       id: 'selections',
       version: 1,
       shortcuts: [
-        {
-          title: 'Transform from the center or reflect',
-          keys: ['Alt'],
-        },
-        {
-          title: 'Constrain',
-          keys: ['Shift'],
-        },
-        {
-          title: 'Distort',
-          keys: ['Meta'],
-        },
+        // {
+        //   title: 'Transform from the center or reflect',
+        //   keys: ['Alt'],
+        // },
+        // {
+        //   title: 'Constrain',
+        //   keys: ['Shift'],
+        // },
+        // {
+        //   title: 'Distort',
+        //   keys: ['Meta'],
+        // },
         {
           title: 'Apply',
           keys: ['Enter'],
@@ -631,8 +468,8 @@ module.exports = {
       ],
     },
     {
-      title: 'Blending Modes',
-      id: 'blending',
+      title: 'Blending Modes I',
+      id: 'blending-modes-1',
       version: 1,
       shortcuts: [
         {
@@ -671,6 +508,14 @@ module.exports = {
           title: 'Linear Burn',
           keys: ['Shift', 'Alt', 'a'],
         },
+      ],
+    },
+    {
+      title: 'Blending Modes II',
+      id: 'blending-modes-2',
+      version: 1,
+      shortcuts: [
+
         {
           title: 'Lighten',
           keys: ['Shift', 'Alt', 'g'],
@@ -707,6 +552,13 @@ module.exports = {
           title: 'Linear Light',
           keys: ['Shift', 'Alt', 'j'],
         },
+      ],
+    },
+    {
+      title: 'Blending Modes III',
+      id: 'blending-modes-3',
+      version: 1,
+      shortcuts: [
         {
           title: 'Pin Light',
           keys: ['Shift', 'Alt', 'z'],
@@ -809,81 +661,227 @@ module.exports = {
       ],
     },
     {
-      title: 'Layers',
-      id: 'layers',
+      title: 'Puppet Warp',
+      id: 'puppet-warp',
       version: 1,
       shortcuts: [
         {
-          title: 'New layer',
-          keys: ['Meta', 'Shift', 'n'],
+          title: 'Cancel completely',
+          keys: ['Escape'],
         },
         {
-          title: 'New layer via copy',
-          keys: ['Meta', 'j'],
+          title: 'Undo last pin adjustment',
+          keys: ['Meta', 'z'],
         },
         {
-          title: 'New layer via cut',
-          keys: ['Shift', 'Meta', 'j'],
+          title: 'Select all pins',
+          keys: ['Meta', 'a'],
         },
         {
-          title: 'Group layers',
-          keys: ['Meta', 'g'],
+          title: 'Deselect all pins',
+          keys: ['Meta', 'd'],
         },
         {
-          title: 'Ungroup layers',
-          keys: ['Meta', 'Shift', 'g'],
+          title: 'Temporarily hide pins',
+          keys: ['h'],
+        },
+      ],
+    },
+    {
+      title: 'Refine Edge',
+      id: 'refine-edge',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Open the Refine Edge dialog box',
+          keys: ['Meta', 'Alt', 'r'],
         },
         {
-          title: 'Create/release clipping mask',
-          keys: ['Meta', 'Alt', 'g'],
+          title: 'Cycle forward through preview modes',
+          keys: ['f'],
         },
         {
-          title: 'Select all layers',
-          keys: ['Meta', 'Alt', 'a'],
+          title: 'Cycle backward through preview modes',
+          keys: ['Shift', 'f'],
         },
         {
-          title: 'Merge visible layers',
-          keys: ['Meta', 'Shift', 'e'],
+          title: 'Toggle between original image & selection preview',
+          keys: ['x'],
         },
         {
-          title: 'Select top layer',
-          keys: ['Alt', '.'],
+          title: 'Toggle between original selection & refined version',
+          keys: ['p'],
         },
         {
-          title: 'Select bottom layer',
-          keys: ['Alt', ','],
+          title: 'Toggle radius preview',
+          keys: ['j'],
         },
         {
-          title: 'Add to layer selection in Layers panel',
-          keys: ['Shift', 'Alt', '['],
+          title: 'Toggle between Refine Radius & Erase Refinements tools',
+          keys: ['Shift', 'e'],
+        },
+      ],
+    },
+    {
+      title: 'Filter Gallery',
+      id: 'filter-gallery',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Reapply last-used filter',
+          keys: ['Control', 'Meta', 'f'],
         },
         {
-          title: 'Select next layer down',
-          keys: ['Alt', '['],
+          title: 'Change Cancel button to Default',
+          keys: ['Meta'],
         },
         {
-          title: 'Move target layer up',
-          keys: ['Meta', ']'],
+          title: 'Change Cancel button to Reset',
+          keys: ['Alt'],
         },
         {
-          title: 'Merge a copy of all visible layers into target layer',
-          keys: ['Meta', 'Shift', 'Alt', 'e'],
+          title: 'Undo/Redo',
+          keys: ['Meta', 'z'],
         },
         {
-          title: 'Merge layers',
-          keys: ['Meta', 'e'],
+          title: 'Step forward',
+          keys: ['Meta', 'Shift', 'z'],
         },
         {
-          title: 'Move layer to top',
-          keys: ['Meta', 'Shift', '['],
+          title: 'Step backward',
+          keys: ['Meta', 'Alt', 'z'],
+        },
+      ],
+    },
+    {
+      title: 'Liquify Filter',
+      id: 'liquify-filter',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Forward Warp tool',
+          keys: ['w'],
         },
         {
-          title: 'Move layer to bottom',
-          keys: ['Meta', 'Shift', ']'],
+          title: 'Reconstruct tool',
+          keys: ['r'],
         },
         {
-          title: 'Toggle lock transparency for target layer, or last applied lock',
-          keys: ['/'],
+          title: 'Twirl Clockwise tool',
+          keys: ['c'],
+        },
+        {
+          title: 'Pucker tool',
+          keys: ['s'],
+        },
+        {
+          title: 'Bloat tool',
+          keys: ['b'],
+        },
+        {
+          title: 'Push Left tool',
+          keys: ['o'],
+        },
+        {
+          title: 'Mirror tool',
+          keys: ['m'],
+        },
+        {
+          title: 'Turbulence tool',
+          keys: ['t'],
+        },
+        {
+          title: 'Freeze Mask tool',
+          keys: ['f'],
+        },
+        {
+          title: 'Thaw Mask tool',
+          keys: ['d'],
+        },
+        {
+          title: 'Cycle through controls on right from top',
+          keys: ['Tab'],
+        },
+        {
+          title: 'Cycle through controls on right from bottom',
+          keys: ['Shift', 'Tab'],
+        },
+        {
+          title: 'Change Cancel to Reset',
+          keys: ['Alt'],
+        },
+      ],
+    },
+    {
+      title: 'Vanishing Point',
+      id: 'vanishing-point',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Zoom 2x (temporary)',
+          keys: ['x'],
+        },
+        {
+          title: 'Zoom in',
+          keys: [
+            ['='],
+            ['+'],
+          ],
+        },
+        {
+          title: 'Zoom out',
+          keys: ['Meta', '-'],
+        },
+        {
+          title: 'Fit in view',
+          keys: ['Meta', '0'],
+        },
+        {
+          title: 'Deselect all',
+          keys: ['Meta', 'd'],
+        },
+        {
+          title: 'Hide selection and planes',
+          keys: ['Meta', 'h'],
+        },
+        {
+          title: 'Move selection 1 pixel left',
+          keys: ['ArrowLeft'],
+        },
+        {
+          title: 'Move selection 10 pixels right',
+          keys: ['Shift', 'ArrowRight'],
+        },
+        {
+          title: 'Repeat last duplicate and move',
+          keys: ['Meta', 'Shift', 't'],
+        },
+        {
+          title: 'Constrain selection to a 15° rotation',
+          keys: ['Alt', 'Shift'],
+        },
+        {
+          title: 'Delete last node while creating plane',
+          keys: ['Delete'],
+        },
+      ],
+    },
+    {
+      title: 'Black-and-White Dialog',
+      id: 'black-and-white',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Open the Black-and-White dialog box',
+          keys: ['Shift', 'Meta', 'Alt', 'b'],
+        },
+        {
+          title: 'Increase selected value by 1%',
+          keys: ['ArrowUp'],
+        },
+        {
+          title: 'Decrease selected value by 10%',
+          keys: ['ArrowDown'],
         },
       ],
     },
