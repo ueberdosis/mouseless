@@ -498,6 +498,21 @@ module.exports = {
       ],
     },
     {
+      title: 'Auto Layout',
+      id: 'auto-layout',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Add Auto Layout',
+          keys: ['Shift', 'a'],
+        },
+        {
+          title: 'Remove Auto Layout',
+          keys: ['Shift', 'Alt', 'a'],
+        },
+      ],
+    },
+    {
       title: 'Components',
       id: 'components',
       version: 1,
