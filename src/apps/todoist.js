@@ -90,11 +90,11 @@ module.exports = {
       shortcuts: [
         {
           title: 'Increase task indent',
-          keys: ['Control', 'ArrowRight'],
+          keys: ['Meta', 'ArrowRight'],
         },
         {
           title: 'Decrease task indent',
-          keys: ['Control', 'ArrowLeft'],
+          keys: ['Meta', 'ArrowLeft'],
         },
       ],
     },
@@ -105,11 +105,11 @@ module.exports = {
       shortcuts: [
         {
           title: 'Increase task indent',
-          keys: ['Control', 'ArrowRight'],
+          keys: ['Meta', 'ArrowRight'],
         },
         {
           title: 'Decrease task indent',
-          keys: ['Control', 'ArrowLeft'],
+          keys: ['Meta', 'ArrowLeft'],
         },
       ],
     },
