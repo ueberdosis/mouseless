@@ -48,7 +48,7 @@ module.exports = {
       builderOptions: {
         appId: process.env.VUE_APP_IS_SETAPP
           ? 'com.ueberclub.mouseless-setapp'
-          : 'com.ueberclub.mouseless',
+          : 'com.Mouseless.app',
         artifactName: '${productName}-${version}-${os}.${ext}', // eslint-disable-line
         afterSign: 'src/notarize.js',
         productName: 'Mouseless',

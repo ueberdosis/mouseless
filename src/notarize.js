@@ -14,7 +14,7 @@ module.exports = async context => {
       // appBundleId: 'com.Mouseless.app',
       appBundleId: process.env.VUE_APP_IS_SETAPP
         ? 'com.ueberclub.mouseless-setapp'
-        : 'com.ueberclub.mouseless',
+        : 'com.Mouseless.app',
       appPath: `${appOutDir}/${appName}.app`,
       appleId: process.env.APPLE_ID,
       appleIdPassword: process.env.APPLE_ID_PASS,
