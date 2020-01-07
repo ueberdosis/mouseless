@@ -1,9 +1,8 @@
 /* eslint-disable max-len */
 // https://gist.github.com/faizshukri/7867631
 module.exports = {
-  id: 'sublime',
-  title: 'Sublime',
-  systemTitle: 'Sublime',
+  id: 'sublimetext',
+  title: 'Sublime Text',
   category: 'Development',
   sets: [
     {
