@@ -16,26 +16,6 @@ module.exports = {
           keys: ['Meta', 'n'],
         },
         {
-          title: 'Cut',
-          keys: ['Meta', 'x'],
-        },
-        {
-          title: 'Copy',
-          keys: ['Meta', 'c'],
-        },
-        {
-          title: 'Copy (alternative link)',
-          keys: ['Meta', 'Alt', 'c'],
-        },
-        {
-          title: 'Paste',
-          keys: ['Meta', 'v'],
-        },
-        {
-          title: 'Delete',
-          keys: ['Backspace'],
-        },
-        {
           title: 'Select all',
           keys: ['Meta', 'a'],
         },
@@ -52,6 +32,14 @@ module.exports = {
           keys: ['Meta', 's'],
         },
         {
+          title: 'Filter (in Songs and Playlists)',
+          keys: ['Meta', 'f'],
+        },
+        {
+          title: 'Play selected row',
+          keys: ['Enter'],
+        },
+        {
           title: 'Next track',
           keys: ['Ctrl', 'Meta', 'ArrowRight'],
         },
@@ -59,6 +47,13 @@ module.exports = {
           title: 'Previous track',
           keys: ['Ctrl', 'Meta', 'ArrowLeft'],
         },
+      ],
+    },
+    {
+      title: 'Volume',
+      id: 'volume',
+      version: 1,
+      shortcuts: [
         {
           title: 'Volume up',
           keys: ['Meta', 'ArrowUp'],
@@ -75,18 +70,13 @@ module.exports = {
           title: 'Max volume',
           keys: ['Meta', 'Shift', 'ArrowUp'],
         },
-        {
-          title: 'Show help',
-          keys: ['Meta', 'Shift', '?'],
-        },
-        {
-          title: 'Filter (in Songs and Playlists)',
-          keys: ['Meta', 'f'],
-        },
-        {
-          title: 'Give focus to search field',
-          keys: ['Meta', 'Alt', 'f'],
-        },
+      ],
+    },
+    {
+      title: 'Navigation',
+      id: 'navigation',
+      version: 1,
+      shortcuts: [
         {
           title: 'Go back',
           keys: ['Meta', 'Alt', 'ArrowLeft'],
@@ -95,18 +85,13 @@ module.exports = {
           title: 'Go forward',
           keys: ['Meta', 'Alt', 'ArrowRight'],
         },
-        {
-          title: 'Play selected row',
-          keys: ['Enter'],
-        },
-        {
-          title: 'Preferences',
-          keys: ['Meta', ','],
-        },
-        {
-          title: 'Logout active user',
-          keys: ['Meta', 'Shift', 'w'],
-        },
+      ],
+    },
+    {
+      title: 'Window',
+      id: 'window',
+      version: 1,
+      shortcuts: [
         {
           title: 'Quit',
           keys: ['Meta', 'q'],
@@ -130,6 +115,29 @@ module.exports = {
         {
           title: 'Restore from minimized',
           keys: ['Meta', 'Alt', '1'],
+        },
+      ],
+    },
+    {
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Logout active user',
+          keys: ['Meta', 'Shift', 'w'],
+        },
+        {
+          title: 'Give focus to search field',
+          keys: ['Meta', 'Alt', 'f'],
+        },
+        {
+          title: 'Preferences',
+          keys: ['Meta', ','],
+        },
+        {
+          title: 'Show help',
+          keys: ['Meta', 'Shift', '?'],
         },
       ],
     },
