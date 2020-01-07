@@ -2,6 +2,7 @@ import collect from 'collect.js'
 import keymap from 'native-keymap'
 import Emitter from '@/services/Emitter'
 import { findDuplicatesInArray, isSameArray, getArrayDepth } from '@/helpers'
+import Store from '@/services/Store'
 
 const isISOKeyboard = keymap.isISOKeyboard()
 const basicKeyMap = keymap.getKeyMap()
@@ -49,7 +50,7 @@ export default class Keyboard {
     ['Control', 'ArrowLeft'], // window navigation
     ['Control', 'ArrowRight'], // window navigation
     ['Alt', 'Meta', 'd'], // toggle dock
-    ['Meta', 'm'], // mouseless shortcut
+    Store.get('shortcut', []), // mouseless shortcut
   ]
 
   static keymap = Object

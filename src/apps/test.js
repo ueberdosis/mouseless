@@ -12,6 +12,10 @@ module.exports = {
       version: 1,
       shortcuts: [
         // {
+        //   title: 'Mouseless Shortcut',
+        //   keys: ['Meta', 'Shift', 'm'],
+        // },
+        // {
         //   title: 'Special Space',
         //   keys: ['Alt', 'Space'],
         // },
