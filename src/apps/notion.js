@@ -4,7 +4,7 @@ module.exports = {
   id: 'notion',
   title: 'Notion',
   category: 'Productivity',
-  description: null,
+  description: 'Notion is a real productivity boost for teams. Learn a few of the keyboard shortcuts to make the most out of it. Your team will love you.',
   sets: [
     {
       title: 'Essentials',
