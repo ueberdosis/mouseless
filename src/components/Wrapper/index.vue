@@ -21,6 +21,7 @@
 import { ipcRenderer } from 'electron'
 import SpatialNavigation from 'spatial-navigation-js'
 import Event from '@/services/Event'
+import User from '@/services/User'
 import OptionsOverlay from '@/components/OptionsOverlay'
 import LicenseOverlay from '@/components/LicenseOverlay'
 
@@ -36,7 +37,7 @@ export default {
     return {
       isLoaded: false,
       showOptions: false,
-      showLicense: !this.$db.verified,
+      showLicense: !User.isVerified,
     }
   },
 

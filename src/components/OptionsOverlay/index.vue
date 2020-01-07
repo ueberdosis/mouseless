@@ -1,5 +1,5 @@
 <template>
-  <div class="options-overlay" v-if="verified">
+  <div class="options-overlay" v-if="user.isVerified">
     <div class="options-overlay__header">
       <h2>
         Options
@@ -19,12 +19,12 @@
         </div>
       </div>
 
-      <div class="options-overlay__section">
+      <div class="options-overlay__section" v-if="user.email">
         <div>
           License
         </div>
         <div>
-          Licenced to {{ licenseEmail }}
+          Licenced to {{ user.email }}
         </div>
       </div>
 
@@ -125,6 +125,7 @@
 import { remote, ipcRenderer } from 'electron'
 import Event from '@/services/Event'
 import Keyboard from '@/services/Keyboard'
+import User from '@/services/User'
 import Btn from '@/components/Btn'
 import Store from '@/services/Store'
 import SmallKey from '@/components/SmallKey'
@@ -147,6 +148,7 @@ export default {
       showMenubarRestartButton: false,
       keyboard: null,
       shortcut: Store.get('shortcut'),
+      user: User,
     }
   },
 
@@ -167,14 +169,6 @@ export default {
   },
 
   computed: {
-    verified() {
-      return this.$db.verified
-    },
-
-    licenseEmail() {
-      return this.$db.verification.purchase.email
-    },
-
     isListening() {
       return !!this.keyboard
     },

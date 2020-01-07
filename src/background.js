@@ -13,6 +13,9 @@ import MenuBuilder from './services/MenuBuilder'
 import MenuBar from './services/MenuBar'
 import AutoStart from './services/AutoStart'
 import Store from './services/Store'
+import Setapp from './services/Setapp'
+
+Setapp.init()
 
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
@@ -45,8 +48,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    /* global __static */
-    icon: path.join(__static, 'icon.png'),
+    icon: path.resolve(__dirname, 'build/icon.icns'),
   })
 
   LicenseCheck.setWindow(win)
@@ -69,6 +71,7 @@ function createWindow() {
     win = null
   })
 
+  Setapp.setMainWindow(win)
   MenuBar.setMainWindow(win)
 }
 
