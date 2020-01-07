@@ -9,8 +9,6 @@ import Run from '@/models/Run'
 
 export default new class {
 
-  debug = false
-
   get locale() {
     return keymap.getCurrentKeyboardLayout().localizedName
   }
@@ -32,9 +30,9 @@ export default new class {
       .keys()
       .map(filename => context(filename))
       .filter(data => {
-        const debug = typeof data.debug === 'undefined' ? false : data.debug
+        const debug = typeof data.debug === 'undefined' ? 'false' : 'true'
 
-        return debug === this.debug
+        return debug === process.env.VUE_APP_DEBUG
       })
       .map(data => this.createModel(App, data))
 
