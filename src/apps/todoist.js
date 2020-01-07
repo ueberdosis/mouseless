@@ -75,11 +75,11 @@ module.exports = {
         },
         {
           title: 'Move to the task above the task currently being edited',
-          keys: ['Control', 'ArrowUp'],
+          keys: ['Meta', 'ArrowUp'],
         },
         {
           title: 'Move to the task below the task currently being edited',
-          keys: ['Control', 'ArrowDown'],
+          keys: ['Meta', 'ArrowDown'],
         },
       ],
     },
