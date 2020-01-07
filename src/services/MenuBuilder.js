@@ -1,5 +1,6 @@
 import { app, Menu } from 'electron'
 import Updater from './Updater'
+import Setapp from './Setapp'
 
 const isMac = process.platform === 'darwin'
 
@@ -16,12 +17,14 @@ export default new class {
           { role: 'hideothers' },
           { role: 'unhide' },
           { type: 'separator' },
-          {
-            label: 'Check for Updates',
-            click(menuItem) {
-              Updater.checkForUpdates(menuItem)
+          ...(!Setapp.isActive ? [
+            {
+              label: 'Check for Updates',
+              click(menuItem) {
+                Updater.checkForUpdates(menuItem)
+              },
             },
-          },
+          ] : []),
           { type: 'separator' },
           { role: 'quit' },
         ],
