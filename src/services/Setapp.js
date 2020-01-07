@@ -15,6 +15,7 @@ export default new class {
     }
 
     this.setapp = require('../../setapp-nodejs-wrapper/build/Release/setapp.node')
+    // eslint-disable-next-line
     console.log({ setapp: this.setapp })
 
     this.reportUsageEvent('launch')
