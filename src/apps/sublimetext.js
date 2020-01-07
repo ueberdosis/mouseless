@@ -6,8 +6,75 @@ module.exports = {
   category: 'Development',
   sets: [
     {
-      title: 'Editing',
-      id: 'editing',
+      title: 'Essentials',
+      id: 'essentials',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Select word',
+          keys: ['Meta', 'd'],
+        },
+        {
+          title: 'Jump to closing parentheses',
+          keys: ['Control', 'm'],
+        },
+        {
+          title: 'Select all contents of the current parentheses',
+          keys: ['Control', 'Shift', 'm'],
+        },
+        {
+          title: 'Redo, or repeat last keyboard shortcut command',
+          keys: ['Meta', 'y'],
+        },
+        {
+          title: 'Paste and indent correctly',
+          keys: ['Meta', 'Shift', 'v'],
+        },
+        {
+          title: 'Soft undo',
+          description: 'Jumps to your last change before undoing change when repeated',
+          keys: ['Control', 'u'],
+        },
+        {
+          title: 'Column selection up',
+          keys: ['Control', 'Shift', 'ArrowUp'],
+        },
+        {
+          title: 'Column selection down',
+          keys: ['Control', 'Shift', 'ArrowDown'],
+        },
+      ],
+    },
+    {
+      title: 'Selections',
+      id: 'selections',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Select line',
+          keys: ['Meta', 'l'],
+        },
+        {
+          title: 'Move selection up',
+          keys: ['Meta', 'Control', 'ArrowUp'],
+        },
+        {
+          title: 'Move selection down',
+          keys: ['Meta', 'Control', 'ArrowDown'],
+        },
+        {
+          title: 'Block comment current selection',
+          keys: ['Meta', 'Alt', '/'],
+        },
+        {
+          title: 'Select next auto-complete suggestion',
+          keys: ['Control', 'Space'],
+        },
+      ],
+    },
+    {
+      title: 'Lines',
+      id: 'lines',
       version: 1,
       shortcuts: [
         {
@@ -23,76 +90,32 @@ module.exports = {
           keys: ['Meta', 'Shift', 'Enter'],
         },
         {
-          title: 'Move line/selection up',
+          title: 'Move line up',
           keys: ['Meta', 'Control', 'ArrowUp'],
         },
         {
-          title: 'Move line/selection down',
+          title: 'Move line down',
           keys: ['Meta', 'Control', 'ArrowDown'],
-        },
-        {
-          title: 'elect line – Repeat to select next lines',
-          keys: ['Meta', 'l'],
-        },
-        {
-          title: 'Select word – Repeat select others occurrences',
-          keys: ['Meta', 'd'],
-        },
-        {
-          title: 'Jump to closing parentheses Repeat to jump to opening parentheses',
-          keys: ['Control', 'm'],
-        },
-        {
-          title: 'Select all contents of the current parentheses',
-          keys: ['Control', 'Shift', 'm'],
-        },
-        {
-          title: 'Indent current line(s)',
-          keys: ['Meta', ']'],
-        },
-        {
-          title: 'Un-indent current line(s)',
-          keys: ['Meta', '['],
-        },
-        {
-          title: 'Duplicate line(s)',
-          keys: ['Meta', 'Shift', 'd'],
-        },
-        {
-          title: 'Join line below to the end of the current line',
-          keys: ['Meta', 'j'],
         },
         {
           title: 'Comment/un-comment current line',
           keys: ['Meta', '/'],
         },
         {
-          title: 'Block comment current selection',
-          keys: ['Meta', 'Alt', '/'],
+          title: 'Indent current line',
+          keys: ['Meta', ']'],
         },
         {
-          title: 'Redo, or repeat last keyboard shortcut command',
-          keys: ['Meta', 'y'],
+          title: 'Un-indent current line',
+          keys: ['Meta', '['],
         },
         {
-          title: 'Paste and indent correctly',
-          keys: ['Meta', 'Shift', 'v'],
+          title: 'Duplicate line',
+          keys: ['Meta', 'Shift', 'd'],
         },
         {
-          title: 'Select next auto-complete suggestion',
-          keys: ['Control', 'Space'],
-        },
-        {
-          title: 'Soft undo; jumps to your last change before undoing change when repeated',
-          keys: ['Control', 'u'],
-        },
-        {
-          title: 'Column selection up',
-          keys: ['Control', 'Shift', 'ArrowUp'],
-        },
-        {
-          title: 'Column selection down',
-          keys: ['Control', 'Shift', 'ArrowDown'],
+          title: 'Join line below to the end of the current line',
+          keys: ['Meta', 'j'],
         },
       ],
     },
@@ -136,7 +159,7 @@ module.exports = {
     },
     {
       title: 'Find/Replace',
-      id: 'find',
+      id: 'find-replace',
       version: 1,
       shortcuts: [
         {
@@ -174,7 +197,7 @@ module.exports = {
     },
     {
       title: 'Split Window',
-      id: 'window',
+      id: 'split-window',
       version: 1,
       shortcuts: [
         {
