@@ -104,12 +104,20 @@ module.exports = {
       version: 1,
       shortcuts: [
         {
-          title: 'Increase task indent',
-          keys: ['Meta', 'ArrowRight'],
+          title: 'Sort by date',
+          keys: ['d'],
         },
         {
-          title: 'Decrease task indent',
-          keys: ['Meta', 'ArrowLeft'],
+          title: 'Sort by priority',
+          keys: ['p'],
+        },
+        {
+          title: 'Sort by name',
+          keys: ['n'],
+        },
+        {
+          title: 'Sort by assignee',
+          keys: ['r'],
         },
       ],
     },
