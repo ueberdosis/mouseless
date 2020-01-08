@@ -1,5 +1,6 @@
 import { dialog, app, BrowserWindow } from 'electron'
 import { autoUpdater } from 'electron-updater'
+import log from 'electron-log'
 import Setapp from './Setapp'
 
 export default new class {
@@ -7,12 +8,9 @@ export default new class {
   constructor() {
     autoUpdater.autoDownload = false
 
-    // if (process.env.NODE_ENV === 'development') {
-    //   // logs to ~/Library/Logs/<app name>/log.log
-    //   const log = require('electron-log')
-    //   autoUpdater.logger = log
-    //   autoUpdater.logger.transports.file.level = 'debug'
-    // }
+    // logs to ~/Library/Logs/Mouseless/log.log
+    autoUpdater.logger = log
+    autoUpdater.logger.transports.file.level = 'info'
 
     this.menuItem = null
     this.silent = false
