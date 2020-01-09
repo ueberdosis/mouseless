@@ -71,7 +71,6 @@ function createWindow() {
     win = null
   })
 
-  Setapp.setMainWindow(win)
   MenuBar.setMainWindow(win)
 }
 

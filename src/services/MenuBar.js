@@ -10,6 +10,7 @@ import activeWin from 'active-win'
 import windowShortcuts from 'window-shortcuts'
 import Store from './Store'
 import User from './User'
+import Setapp from './Setapp'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const isDevelopment = !isProduction
@@ -76,11 +77,14 @@ export default new class {
       ])
 
       this.menubar.tray.on('right-click', () => {
+        Setapp.reportUsageEvent('user-interaction')
         this.menubar.tray.popUpContextMenu(contextMenu)
       })
     })
 
     this.menubar.on('show', () => {
+      Setapp.reportUsageEvent('user-interaction')
+
       const activeWindow = activeWin.sync()
       const appName = activeWindow ? activeWindow.owner.name : null
       const defaultResponse = {
