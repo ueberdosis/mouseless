@@ -50,12 +50,20 @@ export default new class {
   }
 
   silentlyCheckForUpdates() {
+    if (Setapp.isActive) {
+      return
+    }
+
     this.silent = true
     this.disableMenuItem()
     autoUpdater.checkForUpdates()
   }
 
   checkForUpdates(menuItem = null) {
+    if (Setapp.isActive) {
+      return
+    }
+
     this.menuItem = menuItem
     this.silent = false
     this.disableMenuItem()
@@ -63,6 +71,10 @@ export default new class {
   }
 
   ensureSafeQuitAndInstall() {
+    if (Setapp.isActive) {
+      return
+    }
+
     app.removeAllListeners('window-all-closed')
     this.browserWindows.forEach(browserWindow => browserWindow.removeAllListeners('close'))
     autoUpdater.quitAndInstall()
@@ -74,6 +86,10 @@ export default new class {
   }
 
   async onUpdateAvailable() {
+    if (Setapp.isActive) {
+      return
+    }
+
     this.sendStatusToWindow('Update available.')
 
     const { response } = await dialog.showMessageBox({
@@ -92,6 +108,10 @@ export default new class {
   }
 
   onUpdateNotAvailable() {
+    if (Setapp.isActive) {
+      return
+    }
+
     this.sendStatusToWindow('Update not available.')
 
     this.enableMenuItem()
@@ -107,6 +127,10 @@ export default new class {
   }
 
   async onUpdateDownloaded() {
+    if (Setapp.isActive) {
+      return
+    }
+
     this.sendStatusToWindow('Update downloaded.')
 
     const { response } = await dialog.showMessageBox({
@@ -128,6 +152,10 @@ export default new class {
   }
 
   onDownloadProgress(progress) {
+    if (Setapp.isActive) {
+      return
+    }
+
     let logMessage = `Download speed: ${progress.bytesPerSecond}`
     logMessage = `${logMessage} - Downloaded ${progress.percent}%`
     logMessage = `${logMessage} (${progress.transferred}/${progress.total})`
