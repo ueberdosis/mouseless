@@ -9,16 +9,15 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "cross-env vue-cli-service electron:serve",
+    "start": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
     "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten",
     "electron:build": "vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
     "electron:publish": "yarn electron:build -p always",
-    "setapp:start": "yarn start",
-    "setapp:build": "yarn electron:build",
-    "setapp:sign": "./setapp-nodejs-wrapper/integrate_setapp.sh -app ./dist_electron/mac/Mouseless.app -sign 4059EB328525CEA031269896FF794545316A64A4 -entitlements ./build/entitlements.mac.plist"
+    "setapp:start": "cross-env IS_SETAPP=true yarn start",
+    "setapp:build": "cross-env IS_SETAPP=true yarn electron:build"
   },
   "main": "background.js",
   "devDependencies": {

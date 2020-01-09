@@ -27,6 +27,14 @@ module.exports = {
       .end()
 
     config.resolve.extensions.prepend('.node')
+
+    // cross-env can't send through the electron wrapper to the vue app
+    // so we have to provide it here
+    config.plugin('define').tap(definitions => {
+      // eslint-disable-next-line
+      definitions[0]['process.env'].IS_SETAPP = JSON.stringify(process.env.IS_SETAPP)
+      return definitions
+    })
   },
 
   pluginOptions: {

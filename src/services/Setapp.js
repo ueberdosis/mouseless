@@ -4,7 +4,7 @@ import { app, BrowserWindow } from 'electron'
 export default new class {
 
   constructor() {
-    this.isActive = process.env.VUE_APP_IS_SETAPP === 'true'
+    this.isActive = process.env.IS_SETAPP === 'true'
   }
 
   init() {
