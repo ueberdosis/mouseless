@@ -5,6 +5,9 @@ export default new class {
 
   constructor() {
     this.isActive = process.env.IS_SETAPP === 'true'
+
+    // eslint-disable-next-line
+    console.log('is setapp:', this.isActive)
   }
 
   init() {
