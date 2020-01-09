@@ -4,7 +4,7 @@ import { app, BrowserWindow } from 'electron'
 export default new class {
 
   constructor() {
-    this.isActive = process.env.IS_SETAPP === 'true'
+    this.isActive = process.env.VUE_APP_IS_SETAPP === 'true'
 
     // eslint-disable-next-line
     console.log('is setapp:', this.isActive)
@@ -16,8 +16,6 @@ export default new class {
     }
 
     this.setapp = require('../../setapp-nodejs-wrapper/build/Release/setapp.node')
-    // eslint-disable-next-line
-    console.log({ setapp: this.setapp })
   }
 
   reportUsageEvent(name = null) {
@@ -25,8 +23,6 @@ export default new class {
       return
     }
 
-    // eslint-disable-next-line
-    console.log(name)
     this.setapp.SCReportUsageEvent(name)
   }
 

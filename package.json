@@ -16,8 +16,8 @@
     "electron:build": "vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
     "electron:publish": "yarn electron:build -p always",
-    "setapp:start": "cross-env IS_SETAPP=true yarn start",
-    "setapp:build": "cross-env IS_SETAPP=true yarn electron:build"
+    "setapp:start": "cross-env VUE_APP_IS_SETAPP=true vue-cli-service electron:serve",
+    "setapp:build": "cross-env VUE_APP_IS_SETAPP=true vue-cli-service electron:build"
   },
   "main": "background.js",
   "devDependencies": {
