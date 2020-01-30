@@ -181,6 +181,12 @@ export default new class {
         this.show()
       }
     })
+
+    globalShortcut.register('escape', () => {
+      if (this.isWindowVisible(this.menubar.window)) {
+        this.hide()
+      }
+    })
   }
 
 }()
