@@ -201,9 +201,20 @@ export default class Keyboard {
         return key
       })
 
+      // https://developer.apple.com/design/human-interface-guidelines/macos/user-interaction/keyboard/#keyboard-shortcuts
+      const sortOrder = ['Control', 'Alt', 'Shift', 'Meta']
+
       return collect(resolvedKeys)
         .flatten()
         .filter()
+        .sortBy((a, b) => {
+          const indexA = sortOrder.indexOf(a)
+          const indexB = sortOrder.indexOf(b)
+          const hugeNumber = 1000 // TODO: ugly
+
+          return (indexA >= 0 ? indexA : hugeNumber)
+            - (indexB >= 0 ? indexB : hugeNumber)
+        })
         .toArray()
     })
 
