@@ -373,10 +373,6 @@ module.exports = {
           keys: ['Meta', 'Shift', 'a'],
         },
         {
-          title: 'Scratchpad',
-          keys: ['Shift', 'F4'],
-        },
-        {
           title: 'PageSource',
           keys: ['Meta', 'u'],
         },
@@ -588,10 +584,6 @@ module.exports = {
         {
           title: 'Open Browser Toolbox',
           keys: ['Meta', 'Alt', 'Shift', 'i'],
-        },
-        {
-          title: 'Open Scratchpad',
-          keys: ['Shift', 'F4'],
         },
         {
           title: 'Open WebIDE',
