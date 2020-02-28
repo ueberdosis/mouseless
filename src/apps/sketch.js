@@ -663,7 +663,7 @@ module.exports = {
         },
         {
           title: 'Emoji & symbols',
-          keys: ['Alt', 'Meta', 'Space'],
+          keys: ['Control', 'Meta', 'Space'],
         },
       ],
     },
