@@ -85,7 +85,7 @@ module.exports = {
         },
         {
           title: 'Delete selected items',
-          keys: ['Delete'],
+          keys: ['Backspace'],
         },
         {
           title: 'Move completed to Logbook',

@@ -160,7 +160,7 @@ module.exports = {
         },
         {
           title: 'Delete the previous word in a text field',
-          keys: ['Alt', 'Delete'],
+          keys: ['Alt', 'Backspace'],
         },
       ],
     },
@@ -195,7 +195,7 @@ module.exports = {
         },
         {
           title: 'Open the Clear Browsing Data options',
-          keys: ['Meta', 'Shift', 'Delete'],
+          keys: ['Meta', 'Shift', 'Backspace'],
         },
         {
           title: 'Log in as a different user, browse as a Guest, or access payment and password info',

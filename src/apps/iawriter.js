@@ -116,7 +116,7 @@ module.exports = {
         },
         {
           title: 'Clear Styles',
-          keys: ['Alt', 'Meta', 'Delete'],
+          keys: ['Alt', 'Meta', 'Backspace'],
         },
       ],
     },

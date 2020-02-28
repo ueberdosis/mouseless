@@ -389,7 +389,7 @@ module.exports = {
         },
         {
           title: 'Delete a point on the curve',
-          keys: ['Delete'],
+          keys: ['Backspace'],
         },
       ],
     },
@@ -447,19 +447,19 @@ module.exports = {
         },
         {
           title: 'Open Fill dialog box',
-          keys: ['Delete'],
+          keys: ['Backspace'],
         },
         {
           title: 'Fill with foreground or background color',
-          keys: ['Alt', 'Delete'],
+          keys: ['Alt', 'Backspace'],
         },
         {
           title: 'Fill from history',
-          keys: ['Meta', 'Alt', 'Delete'],
+          keys: ['Meta', 'Alt', 'Backspace'],
         },
         {
           title: 'Displays Fill dialog box',
-          keys: ['Shift', 'Delete'],
+          keys: ['Shift', 'Backspace'],
         },
         {
           title: 'Lock transparent pixels on/off',
@@ -862,7 +862,7 @@ module.exports = {
         },
         {
           title: 'Delete last node while creating plane',
-          keys: ['Delete'],
+          keys: ['Backspace'],
         },
       ],
     },

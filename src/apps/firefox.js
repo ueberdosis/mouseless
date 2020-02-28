@@ -100,7 +100,7 @@ module.exports = {
         },
         {
           title: 'Delete',
-          keys: ['Delete'],
+          keys: ['Backspace'],
         },
         {
           title: 'Go to End of Line',
@@ -328,7 +328,7 @@ module.exports = {
         },
         {
           title: 'Clear Recent History',
-          keys: ['Meta', 'Shift', 'Delete'],
+          keys: ['Meta', 'Shift', 'Backspace'],
         },
       ],
     },
@@ -444,7 +444,7 @@ module.exports = {
         },
         {
           title: 'Delete Selected Autocomplete Entry',
-          keys: ['Shift', 'Delete'],
+          keys: ['Shift', 'Backspace'],
         },
         {
           title: 'Toggle Full Screen',

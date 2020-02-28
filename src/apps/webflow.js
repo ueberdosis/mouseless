@@ -25,7 +25,7 @@ module.exports = {
         },
         {
           title: 'Delete Element',
-          keys: ['Delete'],
+          keys: ['Backspace'],
         },
         {
           title: 'Show Publish Dialog',
