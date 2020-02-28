@@ -184,15 +184,15 @@ module.exports = {
       shortcuts: [
         {
           title: 'Move the selected item to the Trash',
-          keys: ['Meta', 'Delete'],
+          keys: ['Meta', 'Backspace'],
         },
         {
           title: 'Empty the Trash',
-          keys: ['Shift', 'Meta', 'Delete'],
+          keys: ['Shift', 'Meta', 'Backspace'],
         },
         {
           title: 'Empty the Trash without confirmation dialog',
-          keys: ['Alt', 'Shift', 'Meta', 'Delete'],
+          keys: ['Alt', 'Shift', 'Meta', 'Backspace'],
         },
       ],
     },
