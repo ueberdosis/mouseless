@@ -49,6 +49,7 @@ export default class Keyboard {
     ['Control', 'ArrowDown'], // window navigation
     ['Control', 'ArrowLeft'], // window navigation
     ['Control', 'ArrowRight'], // window navigation
+    ['Control', 'Meta', 'd'], // dictionary
     ['Alt', 'Meta', 'd'], // toggle dock
     Store.get('shortcut', []), // mouseless shortcut
   ]
