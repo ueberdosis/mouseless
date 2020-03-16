@@ -208,7 +208,7 @@ export default class Keyboard {
       return collect(resolvedKeys)
         .flatten()
         .filter()
-        .sortBy((a, b) => {
+        .sort((a, b) => {
           const indexA = sortOrder.indexOf(a)
           const indexB = sortOrder.indexOf(b)
           const hugeNumber = 1000 // TODO: ugly

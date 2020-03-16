@@ -12,6 +12,11 @@ module.exports = {
       version: 1,
       shortcuts: [
         // {
+        //   title: 'Order',
+        //   keys: ['Meta', 'Control', 'Shift', 'Alt', 'm'],
+        //   // should be ['Control', 'Alt', 'Shift', 'Meta', 'm']
+        // },
+        // {
         //   title: 'Mouseless Shortcut',
         //   keys: ['Meta', 'Shift', 'm'],
         // },
