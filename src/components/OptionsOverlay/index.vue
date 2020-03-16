@@ -24,7 +24,7 @@
           License
         </div>
         <div>
-          Licenced to {{ user.email }}
+          Licensed to {{ user.email }}
         </div>
       </div>
 
