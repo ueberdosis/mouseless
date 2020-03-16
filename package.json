@@ -17,7 +17,8 @@
     "electron:serve": "vue-cli-service electron:serve",
     "electron:publish": "yarn electron:build -p always",
     "setapp:start": "cross-env VUE_APP_IS_SETAPP=true vue-cli-service electron:serve",
-    "setapp:build": "cross-env VUE_APP_IS_SETAPP=true vue-cli-service electron:build"
+    "setapp:build": "cross-env VUE_APP_IS_SETAPP=true vue-cli-service electron:build",
+    "hash": "./node_modules/app-builder-bin/mac/app-builder blockmap -i dist_electron/mac/Mouseless-1.2.6-mac.zip"
   },
   "main": "background.js",
   "devDependencies": {
