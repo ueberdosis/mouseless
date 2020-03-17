@@ -139,6 +139,12 @@ export default new class {
       this.addShortcutListener()
     })
 
+    ipcMain.on('hide', () => {
+      if (this.isWindowVisible(this.menubar.window)) {
+        this.hide()
+      }
+    })
+
     app.on('will-quit', () => {
       globalShortcut.unregisterAll()
     })
@@ -179,12 +185,6 @@ export default new class {
         this.hide()
       } else {
         this.show()
-      }
-    })
-
-    globalShortcut.register('escape', () => {
-      if (this.isWindowVisible(this.menubar.window)) {
-        this.hide()
       }
     })
   }

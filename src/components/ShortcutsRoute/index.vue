@@ -201,18 +201,26 @@ export default {
 
       return fuse.search(this.query)
     },
+
+    handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        ipcRenderer.send('hide')
+      }
+    },
   },
 
   mounted() {
     ipcRenderer.on('activeWindow:loading', this.onLoading)
     ipcRenderer.on('activeWindow:response', this.onActiveWindow)
     ipcRenderer.on('activeWindow:hide', this.onHide)
+    document.addEventListener('keydown', this.handleKeyDown)
   },
 
   beforeDestroy() {
     ipcRenderer.removeListener('activeWindow:loading', this.onLoading)
     ipcRenderer.removeListener('activeWindow:response', this.onActiveWindow)
     ipcRenderer.removeListener('activeWindow:hide', this.onHide)
+    document.removeEventListener('keydown', this.handleKeyDown)
   },
 }
 </script>
