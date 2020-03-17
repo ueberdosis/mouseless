@@ -20,6 +20,7 @@
         type="text"
         autofocus
         ref="search"
+        @blur="onBlur"
         v-if="sets.length || query"
       >
     </div>
@@ -165,11 +166,18 @@ export default {
       this.loading = true
     },
 
+    onBlur() {
+      this.focusSearch()
+    },
+
     onActiveWindow(event, activeWindow) {
       this.loading = false
       this.activeWindow = activeWindow
       this.title = activeWindow.app
+      this.focusSearch()
+    },
 
+    focusSearch() {
       this.$nextTick(() => {
         if (this.$refs.search) {
           this.$refs.search.focus()
