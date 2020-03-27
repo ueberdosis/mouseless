@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://support.apple.com/en-gb/HT201236
 module.exports = {
   id: 'macos',

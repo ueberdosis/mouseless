@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://helpx.adobe.com/xd/help/keyboard-shortcuts.html
 module.exports = {
   id: 'adobexd',

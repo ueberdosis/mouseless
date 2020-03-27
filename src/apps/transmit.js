@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://library.panic.com/transmit/transmit5/shortcuts/
 module.exports = {
   id: 'transmit',

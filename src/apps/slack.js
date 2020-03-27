@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://slack.com/intl/en-Gb/help/articles/201374536#
 module.exports = {
   id: 'slack',

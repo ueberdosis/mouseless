@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://support.apple.com/en-gb/guide/safari/cpsh003/mac
 module.exports = {
   id: 'safari',

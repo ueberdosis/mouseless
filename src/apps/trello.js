@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://trello.com/shortcuts
 module.exports = {
   id: 'trello',

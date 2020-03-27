@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://get.todoist.help/hc/en-us/articles/205063212-Keyboard-Shortcuts
 module.exports = {
   id: 'todoist',

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://gist.github.com/faizshukri/7867631
 module.exports = {
   id: 'sublimetext',

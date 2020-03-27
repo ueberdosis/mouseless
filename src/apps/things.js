@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://support.culturedcode.com/customer/en/portal/articles/2785159-keyboard-shortcuts-for-mac
 module.exports = {
   id: 'things',

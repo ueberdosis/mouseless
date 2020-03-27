@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly#w_media-shortcuts
 // https://developer.mozilla.org/en-US/docs/Tools/Keyboard_shortcuts
 module.exports = {

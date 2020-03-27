@@ -1,5 +1,4 @@
-/* eslint-disable max-len */
-// https://bear.app/faq/Shortcuts%20and%20more/Mac%20shortcuts/
+// https://bear.app/faq/Shorstcuts%20and%20more/Mac%20shortcuts/
 module.exports = {
   id: 'bear',
   title: 'Bear',

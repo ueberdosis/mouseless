@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://support.spotify.com/us/using_spotify/system_settings/keyboard-shortcuts/
 module.exports = {
   id: 'spotify',

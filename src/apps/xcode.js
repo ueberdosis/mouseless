@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/xcode_help-command_shortcuts/MenuMetas/MenuMetas014.html#//apple_ref/doc/uid/TP40010560-CH2-SW1
 module.exports = {
   id: 'xcode',

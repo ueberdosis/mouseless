@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 module.exports = {
   id: 'test',
   title: 'Test',

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://support.google.com/chrome/answer/157179?hl=en
 module.exports = {
   id: 'chrome',

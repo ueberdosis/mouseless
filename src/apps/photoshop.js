@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://helpx.adobe.com/photoshop/using/default-keyboard-shortcuts.html
 module.exports = {
   id: 'photoshop',

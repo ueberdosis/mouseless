@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://ia.net/writer/support/general/keyboard
 module.exports = {
   id: 'iawriter',

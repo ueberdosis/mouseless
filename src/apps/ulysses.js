@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // https://ulysses.app/tutorials/shortcuts
 module.exports = {
   id: 'ulysses',
