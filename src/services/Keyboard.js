@@ -63,30 +63,6 @@ export default class Keyboard {
     // maybe this will break something
     .filter(key => !this.blockedKeys.includes(key.code))
 
-  static formats = {
-    CapsLock: '⇪',
-    Shift: '⇧',
-    Control: '⌃',
-    Alt: '⌥',
-    Meta: '⌘',
-    ArrowUp: '↑',
-    ArrowRight: '→',
-    ArrowDown: '↓',
-    ArrowLeft: '←',
-    Enter: '↩',
-    Backspace: '⌫',
-    Delete: '⌦',
-    Escape: '⎋',
-    Tab: '⇥',
-    PageUp: '⇞',
-    PageDown: '⇟',
-    Space: '␣',
-  }
-
-  static formatKeyCode(name) {
-    return this.formats[name] ? this.formats[name] : name
-  }
-
   constructor() {
     this.emitter = new Emitter()
     this.specialKeys = []

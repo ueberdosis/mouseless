@@ -1,15 +1,15 @@
 import Vue from 'vue'
+import keyboardSymbol from 'keyboard-symbol'
 import router from '@/router'
 import DB from '@/services/DB'
 import CleanUp from '@/services/CleanUp'
 import HealthCheck from '@/services/HealthCheck'
-import Keyboard from '@/services/Keyboard'
 import Wrapper from '@/components/Wrapper'
 
 Vue.config.productionTip = false
 Vue.prototype.$db = DB
 
-Vue.filter('key', value => Keyboard.formatKeyCode(value))
+Vue.filter('key', value => keyboardSymbol(value, 'mac'))
 
 Vue.filter('uppercase', value => {
   const ignoredCharacters = ['ß']

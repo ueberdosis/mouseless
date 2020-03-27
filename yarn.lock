@@ -6619,6 +6619,11 @@ kew@^0.7.0:
   resolved "https://registry.yarnpkg.com/kew/-/kew-0.7.0.tgz#79d93d2d33363d6fdd2970b335d9141ad591d79b"
   integrity sha1-edk9LTM2PW/dKXCzNdkUGtWR15s=
 
+keyboard-symbol@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/keyboard-symbol/-/keyboard-symbol-1.0.0.tgz#5511323c1feeb911f94b7f229019042f8b2fa110"
+  integrity sha512-La1MgFZLliaKKyYPPr21gj1Wi9UqDMAkn0S/Z+SwWymrIHxXSOasLIvPLH/vhvS7gHO/NQcDQF3aVgw5qZYqvg==
+
 keyv@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-3.1.0.tgz#ecc228486f69991e49e9476485a5be1e8fc5c4d9"
