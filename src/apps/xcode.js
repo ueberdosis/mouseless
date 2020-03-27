@@ -372,7 +372,7 @@ module.exports = {
     },
     {
       title: 'Navigate Source Editor',
-      id: 'source',
+      id: 'source-editor',
       version: 1,
       shortcuts: [
         {
@@ -483,7 +483,7 @@ module.exports = {
     },
     {
       title: 'Source code',
-      id: 'source',
+      id: 'source-code',
       version: 1,
       shortcuts: [
         {
