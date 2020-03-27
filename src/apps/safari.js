@@ -12,7 +12,7 @@ module.exports = {
       shortcuts: [
         {
           title: 'Scroll up',
-          keys: ['ArrowTop'],
+          keys: ['ArrowUp'],
         },
         {
           title: 'Scroll down in larger increments',
@@ -62,10 +62,11 @@ module.exports = {
           title: 'Close Reader',
           keys: ['Escape'],
         },
-        {
-          title: 'Exit full-screen view',
-          keys: ['Escape'],
-        },
+        // duplicated
+        // {
+        //   title: 'Exit full-screen view',
+        //   keys: ['Escape'],
+        // },
         {
           title: 'Zoom',
           keys: ['Meta', '+'],
@@ -92,8 +93,8 @@ module.exports = {
       ],
     },
     {
-      title: 'Web pages',
-      id: 'web',
+      title: 'Bookmarks',
+      id: 'bookmarks',
       version: 1,
       shortcuts: [
         {
@@ -124,10 +125,11 @@ module.exports = {
           title: 'Cancel editing a bookmark name in the sidebar',
           keys: ['Escape'],
         },
-        {
-          title: 'Finish editing a bookmark name',
-          keys: ['Enter'],
-        },
+        // duplicated
+        // {
+        //   title: 'Finish editing a bookmark name',
+        //   keys: ['Enter'],
+        // },
         {
           title: 'Delete a bookmark',
           keys: ['Delete'],
