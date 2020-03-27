@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import moment from 'moment'
-import uuidv4 from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 import collect from 'collect.js'
 import keymap from 'native-keymap'
 import Store from '@/services/Store'

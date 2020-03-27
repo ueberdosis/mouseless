@@ -64,7 +64,7 @@
 <script>
 import collect from 'collect.js'
 import Fuse from 'fuse.js'
-import uuidv4 from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 import { ipcRenderer } from 'electron'
 import Icon from '@/components/Icon'
 import Keyboard from '@/services/Keyboard'
