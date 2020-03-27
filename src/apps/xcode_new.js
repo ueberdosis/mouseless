@@ -509,22 +509,22 @@ module.exports = {
       id: 'find',
       version: 1,
       shortcuts: [
-        Find in Workspace…|Shift++Meta++f
-        Find and Replace in Workspace…|Alt++Shift++Meta
-        Find Next in Workspace|Control++Meta++g
-        Find Previous in Workspace|Control++Shift++Meta++g
-        Find Selected Smybol in Workspace|Control++Shift++Meta++f
-        Find Call Hierarchy|Control++Shift++Meta++h
-        Find…|Meta++f
-        Find and Replace…|Alt++Meta++f
-        Find Next|Meta++g
-        Find Previous|Shift++Meta++g
-        Find and Select Next|Alt++Meta++g
-        Find and Select Previous|Alt++Shift++Meta++g
-        Use Selection for Find|Meta++e
-        Use Selection for Replace|Shift++Meta++e
-        Select Next Occurrence|Alt++Meta++e
-        Select Previous Occurrence|Alt++Shift++Meta++e
+        Find in Workspace…||Shift++Meta++f
+        Find and Replace in Workspace…||Alt++Shift++Meta
+        Find Next in Workspace||Control++Meta++g
+        Find Previous in Workspace||Control++Shift++Meta++g
+        Find Selected Smybol in Workspace||Control++Shift++Meta++f
+        Find Call Hierarchy||Control++Shift++Meta++h
+        Find…||Meta++f
+        Find and Replace…||Alt++Meta++f
+        Find Next||Meta++g
+        Find Previous||Shift++Meta++g
+        Find and Select Next||Alt++Meta++g
+        Find and Select Previous||Alt++Shift++Meta++g
+        Use Selection for Find||Meta++e
+        Use Selection for Replace||Shift++Meta++e
+        Select Next Occurrence||Alt++Meta++e
+        Select Previous Occurrence||Alt++Shift++Meta++e
       ],
     },
     {
@@ -532,29 +532,29 @@ module.exports = {
       id: 'navigate',
       version: 1,
       shortcuts: [
-        Reveal in Projet Navigator|Shift++Meta++j
-        Reveal in Debug Navigator|Shift++Meta++d
-        Open in Next Editor|Alt++Meta++,
-        Move Focus to Next Area|Alt++Meta++`
-        Move Focus to Previous Area|Alt++Shift++Meta++`
-        Move Focus to Next Editor|Control++`
-        Move Focus to Previous Editor|Control++Shift++`
-        Move Focus to Editor…|Meta++j
-        Go Forward|Control++Meta++ArrowRight
-        Go Forward in Next Editor|Control++Alt++Meta++ArrowRight
-        Go Forward in…|Control++Alt++Shift++Meta++ArrowRight
-        Go Back|Control++Meta++ArrowLeft
-        Go Back in Next Editor|Control++Alt++Meta++ArrowLeft
-        Go Forward in…|Control++Alt++Shift++Meta++ArrowLeft
-        Jump to Selection|Alt++Meta++l
-        Jump to Definition|Control++Meta++j
-        Jump to Definition in Next Editor|Control++Alt++Meta++j
-        Jump to Definition in…|Control++Alt++Shift++Meta++j
-        Jump to Next Issue|Meta++'
-        Fix Next Issue|Control++Meta++'
-        Jump to Previous Issue|Meta++"
-        Fix Previous Issue|Control++Meta++"
-        Jump to Instruction Pointer|Control++Meta++p
+        Reveal in Projet Navigator||Shift++Meta++j
+        Reveal in Debug Navigator||Shift++Meta++d
+        Open in Next Editor||Alt++Meta++,
+        Move Focus to Next Area||Alt++Meta++`
+        Move Focus to Previous Area||Alt++Shift++Meta++`
+        Move Focus to Next Editor||Control++`
+        Move Focus to Previous Editor||Control++Shift++`
+        Move Focus to Editor…||Meta++j
+        Go Forward||Control++Meta++ArrowRight
+        Go Forward in Next Editor||Control++Alt++Meta++ArrowRight
+        Go Forward in…||Control++Alt++Shift++Meta++ArrowRight
+        Go Back||Control++Meta++ArrowLeft
+        Go Back in Next Editor||Control++Alt++Meta++ArrowLeft
+        Go Forward in…||Control++Alt++Shift++Meta++ArrowLeft
+        Jump to Selection||Alt++Meta++l
+        Jump to Definition||Control++Meta++j
+        Jump to Definition in Next Editor||Control++Alt++Meta++j
+        Jump to Definition in…||Control++Alt++Shift++Meta++j
+        Jump to Next Issue||Meta++'
+        Fix Next Issue||Control++Meta++'
+        Jump to Previous Issue||Meta++"
+        Fix Previous Issue||Control++Meta++"
+        Jump to Instruction Pointer||Control++Meta++p
       ],
     },
     {
@@ -562,6 +562,19 @@ module.exports = {
       id: 'navigate_commitsheet',
       version: 1,
       shortcuts: [
+        Jump to Next Counterpart||Control++Meta++ArrowTop
+        Jump to Next Counterpart in Next Editor||Control++Alt++Meta++ArrowTop
+        Jump to Next Counterpart in…||Control++Alt++Shift++Meta++ArrowTop
+        Jump to Previous Counterpart||Control++Meta++ArrowDown
+        Jump to Previous Counterpart in Next Editor||Control++Alt++Meta++ArrowDown
+        Jump to Previous Counterpart in…||Control++Alt++Shift++Meta++ArrowDown
+        Jump to…||Meta++l
+        Jump to Next Placeholder||Control++/
+        Jump to Previous Placeholder||Control++?
+        Jump to Next Change||Control++\
+        Jump to Next Local or Upstream Change||Control++Alt++\
+        Jump to Previous Change||Control++|
+        Jump to Previous Local or Upstream Change||Control++Alt++|
       ],
     },
     {
@@ -569,13 +582,7 @@ module.exports = {
       id: 'navigate_documentation',
       version: 1,
       shortcuts: [
-      ],
-    },
-    {
-      title: 'Navigate Menu for Interface Builder - Storyboard',
-      id: 'navigate_storyboard',
-      version: 1,
-      shortcuts: [
+        Jump to…||Meta++l
       ],
     },
     {
@@ -583,6 +590,9 @@ module.exports = {
       id: 'navigate_playground',
       version: 1,
       shortcuts: [
+        Jump to…||Meta++l
+        Jump to Next Placeholder||Control++/
+        Jump to Previous Placeholder||Control++?
       ],
     },
     {
