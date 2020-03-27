@@ -6,8 +6,8 @@ module.exports = {
   category: 'Utility',
   sets: [
     {
-      title: 'Web Pages',
-      id: 'web',
+      title: 'Scrolling',
+      id: 'scrolling',
       version: 1,
       shortcuts: [
         {
@@ -34,10 +34,13 @@ module.exports = {
           title: 'Scroll to the bottom-left corner of the page',
           keys: ['Meta', 'ArrowDown'],
         },
-        {
-          title: 'Highlight the next item on a web page',
-          keys: ['Tab'],
-        },
+      ],
+    },
+    {
+      title: 'Tabs',
+      id: 'tabs',
+      version: 1,
+      shortcuts: [
         {
           title: 'Show all tabs',
           keys: ['Shift', 'Meta', '\\'],
@@ -58,22 +61,31 @@ module.exports = {
           title: 'Reopen the last tab you closed',
           keys: ['Shift', 'Meta', 't'],
         },
+      ],
+    },
+    {
+      title: 'Layout',
+      id: 'layout',
+      version: 1,
+      shortcuts: [
         {
-          title: 'Close Reader',
-          keys: ['Escape'],
-        },
-        // duplicated
-        // {
-        //   title: 'Exit full-screen view',
-        //   keys: ['Escape'],
-        // },
-        {
-          title: 'Zoom',
-          keys: ['Meta', '+'],
+          title: 'Zoom in',
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
         },
         {
           title: 'Zoom out',
           keys: ['Meta', '-'],
+        },
+        {
+          title: 'Actual size',
+          keys: ['Meta', '0'],
+        },
+        {
+          title: 'Exit full-screen view',
+          keys: ['Escape'],
         },
       ],
     },
@@ -132,7 +144,22 @@ module.exports = {
         // },
         {
           title: 'Delete a bookmark',
-          keys: ['Delete'],
+          keys: ['Backspace'],
+        },
+      ],
+    },
+    {
+      title: 'Miscellaneous',
+      id: 'miscellaneous',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Highlight the next item on a web page',
+          keys: ['Tab'],
+        },
+        {
+          title: 'Close Reader',
+          keys: ['Escape'],
         },
       ],
     },
