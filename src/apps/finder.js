@@ -8,7 +8,7 @@ module.exports = {
     {
       title: 'Essentials',
       id: 'essentials',
-      version: 1,
+      version: 2,
       shortcuts: [
         {
           title: 'Create a new folder',
@@ -17,6 +17,10 @@ module.exports = {
         {
           title: 'Open a new Finder window',
           keys: ['Meta', 'n'],
+        },
+        {
+          title: 'Open a new tab',
+          keys: ['Meta', 't'],
         },
         {
           title: 'Create a new Smart Folder',
@@ -124,7 +128,7 @@ module.exports = {
     {
       title: 'Layout',
       id: 'layout',
-      version: 1,
+      version: 2,
       shortcuts: [
         {
           title: 'View the items in the Finder window as icons',
@@ -161,10 +165,6 @@ module.exports = {
         {
           title: 'Hide or show the status bar in Finder windows',
           keys: ['Meta', '/'],
-        },
-        {
-          title: 'Show or hide the tab bar when a single tab is open in the current Finder window',
-          keys: ['Meta', 't'],
         },
         {
           title: 'Show or hide the toolbar when a single tab is open in the current Finder window',
