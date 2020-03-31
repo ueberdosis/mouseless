@@ -600,6 +600,39 @@ module.exports = {
       id: 'navigate_source_code',
       version: 1,
       shortcuts: [
+        Jump to Next Counterpart||Control++Meta++ArrowUp
+        Jump to Next Counterpart in Next Editor||Control++Alt++Meta++ArrowUp
+        Jump to Next Counterpart in…||Control++Alt++Shift++Meta++ArrowUp
+        Jump to Previous Counterpart||Control++Meta++ArrowDown
+        Jump to Previous Counterpart in Next Editor||Control++Alt++Meta++ArrowDown
+        Jump to Previous Counterpart in…||Control++Alt++Shift++Meta++ArrowDown
+        Jump to…||Meta++l
+        Jump to Next Placeholder||Control++/
+        Jump to Previous Placeholder||Control++?
+        Jump to Next Change||Control++\
+        Jump Lo Next Local or Upstream Change||Control++Alt++\
+        Jump to Previous Change||Control++|
+        Jump to Previous Local or Upstream Change||Control++Alt++|
+      ],
+    },
+    {
+      title: 'Navigate Menu for Source Code Comparison',
+      id: 'navigate_source_code_comparison',
+      version: 1,
+      shortcuts: [
+        Jump to Next Counterpart||Control++Meta++ArrowUp
+        Jump to Next Counterpart in Next Editor||Control++Alt++Meta++ArrowUp
+        Jump to Next Counterpart in…||Control++Alt++Shift++Meta++ArrowUp
+        Jump to Previous Counterpart||Control++Meta++ArrowDown
+        Jump to Previous Counterpart in Next Editor||Control++Alt++Meta++ArrowDown
+        Jump to Previous Counterpart in…||Control++Alt++Shift++Meta++ArrowDown
+        Jump to…||Meta++l
+        Jump to Next Placeholder||Control++/
+        Jump to Previous Placeholder||Control++?
+        Jump to Next Change||Control++\
+        Jump to Next Local or Upstream Change||Control++Alt++\
+        Jump to Previous Change||Control++|
+        Jump to Previous Local or Upstream Change||Control++Alt++|
       ],
     },
     {
@@ -607,6 +640,27 @@ module.exports = {
       id: 'navigate_source_control_history',
       version: 1,
       shortcuts: [
+        Jump to Commit View||Alt++Shift++Meta++c
+      ],
+    },
+    {
+      title: 'Navigate Menu for Pull Request Changes',
+      id: 'navigate_pull_request_changes',
+      version: 1,
+      shortcuts: [
+        Jump to Next Counterpart||Control++Meta++ArrowUp
+        Jump to Next Counterpart in Next Editor||Control++Alt++Meta++ArrowUp
+        Jump to Next Counterpart in…||Control++Alt++Shift++Meta++ArrowUp
+        Jump to Previous Counterpart||Control++Meta++ArrowDown
+        Jump to Previous Counterpart in Next Editor||Control++Alt++Meta++ArrowDown
+        Jump to Previous Counterpart in…||Control++Alt++Shift++Meta++ArrowDown
+        Jump to…||Meta++l
+        Jump to Next Placeholder||Control++/
+        Jump to Previous Placeholder||Control++?
+        Jump to Next Change||Control++\
+        Jump to Next Local or Upstream Change||Control++Alt++\
+        Jump to Previous Change||Control++|
+        Jump to Previous Local or Upstream Change||Control++Alt++|
       ],
     },
     {
@@ -614,13 +668,29 @@ module.exports = {
       id: 'editor_asset_catalog_comparision',
       version: 1,
       shortcuts: [
-      ],
-    },
-    {
-      title: 'Editor Menu for Asset Catalog Document',
-      id: 'editor_asset_catalog_document',
-      version: 1,
-      shortcuts: [
+        Show Completions||Control++Space
+        Edit All in Scope||Control++Meta++e
+        Fix All Issues||Control++Alt++Meta+f
+        Issues ► Show All Issues||Control++Meta+m
+        Previews ► Refresh||Alt++Meta+p
+        Selection ► Select Column Up||Control++Shift++ArrowUp
+        Selection ► Select Column Down||Control++Shift++ArrowDown
+        Structure ► Re-Indent||Control++|
+        Structure ► Shift Right||Meta++|
+        Structure ► Shift Left||Meta++[
+        Structure ► Move Line Up||Alt++Meta+[
+        Structure ► Move Line Down||Alt++Meta++[
+        Structure ► Comment Selection||Meta++/
+        Structure ► Add Documentation||Alt++Meta+/
+        Code Folding ► Fold||Alt++Meta++ArrowLeft
+        Code Folding ► Unfold||Alt++Meta++ArrowRight
+        Code Folding ► Fold Methods & Functions||Alt++Shift++Meta++ArrowLeft
+        Code Folding ► Unfold Methods & Functions||Alt++Shift++Meta++ArrowRight
+        Code Folding ► Fold Comment Blocks||Control++Shift++Meta++ArrowLeft
+        Code Folding ► Unfold Comment Blocks||Control++Shift++Meta++ArrowRight
+        Font Size ► Increase||Meta+++
+        Font Size ► Decrease||Meta++-
+        Font Size ► Reset||Control++Meta++0
       ],
     },
     {
@@ -628,6 +698,8 @@ module.exports = {
       id: 'editor_data_model',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -635,6 +707,9 @@ module.exports = {
       id: 'editor_documentation',
       version: 1,
       shortcuts: [
+        Zoom In||Meta+++
+        Zoom Out||Meta++-
+        Actual Size||Control++Meta++=
       ],
     },
     {
@@ -642,6 +717,12 @@ module.exports = {
       id: 'editor_gpu_counters',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
+        Zoom In||Meta+++
+        Zoom Out||Meta++-
+        Select Next Draw/Encoder||Control++Alt++ArrowRight
+        Select Prev Draw/Encoder||Control++Alt++ArrowLeft
       ],
     },
     {
@@ -649,6 +730,8 @@ module.exports = {
       id: 'editor_gpu_frame_debugger',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -656,6 +739,8 @@ module.exports = {
       id: 'editor_hex',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -663,6 +748,8 @@ module.exports = {
       id: 'editor_integration_report_commits',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -670,6 +757,17 @@ module.exports = {
       id: 'editor_interface_builder',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Preview||Alt++Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
+        Actual Size||Control++Meta++=
+        Align Left Edges||Meta++[
+        Align Right Edges||Meta++]
+        Size to Fit Content||Meta++=
+        Update Frames||Alt++Meta++=
+        Add Horizontal Guide||Meta++_
+        Add Verical Guide||Control++Meta++|
+        Resolve Auto Layout Issues ► Reset to Suggested Constraints||Alt++Shift++Meta++=
       ],
     },
     {
@@ -677,6 +775,17 @@ module.exports = {
       id: 'editor_cocoa_preview',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Preview||Alt++Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
+        Zoom to 100%||Control++Meta++=
+        Align Left Edges||Meta++[
+        Align Right Edges||Meta++]
+        Size to Fit Content||Meta++=
+        Update Frames||Alt++Meta++=
+        Add Horizontal Guide||Meta++_
+        Add Verical Guide||Control++Meta++|
+        Resolve Auto Layout Issues ► Reset to Suggested Constraints||Alt+
       ],
     },
     {
@@ -684,6 +793,8 @@ module.exports = {
       id: 'editor_log_viewer',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -691,6 +802,8 @@ module.exports = {
       id: 'editor_machine_learning_model',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -698,6 +811,8 @@ module.exports = {
       id: 'editor_mapping_model',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -705,13 +820,8 @@ module.exports = {
       id: 'editor_memory',
       version: 1,
       shortcuts: [
-      ],
-    },
-    {
-      title: 'Editor Menu for Memory Browser',
-      id: 'editor_memory_browser',
-      version: 1,
-      shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -719,6 +829,11 @@ module.exports = {
       id: 'editor_pdf',
       version: 1,
       shortcuts: [
+        Zoom In||Meta+++
+        Zoom Out||Meta++-
+        Zoom Actual Size||Control++Meta++=
+        Next Page||Alt++Meta++ArrowDown
+        Previous Page||Alt++Meta++ArrowUp
       ],
     },
     {
