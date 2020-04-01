@@ -676,10 +676,10 @@ module.exports = {
         Selection ► Select Column Up||Control++Shift++ArrowUp
         Selection ► Select Column Down||Control++Shift++ArrowDown
         Structure ► Re-Indent||Control++|
-        Structure ► Shift Right||Meta++|
+        Structure ► Shift Right||Meta++]
         Structure ► Shift Left||Meta++[
         Structure ► Move Line Up||Alt++Meta+[
-        Structure ► Move Line Down||Alt++Meta++[
+        Structure ► Move Line Down||Alt++Meta++]
         Structure ► Comment Selection||Meta++/
         Structure ► Add Documentation||Alt++Meta+/
         Code Folding ► Fold||Alt++Meta++ArrowLeft
@@ -841,6 +841,34 @@ module.exports = {
       id: 'editor_playground',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Preview||Alt++Meta++Enter
+        Show Completions||Control++Space
+        Edit All in Scope||Control++Meta++e
+        Fix All Issues||Control++Alt++Meta++f
+        Issues ► Show All Issues||Control++Meta++m
+        Selection ► Select Column Up||Control++Shift++ArrowUp
+        Selection ► Select Column Down||Control++Shift++ArrowDown
+        Structure ► Re-Indent||Contol++|
+        Structure ► Shift Right||Meta++]
+        Structure ► Shift Left||Meta++[
+        Structure ► Move Line Up||Alt++Meta++[
+        Structure ► Move Line Down||Alt++Meta++]
+        Structure ► Comment Selection||Meta++/
+        Structure ► Add Documentation||Alt++Meta++/
+        Code Folding ► Fold||Alt++Meta++ArrowLeft
+        Code Folding ► Unfold||Alt++Meta++ArrowRight
+        Code Folding ► Fold Methods & Functions||Alt++Shift++Meta++ArrowLeft
+        Code Folding ► Unfold Methods & Functions||Alt++Shift++Meta++ArrowRight
+        Code Folding ► Fold Comment Blocks||Control++Shift++Meta++ArrowLeft
+        Code Folding ► Unfold Comment Blocks||Control++Shift++Meta++ArrowRight
+        Font Size ► Increase||Meta+++
+        Font Size ► Decrease||Meta++-
+        Font Size ► Reset||Control++Meta++0
+        Authors||Control++Shift++Meta++a
+        Run Playground||Shift++Meta++Enter
+        Run Playground to Current Line||Shift++Enter
+        Run Playground from Top to Current Line||Alt++Shift++Enter
       ],
     },
     {
@@ -848,13 +876,8 @@ module.exports = {
       id: 'editor_property_list',
       version: 1,
       shortcuts: [
-      ],
-    },
-    {
-      title: 'Editor Menu for Quick Look',
-      id: 'editor_quick_look',
-      version: 1,
-      shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -862,6 +885,8 @@ module.exports = {
       id: 'editor_rtf',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -869,6 +894,7 @@ module.exports = {
       id: 'editor_scene_kit',
       version: 1,
       shortcuts: [
+        Controls ► Focus Selection||Alt++f
       ],
     },
     {
@@ -876,6 +902,8 @@ module.exports = {
       id: 'editor_scripting_definition',
       version: 1,
       shortcuts: [
+        Make Text Bigger||Meta+++
+        Make Text Smaller||Meta++-
       ],
     },
     {
@@ -883,6 +911,36 @@ module.exports = {
       id: 'editor_source_code',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Preview||Alt++Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
+        Show Completions||Control++Space
+        Show Code Actions||Shift++Meta++a
+        Edit All in Scope||Control++Meta++e
+        Fix All Issues||Control++Alt++Meta+f
+        Issues ► Show All Issues||Control++Meta+m
+        Previews ► Refresh||Alt++Meta++p
+        Selection ► Select Column Up||Control++Shift++ArrowUp
+        Selection ► Select Column Down||Control++Shift++ArrowDown
+        Structure ► Re-Indent||Control++|
+        Structure ► Shift Right||Meta++]
+        Structure ► Shift Left||Meta++[
+        Structure ► Move Line Up||Alt++Meta+[
+        Structure ► Move Line Down||Alt++Meta++]
+        Structure ► Comment Selection||Meta++/
+        Structure ► Add Documentation||Alt++Meta+/
+        Code Folding ► Fold||Alt++Meta++ArrowLeft
+        Code Folding ► Unfold||Alt++Meta++ArrowRight
+        Code Folding ► Fold Methods & Functions||Alt++Shift++Meta++ArrowLeft
+        Code Folding ► Unfold Methods & Functions||Alt++Shift++Meta++ArrowRight
+        Code Folding ► Fold Comment Blocks||Control++Shift++Meta++ArrowLeft
+        Code Folding ► Unfold Comment Blocks||Control++Shift++Meta++ArrowRight
+        Font Size ► Increase||Meta+++
+        Font Size ► Decrease||Meta++-
+        Font Size ► Reset||Control++Meta++0
+        Minimap||Control++Shift++Meta++m
+        Minimap||Control++Shift++Meta++m
+        Authors||Control++Shift++Meta++a
       ],
     },
     {
