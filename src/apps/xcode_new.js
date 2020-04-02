@@ -562,9 +562,9 @@ module.exports = {
       id: 'navigate_commitsheet',
       version: 1,
       shortcuts: [
-        Jump to Next Counterpart||Control++Meta++ArrowTop
-        Jump to Next Counterpart in Next Editor||Control++Alt++Meta++ArrowTop
-        Jump to Next Counterpart in…||Control++Alt++Shift++Meta++ArrowTop
+        Jump to Next Counterpart||Control++Meta++ArrowUp
+        Jump to Next Counterpart in Next Editor||Control++Alt++Meta++ArrowUp
+        Jump to Next Counterpart in…||Control++Alt++Shift++Meta++ArrowUp
         Jump to Previous Counterpart||Control++Meta++ArrowDown
         Jump to Previous Counterpart in Next Editor||Control++Alt++Meta++ArrowDown
         Jump to Previous Counterpart in…||Control++Alt++Shift++Meta++ArrowDown
@@ -948,13 +948,38 @@ module.exports = {
       id: 'editor_source_code_comparison',
       version: 1,
       shortcuts: [
+        Show Completions||Control++Space
+        Edit All in Scope||Control++Meta++e
+        Fix All Issues||Control++Alt++Meta++f
+        Show All Issues||Control++Meta++m
+        Previews ► Refresh||Alt++Meta++p
+        Selection ► Select Column Up||Control++Shift++ArrowUp
+        Selection ► Select Column Down||Control++Shift++ArrowDown
+        Structure ► Re-Indent||Control++|
+        Structure ► Shift Right||Meta++]
+        Structure ► Shift Left||Meta++[
+        Structure ► Move Line Up||Alt++Meta+[
+        Structure ► Move Line Down||Alt++Meta++]
+        Structure ► Comment Selection||Meta++/
+        Structure ► Add Documentation||Alt++Meta+/
+        Code Folding ► Fold||Alt++Meta++ArrowLeft
+        Code Folding ► Unfold||Alt++Meta++ArrowRight
+        Code Folding ► Fold Methods & Functions||Alt++Shift++Meta++ArrowLeft
+        Code Folding ► Unfold Methods & Functions||Alt++Shift++Meta++ArrowRight
+        Code Folding ► Fold Comment Blocks||Control++Shift++Meta++ArrowLeft
+        Code Folding ► Unfold Comment Blocks||Control++Shift++Meta++ArrowRight
+        Font Size ► Increase||Meta+++
+        Font Size ► Decrease||Meta++-
+        Font Size ► Reset||Control++Meta++0
       ],
     },
     {
-      title: 'Editor Menu for Source Control Histor',
+      title: 'Editor Menu for Source Control History',
       id: 'editor_source_control_history',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -962,6 +987,12 @@ module.exports = {
       id: 'editor_sprite_kit_scene_editor',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
+        Edit / Simulate||Control++Space
+        Zoom In||Meta+++
+        Restore Zoom||Control++Meta++=
+        Zoom Out||Meta++-
       ],
     },
     {
@@ -969,6 +1000,8 @@ module.exports = {
       id: 'editor_stickers_document',
       version: 1,
       shortcuts: [
+        Show Tests||Control++Alt++1
+        Show Configuration||Control++Alt++2
       ],
     },
     {
@@ -976,6 +1009,19 @@ module.exports = {
       id: 'editor_view_debugger',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
+        Zoom In||Meta+++
+        Zoom Out||Meta++-
+        Zoom Actual||Control++Meta++=
+      ],
+    },
+    {
+      title: 'Editor Menu for GPU Report Document',
+      id: 'editor_coverage_report_document',
+      version: 1,
+      shortcuts: [
+        Show Editor Only||Meta++Enter
       ],
     },
     {
@@ -983,6 +1029,8 @@ module.exports = {
       id: 'editor_coverage_report_document',
       version: 1,
       shortcuts: [
+        Show Editor Only||Meta++Enter
+        Assistant||Control++Alt++Meta++Enter
       ],
     },
     {
@@ -990,6 +1038,37 @@ module.exports = {
       id: 'product_menu',
       version: 1,
       shortcuts: [
+        Run||Meta++r
+        Run…||Alt++Meta++r
+        Test||Meta++u
+        Test…||Alt++Meta++u
+        Profile||Meta++i
+        Profile…||Alt++Meta++i
+        Analyze||Shift++Meta++b
+        Analyze…||Alt++Shift++Meta++b
+        Copy to Device (Internal Only)||Control++Meta++a
+        Build For ► Running||Shift++Meta++r
+        Build For ► Testing||Shift++Meta++u
+        Build For ► Profiling||Shift++Meta++i
+        Perform Action ► Run Without Building||Control++Meta++r
+        Perform Action ► Test Without Building||Control++Meta++u
+        Perform Action ► Profile Without Building||Control++Meta++i
+        Perform Action ► Test||Control++Alt++Meta++u
+        Perform Action ► Test Again||Control++Alt++Meta++g
+        Perform Action ► Compile File||Control++Meta++b
+        Perform Action ► Analyze File||Control++Shift++Meta++b
+        Build||Meta++b
+        Clean||Shift++Meta++k
+        Clean Build Folder…||Alt++Shift++Meta++k
+        Stop||Meta++.
+        Scheme ► Choose Scheme||Control++0
+        Scheme ► Select Next Scheme||Control++Meta++]
+        Scheme ► Select Previous Scheme||Control++Meta++[
+        Scheme ► Edit Scheme…||Meta++<
+        Destination ► Choose Destination||Control++Shift++0
+        Destination ► Select Next Destination||Control++Alt++Meta++]
+        Destination ► Select Previous Destination||Control++Alt++Meta++[
+        Test Plan ► Edit Test Plan||Meta++>
       ],
     },
     {
@@ -997,6 +1076,11 @@ module.exports = {
       id: 'debug_menu_gpu_frame_debugger',
       version: 1,
       shortcuts: [
+        Release GPU Frame||Control++Meta++y
+        Step to Previous Draw/Dispatch Call||F5
+        Step to Next Draw/Dispatch Call||F6
+        Step to Previous GPU Call||Control++F5
+        Step to Next GPU Call||Control++F6
       ],
     },
     {
@@ -1004,6 +1088,21 @@ module.exports = {
       id: 'debug_menu',
       version: 1,
       shortcuts: [
+        Pause / Continue||Control++Meta++y
+        Continue To Current Line||Control++Meta++c
+        Step Over||F6
+        Step Into||F7
+        Step Out||F8
+        Step Over Instruction||Control++F6
+        Step Over Thread||Control++Shift++F6
+        Step Into Instruction||Control++F7
+        Step Into Thread||Control++Shift++F7
+        Activate Breakpoints||Meta++y
+        Breakpoints ► Add Breakpoint at Current Line||Meta++\
+        Breakpoints ► Create Symbolic Breakpoint…||Alt++Meta++\
+        Debug Workflow ► View Memory||Control++Alt++Shift++Meta++m
+        Debug Workflow ► Clear Console||Meta++k
+        Debug Workflow ► Reload Console||Alt++Meta++k
       ],
     },
     {
@@ -1011,6 +1110,8 @@ module.exports = {
       id: 'source_control_menu',
       version: 1,
       shortcuts: [
+        Commit…||Alt++Meta++c
+        Pull…||Alt++Meta++x
       ],
     },
     {
@@ -1018,6 +1119,14 @@ module.exports = {
       id: 'window_menu',
       version: 1,
       shortcuts: [
+        Minimize||Meta++m
+        Rename Tab…||Alt++Shift++Meta++t
+        Show Previous Tab||Control++Shift++Tab
+        Show Next Tab||Control++Tab
+        Developer Documentation||Shift++Meta++0
+        Welcome to Xcode||Shift++Meta++1
+        Devices and Simulators||Shift++Meta++2
+        Organizer||Alt++Shift++Meta++o
       ],
     },
     {
@@ -1025,6 +1134,9 @@ module.exports = {
       id: 'help_menu',
       version: 1,
       shortcuts: [
+        Developer Documentation||Shift++Meta++0
+        Show Quick Help for Selected Item||Control++Meta++?
+        Search Documentation for Selected Text||Control++Alt++Meta++/
       ],
     },
     {
@@ -1032,6 +1144,11 @@ module.exports = {
       id: 'scrolling',
       version: 1,
       shortcuts: [
+        Scroll Page Down||Control++ArrowDown
+        Scroll to End of Document||End
+        Center Selection in Visible Area||Control++l
+        Scroll Page Up||Control++ArrowUp
+        Scroll to Beginning of Document||Home
       ],
     },
     {
@@ -1039,6 +1156,7 @@ module.exports = {
       id: 'transformations',
       version: 1,
       shortcuts: [
+        Transpose||Control++t
       ],
     },
     {
@@ -1046,6 +1164,9 @@ module.exports = {
       id: 'mark_and_yank',
       version: 1,
       shortcuts: [
+        Delete to Mark||Control++w
+        Set Mark||Control++@
+        Yank||Control++y
       ],
     },
     {
@@ -1053,6 +1174,9 @@ module.exports = {
       id: 'code_completion',
       version: 1,
       shortcuts: [
+        Select Previous Completion||Control++>
+        Show Completion List||Alt++Escape
+        Select Next Completion||Control++.
       ],
     },
     {
@@ -1060,6 +1184,15 @@ module.exports = {
       id: 'insertions_and_indentations',
       version: 1,
       shortcuts: [
+        Insert Newline||Enter
+        Insert Tab without Extra Action||Alt++Tab
+        Insert Double Quote without Extra Action||Control++"
+        Insert Backtab||Shift++Tab
+        Insert Newline without Extra Action||Alt++Enter
+        Insert Single Quote without Extra Action||Control++\'
+        Insert Line Break||Control++Enter
+        Insert Tab||Tab
+        Insert Newline and Leave Selection Before It||Control++o
       ],
     },
     {
@@ -1067,6 +1200,12 @@ module.exports = {
       id: 'deletions',
       version: 1,
       shortcuts: [
+        Delete Forward||Control++d
+        Delete Subword Backward||Control++Backspace
+        Delete to End of Paragraph||Control++k
+        Delete Backward||Control++h
+        Delete Word Backward||Alt++Backspace
+        Delete to Beginning of Text||Meta++Backspace
       ],
     },
     {
@@ -1074,6 +1213,7 @@ module.exports = {
       id: 'cancel',
       version: 1,
       shortcuts: [
+        Cancel||Escape
       ],
     },
     {
@@ -1081,6 +1221,50 @@ module.exports = {
       id: 'selection',
       version: 1,
       shortcuts: [
+        Move Up||Control++p
+        Move Down||Control++n
+        Move to Beginning of Paragraph Extending Selection||Control++Shift++a
+        Move Subword Forward Extending Selection||Control++Shift++ArrowRight
+        Move to End of Text Extending Selection||Shift++Meta++ArrowRight
+        Move to Beginning of Document Extending Selection||Shift++Meta++ArrowUp
+        Move Down Extending Selection||Control++Shift++n
+        Move Word Backward Extending Selection||Control++Alt++Shift++b
+        Move Word Forward Extending Selection||Control++Alt++Shift++f
+        Move Subword Forward||Control++ArrowRight
+        Move Page Up Extending Selection||Shift++PageUp
+        Move to Beginning of Document||Meta++ArrowUp
+        Move Left||ArrowLeft
+        Move Right Extending Selection||Shift++ArrowRight
+        Move Backward Extending Selection||Control++Shift++b
+        Move to Beginning of Paragraph||Control++a
+        Move to End of Document Extending Selection||Shift++Meta++ArrowDown
+        Move Subword Backward||Control++ArrowLeft
+        Move Word Right||Alt++ArrowRight
+        Move Right||ArrowRight
+        Move Paragraph Backward Extending Selection||Alt++Shift++ArrowUp
+        Move to Beginning of Text Extending Selection||Alt++Shift++ArrowRight
+        Move Left Extending Selection||Shift++ArrowLeft
+        Move Paragraph Backward||Alt++ArrowUp
+        Move Word Backward||Control++Alt++b
+        Move Backward||Control++b
+        Move Forward||Control++f
+        Move Page Down Extending Selection||Control++Shift++v
+        Move Paragraph Forward||Alt++ArrowDown
+        Move to End of Text||Meta++ArrowRight
+        Move Page Up||Alt++PageUp
+        Move Up Extending Selection||Control++Shift++p
+        Move Forward Extending Selection||Control++Shift++f
+        Move Forward Extending Selection||Control++Shift++f
+        Move Page Down||Control++v
+        Move to End of Document||Meta++ArrowDown
+        Move Word Forward||Control++Alt++f
+        Move Word Left||Alt++ArrowLeft
+        Move to Beginning of Text||Meta++ArrowLeft
+        Move Word Left Extending Selection||Alt++Shift++ArrowLeft
+        Move Subword Backward Extending Selection||Control++Shift++ArrowLeft
+        Move Paragraph Forward Extending Selection||Alt++Shift++ArrowDown
+        Move to End of Paragraph||Control++e
+        Move to End of Pragraph Extending Selection||Control++Shift++e
       ],
     },
   ],
