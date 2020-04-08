@@ -1918,7 +1918,7 @@ module.exports = {
     },
     {
       title: 'Editor Menu for GPU Report Document',
-      id: 'editor_coverage_report_document',
+      id: 'editor_gpu_report_document',
       version: 1,
       shortcuts: [
         {
