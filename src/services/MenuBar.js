@@ -161,12 +161,14 @@ export default new class {
         },
       },
       { type: 'separator' },
-      {
-        label: 'Check for Updates',
-        click(menuItem) {
-          Updater.checkForUpdates(menuItem)
+      ...(!Setapp.isActive ? [
+        {
+          label: 'Check for Updates',
+          click(menuItem) {
+            Updater.checkForUpdates(menuItem)
+          },
         },
-      },
+      ] : []),
       { type: 'separator' },
       {
         label: 'Quit',
