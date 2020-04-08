@@ -5,15 +5,14 @@ import {
   app,
   globalShortcut,
   ipcMain,
+  BrowserWindow,
 } from 'electron'
 import activeWin from 'active-win'
 import windowShortcuts from 'window-shortcuts'
 import Store from './Store'
 import User from './User'
 import Setapp from './Setapp'
-
-const isProduction = process.env.NODE_ENV === 'production'
-const isDevelopment = !isProduction
+import Updater from './Updater'
 
 export default new class {
 
@@ -148,6 +147,27 @@ export default new class {
 
   handleRightClick() {
     const contextMenu = Menu.buildFromTemplate([
+      { role: 'about' },
+      { type: 'separator' },
+      {
+        label: 'Preferences',
+        click: () => {
+          BrowserWindow
+            .getAllWindows()
+            .forEach(browserWindow => {
+              browserWindow.webContents.send('showOptions')
+              browserWindow.show()
+            })
+        },
+      },
+      { type: 'separator' },
+      {
+        label: 'Check for Updates',
+        click(menuItem) {
+          Updater.checkForUpdates(menuItem)
+        },
+      },
+      { type: 'separator' },
       {
         label: 'Quit',
         click: () => {

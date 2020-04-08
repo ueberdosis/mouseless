@@ -53,6 +53,11 @@ export default {
 
   methods: {
     onShowOptions() {
+      if (this.$route.name === 'shortcuts') {
+        ipcRenderer.send('showMainWindow')
+        return
+      }
+
       this.showOptions = true
     },
 
@@ -89,6 +94,7 @@ export default {
     Event.on('showLicense', this.onShowLicense)
     Event.on('hideLicense', this.onHideLicense)
 
+    ipcRenderer.on('showOptions', this.onShowOptions)
     ipcRenderer.on('log', this.onLog)
   },
 
@@ -98,6 +104,7 @@ export default {
     Event.off('showLicense', this.onShowLicense)
     Event.off('hideLicense', this.onHideLicense)
 
+    ipcRenderer.removeListener('showOptions', this.onShowOptions)
     ipcRenderer.removeListener('log', this.onLog)
   },
 }
