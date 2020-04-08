@@ -1,6 +1,6 @@
 {
   "name": "mouseless",
-  "version": "1.2.7",
+  "version": "1.3.0",
   "productName": "Mouseless",
   "author": "überdosis GbR <mail@ueber.io>",
   "description": "A shortcut app.",
@@ -18,7 +18,7 @@
     "electron:publish": "yarn electron:build -p always",
     "setapp:start": "cross-env VUE_APP_IS_SETAPP=true vue-cli-service electron:serve",
     "setapp:build": "cross-env VUE_APP_IS_SETAPP=true vue-cli-service electron:build",
-    "hash": "./node_modules/app-builder-bin/mac/app-builder blockmap -i dist_electron/mac/Mouseless-1.2.6-mac.zip"
+    "hash": "./node_modules/app-builder-bin/mac/app-builder blockmap -i dist_electron/mac/Mouseless-1.3.0-mac.zip"
   },
   "main": "background.js",
   "devDependencies": {
