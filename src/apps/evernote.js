@@ -5,6 +5,41 @@ module.exports = {
   category: 'Productivity',
   sets: [
     {
+      title: 'Essentials',
+      id: 'essentials',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'New Note',
+          keys: ['Meta', 'n'],
+        },
+        {
+          title: 'New Chat',
+          keys: ['Alt', 'Shift', 'Meta', 'n'],
+        },
+        {
+          title: 'New Notebook',
+          keys: ['Shift', 'Meta', 'n'],
+        },
+        {
+          title: 'New Tag',
+          keys: ['Control', 'Meta', 't'],
+        },
+        {
+          title: 'New Window',
+          keys: ['Alt', 'Meta', 'n'],
+        },
+        {
+          title: 'New Tab',
+          keys: ['Meta', 't'],
+        },
+        {
+          title: 'Save',
+          keys: ['Meta', 's'],
+        },
+      ],
+    },
+    {
       title: 'Global',
       id: 'global',
       version: 1,
@@ -37,30 +72,6 @@ module.exports = {
       version: 1,
       shortcuts: [
         {
-          title: 'New Note',
-          keys: ['Meta', 'n'],
-        },
-        {
-          title: 'New Chat',
-          keys: ['Alt', 'Shift', 'Meta', 'n'],
-        },
-        {
-          title: 'New Notebook',
-          keys: ['Shift', 'Meta', 'n'],
-        },
-        {
-          title: 'New Tag',
-          keys: ['Control', 'Meta', 't'],
-        },
-        {
-          title: 'New Window',
-          keys: ['Alt', 'Meta', 'n'],
-        },
-        {
-          title: 'New Tab',
-          keys: ['Meta', 't'],
-        },
-        {
           title: 'Sync',
           keys: ['Control', 'Meta', 's'],
         },
@@ -69,17 +80,13 @@ module.exports = {
           keys: ['Meta', 'w'],
         },
         {
-          title: 'Save',
-          keys: ['Meta', 's'],
-        },
-        {
           title: 'Quick Look Attachments',
           keys: ['Meta', 'y'],
         },
-        {
-          title: 'Print',
-          keys: ['Meta', 'p'],
-        },
+        // {
+        //   title: 'Print',
+        //   keys: ['Meta', 'p'],
+        // },
         {
           title: 'Show/Hide Toolbar',
           keys: ['Alt', 'Meta', 't'],
@@ -105,26 +112,6 @@ module.exports = {
           keys: ['Alt', 'Meta', '3'],
         },
         {
-          title: 'Atlas / Business Home',
-          description: 'Evernote Business only',
-          keys: ['Alt', 'Meta', '4'],
-        },
-        {
-          title: 'Atlas',
-          description: 'Evernote Business only',
-          keys: ['Alt', 'Meta', '5'],
-        },
-        {
-          title: 'Announcements',
-          description: 'Evernote Business only',
-          keys: ['Alt', 'Meta', '6'],
-        },
-        {
-          title: 'Announcements',
-          description: 'Evernote Business only',
-          keys: ['Alt', 'Meta', '7'],
-        },
-        {
           title: 'Show All Notes',
           keys: ['Shift', 'Meta', 'a'],
         },
@@ -148,42 +135,42 @@ module.exports = {
           title: 'Forward',
           keys: ['Meta', ']'],
         },
-        {
-          title: 'Enter Full Screen',
-          keys: ['Control', 'Meta', 'f'],
-        },
+        // {
+        //   title: 'Enter Full Screen',
+        //   keys: ['Control', 'Meta', 'f'],
+        // },
         {
           title: 'Go to Shortcut 3',
           keys: ['Meta', '3'],
         },
-        {
-          title: 'Preferences',
-          keys: ['Meta', ','],
-        },
+        // {
+        //   title: 'Preferences',
+        //   keys: ['Meta', ','],
+        // },
         {
           title: 'Switch User',
           keys: ['Control', 'Meta', 'a'],
         },
-        {
-          title: 'Hide Evernote',
-          keys: ['Meta', 'h'],
-        },
-        {
-          title: 'Hide Others',
-          keys: ['Alt', 'Meta', 'h'],
-        },
-        {
-          title: 'Quit Evernote',
-          keys: ['Meta', 'q'],
-        },
-        {
-          title: 'Minimize',
-          keys: ['Meta', 'm'],
-        },
-        {
-          title: 'Zoom',
-          keys: ['/'],
-        },
+        // {
+        //   title: 'Hide Evernote',
+        //   keys: ['Meta', 'h'],
+        // },
+        // {
+        //   title: 'Hide Others',
+        //   keys: ['Alt', 'Meta', 'h'],
+        // },
+        // {
+        //   title: 'Quit Evernote',
+        //   keys: ['Meta', 'q'],
+        // },
+        // {
+        //   title: 'Minimize',
+        //   keys: ['Meta', 'm'],
+        // },
+        // {
+        //   title: 'Zoom',
+        //   keys: ['/'],
+        // },
       ],
     },
     {
@@ -191,30 +178,31 @@ module.exports = {
       id: 'note',
       version: 1,
       shortcuts: [
-        {
-          title: 'Undo',
-          keys: ['Meta', 'z'],
-        },
-        {
-          title: 'Redo',
-          keys: ['Shift', 'Meta', 'z'],
-        },
-        {
-          title: 'Cut',
-          keys: ['Meta', 'x'],
-        },
-        {
-          title: 'Copy',
-          keys: ['Meta', 'c'],
-        },
-        {
-          title: 'Paste',
-          keys: ['Meta', 'v'],
-        },
-        {
-          title: 'Paste and Match Style',
-          keys: ['Shift', 'Meta', 'v'],
-        },
+        // basic
+        // {
+        //   title: 'Undo',
+        //   keys: ['Meta', 'z'],
+        // },
+        // {
+        //   title: 'Redo',
+        //   keys: ['Shift', 'Meta', 'z'],
+        // },
+        // {
+        //   title: 'Cut',
+        //   keys: ['Meta', 'x'],
+        // },
+        // {
+        //   title: 'Copy',
+        //   keys: ['Meta', 'c'],
+        // },
+        // {
+        //   title: 'Paste',
+        //   keys: ['Meta', 'v'],
+        // },
+        // {
+        //   title: 'Paste and Match Style',
+        //   keys: ['Shift', 'Meta', 'v'],
+        // },
         {
           title: 'Select All',
           keys: ['Meta', 'a'],
@@ -251,10 +239,11 @@ module.exports = {
           title: 'Check Document Now',
           keys: ['Meta', ';'],
         },
-        {
-          title: 'Emoji & Symbols',
-          keys: ['Control', 'Meta', 'Space'],
-        },
+        // os default
+        // {
+        //   title: 'Emoji & Symbols',
+        //   keys: ['Control', 'Meta', 'Space'],
+        // },
         {
           title: 'Copy Public Link',
           keys: ['Meta', '/'],
@@ -295,6 +284,31 @@ module.exports = {
           title: 'Show Colors',
           keys: ['Shift', 'Meta', 'c'],
         },
+      ],
+    },
+    {
+      title: 'Layout',
+      id: 'layout',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Zoom In',
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
+        },
+        {
+          title: 'Zoom Out',
+          keys: ['Meta', '-'],
+        },
+      ],
+    },
+    {
+      title: 'Formatting',
+      id: 'formatting',
+      version: 1,
+      shortcuts: [
         {
           title: 'Align Left',
           keys: ['Alt', 'Meta', '{'],
@@ -372,14 +386,6 @@ module.exports = {
           keys: ['Control', 'Meta', '-'],
         },
         {
-          title: 'Bigger',
-          keys: ['Meta', '+'],
-        },
-        {
-          title: 'Smaller',
-          keys: ['Meta', '-'],
-        },
-        {
           title: 'Insert To-do',
           keys: ['Shift', 'Meta', 't'],
         },
@@ -398,6 +404,29 @@ module.exports = {
         {
           title: 'Simplify Formatting',
           keys: ['Shift', 'Meta', 'f'],
+        },
+      ],
+    },
+    {
+      title: 'Evernote Business only',
+      id: 'business',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Atlas / Business Home',
+          keys: ['Alt', 'Meta', '4'],
+        },
+        {
+          title: 'Atlas',
+          keys: ['Alt', 'Meta', '5'],
+        },
+        {
+          title: 'Announcements',
+          keys: ['Alt', 'Meta', '6'],
+        },
+        {
+          title: 'Announcements',
+          keys: ['Alt', 'Meta', '7'],
         },
       ],
     },
