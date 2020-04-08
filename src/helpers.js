@@ -1,3 +1,21 @@
+import { app as backendApp, remote } from 'electron'
+
+function getApp() {
+  if (backendApp) {
+    return backendApp
+  } if (remote) {
+    return remote.app
+  }
+
+  return null
+}
+
+export const app = getApp()
+
+export const isProduction = process.env.NODE_ENV === 'production'
+
+export const isDevelopment = !isProduction
+
 export function findDuplicatesInArray(data = []) {
   const result = []
 

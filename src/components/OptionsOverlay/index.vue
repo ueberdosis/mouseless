@@ -128,6 +128,7 @@ import Keyboard from '@/services/Keyboard'
 import User from '@/services/User'
 import Btn from '@/components/Btn'
 import Store from '@/services/Store'
+import AutoStart from '@/services/AutoStart'
 import SmallKey from '@/components/SmallKey'
 
 export default {
@@ -165,6 +166,7 @@ export default {
 
     autoStart() {
       Store.set('autoStart', this.autoStart)
+      AutoStart.update()
     },
   },
 
