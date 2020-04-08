@@ -67,18 +67,14 @@ export default new class {
     this.menubar.on('after-create-window', () => {
       this.menubar.window.webContents.executeJavaScript('window.location.hash = "/shortcuts"')
 
-      const contextMenu = Menu.buildFromTemplate([
-        {
-          label: 'Quit',
-          click: () => {
-            this.menubar.app.quit()
-          },
-        },
-      ])
-
       this.menubar.tray.on('right-click', () => {
-        Setapp.reportUsageEvent('user-interaction')
-        this.menubar.tray.popUpContextMenu(contextMenu)
+        this.handleRightClick()
+      })
+
+      this.menubar.tray.on('click', event => {
+        if (event.ctrlKey) {
+          this.handleRightClick()
+        }
       })
     })
 
@@ -148,6 +144,20 @@ export default new class {
     app.on('will-quit', () => {
       globalShortcut.unregisterAll()
     })
+  }
+
+  handleRightClick() {
+    const contextMenu = Menu.buildFromTemplate([
+      {
+        label: 'Quit',
+        click: () => {
+          this.menubar.app.quit()
+        },
+      },
+    ])
+
+    this.menubar.tray.popUpContextMenu(contextMenu)
+    Setapp.reportUsageEvent('user-interaction')
   }
 
   isWindowVisible(window) {
