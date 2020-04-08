@@ -62,7 +62,6 @@ export default {
 
   methods: {
     openFeedbackBoard() {
-      console.log('openFeedbackBoard')
       shell.openExternal('https://feedback.mouseless.app')
     },
   },
