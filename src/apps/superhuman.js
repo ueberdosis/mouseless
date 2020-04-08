@@ -1,4 +1,3 @@
-// https://www.sketch.com/docs/shortcuts/
 module.exports = {
   id: 'superhuman',
   title: 'Superhuman',
@@ -107,6 +106,18 @@ module.exports = {
       id: 'conversations',
       version: 1,
       shortcuts: [
+        {
+          title: 'Open Conversation',
+          keys: ['Enter'],
+        },
+        {
+          title: 'Next Conversation',
+          keys: ['j'],
+        },
+        {
+          title: 'Previous Conversation',
+          keys: ['k'],
+        },
         {
           title: 'Mark Done (Archive)',
           keys: ['e'],
@@ -284,18 +295,6 @@ module.exports = {
           keys: ['Shift', 'Tab'],
         },
         {
-          title: 'Open Conversation',
-          keys: ['Enter'],
-        },
-        {
-          title: 'Next Conversation',
-          keys: ['j'],
-        },
-        {
-          title: 'Previous Conversation',
-          keys: ['k'],
-        },
-        {
           title: 'Next Message',
           keys: ['n'],
         },
@@ -324,6 +323,29 @@ module.exports = {
           keys: ['Meta', 'n'],
         },
         {
+          title: 'Switch to Account 1',
+          keys: ['Control', '1'],
+        },
+        {
+          title: 'Switch Account 3',
+          keys: ['Control', '3'],
+        },
+        {
+          title: 'Copy Page Link',
+          keys: ['Control', '/'],
+        },
+        {
+          title: 'Back',
+          keys: ['Escape'],
+        },
+      ],
+    },
+    {
+      title: 'Tabs',
+      id: 'tabs',
+      version: 1,
+      shortcuts: [
+        {
           title: 'New Tab',
           keys: ['Meta', 't'],
         },
@@ -345,19 +367,21 @@ module.exports = {
         },
         {
           title: 'Close Tab',
-          keys: ['Meta', 'W'],
+          keys: ['Meta', 'w'],
         },
-        {
-          title: 'Switch to Account 1',
-          keys: ['Control', '1'],
-        },
-        {
-          title: 'Switch Account 3',
-          keys: ['Control', '3'],
-        },
+      ],
+    },
+    {
+      title: 'Zoom',
+      id: 'zoom',
+      version: 1,
+      shortcuts: [
         {
           title: 'Increase Font Size',
-          keys: ['Meta', '='],
+          keys: [
+            ['Meta', '='],
+            ['Meta', '+'],
+          ],
         },
         {
           title: 'Decrease Font Size',
@@ -366,14 +390,6 @@ module.exports = {
         {
           title: 'Reset Font Size',
           keys: ['Meta', '0'],
-        },
-        {
-          title: 'Copy Page Link',
-          keys: ['Control', '/'],
-        },
-        {
-          title: 'Back',
-          keys: ['Escape'],
         },
       ],
     },
