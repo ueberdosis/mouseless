@@ -50,10 +50,11 @@ module.exports = {
           title: 'Open sort menu',
           keys: ['Meta', 'Shift', 's'],
         },
-        {
-          title: 'Re-apply the most recent sort',
-          keys: ['Enter'],
-        },
+        // duplicated
+        // {
+        //   title: 'Re-apply the most recent sort',
+        //   keys: ['Enter'],
+        // },
         {
           title: 'Toggles blocks',
           keys: ['Meta', 'Shift', '\\'],
