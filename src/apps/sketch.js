@@ -8,7 +8,7 @@ module.exports = {
     {
       title: 'Essentials',
       id: 'essentials',
-      version: 1,
+      version: 2,
       shortcuts: [
         {
           title: 'Copy',
@@ -28,7 +28,7 @@ module.exports = {
         },
         {
           title: 'New page',
-          keys: ['Shift', 'Meta', 'n'],
+          keys: ['Shift', 'Alt', 'Meta', 'n'],
         },
         {
           title: 'Run custom plugin',
@@ -42,10 +42,11 @@ module.exports = {
           title: 'Redo',
           keys: ['Shift', 'Meta', 'z'],
         },
-        {
-          title: 'Page setup',
-          keys: ['Shift', 'Meta', 'p'],
-        },
+        // Documented, but doesn't work
+        // {
+        //   title: 'Page setup',
+        //   keys: ['Shift', 'Meta', 'p'],
+        // },
         {
           title: 'Open Preferences window',
           keys: ['Meta', ','],
@@ -121,7 +122,7 @@ module.exports = {
     {
       title: 'Documents',
       id: 'documents',
-      version: 1,
+      version: 2,
       shortcuts: [
         {
           title: 'New document',
@@ -142,11 +143,12 @@ module.exports = {
         {
           title: 'Duplicate document',
           keys: ['Shift', 'Meta', 's'],
+          description: 'replaced by Save As… when Auto Save is disabled',
         },
-        {
-          title: 'Save document as…',
-          keys: ['Alt', 'Shift', 'Meta', 's'],
-        },
+        // {
+        //   title: 'Save as…',
+        //   keys: ['Alt', 'Shift', 'Meta', 's'],
+        // },
       ],
     },
     {
@@ -233,7 +235,7 @@ module.exports = {
           keys: ['ArrowUp'],
         },
         {
-          title: 'Nudge layer 1 px to bottom',
+          title: 'Nudge layer 10 px to bottom',
           keys: ['Shift', 'ArrowDown'],
         },
         {
