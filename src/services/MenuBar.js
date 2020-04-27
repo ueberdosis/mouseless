@@ -5,15 +5,14 @@ import {
   app,
   globalShortcut,
   ipcMain,
+  BrowserWindow,
 } from 'electron'
 import activeWin from 'active-win'
 import windowShortcuts from 'window-shortcuts'
 import Store from './Store'
 import User from './User'
 import Setapp from './Setapp'
-
-const isProduction = process.env.NODE_ENV === 'production'
-const isDevelopment = !isProduction
+import Updater from './Updater'
 
 export default new class {
 
@@ -67,18 +66,14 @@ export default new class {
     this.menubar.on('after-create-window', () => {
       this.menubar.window.webContents.executeJavaScript('window.location.hash = "/shortcuts"')
 
-      const contextMenu = Menu.buildFromTemplate([
-        {
-          label: 'Quit',
-          click: () => {
-            this.menubar.app.quit()
-          },
-        },
-      ])
-
       this.menubar.tray.on('right-click', () => {
-        Setapp.reportUsageEvent('user-interaction')
-        this.menubar.tray.popUpContextMenu(contextMenu)
+        this.handleRightClick()
+      })
+
+      this.menubar.tray.on('click', event => {
+        if (event.ctrlKey) {
+          this.handleRightClick()
+        }
       })
     })
 
@@ -148,6 +143,43 @@ export default new class {
     app.on('will-quit', () => {
       globalShortcut.unregisterAll()
     })
+  }
+
+  handleRightClick() {
+    const contextMenu = Menu.buildFromTemplate([
+      { role: 'about' },
+      { type: 'separator' },
+      {
+        label: 'Preferences',
+        click: () => {
+          BrowserWindow
+            .getAllWindows()
+            .forEach(browserWindow => {
+              browserWindow.webContents.send('showOptions')
+              browserWindow.show()
+            })
+        },
+      },
+      { type: 'separator' },
+      ...(!Setapp.isActive ? [
+        {
+          label: 'Check for Updates',
+          click(menuItem) {
+            Updater.checkForUpdates(menuItem)
+          },
+        },
+      ] : []),
+      { type: 'separator' },
+      {
+        label: 'Quit',
+        click: () => {
+          this.menubar.app.quit()
+        },
+      },
+    ])
+
+    this.menubar.tray.popUpContextMenu(contextMenu)
+    Setapp.reportUsageEvent('user-interaction')
   }
 
   isWindowVisible(window) {

@@ -10,26 +10,6 @@
     <div class="options-overlay__content">
       <div class="options-overlay__section">
         <div>
-          Support
-        </div>
-        <div>
-          <a href="mailto:support@mouseless.app">
-            support@mouseless.app
-          </a>
-        </div>
-      </div>
-
-      <div class="options-overlay__section" v-if="user.email">
-        <div>
-          License
-        </div>
-        <div>
-          Licensed to {{ user.email }}
-        </div>
-      </div>
-
-      <div class="options-overlay__section">
-        <div>
           Shortcut
         </div>
         <div>
@@ -104,6 +84,26 @@
         </div>
       </div>
 
+      <div class="options-overlay__section" v-if="user.email">
+        <div>
+          License
+        </div>
+        <div>
+          Licensed to {{ user.email }}
+        </div>
+      </div>
+
+      <div class="options-overlay__section">
+        <div>
+          Support
+        </div>
+        <div>
+          <a href="mailto:support@mouseless.app">
+            support@mouseless.app
+          </a>
+        </div>
+      </div>
+
       <div class="options-overlay__section">
         <div>
           Danger Zone
@@ -128,6 +128,7 @@ import Keyboard from '@/services/Keyboard'
 import User from '@/services/User'
 import Btn from '@/components/Btn'
 import Store from '@/services/Store'
+import AutoStart from '@/services/AutoStart'
 import SmallKey from '@/components/SmallKey'
 
 export default {
@@ -165,6 +166,7 @@ export default {
 
     autoStart() {
       Store.set('autoStart', this.autoStart)
+      AutoStart.update()
     },
   },
 

@@ -10,18 +10,19 @@ module.exports = {
       id: 'essentials',
       version: 1,
       shortcuts: [
-        {
-          title: 'Undo',
-          keys: ['Meta', 'z'],
-        },
-        {
-          title: 'Redo',
-          keys: ['Meta', 'y'],
-        },
-        {
-          title: 'Print',
-          keys: ['Meta', 'p'],
-        },
+        // basics
+        // {
+        //   title: 'Undo',
+        //   keys: ['Meta', 'z'],
+        // },
+        // {
+        //   title: 'Redo',
+        //   keys: ['Meta', 'y'],
+        // },
+        // {
+        //   title: 'Print',
+        //   keys: ['Meta', 'p'],
+        // },
         {
           title: 'Open table switcher',
           keys: ['Meta', 'j'],
@@ -50,10 +51,11 @@ module.exports = {
           title: 'Open sort menu',
           keys: ['Meta', 'Shift', 's'],
         },
-        {
-          title: 'Re-apply the most recent sort',
-          keys: ['Enter'],
-        },
+        // duplicated
+        // {
+        //   title: 'Re-apply the most recent sort',
+        //   keys: ['Enter'],
+        // },
         {
           title: 'Toggles blocks',
           keys: ['Meta', 'Shift', '\\'],
@@ -77,18 +79,19 @@ module.exports = {
       id: 'grid',
       version: 1,
       shortcuts: [
-        {
-          title: 'Copy',
-          keys: ['Meta', 'c'],
-        },
-        {
-          title: 'Cut',
-          keys: ['Meta', 'x'],
-        },
-        {
-          title: 'Paste',
-          keys: ['Meta', 'v'],
-        },
+        // basics
+        // {
+        //   title: 'Copy',
+        //   keys: ['Meta', 'c'],
+        // },
+        // {
+        //   title: 'Cut',
+        //   keys: ['Meta', 'x'],
+        // },
+        // {
+        //   title: 'Paste',
+        //   keys: ['Meta', 'v'],
+        // },
         {
           title: 'Expand the active record',
           keys: ['Space'],

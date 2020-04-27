@@ -1,3 +1,23 @@
 .apps-route {
   padding-top: 8px;
+
+  &__feedback {
+    cursor: pointer;
+    width: 100%;
+    background-color: rgba($colorWhite, 0.08);
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba($colorWhite, 0.5);
+    line-height: 1.6;
+    will-change: background-color;
+    transition: background-color 0.2s $ease;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($colorWhite, 0.12);
+    }
+  }
+
 }

@@ -68,22 +68,22 @@ module.exports = {
           title: 'New Workspace…',
           keys: ['Control', 'Meta', 'n'],
         },
-        {
-          title: 'New Group',
-          keys: ['Alt', 'Meta', 'n'],
-        },
+        // {
+        //   title: 'New Group',
+        //   keys: ['Alt', 'Meta', 'n'],
+        // },
         {
           title: 'New Group without Folder',
           keys: ['Control', 'Alt', 'Meta', 'n'],
         },
-        {
-          title: 'New Folder',
-          keys: ['Alt', 'Meta', 'n'],
-        },
-        {
-          title: 'New Playground Page',
-          keys: ['Alt', 'Meta', 'n'],
-        },
+        // {
+        //   title: 'New Folder',
+        //   keys: ['Alt', 'Meta', 'n'],
+        // },
+        // {
+        //   title: 'New Playground Page',
+        //   keys: ['Alt', 'Meta', 'n'],
+        // },
         {
           title: 'Add Files…',
           keys: ['Alt', 'Meta', 'a'],
@@ -96,14 +96,15 @@ module.exports = {
           title: 'Open Quickly…',
           keys: ['Shift', 'Meta', 'o'],
         },
-        {
-          title: 'Close Window',
-          keys: ['Shift', 'Meta', 'w'],
-        },
-        {
-          title: 'Close Other Windows',
-          keys: ['Alt', 'Shift', 'Meta', 'w'],
-        },
+        // duplicated
+        // {
+        //   title: 'Close Window',
+        //   keys: ['Shift', 'Meta', 'w'],
+        // },
+        // {
+        //   title: 'Close Other Windows',
+        //   keys: ['Alt', 'Shift', 'Meta', 'w'],
+        // },
         {
           title: 'Close Tab',
           keys: ['Shift', 'Meta', 'w'],
@@ -344,144 +345,144 @@ module.exports = {
         },
         {
           title: 'Show Custom Class Inspector',
-          description: 'Inspectors',
           keys: ['Alt', 'Meta', '7'],
         },
-        {
-          title: 'Show Scene Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '7'],
-        },
-        {
-          title: 'Show Mapping Model Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '3'],
-        },
-        {
-          title: 'Show Material Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '5'],
-        },
-        {
-          title: 'Show Size Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '4'],
-        },
-        {
-          title: 'Show Entity Attributes Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '4'],
-        },
-        {
-          title: 'Show View Effects Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '9'],
-        },
-        {
-          title: 'Show Attributes Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '4'],
-        },
-        {
-          title: 'Show Source Control Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '3'],
-        },
-        {
-          title: 'Show Attributes Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '3'],
-        },
-        {
-          title: 'Show Connections Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '7'],
-        },
-        {
-          title: 'Show Components Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '7'],
-        },
-        {
-          title: 'Show Identity Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '4'],
-        },
-        {
-          title: 'Show Attributes Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '7'],
-        },
-        {
-          title: 'Show Physics Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '6'],
-        },
-        {
-          title: 'Show File Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '1'],
-        },
-        {
-          title: 'Show History Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '2'],
-        },
-        {
-          title: 'Show Object Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '3'],
-        },
-        {
-          title: 'Show Node Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '3'],
-        },
-        {
-          title: 'Show Size Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '6'],
-        },
-        {
-          title: 'Show Attributes Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '3'],
-        },
-        {
-          title: 'Show Data Model Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '3'],
-        },
-        {
-          title: 'Show Memory Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '3'],
-        },
-        {
-          title: 'Show Components Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '7'],
-        },
-        {
-          title: 'Show Identity Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '7'],
-        },
-        {
-          title: 'Show Bindings Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '8'],
-        },
-        {
-          title: 'Show Quick Help Inspector',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '3'],
-        },
-        {
-          title: 'Show Inspectors',
-          description: 'Inspectors',
-          keys: ['Alt', 'Meta', '0'],
-        },
+        // duplicated
+        // {
+        //   title: 'Show Scene Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '7'],
+        // },
+        // {
+        //   title: 'Show Mapping Model Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '3'],
+        // },
+        // {
+        //   title: 'Show Material Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '5'],
+        // },
+        // {
+        //   title: 'Show Size Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '4'],
+        // },
+        // {
+        //   title: 'Show Entity Attributes Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '4'],
+        // },
+        // {
+        //   title: 'Show View Effects Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '9'],
+        // },
+        // {
+        //   title: 'Show Attributes Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '4'],
+        // },
+        // {
+        //   title: 'Show Source Control Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '3'],
+        // },
+        // {
+        //   title: 'Show Attributes Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '3'],
+        // },
+        // {
+        //   title: 'Show Connections Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '7'],
+        // },
+        // {
+        //   title: 'Show Components Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '7'],
+        // },
+        // {
+        //   title: 'Show Identity Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '4'],
+        // },
+        // {
+        //   title: 'Show Attributes Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '7'],
+        // },
+        // {
+        //   title: 'Show Physics Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '6'],
+        // },
+        // {
+        //   title: 'Show File Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '1'],
+        // },
+        // {
+        //   title: 'Show History Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '2'],
+        // },
+        // {
+        //   title: 'Show Object Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '3'],
+        // },
+        // {
+        //   title: 'Show Node Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '3'],
+        // },
+        // {
+        //   title: 'Show Size Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '6'],
+        // },
+        // {
+        //   title: 'Show Attributes Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '3'],
+        // },
+        // {
+        //   title: 'Show Data Model Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '3'],
+        // },
+        // {
+        //   title: 'Show Memory Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '3'],
+        // },
+        // {
+        //   title: 'Show Components Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '7'],
+        // },
+        // {
+        //   title: 'Show Identity Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '7'],
+        // },
+        // {
+        //   title: 'Show Bindings Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '8'],
+        // },
+        // {
+        //   title: 'Show Quick Help Inspector',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '3'],
+        // },
+        // {
+        //   title: 'Show Inspectors',
+        //   description: 'Inspectors',
+        //   keys: ['Alt', 'Meta', '0'],
+        // },
         {
           title: 'Show Library',
           keys: ['Shift', 'Meta', 'l'],
@@ -966,17 +967,17 @@ module.exports = {
         },
         {
           title: 'Fix All Issues',
-          keys: ['Control', 'Alt', 'Meta+f'],
+          keys: ['Control', 'Alt', 'Meta', 'f'],
         },
         {
           title: 'Show All Issues',
           description: 'Issues',
-          keys: ['Control', 'Meta+m'],
+          keys: ['Control', 'Meta', 'm'],
         },
         {
           title: 'Refresh',
           description: 'Previews',
-          keys: ['Alt', 'Meta+p'],
+          keys: ['Alt', 'Meta', 'p'],
         },
         {
           title: 'Select Column Up',
@@ -1006,7 +1007,7 @@ module.exports = {
         {
           title: 'Move Line Up',
           description: 'Structure',
-          keys: ['Alt', 'Meta+['],
+          keys: ['Alt', 'Meta', '['],
         },
         {
           title: 'Move Line Down',
@@ -1021,7 +1022,7 @@ module.exports = {
         {
           title: 'Add Documentation',
           description: 'Structure',
-          keys: ['Alt', 'Meta+/'],
+          keys: ['Alt', 'Meta', '/'],
         },
         {
           title: 'Fold',
@@ -1280,7 +1281,7 @@ module.exports = {
         {
           title: 'Reset to Suggested Constraints',
           description: 'Resolve Auto Layout Issues',
-          keys: ['Alt+'],
+          keys: ['Alt', '+'],
         },
       ],
     },
@@ -1414,7 +1415,7 @@ module.exports = {
         {
           title: 'Re-Indent',
           description: 'Structure',
-          keys: ['Contol', '|'],
+          keys: ['Control', '|'],
         },
         {
           title: 'Shift Right',
@@ -1597,12 +1598,12 @@ module.exports = {
         },
         {
           title: 'Fix All Issues',
-          keys: ['Control', 'Alt', 'Meta+f'],
+          keys: ['Control', 'Alt', 'Meta', 'f'],
         },
         {
           title: 'Show All Issues',
           description: 'Issues',
-          keys: ['Control', 'Meta+m'],
+          keys: ['Control', 'Meta', 'm'],
         },
         {
           title: 'Refresh',
@@ -1637,7 +1638,7 @@ module.exports = {
         {
           title: 'Move Line Up',
           description: 'Structure',
-          keys: ['Alt', 'Meta+['],
+          keys: ['Alt', 'Meta', '['],
         },
         {
           title: 'Move Line Down',
@@ -1652,7 +1653,7 @@ module.exports = {
         {
           title: 'Add Documentation',
           description: 'Structure',
-          keys: ['Alt', 'Meta+/'],
+          keys: ['Alt', 'Meta', '/'],
         },
         {
           title: 'Fold',
@@ -1698,10 +1699,6 @@ module.exports = {
           title: 'Reset',
           description: 'Font Size',
           keys: ['Control', 'Meta', '0'],
-        },
-        {
-          title: 'Minimap',
-          keys: ['Control', 'Shift', 'Meta', 'm'],
         },
         {
           title: 'Minimap',
@@ -1767,7 +1764,7 @@ module.exports = {
         {
           title: 'Move Line Up',
           description: 'Structure',
-          keys: ['Alt', 'Meta+['],
+          keys: ['Alt', 'Meta', '['],
         },
         {
           title: 'Move Line Down',
@@ -1782,7 +1779,7 @@ module.exports = {
         {
           title: 'Add Documentation',
           description: 'Structure',
-          keys: ['Alt', 'Meta+/'],
+          keys: ['Alt', 'Meta', '/'],
         },
         {
           title: 'Fold',
@@ -1921,7 +1918,7 @@ module.exports = {
     },
     {
       title: 'Editor Menu for GPU Report Document',
-      id: 'editor_coverage_report_document',
+      id: 'editor_gpu_report_document',
       version: 1,
       shortcuts: [
         {
@@ -2559,10 +2556,6 @@ module.exports = {
         {
           title: 'Move Up Extending Selection',
           keys: ['Control', 'Shift', 'p'],
-        },
-        {
-          title: 'Move Forward Extending Selection',
-          keys: ['Control', 'Shift', 'f'],
         },
         {
           title: 'Move Forward Extending Selection',

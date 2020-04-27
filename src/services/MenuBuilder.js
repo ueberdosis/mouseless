@@ -1,8 +1,6 @@
-import { app, Menu } from 'electron'
+import { app, Menu, BrowserWindow } from 'electron'
 import Updater from './Updater'
 import Setapp from './Setapp'
-
-const isMac = process.platform === 'darwin'
 
 export default new class {
 
@@ -12,6 +10,19 @@ export default new class {
         label: app.getName(),
         submenu: [
           { role: 'about' },
+          { type: 'separator' },
+          {
+            label: 'Preferences',
+            accelerator: 'CmdOrCtrl+,',
+            click() {
+              BrowserWindow
+                .getAllWindows()
+                .forEach(browserWindow => {
+                  browserWindow.webContents.send('showOptions')
+                  browserWindow.show()
+                })
+            },
+          },
           { type: 'separator' },
           { role: 'hide' },
           { role: 'hideothers' },
@@ -38,9 +49,7 @@ export default new class {
           { role: 'cut' },
           { role: 'copy' },
           { role: 'paste' },
-          ...(isMac ? [
-            { role: 'pasteAndMatchStyle' },
-          ] : []),
+          { role: 'pasteAndMatchStyle' },
           { role: 'selectAll' },
           { role: 'delete' },
         ],
