@@ -12,17 +12,17 @@ module.exports = {
     'max-len': 'off',
     // Module build failed eslint-loader TypeError: Cannot read property 'range' of null
     // https://github.com/babel/babel-eslint/issues/799#issuecomment-568195009
-    "indent": [
-      "error",
+    'indent': [
+      'error',
       2,
       {
-        "ignoredNodes": [
-          "TemplateLiteral"
+        'ignoredNodes': [
+          'TemplateLiteral'
         ]
       }
     ],
-    "template-curly-spacing": [
-      "off"
+    'template-curly-spacing': [
+      'off'
     ]
   },
   parserOptions: {
