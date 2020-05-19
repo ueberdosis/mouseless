@@ -29,4 +29,4 @@ yarn run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Test License
-`CEFA8043-F49D46F2-965EA1E6-11725170`
+`DBVPXFQ2-3DSOU9IE-WYCEH7EE-XRBJ2P20`
