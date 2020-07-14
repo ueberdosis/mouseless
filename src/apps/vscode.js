@@ -70,7 +70,7 @@ module.exports = {
           keys: ['Meta', 'F2'],
         },
         {
-          title: 'Select All Occurrences of Find Match',
+          title: 'Select all occurrences of find match',
           keys: ['Alt', 'Enter'],
         },
         {
