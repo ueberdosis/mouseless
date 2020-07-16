@@ -1,5 +1,7 @@
 # Mouseless.app
 
+<img width="712" alt="OAJSdfRA10" src="https://user-images.githubusercontent.com/2500670/87651207-08ad2780-c753-11ea-91e7-5f8c32fa1fa1.png">
+
 ## Project setup
 ```
 yarn install
