@@ -276,7 +276,7 @@ module.exports = {
           keys: ['Alt', 'Shift', 'Meta', 'Enter'],
         },
         {
-          title: 'Reset Assitant Selection',
+          title: 'Reset Assistant Selection',
           keys: ['Alt', 'Shift', 'Meta', 'z'],
         },
         {
@@ -953,7 +953,7 @@ module.exports = {
       ],
     },
     {
-      title: 'Editor Menu for Asset Catalog Comparision',
+      title: 'Editor Menu for Asset Catalog Comparison',
       id: 'editor_asset_catalog_comparision',
       version: 1,
       shortcuts: [
@@ -1223,7 +1223,7 @@ module.exports = {
           keys: ['Meta', '_'],
         },
         {
-          title: 'Add Verical Guide',
+          title: 'Add Vertical Guide',
           keys: ['Control', 'Meta', '|'],
         },
         {
@@ -1275,7 +1275,7 @@ module.exports = {
           keys: ['Meta', '_'],
         },
         {
-          title: 'Add Verical Guide',
+          title: 'Add Vertical Guide',
           keys: ['Control', 'Meta', '|'],
         },
         {
@@ -2598,7 +2598,7 @@ module.exports = {
           keys: ['Control', 'e'],
         },
         {
-          title: 'Move to End of Pragraph Extending Selection',
+          title: 'Move to End of Paragraph Extending Selection',
           keys: ['Control', 'Shift', 'e'],
         },
       ],
