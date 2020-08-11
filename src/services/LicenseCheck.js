@@ -4,8 +4,6 @@ import Store from './Store'
 import { nestedValue } from '../helpers'
 import MenuBar from './MenuBar'
 
-const masterKey = 'DBVPXFQ2-3DSOU9IE-WYCEH7EE-XRBJ2P20'
-
 export default new class {
 
   constructor() {
@@ -23,7 +21,7 @@ export default new class {
   }
 
   verifyLicenseKey(licenseKey) {
-    if (licenseKey === masterKey) {
+    if (process.env.MASTER_KEY && licenseKey === process.env.MASTER_KEY) {
       Store.set('verification', {
         success: true,
         purchase: {
