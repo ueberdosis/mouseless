@@ -1,10 +1,5 @@
 module.exports = {
-  // devServer: {
-  //   overlay: {
-  //     warnings: false,
-  //     errors: false,
-  //   },
-  // },
+  lintOnSave: process.env.NODE_ENV === 'production',
 
   css: {
     loaderOptions: {
@@ -15,15 +10,25 @@ module.exports = {
   },
 
   chainWebpack: config => {
-    const nodeLoader = process.env.NODE_ENV === 'development'
-      ? 'node-loader'
-      : 'native-ext-loader'
+    // required for 'native-ext-loader'
+    config.node.set('__dirname', true)
+
+    config
+      .output
+      .globalObject('(typeof self !== "undefined" ? self : this)')
 
     config.module
       .rule('node')
       .test(/\.node$/)
-      .use(nodeLoader)
-      .loader(nodeLoader)
+      .use('native-ext-loader')
+      .loader('native-ext-loader')
+      .end()
+
+    config.module
+      .rule('worker')
+      .test(/\.worker\.js$/i)
+      .use('worker-loader')
+      .loader('worker-loader')
       .end()
 
     config.resolve.extensions.prepend('.node')
@@ -50,7 +55,7 @@ module.exports = {
           ? 'com.ueberclub.mouseless-setapp'
           : 'com.Mouseless.app',
         artifactName: '${productName}-${version}-${os}.${ext}', // eslint-disable-line
-        afterSign: 'src/notarize.js',
+        afterSign: 'electron-builder-notarize',
         productName: 'Mouseless',
         mac: {
           hardenedRuntime: true,
