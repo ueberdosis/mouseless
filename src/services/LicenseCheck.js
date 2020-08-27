@@ -21,7 +21,7 @@ export default new class {
   }
 
   verifyLicenseKey(licenseKey) {
-    if (process.env.MASTER_KEY && licenseKey === process.env.MASTER_KEY) {
+    if (process.env.TEST_KEY && licenseKey === process.env.TEST_KEY) {
       Store.set('verification', {
         success: true,
         purchase: {

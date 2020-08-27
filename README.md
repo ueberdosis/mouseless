@@ -30,5 +30,4 @@ yarn run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Test License
-`DBVPXFQ2-3DSOU9IE-WYCEH7EE-XRBJ2P20`
+
