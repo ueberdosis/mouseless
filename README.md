@@ -13,34 +13,10 @@ Keyboard shortcut training and look-up.
 * available for macOS
 
 ## Supported apps
-* Adobe XD
-* Airtable
-* Bear
-* Code
-* Evernote
-* Figma
-* Finder
-* Firefox
-* Gmail
-* Google Chrome
-* Google Docs
-* iA Writer
-* macOS
-* Notion
-* Photoshop
-* Safari
-* Sketch
-* Slack
-* Spotify
-* Sublime Text
-* Superhuman
-* Things
-* Todoist
-* Transmit
-* Trello
-* Ulysses
-* Webflow
-* Xcode
+
+Adobe XD, Airtable, Bear, Code, Evernote, Figma, Finder, Firefox, Gmail, Google Chrome, Google Docs, iA Writer, macOS, Notion, Photoshop, Safari, Sketch, Slack, Spotify, Sublime Text, Superhuman, Things, Todoist, Transmit, Trello, Ulysses, Webflow, Xcode
+
+Something’s missing? https://feedback.mouseless.app/
 
 ## Using Mouseless
 
