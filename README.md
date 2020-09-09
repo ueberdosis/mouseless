@@ -1,5 +1,7 @@
 # Mouseless
 
+[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub)](https://github.com/sponsors/ueberdosis)
+
 Keyboard shortcut training and look-up.
 
 <img width="712" alt="OAJSdfRA10" src="https://user-images.githubusercontent.com/2500670/87651207-08ad2780-c753-11ea-91e7-5f8c32fa1fa1.png">
