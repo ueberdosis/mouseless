@@ -45,7 +45,7 @@
     "sass": "^1.26.3",
     "sass-loader": "8.0.2",
     "vue-cli-plugin-electron-builder": "^1.4.6",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "dependencies": {
     "active-win": "^6.1.0",
@@ -63,7 +63,7 @@
     "sha.js": "^2.4.11",
     "spatial-navigation-js": "^1.0.0",
     "uuid": "^7.0.2",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-router": "^3.1.6",
     "vue-the-mask": "^0.11.1",
     "weighted": "^0.3.0",
