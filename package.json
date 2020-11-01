@@ -55,7 +55,7 @@
     "electron-log": "^4.1.0",
     "electron-store": "^5.1.1",
     "electron-updater": "^4.2.5",
-    "fuse.js": "^3.4.6",
+    "fuse.js": "^6.4.3",
     "keyboard-symbol": "^1.0.0",
     "menubar": "^7.1.0",
     "moment": "^2.24.0",
