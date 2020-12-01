@@ -51,7 +51,7 @@
     "active-win": "^6.1.0",
     "axios": "^0.19.2",
     "collect.js": "^4.20.3",
-    "core-js": "3.6.4",
+    "core-js": "3.8.0",
     "electron-log": "^4.1.0",
     "electron-store": "^5.1.1",
     "electron-updater": "^4.2.5",
