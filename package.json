@@ -31,6 +31,7 @@
     "dotenv": "^8.2.0",
     "electron": "^15.3.1",
     "electron-builder-notarize": "^1.2.0",
+    "electron-devtools-installer": "^3.2.0",
     "electron-icon-builder": "^1.0.2",
     "electron-notarize": "^0.2.1",
     "eslint": "^6.8.0",
