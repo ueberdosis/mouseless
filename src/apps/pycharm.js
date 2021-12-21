@@ -1,10 +1,21 @@
-// https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf
+// https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard_mac.pdf
 module.exports = {
   id: 'pycharm',
-  title: 'PyCharm',
+  title: 'PyCharm MacOS keymap',
   category: 'Development',
   description: null,
   sets: [
+    {
+      title: 'Actions',
+      id: 'actions',
+      version: 1,
+      shortcuts: [
+        {
+          title: 'Find any action inside the IDE',
+          keys: ['Shift', 'Meta', 'A'],
+        },
+      ]
+    },
     {
       title: 'Create and Edit',
       id: 'createandedit',
@@ -28,23 +39,19 @@ module.exports = {
         },
         {
           title: 'Complete statement',
-          keys: ['Control', 'Shift', 'Enter'],
+          keys: ['Shift', 'Meta', 'Enter'],
         },
         {
           title: 'Parameter information',
-          keys: ['Control', 'P'],
-        },
-        {
-          title: 'Context info',
-          keys: ['Alt', 'Q'],
+          keys: ['Meta', 'P'],
         },
         {
           title: 'Quick definition',
-          keys: ['Control', 'Shift', 'I'],
+          keys: ['Alt', 'Space'],
         },
         {
           title: 'Quick documentation',
-          keys: ['Control', 'Q'],
+          keys: ['F1'],
         },
         {
           title: 'External documentation',
@@ -52,7 +59,7 @@ module.exports = {
         },
         {
           title: 'Generate code',
-          keys: ['Alt', 'Insert'],
+          keys: ['Meta', 'N'],
         },
         {
           title: 'Override members',
@@ -64,19 +71,23 @@ module.exports = {
         },
         {
           title: 'Surround with...',
-          keys: ['Control', 'Alt', 'T'],
+          keys: ['Control', 'Meta', 'T'],
         },
         {
           title: 'Comment with line comment',
-          keys: ['Control', '/'],
+          keys: ['Meta', '/'],
         },
         {
-          title: 'Extend',
-          keys: ['Control', 'W'],
+          title: 'Extend selection',
+          keys: ['Control', 'ArrowUp'],
         },
         {
           title: 'Shrink selection',
-          keys: ['Control', 'Shift', 'W'],
+          keys: ['Control', 'ArrowDown'],
+        },
+        {
+          title: 'Context info',
+          keys: ['Control', 'Shift', 'Q'],
         },
         {
           title: 'Optimize imports',
@@ -88,47 +99,47 @@ module.exports = {
         },
         {
           title: 'Cut',
-          keys: ['Control', 'X'],
+          keys: ['Meta', 'X'],
         },
         {
           title: 'Сopy',
-          keys: ['Control', 'C'],
+          keys: ['Meta', 'C'],
         },
         {
           title: 'Paste',
-          keys: ['Control', 'V'],
+          keys: ['Meta', 'V'],
         },
         {
           title: 'Copy document path',
-          keys: ['Control', 'Shift', 'C'],
+          keys: ['Shift', 'Meta', 'C'],
         },
         {
           title: 'Paste from clipboard history',
-          keys: ['Control', 'Shift', 'V'],
+          keys: ['Shift', 'Meta', 'V'],
         },
         {
           title: 'Duplicate current line or selection',
-          keys: ['Control', 'D'],
+          keys: ['Meta', 'D'],
         },
         {
           title: 'Move line up',
-          keys: ['Control', 'Shift', 'Up']
+          keys: ['Shift', 'Meta', 'ArrowUp']
         },
         {
           title: 'Move line down',
-          keys: ['Control', 'Shift', 'Down']
+          keys: ['Shift', 'Meta', 'ArrowDown']
         },
         {
           title: 'Delete line at caret',
-          keys: ['Control', 'Y']
+          keys: ['Meta', 'Backspace']
         },
         {
           title: 'Join line',
-          keys: ['Control', 'Shift', 'J'],
+          keys: ['Shift', 'Meta', 'J'],
         },
         {
           title: 'Split line',
-          keys: ['Control', 'Enter'],
+          keys: ['Meta', 'Enter'],
         },
         {
           title: 'Start new line',
@@ -136,27 +147,27 @@ module.exports = {
         },
         {
           title: 'Toggle case',
-          keys: ['Control', 'Shift', 'U'],
+          keys: ['Shift', 'Meta', 'U'],
         },
         {
           title: 'Expand code block',
-          keys: ['Control', 'NumPad','+'],
+          keys: ['Meta', '+'],
         },
         {
           title: 'Collapse code block',
-          keys: ['Control', 'NumPad', '-'],
+          keys: ['Meta', '-'],
         },
         {
           title: 'Expand all',
-          keys: ['Control', 'Shift', 'NumPad', '+'],
+          keys: ['Shift', 'Meta', '+'],
         },
         {
           title: 'Collapse all',
-          keys: ['Control', 'Shift', 'NumPad', '-'],
+          keys: ['Shift', 'Meta', '-'],
         },
         {
           title: 'Save all',
-          keys: ['Control', 'S'],
+          keys: ['Meta', 'S'],
         },
       ],
     },
@@ -167,15 +178,15 @@ module.exports = {
       shortcuts: [
         {
           title: 'VCS operations popup...',
-          keys: ['Alt', '`']
+          keys: ['Control', '`']
         },
         {
           title: 'Commit',
-          keys: ['Ctrl', 'K']
+          keys: ['Meta', 'K']
         },
         {
           title: 'Update project',
-          keys: ['Ctrl', 'T']
+          keys: ['Meta', 'T']
         },
         {
           title: 'Recent changes',
@@ -183,19 +194,19 @@ module.exports = {
         },
         {
           title: 'Revert',
-          keys: ['Ctrl', 'Alt', 'Z']
+          keys: ['Control', 'Meta', 'Z']
         },
         {
           title: 'Push...',
-          keys: ['Ctrl', 'Shift', 'K']
+          keys: ['Shift', 'Meta', 'K']
         },
         {
           title: 'Next change',
-          keys: ['Ctrl', 'Alt', 'Shift', 'Down']
+          keys: ['Control', 'Alt', 'Shift', 'ArrowDown']
         },
         {
           title: 'Previous change',
-          keys: ['Ctrl', 'Alt', 'Shift', 'Up']
+          keys: ['Control', 'Alt', 'Shift', 'ArrowUp']
         },
       ],
     },
@@ -206,31 +217,35 @@ module.exports = {
       shortcuts: [
         {
           title: 'Find action...',
-          keys: ['Ctrl', 'Shift', 'A']
+          keys: ['Shift', 'Meta', 'A']
         },
         {
           title: 'Open a tool window',
-          keys: ['Alt', '[0-9]']
+          keys: ['Meta', 'Y', '[0-9]']
         },
         {
           title: 'Synchronize',
-          keys: ['Ctrl', 'Alt', 'Y']
+          keys: ['Alt', 'Meta', 'Y']
+        },
+        {
+          title: 'Toggle full screen mode',
+          keys: ['Control', 'Meta', 'F']
         },
         {
           title: 'Quick switch scheme...',
-          keys: ['Ctrl', '`']
+          keys: ['Control', '`']
         },
         {
-          title: 'Settings...',
-          keys: ['Ctrl', 'Alt', 'S']
+          title: 'Preferences...',
+          keys: ['Meta', ',']
         },
         {
-          title: 'Jump to source bar',
-          keys: ['F4']
+          title: 'Jump to source',
+          keys: ['Meta', 'ArrowDown']
         },
         {
           title: 'Jump to navigation bar',
-          keys: ['Alt', 'Home']
+          keys: ['Meeta', 'ArrowUp']
         },
         {
           title: 'Jump to last tool window',
@@ -242,27 +257,15 @@ module.exports = {
         },
         {
           title: 'Hide all tool windows',
-          keys: ['Ctrl', 'Shift', 'F12']
+          keys: ['Shift', 'Meta', 'F12']
         },
         {
-          title: 'Go to next editor tab',
-          keys: ['Alt', 'Right']
-        },
-        {
-          title: 'Go to previous editor tab',
-          keys: ['Alt', 'Left']
+          title: 'Go to next/previous editor tab',
+          keys: ['Control', 'Tab']
         },
         {
           title: 'Go to editor (from a tool window)',
           keys: ['Esc']
-        },
-        {
-          title: 'Close active tab',
-          keys: ['Ctrl', 'Shift', 'F4']
-        },
-        {
-          title: 'Close active window',
-          keys: ['Ctrl', 'F4']
         },
       ],
     },
@@ -277,47 +280,43 @@ module.exports = {
         },
         {
           title:'Find',
-          keys: ['Ctrl', 'F']
+          keys: ['Meta', 'F']
         },
         {
           title:'Replace',
-          keys: ['Ctrl', 'R']
+          keys: ['Meta', 'R']
         },
         {
           title:'Find in path',
-          keys: ['Ctrl', 'Shift', 'F']
+          keys: ['Shift', 'Meta', 'F']
         },
         {
           title:'Replace in path',
-          keys: ['Ctrl', 'Shift', 'R']
+          keys: ['Shift', 'Meta', 'R']
         },
         {
           title:'Next occurence',
-          keys: ['F3']
+          keys: ['Meta', 'G']
         },
         {
           title:'Previous occurence',
-          keys: ['Shift', 'F3']
-        },
-        {
-          title:'Find word at caret',
-          keys: ['Ctrl', 'F3']
+          keys: ['Meta', 'Shift', 'G']
         },
         {
           title:'Go to class',
-          keys: ['Ctrl', 'N']
+          keys: ['Meta', 'O']
         },
         {
           title:'Go to file',
-          keys: ['Ctrl', 'Shift', 'N']
+          keys: ['Shift', 'Meta', 'O']
         },
         {
           title:'Go to file member',
-          keys: ['Ctrl', 'F12']
+          keys: ['Meta', 'F12']
         },
         {
           title:'Go to symbol',
-          keys: ['Ctrl', 'Alt', 'Shift', 'N']
+          keys: ['Control', 'Meta', 'O']
         },
       ],
     },
@@ -328,19 +327,19 @@ module.exports = {
       shortcuts: [
         {
           title: 'Declaration',
-          keys: ['Ctrl', 'B']
+          keys: ['Meta', 'B']
         },
         {
           title: 'Type declaration (JavaScript only)',
-          keys: ['Ctrl', 'Shift', 'B']
+          keys: ['Control', 'Shift', 'B']
         },
         {
           title: 'Super method',
-          keys: ['Ctrl', 'U']
+          keys: ['Meta', 'U']
         },
         {
           title: 'Implementation(s)',
-          keys: ['Ctrl', 'Alt', 'B']
+          keys: ['Alt', 'Meta', 'B']
         },
         {
           title: 'Find usages',
@@ -348,15 +347,15 @@ module.exports = {
         },
         {
           title: 'Find usages in file',
-          keys: ['Ctrl', 'F7']
+          keys: ['Meta', 'F7']
         },
         {
           title: 'Highlight usages in file',
-          keys: ['Ctrl', 'Shift', 'F7']
+          keys: ['Shift', 'Meta', 'F7']
         },
         {
           title: 'Show usages',
-          keys: ['Ctrl', 'Alt', 'F7']
+          keys: ['Alt', 'Meta', 'F7']
         },
       ],
     },
@@ -367,7 +366,7 @@ module.exports = {
       shortcuts: [
         {
           title: 'Refactor this...',
-          keys: ['Ctrl', 'Alt', 'Shift', 'T']
+          keys: ['Control', 'T']
         },
         {
           title: 'Copy...',
@@ -379,7 +378,7 @@ module.exports = {
         },
         {
           title: 'Safe delete...',
-          keys: ['Alt', 'Delete']
+          keys: ['Meta', 'Backspace']
         },
         {
           title: 'Rename...',
@@ -387,35 +386,35 @@ module.exports = {
         },
         {
           title: 'Change signature...',
-          keys: ['Ctrl', 'F6']
+          keys: ['Meta', 'F6']
         },
         {
           title: 'Inline...',
-          keys: ['Ctrl', 'Alt', 'N']
+          keys: ['Alt', 'Meta', 'N']
         },
         {
           title: 'Extract method',
-          keys: ['Ctrl', 'Alt', 'M']
+          keys: ['Alt', 'Meta', 'M']
         },
         {
           title: 'Introduce variable',
-          keys: ['Ctrl', 'Alt', 'V']
+          keys: ['Alt', 'Meta', 'V']
         },
         {
-          title: 'Introduce parameter',
-          keys: ['Ctrl', 'Alt', 'P']
-        },
-        {
-          title: 'Introduce field ',
-          keys: ['Ctrl', 'Alt', 'F']
+          title: 'Introduce field',
+          keys: ['Alt', 'Meta', 'F']
         },
         {
           title: 'Introduce constant ',
-          keys: ['Ctrl', 'Alt', 'C']
+          keys: ['Alt', 'Meta', 'C']
+        },
+        {
+          title: 'Introduce parameter ',
+          keys: ['Alt', 'Meta', 'P']
         },
         {
           title: 'Reformat code',
-          keys: ['Ctrl', 'Alt', 'L']
+          keys: ['Alt', 'Meta', 'L']
         },
       ],
     },
@@ -426,7 +425,7 @@ module.exports = {
       shortcuts: [
         {
           title: 'Show error description',
-          keys: ['Ctrl', 'F1']
+          keys: ['Meta', 'F1']
         },
         {
           title: 'Next highlighted error',
@@ -438,15 +437,15 @@ module.exports = {
         },
         {
           title: 'Run inspection by name...',
-          keys: ['Ctrl', 'Alt', 'Shift', 'I']
+          keys: ['Alt', 'Shift', 'Meta', 'I']
         },
         {
           title: 'Type hierarchy',
-          keys: ['Ctrl', 'H']
+          keys: ['Control', 'H']
         },
         {
           title: 'Call hierarchy',
-          keys: ['Ctrl', 'Alt', 'H']
+          keys: ['Control', 'Alt', 'H']
         },
       ],
     },
@@ -461,43 +460,43 @@ module.exports = {
         },
         {
           title: 'Recently viewed locations',
-          keys: ['Ctrl', 'E']
+          keys: ['Meta', 'E']
         },
         {
           title: 'Recent locations',
-          keys: ['Ctrl', 'Shift', 'E']
+          keys: ['Shift', 'Meta', 'E']
         },
         {
           title: 'Last edit location',
-          keys: ['Ctrl', 'Shift', 'Back']
+          keys: ['Shift', 'Meta', 'Backspace']
         },
         {
           title: 'Navigate back',
-          keys: ['Ctrl', 'Alt', 'Left']
+          keys: ['Meta', '/']
         },
         {
           title: 'Navigate forward',
-          keys: ['Ctrl', 'Alt', 'Right']
+          keys: ['/', 'Meta']
         },
         {
           title: 'Go to previous method',
-          keys: ['Alt', 'Up']
+          keys: ['Alt', 'ArrowUp']
         },
         {
           title: 'Go to next method',
-          keys: ['Alt', 'Down']
+          keys: ['Alt', 'ArrowDown']
         },
         {
           title: 'Go to line / column...',
-          keys: ['Ctrl', 'G']
+          keys: ['Meta', 'L']
         },
         {
           title: 'Go to code block end',
-          keys: ['Ctrl', ']']
+          keys: ['Alt', 'Meta', ']']
         },
         {
           title: 'Go to code block start',
-          keys: ['Ctrl', '[']
+          keys: ['Alt', 'Meta', '[']
         },
         {
           title: 'Add to favorites',
@@ -505,19 +504,19 @@ module.exports = {
         },
         {
           title: 'Toggle bookmark',
-          keys: ['F11']
+          keys: ['F3']
         },
         {
           title: 'Toggle bookmark with mnemonic',
-          keys: ['Ctrl', 'F11']
+          keys: ['Alt', 'F3']
         },
         {
           title: 'Go to numbered bookmark',
-          keys: ['Ctrl', '[0-9]']
+          keys: ['Control', '[0-9]']
         },
         {
           title: 'Show bookmarks',
-          keys: ['Shift', 'F11']
+          keys: ['Meta', 'F3']
         },
       ],
     },
@@ -528,23 +527,23 @@ module.exports = {
       shortcuts: [
         {
           title: 'Run context configuration',
-          keys: ['Ctrl', 'Shift', 'F10']
+          keys: ['Control', 'Alt', 'R']
         },
         {
           title: 'Run selected configuration',
-          keys: ['Alt', 'Shift', 'F10']
+          keys: ['Control', 'Alt', 'R']
         },
         {
           title: 'Debug selected configuration',
-          keys: ['Alt', 'Shift', 'F9']
+          keys: ['Control', 'Alt', 'D']
         },
         {
           title: 'Run current configuration',
-          keys: ['Shift', 'F10']
+          keys: ['Control', 'R']
         },
         {
           title: 'Debug current configuration',
-          keys: ['Shift', 'F9']
+          keys: ['Control', 'D']
         },
         {
           title: 'Step over',
@@ -568,7 +567,7 @@ module.exports = {
         },
         {
           title: 'Force run to cursor',
-          keys: ['Ctrl', 'Alt', 'F9']
+          keys: ['Alt', 'Meta', 'F9']
         },
         {
           title: 'Show execution point',
@@ -580,27 +579,27 @@ module.exports = {
         },
         {
           title: 'Stop',
-          keys: ['Ctrl', 'F2']
+          keys: ['Meta', 'F2']
         },
         {
           title: 'Stop background processes...',
-          keys: ['Ctrl', 'Shift', 'F2']
+          keys: ['Shift', 'Meta', 'F2']
         },
         {
           title: 'Resume program',
-          keys: ['F9']
+          keys: ['Alt', 'Meta', 'R']
         },
         {
           title: 'Toggle line breakpoint',
-          keys: ['Ctrl', 'F8']
+          keys: ['Meta', 'F8']
         },
         {
           title: 'Toggle temporary line breakpoint',
-          keys: ['Ctrl', 'Alt', 'Shift', 'F8']
+          keys: ['Alt', 'Shift', 'Meta', 'F8']
         },
         {
           title: 'Edit / view breakpoint',
-          keys: ['Ctrl', 'Shift', 'F8']
+          keys: ['Shift', 'Meta', 'F8']
         },
       ],
     },
