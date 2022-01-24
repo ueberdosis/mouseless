@@ -47,6 +47,7 @@ function createWindow() {
     backgroundColor: '#000',
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
     },
     icon: path.resolve(__dirname, 'build/icon.icns'),
   })
