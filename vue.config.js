@@ -13,6 +13,8 @@ module.exports = {
     // required for 'native-ext-loader'
     config.node.set('__dirname', true)
 
+    config.target('electron-renderer')
+
     config
       .output
       .globalObject('(typeof self !== "undefined" ? self : this)')
