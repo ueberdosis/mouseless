@@ -52,6 +52,11 @@ function createWindow() {
     icon: path.resolve(__dirname, 'build/icon.icns'),
   })
 
+  const remote = require('@electron/remote/main')
+
+  remote.initialize()
+  remote.enable(win.webContents);
+
   LicenseCheck.setWindow(win)
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
