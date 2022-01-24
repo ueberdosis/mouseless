@@ -1,14 +1,14 @@
 import Store from 'electron-store'
-import { app, remote } from 'electron'
+import electronModule from 'electron'
+
+const electron = process.type === 'browser' ? electronModule : require('@electron/remote')
 
 export default new Store({
   // configName: process.env.NODE_ENV === 'development'
   //   ? 'config_dev'
   //   : 'config',
   // encryptionKey: '123',
-  projectVersion: (app && app.getVersion)
-    ? app.getVersion()
-    : remote.app.getVersion(),
+  projectVersion: electron.app.getVersion(),
   migrations: {
     '1.0.0': store => {
       store.clear()
