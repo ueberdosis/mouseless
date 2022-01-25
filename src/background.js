@@ -5,6 +5,7 @@ import {
   BrowserWindow,
   ipcMain,
 } from 'electron'
+import { initialize, enable as enableRemote } from "@electron/remote/main"
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import LicenseCheck from './services/LicenseCheck'
@@ -35,6 +36,8 @@ function createWindow() {
 
   const { wasOpenedAsHidden } = app.getLoginItemSettings()
 
+  initialize()
+
   // Create the browser window.
   win = new BrowserWindow({
     show: !wasOpenedAsHidden,
@@ -52,10 +55,7 @@ function createWindow() {
     icon: path.resolve(__dirname, 'build/icon.icns'),
   })
 
-  const remote = require('@electron/remote/main')
-
-  remote.initialize()
-  remote.enable(win.webContents);
+  enableRemote(win.webContents);
 
   LicenseCheck.setWindow(win)
 

@@ -1,10 +1,10 @@
-import { app as backendApp, remote } from 'electron'
+import electronModule from 'electron'
+
+const electron = process.type === 'browser' ? electronModule : require('@electron/remote')
 
 function getApp() {
-  if (backendApp) {
-    return backendApp
-  } if (remote) {
-    return remote.app
+  if (electron.app) {
+    return electron.app.remote
   }
 
   return null
