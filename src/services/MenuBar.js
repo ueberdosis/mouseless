@@ -54,6 +54,7 @@ export default new class {
         // alwaysOnTop: isDevelopment,
         webPreferences: {
           nodeIntegration: true,
+          contextIsolation: false,
         },
       },
       /* global __static */
