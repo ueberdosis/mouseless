@@ -1,0 +1,14 @@
+diff --git a/node_modules/menubar/lib/Menubar.js b/node_modules/menubar/lib/Menubar.js
+index c2cc450..eb45753 100644
+--- a/node_modules/menubar/lib/Menubar.js
++++ b/node_modules/menubar/lib/Menubar.js
+@@ -341,6 +341,9 @@ var Menubar = /** @class */ (function (_super) {
+                         }
+                         this._browserWindow.on('close', this.windowClear.bind(this));
+                         if (!(this._options.index !== false)) return [3 /*break*/, 2];
++
++                        require("@electron/remote/main").enable(this._browserWindow.webContents);
++
+                         return [4 /*yield*/, this._browserWindow.loadURL(this._options.index, this._options.loadUrlOptions)];
+                     case 1:
+                         _a.sent();
