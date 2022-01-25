@@ -122,7 +122,8 @@
 </template>
 
 <script>
-import { remote, ipcRenderer } from 'electron'
+import { ipcRenderer } from 'electron'
+import { app } from '@electron/remote'
 import Event from '@/services/Event'
 import Keyboard from '@/services/Keyboard'
 import User from '@/services/User'
@@ -196,8 +197,8 @@ export default {
     },
 
     restart() {
-      remote.app.relaunch()
-      remote.app.exit(0)
+      app.relaunch()
+      app.exit(0)
     },
 
     listenToNewShortcut() {
