@@ -9285,11 +9285,6 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.27, postcss@^7.0.3
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
-postinstall-postinstall@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/postinstall-postinstall/-/postinstall-postinstall-2.1.0.tgz#4f7f77441ef539d1512c40bd04c71b06a4704ca3"
-  integrity sha512-7hQX6ZlZXIoRiWNrbMQaLzUUfH+sSx39u8EJ9HYuDc1kLo9IXKWjM5RSquZN1ad5GnH8CGFM78fsAAQi3OKEEQ==
-
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
@@ -11932,10 +11927,10 @@ widest-line@^3.1.0:
   dependencies:
     string-width "^4.0.0"
 
-window-shortcuts@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/window-shortcuts/-/window-shortcuts-0.2.0.tgz#17ebc607b3afd0cf0c02df9d6eaef862ee0c4c7d"
-  integrity sha512-wsY3v6lmC+22Db76HwXo318yXNXoA3DAQPr2/PVb6AoVjOAK8BZBnewO/gWZhB8z0DgbkYOC5E5Kbj1+kTJxKw==
+window-shortcuts@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/window-shortcuts/-/window-shortcuts-0.4.0.tgz#d4ec7fca3553660a1df22364351793fc15f8490a"
+  integrity sha512-6srAQQcOCFkkOrjFrdjfnGKm1D1qK8LbAoJwekdJK1Wxz7npiC8SasnEg7dIZ8MBtlj+/2xIvwNP0Od9tLx2LQ==
 
 word-wrap@~1.2.3:
   version "1.2.3"
