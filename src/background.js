@@ -36,7 +36,11 @@ function createWindow() {
 
   const { wasOpenedAsHidden } = app.getLoginItemSettings()
 
-  initialize()
+  try {
+    initialize()
+  } catch (err) {
+    console.log(err)
+  }
 
   // Create the browser window.
   win = new BrowserWindow({
