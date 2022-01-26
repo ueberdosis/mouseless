@@ -3,11 +3,7 @@ import electronModule from 'electron'
 const electron = process.type === 'browser' ? electronModule : require('@electron/remote')
 
 function getApp() {
-  if (electron.app) {
-    return electron.app.remote
-  }
-
-  return null
+  return electron.app.remote
 }
 
 export const app = getApp()
