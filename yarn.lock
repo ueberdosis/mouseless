@@ -2097,9 +2097,9 @@ acorn@^7.1.0, acorn@^7.1.1, acorn@^7.4.0:
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
 active-win@^7.7.0:
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/active-win/-/active-win-7.7.0.tgz#fe414ae8250e14bdf8dd6453134562ee0fb5e4b5"
-  integrity sha512-/msjpkIru67qe0hpKkSFXKUSRNu+BC0MdWG01wXFy3Pww6I3esuwUVHmlE3n9g2cJ1uC0uGpovUEUxNqiBYjmw==
+  version "7.7.1"
+  resolved "https://registry.yarnpkg.com/active-win/-/active-win-7.7.1.tgz#4dd81cc44f91d3ff0d8a09151946de9871e3172a"
+  integrity sha512-ed70ZThMclAfcO5VvFdfg5U1lO6D1AoGu5rvnndhZGtKj68bzhHRIb0wpJswwgKCANO0mDjPXUjMlSjMXAtaKg==
   optionalDependencies:
     ffi-napi "^4.0.3"
     ref-napi "^3.0.3"

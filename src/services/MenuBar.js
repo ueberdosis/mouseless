@@ -184,6 +184,8 @@ export default new class {
   }
 
   isWindowVisible(window) {
+    // https://github.com/ueberdosis/mouseless/issues/21
+    // Steps to reproduce: Press the reference shortcut while in safari
     return !window.isDestroyed() && window.isVisible()
   }
 

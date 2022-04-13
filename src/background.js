@@ -5,7 +5,7 @@ import {
   BrowserWindow,
   ipcMain,
 } from 'electron'
-import { initialize, enable } from "@electron/remote/main"
+import { initialize, enable } from '@electron/remote/main'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import LicenseCheck from './services/LicenseCheck'
