@@ -60,6 +60,11 @@ module.exports = {
         afterSign: 'electron-builder-notarize',
         productName: 'Mouseless',
         mac: {
+          mergeASARs: false,
+          target: {
+            target: 'default',
+            arch: 'universal'
+          },
           hardenedRuntime: true,
           gatekeeperAssess: false,
           entitlements: 'build/entitlements.mac.plist',
