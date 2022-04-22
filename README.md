@@ -63,7 +63,7 @@ Don’t do this at home. It won’t work without all the certificates and creden
 1. Bump version in /package.json
 2. Fill out the .env
 3. Install dependencies: `yarn install`
-4. Build the macOS version: `yarn run electron:build:mac`
+4. Build the macOS version: `yarn run electron:build`
 5. Put the notarized version in the Zip file: `yarn run fix:build:mac`
 6. Manually upload `Mouseless-*.dmg`, `Mouseless-*.dmg.blockmap`, `Mouseless-*.zip` and `latest-mac.yml` (find them in dist_electron) to the DigitalOcean space.
 7. Manually upload the `Mouseless-*.dmg` to Gumroad.
@@ -86,5 +86,3 @@ Don’t do this at home. It won’t work without all the certificates and creden
 * [ueberdosis/mouseless-landingpage](https://github.com/ueberdosis/mouseless-landingpage)
 * [ueberdosis/glyphfinder](https://github.com/ueberdosis/mouseless)
 * [ueberdosis/glyphfinder-landingpage](https://github.com/ueberdosis/glyphfinder-landingpage)
-* [ueberdosis/matter](https://github.com/ueberdosis/matter)
-* [ueberdosis/matter-landingpage](https://github.com/ueberdosis/matter-landingpage)
