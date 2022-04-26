@@ -1,18 +1,20 @@
 import path from 'path'
-import { menubar } from 'menubar'
+
+import activeWin from 'active-win'
 import {
+  BrowserWindow,
   Menu,
   app,
   globalShortcut,
   ipcMain,
-  BrowserWindow,
 } from 'electron'
-import activeWin from 'active-win'
+import { menubar } from 'menubar'
 import windowShortcuts from 'window-shortcuts'
-import Store from './Store'
-import User from './User'
+
 import Setapp from './Setapp'
+import Store from './Store'
 import Updater from './Updater'
+import User from './User'
 
 export default new class {
 

@@ -1,7 +1,8 @@
 import collect from 'collect.js'
 import keymap from 'native-keymap'
+
+import { findDuplicatesInArray, getArrayDepth, isSameArray } from '@/helpers'
 import Emitter from '@/services/Emitter'
-import { findDuplicatesInArray, isSameArray, getArrayDepth } from '@/helpers'
 import Store from '@/services/Store'
 
 const isISOKeyboard = keymap.isISOKeyboard()

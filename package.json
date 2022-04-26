@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "@electron/remote": "^2.0.1",
-    "active-win": "^7.7.0",
+    "active-win": "github:ueberdosis/active-win",
     "axios": "^0.19.2",
     "collect.js": "^4.20.3",
     "core-js": "3.8.0",
